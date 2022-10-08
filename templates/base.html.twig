@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="dark">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Monifus, le moniteur Dofus{% endblock %}</title>
@@ -11,9 +11,21 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('darkmode') }}
+            {{ encore_entry_script_tags('feathericons') }}
         {% endblock %}
+        <script>
+
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
     </head>
-    <body>
+    <body class="bg-gray-50 dark:bg-gray-900">
+        {% include('includes/darkmode.html.twig') %}
         {% block body %}
         {% endblock %}
     </body>
