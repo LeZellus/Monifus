@@ -2,6 +2,4 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body {
-    background-color: lightgray;
-}
+@import "components/index";
