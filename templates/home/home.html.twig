@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur deleniti distinctio dolorum earum ex exercitationem fuga, ipsum, minus, nemo non optio ullam ut voluptas voluptatum! Cum ea necessitatibus officiis!
+    <div class="wrapper-style">
+        {% for data in datas %}
+            <p>{{ data.name }}</p>
+        {% endfor %}
     </div>
 {% endblock body %}
