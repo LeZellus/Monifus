@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        {% include("includes/logo.html.twig") %}
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-primary-500">
+                Connexion à votre compte
+            </h1>
+            <form class="space-y-4 md:space-y-6" method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+                <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input value="{{ last_username }}" placeholder="exemple@exemple.fr" type="email" name="email"
+                           id="email" class="form-input" required="">
+                </div>
+                <div>
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" name="password" id="password" placeholder="••••••••" class="form-input"
+                           required="">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input name="_remember_me" id="remember" aria-describedby="remember" type="checkbox"
+                                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="remember" class="text-gray-500 dark:text-gray-300">Se souvenir de moi</label>
+                        </div>
+                    </div>
+                    <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Mot
+                        de passe oublié?</a>
+                </div>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+                <button type="submit" class="form-submit">Connexion</button>
+                <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                    Pas encore inscrit ? <a href="{{ path('app_register') }}"
+                                            class="font-medium text-primary-600 hover:underline dark:text-primary-500">Inscription</a>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

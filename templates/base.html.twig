@@ -12,10 +12,8 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {{ encore_entry_script_tags('darkmode') }}
-            {{ encore_entry_script_tags('feathericons') }}
         {% endblock %}
         <script>
-
             // On page load or when changing themes, best to add inline in `head` to avoid FOUC
             if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
@@ -24,9 +22,11 @@
             }
         </script>
     </head>
-    <body class="bg-gray-50 dark:bg-gray-900">
+    <body class="bg-cover bg-center bg-fixed p-16">
         {% include('includes/darkmode.html.twig') %}
-        {% block body %}
-        {% endblock %}
+        <section class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            {% block body %}
+            {% endblock %}
+        </section>
     </body>
 </html>

@@ -22,7 +22,6 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('darkmode', './assets/styles/js/toggleDarkMode.js')
-    .addEntry('feathericons', './assets/styles/js/featherIcons.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
