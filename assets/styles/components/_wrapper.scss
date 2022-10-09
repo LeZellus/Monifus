@@ -1,15 +1,15 @@
 .wrapper {
   &-style {
-    @apply dark:bg-opacity-60 bg-opacity-20 backdrop-blur-xl drop-shadow-lg bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700;
+    @apply p-4 md:p-6 border border-gray-300 dark:bg-opacity-60 bg-opacity-20 backdrop-blur-xl drop-shadow-lg bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
   }
   &-size {
-    @apply w-full md:mt-0 sm:max-w-md xl:p-0;
+    @apply w-full md:mt-0 sm:max-w-md;
   }
 }
 
 .item {
-  @apply transition duration-500 border border-gray-300 p-4 text-base font-normal text-gray-900 rounded-lg bg-opacity-20 backdrop-blur-xl drop-shadow-lg bg-white rounded-lg shadow;
-  @apply dark:bg-opacity-60 dark:text-white dark:bg-gray-800 dark:border-gray-700;
+  @apply transition duration-500 border border-gray-300 p-4 text-base font-normal rounded-lg bg-opacity-20 backdrop-blur-xl drop-shadow-lg bg-white rounded-lg shadow;
+  @apply dark:bg-opacity-60 dark:bg-gray-800 dark:border-gray-700;
   &:hover {
     @apply transition duration-500 dark:bg-opacity-100 bg-opacity-40 border border-gray-500 dark:border-gray-500;
   }

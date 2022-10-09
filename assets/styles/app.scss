@@ -5,7 +5,8 @@
 @import "components/index";
 
 body {
-  font-family: "Nunito Sans", sans-serif;
+  @apply text-gray-700 dark:text-gray-200;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {

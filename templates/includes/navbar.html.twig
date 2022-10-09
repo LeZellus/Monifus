@@ -1,8 +1,8 @@
-<nav class="p-6 bg-gray-50 wrapper-style sticky top-0">
+<nav class="p-6 bg-gray-50 wrapper-style sticky top-6 z-50">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <div>
-            <p class="text-xs text-gray-700 dark:text-gray-200">Path / <span class="font-bold text-gray-700 dark:text-gray-200">Accueil</span></p>
-            <p class="font-extrabold text-lg text-gray-700 dark:text-gray-200">Bonjour {{ dump(app.user) }}</p>
+            <p class="text-xs">Path / <span class="font-bold text-gray-700 dark:text-gray-200">Accueil</span></p>
+            <p class="font-extrabold text-lg text-gray-700 dark:text-gray-200">Bonjour {{ app.user.pseudonymeWebsite }}</p>
         </div>
         <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500" aria-controls="navbar-solid-bg" aria-expanded="false">
             <span class="sr-only">Ouvrir le menu</span>
@@ -11,16 +11,16 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-d dark:border-gray-700">
                 <li>
-                    <a href="#" class="block py-2 pr-4 text-gray-500 hover:text-gray-700 hover:font-semibold duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:text-gray-400 dark:hover:text-gray-300">Accueil</a>
+                    <a href="{{ path('app_home') }}" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Accueil</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pr-4 text-gray-500 hover:text-gray-700 hover:font-semibold duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:text-gray-400 dark:hover:text-gray-300">Services</a>
+                    <a href="#" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Services</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pr-4 text-gray-500 hover:text-gray-700 hover:font-semibold duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:text-gray-400 dark:hover:text-gray-300">Pricing</a>
+                    <a href="#" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Pricing</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pr-4 text-gray-500 hover:text-gray-700 hover:font-semibold duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:text-gray-400 dark:hover:text-gray-300">Contact</a>
+                    <a href="#" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Contact</a>
                 </li>
             </ul>
         </div>

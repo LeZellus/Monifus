@@ -3,10 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_form.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/components/_wrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_wrapper.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/NunitoSans-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/fonts/Nunito_Sans/OFL.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/logo.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/logo.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/darkmode.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/darkmode.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>

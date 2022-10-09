@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="h-64 rounded-lg w-full overflow-hidden relative">
+        <img src="{{ asset('uploads/bglight.jpeg') }}" class="h-full w-full object-cover">
+        <div class="wrapper-style absolute w-full h-full z-10 top-0 left-0 flex justify-center items-center font-bold text-2xl text-gray-700 dark:text-gray-300">
+            Coming Soon
+        </div>
+    </section>
+
+    <section class="grid gap-4 lg:gap-6 lg:grid-cols-3">
+        <div>
+            <div class="wrapper-style grid gap-4 lg:gap-6">
+                <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
+                <div>
+                    <p>Email : {{ app.user.email }}</p>
+                    <p>Contact sur Dofus : <span class="text-primary-500 font-bold">{{ app.user.pseudonymeDofus }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style lg:col-span-2 grid gap-4 lg:gap-6">
+            <h2 class="text-xl font-extrabold">Informations générales</h2>
+            {{ form_start(editForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
+            <div>
+                {{ form_label(editForm.pseudonymeWebsite, 'Pseudo sur le site') }}
+                {{ form_widget(editForm.pseudonymeWebsite) }}
+            </div>
+            <div>
+                {{ form_label(editForm.pseudonymeDofus, 'Pseudo en jeu') }}
+                {{ form_widget(editForm.pseudonymeDofus) }}
+            </div>
+
+            <div>
+                {{ form_label(editForm.submit, 'Pseudo en jeu') }}
+                {{ form_widget(editForm.submit) }}
+            </div>
+            {{ form_end(editForm) }}
+        </div>
+    </section>
+{% endblock %}
