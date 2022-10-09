@@ -30,9 +30,16 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
+    role_hierarchy:
+        ROLE_TRUST: ROLE_USER
+        ROLE_ADMIN: ROLE_TRUST
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/connexion, roles: [PUBLIC_ACCESS] }
+        - { path: ^/inscription, roles: [PUBLIC_ACCESS] }
+        - { path: ^/deconnexion, roles: [PUBLIC_ACCESS] }
+        - { path: ^/, roles: ROLE_USER }
+        - { path: ^/app_api_to_database, roles: ROLE_SUPER_ADMIN }
 
 when@test:
     security:

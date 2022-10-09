@@ -13,7 +13,14 @@
                 <span class="flex-1 ml-3 whitespace-nowrap">Profil</span>
             </a>
         </li>
-
+        {% if is_granted('ROLE_MANAGER') %}
+            <li>
+                <a href="{{ path('app_api_to_database') }}" class="flex items-center item">
+                    <i data-feather="user" class="w-4"></i>
+                    <span class="flex-1 ml-3 whitespace-nowrap">DATABASE Refresh</span>
+                </a>
+            </li>
+        {% endif %}
         <li>
             <a href="{{ path("app_logout") }}" class="flex items-center item">
                 <i data-feather="log-out" class="w-4"></i>
