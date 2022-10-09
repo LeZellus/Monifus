@@ -28,13 +28,10 @@
         }
     </script>
 </head>
-<body class="bg-cover bg-center bg-fixed flex">
+<body class="bg-cover bg-center bg-fixed py-16 flex">
     {% include('includes/darkmode.html.twig') %}
-    {% include('includes/sidebar.html.twig') %}
-    <section class="flex-1 w-full p-8">
-        {% include('includes/navbar.html.twig') %}
+    <section class="flex flex-col items-center justify-center py-8 mx-auto md:h-screen flex-1">
         {% block body %}
-
         {% endblock %}
     </section>
 </body>
