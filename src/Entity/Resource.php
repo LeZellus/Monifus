@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ResourceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +33,14 @@ class Resource
 
     #[ORM\Column]
     private ?bool $isImportant = null;
+
+    #[ORM\OneToMany(mappedBy: 'resource', targetEntity: Monitor::class)]
+    private Collection $monitors;
+
+    public function __construct()
+    {
+        $this->monitors = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,6 +115,36 @@ class Resource
     public function setIsImportant(bool $isImportant): self
     {
         $this->isImportant = $isImportant;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Monitor>
+     */
+    public function getMonitors(): Collection
+    {
+        return $this->monitors;
+    }
+
+    public function addMonitor(Monitor $monitor): self
+    {
+        if (!$this->monitors->contains($monitor)) {
+            $this->monitors->add($monitor);
+            $monitor->setResource($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMonitor(Monitor $monitor): self
+    {
+        if ($this->monitors->removeElement($monitor)) {
+            // set the owning side to null (unless already changed)
+            if ($monitor->getResource() === $this) {
+                $monitor->setResource(null);
+            }
+        }
 
         return $this;
     }

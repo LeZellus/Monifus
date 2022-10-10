@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ApiToDatabaseController extends AbstractController
 {
-    #[Route('/api/to/database', name: 'app_api_to_database')]
+    #[Route('/apitodatabase', name: 'app_api_to_database')]
     public function index(CallApiService $apiService, EntityManagerInterface $entityManager): Response
     {
         $results = $apiService->getDofapiData();

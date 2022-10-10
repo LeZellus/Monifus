@@ -13,10 +13,18 @@
                 <span class="flex-1 ml-3 whitespace-nowrap">Profil</span>
             </a>
         </li>
-        {% if is_granted('ROLE_MANAGER') %}
+        {% if is_granted('ROLE_TRUST') %}
+            <li>
+                <a href="{{ path('app_monitor_index') }}" class="flex items-center item">
+                    <i data-feather="bar-chart-2" class="w-4"></i>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Monitor</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
             <li>
                 <a href="{{ path('app_api_to_database') }}" class="flex items-center item">
-                    <i data-feather="user" class="w-4"></i>
+                    <i data-feather="database" class="w-4"></i>
                     <span class="flex-1 ml-3 whitespace-nowrap">DATABASE Refresh</span>
                 </a>
             </li>

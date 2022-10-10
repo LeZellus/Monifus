@@ -39,7 +39,8 @@ security:
         - { path: ^/inscription, roles: [PUBLIC_ACCESS] }
         - { path: ^/deconnexion, roles: [PUBLIC_ACCESS] }
         - { path: ^/, roles: ROLE_USER }
-        - { path: ^/app_api_to_database, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/monitor, roles: ROLE_TRUST }
+        - { path: ^/api/to/database, roles: ROLE_SUPER_ADMIN }
 
 when@test:
     security:

@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Stock;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -46,6 +47,13 @@ class AppFixtures extends Fixture
         $user->setEmail("user@user.com");
 
         $manager->persist($user);
+
+        $quantities = [1, 10, 100];
+        for($i = 0; $i <= 2; $i++) {
+            $stock = new Stock();
+            $stock->setQuantity($quantities[$i]);
+            $manager->persist($stock);
+        }
 
         $manager->flush();
     }
