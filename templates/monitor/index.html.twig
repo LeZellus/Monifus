@@ -3,44 +3,33 @@
 {% block title %}Monitor index{% endblock %}
 
 {% block body %}
-    <section class="wrapper-style grid gap-4 lg:gap-6">
-        <h1>Monitor index</h1>
-        <div>
-            <a href="{{ path('app_monitor_new') }}" class="form-submit">Créer un Moniteur</a>
-        </div>
+    <h1>Monitor index</h1>
 
-        <table class="table">
-            <thead>
+    <table class="table">
+        <thead>
             <tr>
                 <th>Id</th>
                 <th>Price</th>
                 <th>actions</th>
             </tr>
-            </thead>
-            <tbody>
-            {% for monitor in user.monitors %}
-                <tr>
-                    <td>{{ monitor.id }}</td>
-                    <td>{{ monitor.price }}</td>
-                    <td>
-                        <a href="{{ path('app_monitor_show', {'id': monitor.id}) }}">show</a>
-                        <a href="{{ path('app_monitor_edit', {'id': monitor.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="3">Aucun moniteur</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        </thead>
+        <tbody>
+        {% for monitor in monitors %}
+            <tr>
+                <td>{{ monitor.id }}</td>
+                <td>{{ monitor.price }}</td>
+                <td>
+                    <a href="{{ path('app_monitor_show', {'id': monitor.id}) }}">show</a>
+                    <a href="{{ path('app_monitor_edit', {'id': monitor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-        <article>
-            <h2>Nom de la ressource</h2>
-
-            <p>Moyenne par lot de 1 : </p>
-            <p>Moyenne par lot de 10 : </p>
-            <p>Moyenne par lot de 100 : </p>
-        </article>
-    </section>
+    <a href="{{ path('app_monitor_new') }}">Create new</a>
 {% endblock %}

@@ -3,30 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/monifus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/monifus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/js/toggleDarkMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/toggleDarkMode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ApiToDatabaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ApiToDatabaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20221009200049.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20221009214613.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20221009220729.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20221010002040.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Resource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Resource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Monitor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Stock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/show.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -135,23 +133,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/matheozeller/Documents/monifus/assets/styles/components&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/matheozeller/Documents/Monifus",
+    "nodejs_package_manager_path": "npm",
+    "ruby.rails.projectView.checked": "true",
+    "settings.editor.selected.configurable": "Symfony2.SettingsForm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets/styles/components" />
       <recent name="$PROJECT_DIR$/assets/styles" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets/js" />
       <recent name="$PROJECT_DIR$/public/uploads" />
     </key>
@@ -172,6 +171,8 @@
       <option name="presentableId" value="Default" />
       <updated>1665140436546</updated>
       <workItem from="1665140439814" duration="27521000" />
+      <workItem from="1665411991387" duration="254000" />
+      <workItem from="1665412349761" duration="936000" />
     </task>
     <servers />
   </component>
@@ -188,5 +189,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
