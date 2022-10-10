@@ -45,7 +45,7 @@ class AppFixtures extends Fixture
         $admin->setEmail("admin@admin.com");
 
         $manager->persist($admin);
-        $user[] = $admin;
+        $this->users[] = $admin;
 
         $trust = new User();
         $trust->setRoles(["ROLE_TRUST"]);
@@ -56,7 +56,7 @@ class AppFixtures extends Fixture
         $trust->setEmail("trust@trust.com");
 
         $manager->persist($trust);
-        $user[] = $trust;
+        $this->users[] = $trust;
 
         $user = new User();
         $user->setRoles(["ROLE_USER"]);
@@ -98,14 +98,14 @@ class AppFixtures extends Fixture
     }
 
     public function createMonitors($manager) {
-        for ($i = 0; $i < 500; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $user = $this->users[array_rand($this->users)];
             $resource = $this->resources[array_rand($this->resources)];
             $stock = $this->stocks[array_rand($this->stocks)];
 
 
             $monitor = new Monitor();
-            $monitor->setPrice(rand(1, 100000000));
+            $monitor->setPrice(rand(1, 30));
             $monitor->setResource($resource);
             $monitor->setStock($stock);
             $monitor->setUser($user);

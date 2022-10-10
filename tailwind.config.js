@@ -26,7 +26,7 @@ module.exports = {
         },
         fontFamily: {
             'body': [
-                'Nunito Sans',
+                'Poppins',
                 'ui-sans-serif',
                 'system-ui',
                 '-apple-system',
@@ -43,7 +43,7 @@ module.exports = {
                 'Noto Color Emoji'
             ],
             'sans': [
-                'Nunito Sans',
+                'Poppins',
                 'ui-sans-serif',
                 'system-ui',
                 '-apple-system',

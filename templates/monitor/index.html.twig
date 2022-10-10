@@ -1,35 +1,304 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Monitor index{% endblock %}
+{% block title %}Monitor | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Monitor index</h1>
+    <section class="wrapper-style grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div class="col-start-1 col-end-4">
+            <h1>Monitor</h1>
+            <h2>Moyenne des ressources</h2>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-style">
+            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
+                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
+                <h3 class="text-2xl uppercase font-black">Pépites</h3>
+            </div>
+            <div class="pt-2">
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">1</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">2 450</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">10</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">24 500</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <p>Lot de <span class="text-primary-500 font-semibold">100</span> :</p>
+                    <div class="flex items-center pl-2">
+                        <span class="font-bold text-lg">245 000</span>
+                        <img class="ml-1 w-4 h-4" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="col-start-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
+    </section>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Price</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for monitor in monitors %}
-            <tr>
-                <td>{{ monitor.id }}</td>
-                <td>{{ monitor.price }}</td>
-                <td>
-                    <a href="{{ path('app_monitor_show', {'id': monitor.id}) }}">show</a>
-                    <a href="{{ path('app_monitor_edit', {'id': monitor.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_monitor_new') }}">Create new</a>
 {% endblock %}

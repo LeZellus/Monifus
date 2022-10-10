@@ -39,12 +39,35 @@ class MonitorRepository extends ServiceEntityRepository
         }
     }
 
-    public function getAllMonitors() {
-        return $this
-            ->createQueryBuilder('m')
+    //Obtenir la moyenne de tout les monitors
+    public function getAverageMonitors(MonitorRepository $monitorRepository) {
+        $qb = $monitorRepository->createQueryBuilder('m');
+        $qb
+            ->select($qb->expr()->avg('m.price'))
+            ->where('')
             ->orderBy('m.resource', 'ASC')
             ->getQuery()
             ->getResult();
+
+
+        return $qb->getQuery()->getResult();
+    }
+
+    //Obtenir la moyenne de tout les monitors par lot de 100 par utilisateur
+    public function getAverageMonitorsByStockByUserByQuantity(MonitorRepository $monitorRepository, int $quantity = 1) {
+        $qb = $monitorRepository->createQueryBuilder('m');
+        $qb
+            ->select($qb->expr()->avg('m.price'))
+            ->leftJoin('m.stock', 's')
+            ->leftJoin('m.user', 'u')
+            ->where('s.quantity = :quantity')
+            ->orderBy('u.id')
+            ->setParameter('quantity', $quantity)
+            ->getQuery()
+            ->getResult();
+
+
+        return $qb->getQuery()->getResult();
     }
 
 //    /**
