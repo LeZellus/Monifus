@@ -39,6 +39,14 @@ class MonitorRepository extends ServiceEntityRepository
         }
     }
 
+    public function getAllMonitors() {
+        return $this
+            ->createQueryBuilder('m')
+            ->orderBy('m.resource', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Monitor[] Returns an array of Monitor objects
 //     */

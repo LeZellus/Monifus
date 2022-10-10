@@ -3,21 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/monifus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/monifus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20221009200049.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20221009214613.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20221009220729.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20221010002040.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Monitor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Stock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/_delete_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MonitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MonitorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +118,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Fnv02D8Wxi7r1N91OJLcxUyaEi" />
@@ -172,7 +165,7 @@
       <updated>1665140436546</updated>
       <workItem from="1665140439814" duration="27521000" />
       <workItem from="1665411991387" duration="254000" />
-      <workItem from="1665412349761" duration="936000" />
+      <workItem from="1665412349761" duration="4723000" />
     </task>
     <servers />
   </component>

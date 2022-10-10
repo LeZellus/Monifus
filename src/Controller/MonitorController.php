@@ -16,6 +16,10 @@ class MonitorController extends AbstractController
     #[Route('/', name: 'app_monitor_index', methods: ['GET'])]
     public function index(MonitorRepository $monitorRepository): Response
     {
+        $monitors = $monitorRepository->getAllMonitors();
+
+        dump($monitors);
+
         return $this->render('monitor/index.html.twig', [
             'monitors' => $monitorRepository->findAll(),
         ]);
