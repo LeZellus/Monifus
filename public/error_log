@@ -1,0 +1,1440 @@
+[12-Oct-2022 12:52:32 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:35 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:37 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:37 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:38 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:52:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:58:53 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 12:58:53 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 13:25:46 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 13:25:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 13:31:57 UTC] PHP Warning:  require_once(/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 13:31:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kcwc9194/xipelgames.fr/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kcwc9194/xipelgames.fr/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/kcwc9194/xipelgames.fr/public/index.php on line 5
+[12-Oct-2022 13:50:05 UTC] [info] Matched route "app_home".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 13:50:05 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 13:50:05 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "debug.security.authorization.vote" to listener "Symfony\Bundle\SecurityBundle\EventListener\VoteListener::onVoterVote".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 13:50:05 UTC] [debug] Access denied, the user is not fully authenticated; redirecting to authentication entry point.
+
+[12-Oct-2022 13:50:05 UTC] [debug] Calling Authentication entry point.
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException" stopped propagation of the event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\WebpackEncoreBundle\EventListener\ExceptionListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::logKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 13:50:06 UTC] [info] Matched route "app_login".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 13:50:06 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 13:50:06 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 13:50:06 UTC] [critical] Uncaught PHP Exception Twig\Error\RuntimeError: "An exception has been thrown during the rendering of a template ("Asset manifest file "/home/kcwc9194/xipelgames.fr/public/build/manifest.json" does not exist. Did you forget to build the assets with npm or yarn?")." at /home/kcwc9194/xipelgames.fr/templates/base_form.html.twig line 8
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\WebpackEncoreBundle\EventListener\ExceptionListener::onKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::logKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException" stopped propagation of the event "kernel.exception".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:06 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 13:50:07 UTC] [info] Matched route "_wdt".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 13:50:07 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 14:11:18 UTC] [info] Matched route "app_login".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 14:11:18 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 14:11:18 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:11:18 UTC] [critical] Uncaught PHP Exception Twig\Error\RuntimeError: "An exception has been thrown during the rendering of a template ("Asset manifest file "/home/kcwc9194/xipelgames.fr/public/build/manifest.json" does not exist. Did you forget to build the assets with npm or yarn?")." at /home/kcwc9194/xipelgames.fr/templates/base_form.html.twig line 8
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\WebpackEncoreBundle\EventListener\ExceptionListener::onKernelException".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::logKernelException".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelException".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException" stopped propagation of the event "kernel.exception".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:18 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 14:11:19 UTC] [info] Matched route "_wdt".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:11:19 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 14:47:44 UTC] [info] Matched route "app_home".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "debug.security.authorization.vote" to listener "Symfony\Bundle\SecurityBundle\EventListener\VoteListener::onVoterVote".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Access denied, the user is not fully authenticated; redirecting to authentication entry point.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Calling Authentication entry point.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException" stopped propagation of the event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\WebpackEncoreBundle\EventListener\ExceptionListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::logKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException" was not called for event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 14:47:44 UTC] [info] Matched route "app_login".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:47:44 UTC] [critical] Uncaught PHP Exception Twig\Error\RuntimeError: "An exception has been thrown during the rendering of a template ("Asset manifest file "/home/kcwc9194/xipelgames.fr/public/build/manifest.json" does not exist. Did you forget to build the assets with npm or yarn?")." at /home/kcwc9194/xipelgames.fr/templates/base_form.html.twig line 8
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\WebpackEncoreBundle\EventListener\ExceptionListener::onKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::logKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException" stopped propagation of the event "kernel.exception".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:44 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 14:47:45 UTC] [info] Matched route "_wdt".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 14:47:45 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:01:57 UTC] [info] Matched route "app_login".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 15:01:57 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 15:01:57 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:01:57 UTC] [info] Matched route "_wdt".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:01:57 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:08:36 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/.env"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/.DS_Store"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/info.php"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/debug/default/view"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/.git/config"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/server-status"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/telescope/requests"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/s/3130392e3233342e3136322e3738/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/config.json"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/v2/_catalog"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/about"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/api/search"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:37 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://mail.xipelgames.fr/login.action"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/debug/default/view"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/server-status"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/.env"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/.DS_Store"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/info.php"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/.git/config"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/telescope/requests"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/s/3130392e3233342e3136322e3738/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/about"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/api/search"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/config.json"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/v2/_catalog"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:08:38 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/login.action"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:16:02 UTC] [critical] Uncaught PHP Exception InvalidArgumentException: "The controller for URI "/inscription" is not callable: Environment variable not found: "MAILER_DSN"." at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/Controller/ControllerResolver.php line 79
+
+[12-Oct-2022 15:16:35 UTC] [info] Matched route "app_register".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 15:16:35 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 15:16:35 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [critical] Uncaught PHP Exception InvalidArgumentException: "The controller for URI "/inscription" is not callable: Environment variable not found: "MAILER_DSN"." at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/Controller/ControllerResolver.php line 79
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\Security\Http\Firewall\ExceptionListener::onKernelException".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\WebpackEncoreBundle\EventListener\ExceptionListener::onKernelException".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::logKernelException".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelException".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onKernelException" stopped propagation of the event "kernel.exception".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:35 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:16:36 UTC] [info] Matched route "_wdt".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:16:36 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:17:00 UTC] [info] Matched route "app_register".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Checking for authenticator support.
+
+[12-Oct-2022 15:17:00 UTC] [debug] Checking support on authenticator.
+
+[12-Oct-2022 15:17:00 UTC] [debug] Authenticator does not support the request.
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:00 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:17:01 UTC] [info] Matched route "_wdt".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::configureLogoutUrlGenerator".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener::onKernelController".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelController".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.controller_arguments" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener::onKernelControllerArguments".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\Security\Http\Firewall\ContextListener::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Bundle\SecurityBundle\Debug\TraceableFirewallListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+
+[12-Oct-2022 15:17:01 UTC] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+
+[12-Oct-2022 15:46:46 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:47 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/blog/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:47 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/web/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:47 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/wordpress/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:47 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/website/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:47 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/wp/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:48 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/news/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:48 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/2018/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:48 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/2019/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:48 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/shop/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:48 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/wp1/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:49 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/test/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:49 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/media/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:49 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/wp2/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:49 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/site/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:50 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/cms/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:46:50 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://xipelgames.fr/sito/wp-includes/wlwmanifest.xml"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
+[12-Oct-2022 15:55:07 UTC] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://xipelgames.fr/robots.txt"" at /home/kcwc9194/xipelgames.fr/vendor/symfony/http-kernel/EventListener/RouterListener.php line 128
+
