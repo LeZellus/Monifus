@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Monifus, le moniteur Dofus{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ asset('uploads/favicon_package/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ asset('uploads/favicon_package/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('uploads/favicon_package/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('uploads/favicon_package/safari-pinned-tab.svg') }}" color="#5bbad5">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="bg-cover bg-center bg-fixed flex" style="background-image: url('{{ asset("uploads/guilde.png") }}')">
+    <section class="relative h-full w-full">
+        {% block body %}
+
+        {% endblock %}
+    </section>
+</body>
+</html>
