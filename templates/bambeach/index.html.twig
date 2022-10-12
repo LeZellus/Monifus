@@ -1,0 +1,23 @@
+{% extends 'basebam.html.twig' %}
+
+{% block body %}
+    <section class="w-full h-screen absolute bg-gray-800 bg-opacity-40 z-20 left-0 top-0 flex items-center justify-center">
+        <div class="bg-gray-800 p-16 bg-opacity-60 rounded-lg grid gap-4">
+            <div class="text-center">
+                <h2 class="text-4xl text-bambeach-400 font-bold">Bam'Beach</h2>
+                <p>Guilde pvm dofus</p>
+            </div>
+            <img src="{{ asset('uploads/blason.png') }}" alt="Blason bam beach" class="w-32 mx-auto">
+            <div class="text-left space-y-2">
+                <a href="https://discord.gg/nMPbdnPesV" class="flex border border-bambeach-400 items-center rounded-lg p-4 hover:bg-bambeach-500 hover:text-black transition duration-300">
+                    <img src="{{ asset('uploads/discorde.png') }}" alt="Logo discord" class="w-10">
+                    <span class="ml-2 uppercase text-xl">discord guilde</span>
+                </a>
+                <a href="https://discord.gg/UqF5q5vhhp" class="flex border border-bambeach-400 items-center rounded-lg p-4 hover:bg-bambeach-500 hover:text-black transition duration-300">
+                    <img src="{{ asset('uploads/discorde.png') }}" alt="Logo discord" class="w-10">
+                    <span class="ml-2 uppercase text-xl">discord alliance</span>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
