@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/components/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MonitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MonitorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MonitorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MonitorType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +161,7 @@
       <updated>1665140436546</updated>
       <workItem from="1665140439814" duration="27521000" />
       <workItem from="1665411991387" duration="254000" />
-      <workItem from="1665412349761" duration="11606000" />
+      <workItem from="1665412349761" duration="12928000" />
     </task>
     <servers />
   </component>

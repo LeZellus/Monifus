@@ -3,9 +3,11 @@
 {% block title %}New Monitor{% endblock %}
 
 {% block body %}
-    <h1>Create new Monitor</h1>
+    <section>
+        <h1 class="md:col-start-1 md:col-end-4">Créer un moniteur</h1>
 
-    {{ include('monitor/_form.html.twig') }}
+        {{ include('monitor/_form.html.twig') }}
 
-    <a href="{{ path('app_monitor_index') }}">back to list</a>
+        <a class="form-submit" href="{{ path('app_monitor_index') }}">Retour</a>
+    </section>
 {% endblock %}
