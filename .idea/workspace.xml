@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/monifus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/monifus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MonitorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MonitorType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +117,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Fnv02D8Wxi7r1N91OJLcxUyaEi" />
@@ -132,7 +135,7 @@
     "last_opened_file_path": "/Users/matheozeller/Documents/Monifus",
     "nodejs_package_manager_path": "npm",
     "ruby.rails.projectView.checked": "true",
-    "settings.editor.selected.configurable": "Symfony2.SettingsForm"
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -161,7 +164,7 @@
       <updated>1665140436546</updated>
       <workItem from="1665140439814" duration="27521000" />
       <workItem from="1665411991387" duration="254000" />
-      <workItem from="1665412349761" duration="12928000" />
+      <workItem from="1665412349761" duration="14407000" />
     </task>
     <servers />
   </component>

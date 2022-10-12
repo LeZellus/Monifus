@@ -1,0 +1,18 @@
+<Ifmodule mod_rewrite.c >
+    RewriteEngine on
+    RewriteOptions inherit
+
+    RewriteCond %{REQUEST_URI} !^/\.well-know/acme-challenge/.*$
+    RewriteCond %{REQUEST_URI} !^/\.well-know/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+    RewriteRule ^.well-know/acme-challenge - [L]
+
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+    RewriteCond %{HTTPS} ≠on
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    RewriteCond %{REQUEST_URI} !public/
+    RewriteRule (.*) /public/$1 [L]
+</Ifmodule>
