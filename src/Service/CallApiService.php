@@ -18,6 +18,7 @@ class CallApiService
             "GET",
             "https://fr.dofus.dofapi.fr/resources"
         );
+
         return $response->toArray();
     }
 

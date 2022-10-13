@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Monitor;
 use App\Form\MonitorType;
 use App\Repository\MonitorRepository;
+use App\Repository\StockRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,13 +15,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class MonitorController extends AbstractController
 {
     #[Route('/', name: 'app_monitor_index', methods: ['GET'])]
-    public function index(MonitorRepository $monitorRepository): Response
+    public function index(MonitorRepository $monitorRepository, StockRepository $stockRepository): Response
     {
-        $quantity = 10;
-        $monitors = $monitorRepository->getAverageMonitorsByStockByUserByQuantity($monitorRepository, $quantity);
+        $quantity = 1;
+//        $monitors = $monitorRepository->getAverageMonitorsByStockByUserByQuantity($monitorRepository, $quantity);
+            $monitors = $monitorRepository->getMonitorByResource($monitorRepository);
+//        dd($monitorRepository->getMonitorByResource($monitorRepository));
+
+
+//        $stocks = $stockRepository->findAll();
 
         return $this->render('monitor/index.html.twig', [
-            'monitors' => $monitors,
+            'monitors' => $monitors
+//            'stocks' => $stocks
         ]);
     }
 
@@ -32,6 +39,8 @@ class MonitorController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $monitor->setUser($this->getUser());
             $monitorRepository->save($monitor, true);
 
             return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);

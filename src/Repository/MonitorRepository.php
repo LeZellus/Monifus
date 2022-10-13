@@ -54,22 +54,41 @@ class MonitorRepository extends ServiceEntityRepository
     }
 
     //Obtenir la moyenne de tout les monitors par lot de 100 par utilisateur
-    public function getAverageMonitorsByStockByUserByQuantity(MonitorRepository $monitorRepository, int $quantity = 1) {
+    public function getAverageMonitorsByStockByUserByQuantity(MonitorRepository $monitorRepository, $quantity = 1) {
         $qb = $monitorRepository->createQueryBuilder('m');
+
         $qb
             ->select($qb->expr()->avg('m.price'))
             ->leftJoin('m.stock', 's')
             ->leftJoin('m.user', 'u')
-            ->where('s.quantity = :quantity')
+            ->leftJoin('m.resource', 'r')
+            ->where('u.id = :idUser')
+            ->andwhere('r.id = :idResource')
+            ->andWhere('s.quantity = :quantity')
             ->orderBy('u.id')
+            ->setParameter('idUser', 19)
+            ->setParameter('idResource', 5)
             ->setParameter('quantity', $quantity)
+            ->getQuery()
+            ->getResult();
+
+        return $qb->getQuery()->getResult();
+    }
+
+    //Je veux récupérer chaque ressource des moniteurs
+    public function getMonitorByResource(MonitorRepository $monitorRepository) {
+        $qb = $monitorRepository->createQueryBuilder('m');
+        $qb
+            ->leftJoin('m.resource', 'r')
+            ->select("r.name")
+            ->orderBy('r.name', 'ASC')
+            ->distinct()
             ->getQuery()
             ->getResult();
 
 
         return $qb->getQuery()->getResult();
     }
-
 //    /**
 //     * @return Monitor[] Returns an array of Monitor objects
 //     */
