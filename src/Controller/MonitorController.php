@@ -18,16 +18,27 @@ class MonitorController extends AbstractController
     public function index(MonitorRepository $monitorRepository, StockRepository $stockRepository): Response
     {
         $quantity = 1;
-//        $monitors = $monitorRepository->getAverageMonitorsByStockByUserByQuantity($monitorRepository, $quantity);
-            $monitors = $monitorRepository->getMonitorByResource($monitorRepository);
-//        dd($monitorRepository->getMonitorByResource($monitorRepository));
+        $user = $this->getUser();
+        $stocks = $stockRepository->findAll();
+
+        $monitorByUserByResources = $monitorRepository->getMonitorByResourceByUser($monitorRepository, $user->getUserIdentifier());
+
+        //pour chaque monitor par ressource par utilisateur
+        foreach ($monitorByUserByResources as $monitorByUserByResource) {
+
+            //je récupère la ressource, je la tri par stock par moniteur par utilisateur et je fais son average
+
+            $monitors = $monitorRepository->getAverageMonitorsByStockByUserByQuantity($monitorRepository, $quantity);
+        }
+
+//        $monitors = $monitorRepository->getMonitorByResource($monitorRepository);
+        dd($monitorByUserByResources[0].[0][0]);
 
 
-//        $stocks = $stockRepository->findAll();
 
         return $this->render('monitor/index.html.twig', [
-            'monitors' => $monitors
-//            'stocks' => $stocks
+            'monitors' => $monitorByUserByResources,
+            'stocks' => $stocks
         ]);
     }
 

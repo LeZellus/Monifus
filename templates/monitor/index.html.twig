@@ -5,33 +5,22 @@
 {% block body %}
 
     {% for monitor in monitors %}
+
         <div class="wrapper-style">
             <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
                 <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
-                <h3 class="text-2xl uppercase font-black">{{ monitor.name }}</h3>
+                <h3 class="text-2xl uppercase font-black"></h3>
             </div>
             <div class="pt-2">
+                {% for stock in stocks  %}
                 <div class="flex items-center">
-                    <p>Lot de <span class="text-primary-500 font-semibold"></span> :</p>
+                    <p>Lot de <span class="text-primary-500 font-semibold"></span>{{ stock.quantity }} :</p>
                     <div class="flex items-center pl-2">
-                        <span class="font-bold text-sm">2 450</span>
+                        <span class="font-bold text-sm"></span>
                         <img class="ml-1 w-3 h-3" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
                     </div>
                 </div>
-                <div class="flex items-center">
-                    <p>Lot de <span class="text-primary-500 font-semibold"></span> :</p>
-                    <div class="flex items-center pl-2">
-                        <span class="font-bold text-sm">24 500</span>
-                        <img class="ml-1 w-3 h-3" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <p>Lot de <span class="text-primary-500 font-semibold"></span> :</p>
-                    <div class="flex items-center pl-2">
-                        <span class="font-bold text-sm">245 000</span>
-                        <img class="ml-1 w-3 h-3" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     {% endfor %}
