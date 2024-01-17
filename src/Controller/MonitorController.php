@@ -32,7 +32,7 @@ class MonitorController extends AbstractController
         }
 
 //        $monitors = $monitorRepository->getMonitorByResource($monitorRepository);
-        dd($monitorByUserByResources[0].[0][0]);
+        //dd($monitorByUserByResources[0].[0][0]);
 
 
 
