@@ -32,40 +32,51 @@ class FetchDofusItemsCommand extends Command
 
     #[NoReturn] protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $this->entityManager->getConnection()->getConfiguration()->setSQLLogger(null);
         $skip = 0;
         $limit = 50;
+        $totalItems = 0;
+
+        $repository = $this->entityManager->getRepository(Resource::class);
+
         do {
-            //Ici on obtient un tableau de 10 éléments
-            $response = $this->dofusApiService->fetchItems($skip, $limit);
+            try {
+                //Ici on obtient un tableau de 10 éléments
+                $response = $this->dofusApiService->fetchItems($skip, $limit);
+                $items = $response["data"] ?? [];
+                $totalItemsFetched = count($items);
 
-            $items = $response["data"] ?? [];
+                //foreach($items as $item) {
+                //    //Get $resource by ankamaId
+                //    $resource = $repository->findOneBy(['ankamaId' => $item['id']]);
+                //
+                //    if(!$resource) {
+                //        $resource = new Resource();
+                //    }
+                //
+                //    //Update or set infos on resource
+                //    $resource->setName($item["name"]["fr"]);
+                //    $resource->setAnkamaId($item["id"]);
+                //    $resource->setDescription($item["description"]["fr"]);
+                //    $resource->setImgUrl($item["img"]);
+                //    $resource->setLevel($item["level"]);
+                //    $resource->setIsImportant(false);
+                //    $this->entityManager->persist($resource);
+                //}
+                //$this->entityManager->flush();
+                //$this->entityManager->clear();
 
-            foreach($items as $item) {
-                //Get $resource by ankamaId
-                $resource = $this->entityManager->getRepository(Resource::class)->findOneBy(['ankamaId' => $item['id']]);
-
-                if(!$resource) {
-                    $resource = new Resource();
-                }
-
-                //Update or set infos on resource
-                $resource->setName($item["name"]["fr"]);
-                $resource->setAnkamaId($item["id"]);
-                $resource->setDescription($item["description"]["fr"]);
-                $resource->setImgUrl($item["img"]);
-                $resource->setLevel($item["level"]);
-                $resource->setIsImportant(false);
-                $this->entityManager->persist($resource);
+                $skip += $limit;
+                $totalItems += $totalItemsFetched;
+                $output->writeln("Processed $totalItemsFetched items. Total processed: $totalItems");
+                $output->writeln(memory_get_usage());
+            } catch (\Exception $e) {
+                $output->writeln('Error: ' . $e->getMessage());
             }
-            $this->entityManager->flush();
-            $this->entityManager->clear();
 
-            $skip += $limit;
         } while (!empty($items));
 
         $output->writeln('Done fetching items.');
-
         return Command::SUCCESS;
     }
 }
-
