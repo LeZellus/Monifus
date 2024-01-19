@@ -42,7 +42,7 @@
                 <input type="hidden" name="_csrf_token"
                        value="{{ csrf_token('authenticate') }}"
                 >
-                <button type="submit" class="form-submit">Connexion</button>
+                <div class="flex justify-center"><button type="submit" class="form-submit">Connexion</button></div>
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                     Pas encore inscrit ? <a href="{{ path('app_register') }}"
                                             class="font-medium text-primary-600 hover:underline dark:text-primary-500">Inscription</a>

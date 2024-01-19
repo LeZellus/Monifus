@@ -9,11 +9,11 @@ let darkThemeCheckbox = document.getElementById('darkmode-checkbox');
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     themeToggleDarkIcon.classList.remove('hidden');
     darkThemeCheckbox.checked = true;
-    bodyStyle.backgroundImage = 'url("/uploads/bgdark3.jpeg")';
+    bodyStyle.backgroundImage = 'url("/uploads/bgdark3.jpg")';
 } else {
     themeToggleLightIcon.classList.remove('hidden');
     darkThemeCheckbox.checked = false;
-    bodyStyle.backgroundImage = 'url("/uploads/bglight.jpeg")';
+    bodyStyle.backgroundImage = 'url("/uploads/bglight.jpg")';
 }
 
 darkThemeButton.addEventListener('click', function() {
@@ -28,12 +28,12 @@ darkThemeButton.addEventListener('click', function() {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
             darkThemeCheckbox.checked = true;
-            bodyStyle.backgroundImage = 'url("/uploads/bgdark3.jpeg")';
+            bodyStyle.backgroundImage = 'url("/uploads/bgdark3.jpg")';
         } else {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
             darkThemeCheckbox.checked = false;
-            bodyStyle.backgroundImage = 'url("/uploads/bglight.jpeg")'
+            bodyStyle.backgroundImage = 'url("/uploads/bglight.jpg")'
         }
 
         // if NOT set via local storage previously
@@ -42,12 +42,12 @@ darkThemeButton.addEventListener('click', function() {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
             darkThemeCheckbox.checked = false;
-            bodyStyle.backgroundImage = 'url("/uploads/bglight.jpeg")';
+            bodyStyle.backgroundImage = 'url("/uploads/bglight.jpg")';
         } else {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
             darkThemeCheckbox.checked = true;
-            bodyStyle.backgroundImage = 'url("/uploads/bgdark3.jpeg")';
+            bodyStyle.backgroundImage = 'url("/uploads/bgdark3.jpg")';
         }
     }
 

@@ -11,13 +11,11 @@
     </section>
 
     <section class="grid gap-4 lg:gap-6 lg:grid-cols-3">
-        <div>
-            <div class="wrapper-style grid gap-4 lg:gap-6">
-                <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
-                <div>
-                    <p>Email : {{ app.user.email }}</p>
-                    <p>Contact sur Dofus : <span class="text-primary-500 font-bold">{{ app.user.pseudonymeDofus }}</span></p>
-                </div>
+        <div class="wrapper-style grid gap-4 lg:gap-6">
+            <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
+            <div>
+                <p>Email : {{ app.user.email }}</p>
+                <p>Contact sur Dofus : <span class="text-primary-500 font-bold">{{ app.user.pseudonymeDofus }}</span></p>
             </div>
         </div>
         <div class="wrapper-style lg:col-span-2 grid gap-4 lg:gap-6">

@@ -1,13 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Monitor{% endblock %}
+{% block title %}Nouveau Moniteur | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <section>
-        <h1 class="md:col-start-1 md:col-end-4">Créer un moniteur</h1>
+    <h1>Créer un moniteur</h1>
+
+    <section class="wrapper-style grid gap-4 lg:gap-6">
 
         {{ include('monitor/_form.html.twig') }}
 
-        <a class="form-submit" href="{{ path('app_monitor_index') }}">Retour</a>
+        <div class="flex justify-center">
+            <a class="form-submit" href="{{ path('app_monitor_index') }}">Retour</a>
+        </div>
     </section>
 {% endblock %}

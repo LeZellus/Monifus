@@ -1,30 +1,43 @@
 {# templates/monitor/list.html.twig #}
 
 {% block body %}
-    {# templates/monitor/list.html.twig #}
-
-    <table>
-        <thead>
-        <tr>
-            <th>Prix par unité</th>
-            <th>Prix par 10</th>
-            <th>Prix par 100</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for monitor in monitors %}
-            <tr data-monitor-id="{{ monitor.id }}" id="monitor-{{ monitor.id }}">
-                <td data-type="pricePer1">{{ monitor.pricePer1 }}</td>
-                <td data-type="pricePer10">{{ monitor.pricePer10 }}</td>
-                <td data-type="pricePer100">{{ monitor.pricePer100 }}</td>
-                <td>
-                    <button class="deleteMonitorBtn" data-monitor-id="{{ monitor.id }}">Supprimer</button>
-                </td>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 wrapper-style">
+            <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-4 md:px-6 py-3 align-middle">
+                    <span class="hidden sm:block">Lot de </span>
+                    <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">1</span></th>
+                <th scope="col" class="px-4 md:px-6 py-3">
+                    <span class="hidden sm:block">Lot de </span>
+                    <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">10</span>
+                </th>
+                <th scope="col" class="px-4 md:px-6 py-3">
+                    <span class="hidden sm:block">Lot de </span>
+                    <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">100</span>
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">Actions</span>
+                </th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for monitor in monitors %}
+                    <tr class="" data-monitor-id="{{ monitor.id }}" id="monitor-{{ monitor.id }}">
+                        <td class="border-b border-gray-300 dark:border-gray-700 px-4 md:px-6 py-4 text-lg" data-type="pricePer1">{{ monitor.pricePer1 }}</td>
+                        <td class="border-b border-gray-300 dark:border-gray-700 px-4 md:px-6 py-4 text-lg" data-type="pricePer10">{{ monitor.pricePer10 }}</td>
+                        <td class="border-b border-gray-300 dark:border-gray-700 px-4 md:px-6 py-4 text-lg" data-type="pricePer100">{{ monitor.pricePer100 }}</td>
+                        <td class="border-b border-gray-300 dark:border-gray-700 px-4 md:px-6 py-4 text-lg">
+                            <button class="deleteMonitorBtn w-full text-right text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-500 transition duration-300 hidden sm:block" data-monitor-id="{{ monitor.id }}">
+                                Supprimer
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
 
 {% endblock %}
 

@@ -37,7 +37,10 @@ function editMode(td) {
     let input = document.createElement('input');
     input.type = 'text';
     input.value = originalValue;
-    input.style.width = "100%";
+    input.classList.add("appearance-none", "border-0", "outline-none",
+        "p-2", "bg-white", "rounded", "text-gray-700");
+
+    console.log('input')
 
     input.onblur = function() {
         updateMonitor(td.parentElement.getAttribute('data-monitor-id'), td.getAttribute('data-type'), this.value);

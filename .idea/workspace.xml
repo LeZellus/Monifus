@@ -5,32 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/monifus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/monifus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/FetchDofusItemsCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/FetchDofusItemsCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MonitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MonitorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Monitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Monitor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Resource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Resource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Stock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_wrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_wrapper.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/js/monitorAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/monitorAjax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/js/toggleDarkMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/toggleDarkMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/bgdark3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/bglight.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/MonitorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MonitorType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ResourceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ResourceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/api_to_database/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/monitor/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/edit.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/monitor/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/show.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/resource/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resource/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,11 +195,11 @@
       <recent name="$PROJECT_DIR$/public/uploads" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mathe\IdeaProjects\Monifus\assets\styles\js" />
+      <recent name="C:\Users\mathe\IdeaProjects\Monifus\assets" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/public/uploads" />
       <recent name="$PROJECT_DIR$/assets/styles/fonts" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/assets/js" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -231,7 +227,7 @@
       <workItem from="1705578638182" duration="3157000" />
       <workItem from="1705593025686" duration="1356000" />
       <workItem from="1705622262355" duration="2770000" />
-      <workItem from="1705625207337" duration="22291000" />
+      <workItem from="1705625207337" duration="44555000" />
     </task>
     <servers />
   </component>

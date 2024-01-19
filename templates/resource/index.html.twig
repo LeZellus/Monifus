@@ -3,15 +3,73 @@
 {% block title %}Ressources | {{ parent() }}{% endblock %}
 
 {% block body %}
-    {% for data in averages %}
+<main class="grid gap-4 lg:gap-6">
+    <h1 class="text-center">Vos ressources</h1>
+    <div class="flex justify-center">
+        <a class="col-span-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
+    </div>
 
-        <div>
-            <h3>{{ data.resourceName }}</h3>
-            <img src="{{ data.resourceImg }}" alt="">
-            <p>Prix moyen par unité : {{ data.averagePriceUnit }}</p>
-            <p>Prix moyen par 10 : {{ data.averagePriceTen }}</p>
-            <p>Prix moyen par 100 : {{ data.averagePriceHundred }}</p>
-        </div>
-    {% endfor %}
-    <a class="col-start-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
+    <section class="grid gap-4 lg:gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {% for data in averages %}
+            <article class="wrapper-style text-center grid gap-4 lg:gap-6">
+                <h3 class="text-2xl font-bold">{{ data.resourceName }}</h3>
+                <img class="w-16 h-16 m-auto" src="{{ data.resourceImg }}" alt="Image ressource dofus">
+
+                <div class="grid gap-2">
+                    <p class="text-green-400 font-bold">Prix moyen :</p>
+
+                    <hr class="border-gray-300 mt-6 mb-6">
+
+                    <div class="flex justify-between">
+                        <div class="font-light">
+                            Lot de
+                            <span class="font-semibold text-primary-500 uppercase">1</span>
+                            :
+                        </div>
+                        <span class="flex items-center tracking-widest">
+                            <span class="flex items-center tracking-widest">
+                                {% set formattedNumber = data.averagePriceUnit|number_format(0, ',', ' ') %}
+                                <span class="font-bold text-green-400 align-middle">{{ formattedNumber }}</span>
+                                <img class="w-4 h-4 ml-2 mb-0.5" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <div class="font-light">
+                            Lot de
+                            <span class="font-semibold text-primary-500 uppercase">10</span>
+                            :
+                        </div>
+                        <span class="flex items-center tracking-widest">
+                            <span class="flex items-center tracking-widest">
+                                {% set formattedNumber = data.averagePriceTen|number_format(0, ',', ' ') %}
+                                <span class="font-bold text-green-400 align-middle">{{ formattedNumber }}</span>
+                                <img class="w-4 h-4 ml-2 mb-0.5" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <div class="font-light">
+                            Lot de
+                            <span class="font-semibold text-primary-500 uppercase">100</span>
+                            :
+                        </div>
+                        <span class="flex items-center tracking-widest">
+                            <span class="flex items-center tracking-widest">
+                                {% set formattedNumber = data.averagePriceHundred|number_format(0, ',', ' ') %}
+                                <span class="font-bold text-green-400 align-middle">{{ formattedNumber }}</span>
+                                <img class="w-4 h-4 ml-2 mb-0.5" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+            </article>
+        {% endfor %}
+    </section>
+</main>
+
 {% endblock %}

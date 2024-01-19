@@ -17,7 +17,10 @@ class MonitorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('resource', ResourceAutocompleteField::class)
+            ->add('resource', ResourceAutocompleteField::class, [
+                'attr' => ['id' => 'tom-select'],
+                // autres options du champ
+            ])
             ->add('pricePer1', IntegerType::class, [
                 'attr' => ["class" => "form-input"],
                 "label_attr" => ["class" => "form-label"]

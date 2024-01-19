@@ -1,7 +1,28 @@
-{{ form_start(form, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
-    {{ form_widget(form.resource) }}
-    {{ form_widget(form.pricePer1) }}
-    {{ form_widget(form.pricePer10) }}
-    {{ form_widget(form.pricePer100) }}
-    <button class="form-submit">{{ button_label|default('Créer') }}</button>
+{{ form_start(form, {'attr': {'class': 'grid lg:gap-6 gap-4'}}) }}
+
+    <div>
+        {{ form_label(form.resource, 'Choisissez la ressource ', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.resource) }}
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-4 lg:gap-6">
+        <div>
+            {{ form_label(form.pricePer1, 'Mentionnez prix par 1', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.pricePer1) }}
+        </div>
+
+        <div>
+            {{ form_label(form.pricePer10, 'Mentionnez prix par 10', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.pricePer10) }}
+        </div>
+
+        <div>
+            {{ form_label(form.pricePer100, 'Mentionnez prix par 100', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.pricePer100) }}
+        </div>
+    </div>
+
+    <div class="flex justify-center">
+        <button class="form-submit">{{ button_label|default('Créer') }}</button>
+    </div>
 {{ form_end(form) }}
