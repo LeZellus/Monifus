@@ -3,28 +3,30 @@
 {% block title %}Monitor | {{ parent() }}{% endblock %}
 
 {% block body %}
+    <h1>Liste des Ressources</h1>
 
-    {% for monitor in monitors %}
-
-        <div class="wrapper-style">
-            <div class="flex border-b-2 border-gray-300 dark:border-gray-700 pb-2">
-                <img class="h-8 mr-2" src="{{ asset('uploads/pepite.png') }}" alt="Image pépite">
-                <h3 class="text-2xl uppercase font-black"></h3>
+    {% if resources is not empty %}
+    <div id="resourcesContainer">
+        {% for resource in resources %}
+            <div id="resource-container-{{ resource.id }}" class="resource" data-resource-id="{{ resource.id }}">
+                <!-- Ajouter d'autres détails si nécessaire -->
+                <button type="button" class="loadMonitorsBtn" data-resource-id="{{ resource.id }}">
+                    {{ resource.name }}
+                    <img src="{{ resource.imgUrl }}" alt="">
+                </button>
             </div>
-            <div class="pt-2">
-                {% for stock in stocks  %}
-                <div class="flex items-center">
-                    <p>Lot de <span class="text-primary-500 font-semibold"></span>{{ stock.quantity }} :</p>
-                    <div class="flex items-center pl-2">
-                        <span class="font-bold text-sm"></span>
-                        <img class="ml-1 w-3 h-3" src="{{ asset('uploads/kamas.webp') }}" alt="Image kamas">
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
-        <a class="col-start-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
-    </section>
+        {% endfor %}
+    </div>
+    <div id="monitorsContainer">
+        <!-- Les moniteurs seront chargés ici -->
+    </div>
+    {% else %}
+        <p>Pour ajouter une ressource cliquez sur le bouton</p>
+        <a href="{{ path('app_monitor_new') }}">Créer Moniteur</a>
+    {% endif %}
+{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('monitorAjax') }}
 {% endblock %}

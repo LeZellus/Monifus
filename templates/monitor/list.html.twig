@@ -1,0 +1,33 @@
+{# templates/monitor/list.html.twig #}
+
+{% block body %}
+    {# templates/monitor/list.html.twig #}
+
+    <table>
+        <thead>
+        <tr>
+            <th>Prix par unité</th>
+            <th>Prix par 10</th>
+            <th>Prix par 100</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for monitor in monitors %}
+            <tr data-monitor-id="{{ monitor.id }}" id="monitor-{{ monitor.id }}">
+                <td data-type="pricePer1">{{ monitor.pricePer1 }}</td>
+                <td data-type="pricePer10">{{ monitor.pricePer10 }}</td>
+                <td data-type="pricePer100">{{ monitor.pricePer100 }}</td>
+                <td>
+                    <button class="deleteMonitorBtn" data-monitor-id="{{ monitor.id }}">Supprimer</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+
+

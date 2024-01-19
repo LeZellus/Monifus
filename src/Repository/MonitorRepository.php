@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Monitor;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -39,76 +40,36 @@ class MonitorRepository extends ServiceEntityRepository
         }
     }
 
-    //Obtenir la moyenne de tout les monitors
-    public function getAverageMonitors(MonitorRepository $monitorRepository) {
-        $qb = $monitorRepository->createQueryBuilder('m');
-        $qb
-            ->select($qb->expr()->avg('m.price'))
-            ->where('')
-            ->orderBy('m.resource', 'ASC')
-            ->getQuery()
-            ->getResult();
-
+    public function findUniqueResourcesByUser(User $user)
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->select('r')
+            ->join('m.resource', 'r')
+            ->where('m.user = :user')
+            ->setParameter('user', $user)
+            ->groupBy('r.id');
 
         return $qb->getQuery()->getResult();
     }
 
-    //Je veux récupérer chaque ressource des moniteurs
-    public function getMonitorByResourceByUser(MonitorRepository $monitorRepository, $identifier) {
-        $qb = $monitorRepository->createQueryBuilder('m');
-        $qb
-            ->leftJoin('m.resource', 'r')
-            ->distinct()
-            ->leftJoin('m.user', 'u')
-            ->where('u.email = :identifier')
-            ->setParameter('identifier', $identifier)
-            ->getQuery()
-            ->getResult();
+    public function findMonitorAveragesByUser(User $user): array
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->select('r.id as resourceId', 'r.name as resourceName', 'r.imgUrl as resourceImg', 'AVG(m.pricePer1) as averagePriceUnit', 'AVG(m.pricePer10) as averagePriceTen', 'AVG(m.pricePer100) as averagePriceHundred')
+            ->join('m.resource', 'r')
+            ->where('m.user = :user')
+            ->groupBy('r.id')
+            ->setParameter('user', $user);
 
-
-        return $qb->getQuery()->getResult();
+        return $qb->getQuery()->getArrayResult();
     }
 
-    //Obtenir la moyenne de tout les monitors par lot de 100 par utilisateur
-    public function getAverageMonitorsByStockByUserByQuantity(MonitorRepository $monitorRepository,Int $quantity = 1) {
-        $qb = $monitorRepository->createQueryBuilder('m');
-
-        $qb
-            ->select($qb->expr()->avg('m.price'))
-            ->leftJoin('m.stock', 's')
-            ->leftJoin('m.resource', 'r')
-            ->andwhere('r.id = :idResource')
-            ->andWhere('s.quantity = :quantity')
-            ->setParameter('idResource', 5)
-            ->setParameter('quantity', $quantity)
+    public function countByResource($resourceId) {
+        return $this->createQueryBuilder('m')
+            ->select('count(m.id)')
+            ->where('m.resource = :resourceId')
+            ->setParameter('resourceId', $resourceId)
             ->getQuery()
-            ->getResult();
-
-        return $qb->getQuery()->getResult();
+            ->getSingleScalarResult();
     }
-
-//    /**
-//     * @return Monitor[] Returns an array of Monitor objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Monitor
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

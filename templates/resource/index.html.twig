@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ressources | {{ parent() }}{% endblock %}
+
+{% block body %}
+    {% for data in averages %}
+
+        <div>
+            <h3>{{ data.resourceName }}</h3>
+            <img src="{{ data.resourceImg }}" alt="">
+            <p>Prix moyen par unité : {{ data.averagePriceUnit }}</p>
+            <p>Prix moyen par 10 : {{ data.averagePriceTen }}</p>
+            <p>Prix moyen par 100 : {{ data.averagePriceHundred }}</p>
+        </div>
+    {% endfor %}
+    <a class="col-start-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
+{% endblock %}

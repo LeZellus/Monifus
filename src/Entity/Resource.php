@@ -7,8 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\UX\Autocomplete\Form\AsEntityAutocompleteField;
 
 #[ORM\Entity(repositoryClass: ResourceRepository::class)]
+#[AsEntityAutocompleteField]
 class Resource
 {
     #[ORM\Id]

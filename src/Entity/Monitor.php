@@ -13,36 +13,74 @@ class Monitor
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $price = null;
-
     #[ORM\ManyToOne(inversedBy: 'monitors')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Resource $resource = null;
 
     #[ORM\ManyToOne(inversedBy: 'monitors')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Stock $stock = null;
-
-    #[ORM\ManyToOne(inversedBy: 'monitors')]
-    #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
+
+    #[ORM\Column(type: 'integer')]
+    private $pricePer1;
+
+    /**
+     * @return mixed
+     */
+    public function getPricePer1(): mixed
+    {
+        return $this->pricePer1;
+    }
+
+    /**
+     * @param mixed $pricePer1
+     */
+    public function setPricePer1(mixed $pricePer1): void
+    {
+        $this->pricePer1 = $pricePer1;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPricePer10(): mixed
+    {
+        return $this->pricePer10;
+    }
+
+    /**
+     * @param mixed $pricePer10
+     */
+    public function setPricePer10(mixed $pricePer10): void
+    {
+        $this->pricePer10 = $pricePer10;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPricePer100(): mixed
+    {
+        return $this->pricePer100;
+    }
+
+    /**
+     * @param mixed $pricePer100
+     */
+    public function setPricePer100(mixed $pricePer100): void
+    {
+        $this->pricePer100 = $pricePer100;
+    }
+
+    #[ORM\Column(type: 'integer')]
+    private mixed $pricePer10;
+
+    #[ORM\Column(type: 'integer')]
+    private mixed $pricePer100;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPrice(): ?int
-    {
-        return $this->price;
-    }
-
-    public function setPrice(int $price): self
-    {
-        $this->price = $price;
-
-        return $this;
     }
 
     public function getResource(): ?Resource
@@ -53,18 +91,6 @@ class Monitor
     public function setResource(?Resource $resource): self
     {
         $this->resource = $resource;
-
-        return $this;
-    }
-
-    public function getStock(): ?Stock
-    {
-        return $this->stock;
-    }
-
-    public function setStock(?Stock $stock): self
-    {
-        $this->stock = $stock;
 
         return $this;
     }

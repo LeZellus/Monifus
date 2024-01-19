@@ -46,25 +46,25 @@ class FetchDofusItemsCommand extends Command
                 $items = $response["data"] ?? [];
                 $totalItemsFetched = count($items);
 
-                //foreach($items as $item) {
-                //    //Get $resource by ankamaId
-                //    $resource = $repository->findOneBy(['ankamaId' => $item['id']]);
-                //
-                //    if(!$resource) {
-                //        $resource = new Resource();
-                //    }
-                //
-                //    //Update or set infos on resource
-                //    $resource->setName($item["name"]["fr"]);
-                //    $resource->setAnkamaId($item["id"]);
-                //    $resource->setDescription($item["description"]["fr"]);
-                //    $resource->setImgUrl($item["img"]);
-                //    $resource->setLevel($item["level"]);
-                //    $resource->setIsImportant(false);
-                //    $this->entityManager->persist($resource);
-                //}
-                //$this->entityManager->flush();
-                //$this->entityManager->clear();
+                foreach($items as $item) {
+                    //Get $resource by ankamaId
+                    $resource = $repository->findOneBy(['ankamaId' => $item['id']]);
+
+                    if(!$resource) {
+                        $resource = new Resource();
+                    }
+
+                    //Update or set infos on resource
+                    $resource->setName($item["name"]["fr"]);
+                    $resource->setAnkamaId($item["id"]);
+                    $resource->setDescription($item["description"]["fr"]);
+                    $resource->setImgUrl($item["img"]);
+                    $resource->setLevel($item["level"]);
+                    $resource->setIsImportant(false);
+                    $this->entityManager->persist($resource);
+                }
+                $this->entityManager->flush();
+                $this->entityManager->clear();
 
                 $skip += $limit;
                 $totalItems += $totalItemsFetched;

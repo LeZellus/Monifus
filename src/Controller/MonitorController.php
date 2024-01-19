@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Resource;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Monitor;
 use App\Form\MonitorType;
 use App\Repository\MonitorRepository;
-use App\Repository\StockRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,30 +17,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class MonitorController extends AbstractController
 {
     #[Route('/', name: 'app_monitor_index', methods: ['GET'])]
-    public function index(MonitorRepository $monitorRepository, StockRepository $stockRepository): Response
+    public function index(EntityManagerInterface $entityManager): Response
     {
-        $quantity = 1;
-        $user = $this->getUser();
-        $stocks = $stockRepository->findAll();
-
-        $monitorByUserByResources = $monitorRepository->getMonitorByResourceByUser($monitorRepository, $user->getUserIdentifier());
-
-        //pour chaque monitor par ressource par utilisateur
-        foreach ($monitorByUserByResources as $monitorByUserByResource) {
-
-            //je récupère la ressource, je la tri par stock par moniteur par utilisateur et je fais son average
-
-            $monitors = $monitorRepository->getAverageMonitorsByStockByUserByQuantity($monitorRepository, $quantity);
-        }
-
-//        $monitors = $monitorRepository->getMonitorByResource($monitorRepository);
-        //dd($monitorByUserByResources[0].[0][0]);
-
-
+        $user = $this->getUser(); // Assurez-vous que l'authentification est configurée
+        $resources = $entityManager->getRepository(Resource::class)->findResourcesWithMonitors($user);
 
         return $this->render('monitor/index.html.twig', [
-            'monitors' => $monitorByUserByResources,
-            'stocks' => $stocks
+            'resources' => $resources,
         ]);
     }
 
@@ -57,45 +42,59 @@ class MonitorController extends AbstractController
             return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('monitor/new.html.twig', [
+        return $this->render('monitor/new.html.twig', [
             'monitor' => $monitor,
             'form' => $form,
         ]);
     }
 
-    #[Route('/{id}', name: 'app_monitor_show', methods: ['GET'])]
-    public function show(Monitor $monitor): Response
+    #[Route('/{resourceId}', name: 'monitors_for_resource', methods: ['GET'])]
+    public function monitorsForResource(EntityManagerInterface $entityManager, int $resourceId): Response
     {
-        return $this->render('monitor/show.html.twig', [
-            'monitor' => $monitor,
+        $user = $this->getUser();
+        $monitors = $entityManager->getRepository(Monitor::class)->findBy([
+            'user' => $user,
+            'resource' => $resourceId
+        ]);
+
+        return $this->render('monitor/list.html.twig', [
+            'monitors' => $monitors,
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_monitor_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Monitor $monitor, MonitorRepository $monitorRepository): Response
+
+    #[Route('/edit/{id}', name: 'app_monitor_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Monitor $monitor, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(MonitorType::class, $monitor);
-        $form->handleRequest($request);
+        $type = $request->request->get('type');
+        $value = $request->request->get('value');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $monitorRepository->save($monitor, true);
-
-            return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
+        if (in_array($type, ['pricePer1', 'pricePer10', 'pricePer100'])) {
+            $monitor->{'set'.ucfirst($type)}($value);
+            $entityManager->flush();
+            return $this->json(['success' => true]);
         }
 
-        return $this->renderForm('monitor/edit.html.twig', [
-            'monitor' => $monitor,
-            'form' => $form,
-        ]);
+        return $this->json(['success' => false]);
     }
 
-    #[Route('/{id}', name: 'app_monitor_delete', methods: ['POST'])]
-    public function delete(Request $request, Monitor $monitor, MonitorRepository $monitorRepository): Response
+    #[Route('/delete/{id}', name: 'app_monitor_delete', methods: ['DELETE', 'POST'])]
+    public function deleteMonitor(int $id, MonitorRepository $monitorRepository, EntityManagerInterface $entityManager): JsonResponse
     {
-        if ($this->isCsrfTokenValid('delete'.$monitor->getId(), $request->request->get('_token'))) {
-            $monitorRepository->remove($monitor, true);
+        $monitor = $monitorRepository->find($id);
+
+        if (!$monitor) {
+            return $this->json(['success' => false, 'message' => 'Moniteur non trouvé']);
         }
 
-        return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
+        $resourceId = $monitor->getResource()->getId();
+        $entityManager->remove($monitor);
+        $entityManager->flush();
+
+        // Calculez le nombre de moniteurs restants
+        $monitorCount = $monitorRepository->countByResource($resourceId);
+
+        return $this->json(['success' => true, 'monitorCount' => $monitorCount, 'resourceId' => $resourceId]);
     }
+
 }
