@@ -18,6 +18,7 @@
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
         {{ encore_entry_script_tags('darkmode') }}
+        {{ encore_entry_script_tags('randomAdvice') }}
     {% endblock %}
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -37,5 +38,18 @@
 
         {% endblock %}
     </section>
+
+    <div id="advicePopup" class="popup bg-green-100 border-t-4 border-green-500 rounded-lg text-green-900 px-4 py-3 shadow-md" role="alert">
+        <div class="popup-content flex">
+            <div class="py-1 mr-4">
+                <i data-feather="help-circle" class="text-primary-600"></i>
+            </div>
+            <div>
+                <p class="font-bold">Point Conseil !</p>
+                <p id="adviceText" class="text-sm">Make sure you know how these changes affect you.</p>
+            </div>
+            <i data-feather="x" class="close-btn"></i>
+        </div>
+    </div>
 </body>
 </html>

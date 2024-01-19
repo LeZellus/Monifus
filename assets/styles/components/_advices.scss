@@ -1,0 +1,15 @@
+.popup {
+  position: fixed;
+  right: -100%; /* Assurez-vous que c'est suffisant pour cacher la popup complètement */
+  top: 20px;
+  z-index: 1000;
+  transition: right .5s; /* Animation de glissement */
+}
+
+.popup-content {
+  border-radius: 5px;
+}
+
+.close-btn {
+  cursor: pointer;
+}
