@@ -6,6 +6,9 @@
 parameters:
 
 services:
+    App\Service\ChartService:
+        arguments:
+            $parameters: '@parameter_bag'
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

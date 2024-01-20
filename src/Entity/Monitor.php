@@ -6,6 +6,8 @@ use App\Repository\MonitorRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MonitorRepository::class)]
+#[ORM\HasLifecycleCallbacks]
+
 class Monitor
 {
     #[ORM\Id]
@@ -22,61 +24,53 @@ class Monitor
     private ?User $user = null;
 
     #[ORM\Column(type: 'integer')]
-    private $pricePer1;
-
-    /**
-     * @return mixed
-     */
-    public function getPricePer1(): mixed
-    {
-        return $this->pricePer1;
-    }
-
-    /**
-     * @param mixed $pricePer1
-     */
-    public function setPricePer1(mixed $pricePer1): void
-    {
-        $this->pricePer1 = $pricePer1;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPricePer10(): mixed
-    {
-        return $this->pricePer10;
-    }
-
-    /**
-     * @param mixed $pricePer10
-     */
-    public function setPricePer10(mixed $pricePer10): void
-    {
-        $this->pricePer10 = $pricePer10;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPricePer100(): mixed
-    {
-        return $this->pricePer100;
-    }
-
-    /**
-     * @param mixed $pricePer100
-     */
-    public function setPricePer100(mixed $pricePer100): void
-    {
-        $this->pricePer100 = $pricePer100;
-    }
+    private mixed $pricePer1;
 
     #[ORM\Column(type: 'integer')]
     private mixed $pricePer10;
 
     #[ORM\Column(type: 'integer')]
     private mixed $pricePer100;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updatedAt = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+    public function getPricePer1(): mixed
+    {
+        return $this->pricePer1;
+    }
+
+    public function setPricePer1(mixed $pricePer1): void
+    {
+        $this->pricePer1 = $pricePer1;
+    }
+
+    public function getPricePer10(): mixed
+    {
+        return $this->pricePer10;
+    }
+
+    public function setPricePer10(mixed $pricePer10): void
+    {
+        $this->pricePer10 = $pricePer10;
+    }
+
+    public function getPricePer100(): mixed
+    {
+        return $this->pricePer100;
+    }
+
+    public function setPricePer100(mixed $pricePer100): void
+    {
+        $this->pricePer100 = $pricePer100;
+    }
 
     public function getId(): ?int
     {
@@ -105,5 +99,35 @@ class Monitor
         $this->user = $user;
 
         return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function onPreUpdate(): void
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 }

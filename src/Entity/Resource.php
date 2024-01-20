@@ -27,9 +27,6 @@ class Resource
     #[ORM\Column]
     private ?int $level = null;
 
-    #[ORM\Column(type:  Types::TEXT, nullable: true)]
-    private ?string $description = null;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imgUrl = null;
 
@@ -81,18 +78,6 @@ class Resource
     public function setLevel(int $level): self
     {
         $this->level = $level;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): self
-    {
-        $this->description = $description;
 
         return $this;
     }

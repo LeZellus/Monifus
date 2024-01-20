@@ -4,16 +4,15 @@ namespace App\DataFixtures;
 
 use App\Entity\Monitor;
 use App\Entity\Resource;
-use App\Entity\Stock;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
-use Faker\Generator;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    private ?User $adminUser = null;
     private UserPasswordHasherInterface $hashed;
 
     public function __construct (UserPasswordHasherInterface $hashed){
@@ -23,6 +22,9 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $this->createUsers($manager);
+        $resources = $this->loadResources($manager);
+        $this->createMonitors($manager, $resources);
+
         $manager->flush();
     }
 
@@ -38,6 +40,7 @@ class AppFixtures extends Fixture
 
         $manager->persist($admin);
         $this->users[] = $admin;
+        $this->adminUser = $admin;
 
         $trust = new User();
         $trust->setRoles(["ROLE_TRUST"]);
@@ -60,5 +63,29 @@ class AppFixtures extends Fixture
 
         $manager->persist($user);
         $this->users[] = $user;
+    }
+
+    private function loadResources(ObjectManager $manager): array
+    {
+        $resourceRepository = $manager->getRepository(Resource::class);
+        $resources = $resourceRepository->findBy(['id' => range(1, 10)]);
+
+        return $resources;
+    }
+
+    private function createMonitors(ObjectManager $manager, array $resources): void
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < 5000; $i++) {
+            $monitor = new Monitor();
+            $monitor->setUser($this->adminUser);
+            $monitor->setResource($faker->randomElement($resources));
+            $monitor->setPricePer1($faker->randomFloat(0, 1, 10));
+            $monitor->setPricePer10($faker->randomFloat(0, 800, 1000));
+            $monitor->setPricePer100($faker->randomFloat(0, 9500, 10000));
+            // Configurez d'autres champs du Monitor selon vos besoins
+            $manager->persist($monitor);
+        }
     }
 }

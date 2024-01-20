@@ -13,10 +13,6 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(CacheInterface $cache): Response
     {
-//        $datasCache = $cache->get('datasCache', function (ResourceRepository $resourceRepository){
-//            return $resourceRepository->findAll();
-//        });
-
-        return $this->render('home/home.html.twig');
+        return $this->render('home/index.html.twig');
     }
 }

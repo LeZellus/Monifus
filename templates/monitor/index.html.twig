@@ -5,27 +5,29 @@
 {% block body %}
     <h1 class="text-center">Liste des Moniteurs</h1>
 
-    <section class="grid gap-4 lg:gap-6">
+    <div class="flex justify-center">
+        <a class="form-submit" href="{{ path('app_monitor_new') }}">Créer Moniteur</a>
+    </div>
 
-            {% if resources is not empty %}
-                <div class="grid gap-4 lg:gap-6 lg:grid-cols-2 xl:grid-cols-3" id="resourcesContainer">
-                    {% for resource in resources %}
-                        <div id="resource-container-{{ resource.id }}" class="resource wrapper-style gap-4" data-resource-id="{{ resource.id }}">
-                            <!-- Ajouter d'autres détails si nécessaire -->
-                            <button type="button" class="loadMonitorsBtn flex justify-between w-full items-center" data-resource-id="{{ resource.id }}">
-                                <span class="uppercase font-bold text-xl">{{ resource.name }}</span>
-                                <img class="w-10 h-10" src="{{ resource.imgUrl }}" alt="Icone ressource">
-                            </button>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div id="monitorsContainer">
-                    <!-- Les moniteurs seront chargés ici -->
-                </div>
-            {% else %}
-                <p>Pour ajouter une ressource cliquez sur le bouton</p>
-                <a href="{{ path('app_monitor_new') }}">Créer Moniteur</a>
-            {% endif %}
+    <section class="grid gap-4 lg:gap-6">
+        {% if resources is not empty %}
+            <div class="grid gap-4 lg:gap-6 lg:grid-cols-2 xl:grid-cols-3" id="resourcesContainer">
+                {% for resource in resources %}
+                    <div id="resource-container-{{ resource.id }}" class="resource wrapper-style gap-4" data-resource-id="{{ resource.id }}">
+                        <!-- Ajouter d'autres détails si nécessaire -->
+                        <button type="button" class="loadMonitorsBtn flex justify-between w-full items-center" data-resource-id="{{ resource.id }}">
+                            <span class="uppercase font-bold text-xl">{{ resource.name }}</span>
+                            <img class="w-10 h-10" src="{{ resource.imgUrl }}" alt="Icone ressource">
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="monitorsContainer">
+                <!-- Les moniteurs seront chargés ici -->
+            </div>
+        {% else %}
+            <p>Pour ajouter une ressource cliquez sur le bouton</p>
+        {% endif %}
     </section>
 {% endblock %}
 

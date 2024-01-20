@@ -55,9 +55,14 @@ class FetchDofusItemsCommand extends Command
                     }
 
                     //Update or set infos on resource
-                    $resource->setName($item["name"]["fr"]);
                     $resource->setAnkamaId($item["id"]);
-                    $resource->setDescription($item["description"]["fr"]);
+                    if(isset($item["name"]["fr"])){
+                        $resource->setName($item["name"]["fr"]);
+                    } else {
+                        $output->writeln('Element ' . $item["id"] . ' skippé car aucun nom associé');
+                        continue;
+                    }
+
                     $resource->setImgUrl($item["img"]);
                     $resource->setLevel($item["level"]);
                     $resource->setIsImportant(false);
