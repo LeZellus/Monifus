@@ -14,14 +14,14 @@ class ChartService
         $this->parameterBag = $parameterBag;
     }
 
-    public function generateChart(): Chart
+    public function generateChart(string $type, $data): Chart
     {
         // Ici, vous pouvez utiliser la bibliothèque Chart.js pour générer un graphique en fonction des données fournies.
         // Vous pouvez personnaliser cette méthode en fonction de vos besoins spécifiques.
 
         // Exemple de création d'un objet Chart
         $chartData = [
-            'type' => 'bar', // Type de graphique (bar, line, etc.)
+            'type' => $type, // Type de graphique (bar, line, etc.)
             'data' => [
                 'labels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
                 'datasets' => [

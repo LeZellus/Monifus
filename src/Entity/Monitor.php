@@ -6,7 +6,6 @@ use App\Repository\MonitorRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MonitorRepository::class)]
-#[ORM\HasLifecycleCallbacks]
 
 class Monitor
 {
@@ -35,13 +34,10 @@ class Monitor
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $updatedAt = null;
-
-    public function __construct()
+    /*public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
-    }
+    }*/
     public function getPricePer1(): mixed
     {
         return $this->pricePer1;
@@ -123,11 +119,5 @@ class Monitor
         $this->updatedAt = $updatedAt;
 
         return $this;
-    }
-
-    #[ORM\PrePersist]
-    public function onPreUpdate(): void
-    {
-        $this->updatedAt = new \DateTimeImmutable();
     }
 }

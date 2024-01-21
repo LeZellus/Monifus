@@ -23,6 +23,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('darkmode', './assets/styles/js/toggleDarkMode.js')
     .addEntry('monitorAjax', './assets/styles/js/monitorAjax.js')
+    .addEntry('chartResource', './assets/styles/js/chartResource.js')
     .addEntry('randomAdvice', './assets/styles/js/randomAdvice.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

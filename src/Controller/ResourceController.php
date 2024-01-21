@@ -17,12 +17,6 @@ class ResourceController extends AbstractController
     public function index(UserInterface $user, MonitorRepository $monitorRepository): Response
     {
         $user = $this->getUser();
-
-        // Utilisez la méthode avec cache si implémentée
-        // $averages = $monitorRepository->findMonitorAveragesByUserCached($user, $cache);
-
-        // Si vous avez implémenté la pagination, ajustez en conséquence
-        // $page = // déterminez la page actuelle
         $averages = $monitorRepository->findMonitorAveragesByUser($user);
 
         return $this->render('resource/index.html.twig', [

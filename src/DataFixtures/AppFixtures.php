@@ -77,15 +77,24 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create();
 
+        $lastDate = new \DateTimeImmutable('-2 years');
+
         for ($i = 0; $i < 5000; $i++) {
+            //Ajouter un intervalle aléatoire à la dernière date
+            $dateInterval = new \DateInterval('P'. rand(1,30) . 'D');
+            $newDate = $lastDate->add($dateInterval);
+
             $monitor = new Monitor();
             $monitor->setUser($this->adminUser);
             $monitor->setResource($faker->randomElement($resources));
+            $monitor->setCreatedAt(new \DateTimeImmutable($newDate->format("Y-m-d H:i:s")));
             $monitor->setPricePer1($faker->randomFloat(0, 1, 10));
             $monitor->setPricePer10($faker->randomFloat(0, 800, 1000));
             $monitor->setPricePer100($faker->randomFloat(0, 9500, 10000));
             // Configurez d'autres champs du Monitor selon vos besoins
             $manager->persist($monitor);
+
+            $lastDate = $newDate;
         }
     }
 }

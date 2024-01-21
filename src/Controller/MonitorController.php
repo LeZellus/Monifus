@@ -37,6 +37,8 @@ class MonitorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $monitor->setUser($this->getUser());
+            //Peut-être à supprimer
+            $monitor->setCreatedAt(new \DateTimeImmutable());
             $monitorRepository->save($monitor, true);
 
             return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
@@ -57,7 +59,7 @@ class MonitorController extends AbstractController
             'resource' => $resourceId
         ]);
 
-        return $this->render('monitor/list.html.twig', [
+        return $this->render('monitor/show.html.twig', [
             'monitors' => $monitors,
         ]);
     }
