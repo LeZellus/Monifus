@@ -7,23 +7,38 @@ document.addEventListener('DOMContentLoaded', function () {
    const resourceId = chartElement.dataset.resourceId;
 
    const chartUrl = '/resource/'+ resourceId +'/data';
-
    let chart;
-   let currentPeriod = 'day';
 
    function fetchData(period) {
-      currentPeriod = period;
-      fetch(`${chartUrl}?period=day`)
+      fetch(`${chartUrl}?period=${period}`)
          .then(response => response.json())
-         .then(data => updateChart(data))
+         .then(data => updateChart(data, period))
           .catch(error => console.log('Error:', error));
 
    }
 
-   function updateChart(data) {
+   function updateChart(data, period) {
       if (chart) {
          chart.destroy();
       }
+
+      // Transformer les données pour obtenir des dates au format correct
+      const transformedData = data.map(d => {
+         return {
+            x: moment(d.x.date).toDate(), // Convertir en objet Date JavaScript
+            y: d.y
+         };
+      });
+
+      //Trouver les valeurs min et maxe pour l'axe Y
+      const yValues = transformedData.map(d => d.y);
+      const yMin = Math.min(...yValues);
+      const yMax = Math.max(...yValues);
+
+      // Calculer le min et max ajustés pour l'axe Y
+      let adjustedYMin = Math.round(yMin - (yMax - yMin) * 0.1);
+      let adjustedYMax = Math.round(yMax + (yMax - yMin) * 0.1);
+      adjustedYMin = adjustedYMin < 0 ? 0 : adjustedYMin;
 
       const ctx = chartElement.getContext('2d');
       chart = new Chart(ctx, {
@@ -31,9 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
          data: {
             datasets: [{
                label: 'Prix de la Ressource',
-               data: data,
-               fill: false,
-               tension: 0.1
+               data: transformedData,
+               fill: true,
+               tension: 0.1,
+               borderColor: 'rgb(133, 77, 14)',
+               pointBorderColor: 'rgb(202, 138, 4)',
+               pointBackgroundColor: 'rgb(234, 179, 8)'
             }]
          },
          options: {
@@ -41,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                x: {
                   type: 'time',
                   time: {
-                     parser: 'YYYY-MM-DD HH:mm:ss',
-                     unit: 'all' // ou 'week', 'month', etc.
+                     unit: period // ou 'week', 'month', etc.
                   },
                   display: true,
                   title: {
@@ -51,6 +68,9 @@ document.addEventListener('DOMContentLoaded', function () {
                   }
                },
                y: {
+                  beginAtZero: false,
+                  min: adjustedYMin,
+                  max: adjustedYMax,
                   display: true,
                   title: {
                      display: true,
@@ -62,21 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
    }
 
-   function determineTimeUnit(period) {
-      switch (period) {
-         case 'day':
-            return 'day';
-         case 'month':
-            return 'month';
-         case 'year':
-            return 'year';
-         case 'all':
-            return 'all';
-         default:
-            return "day";
-      }
-   }
-
    document.querySelectorAll('.period-selector').forEach(button => {
       button.addEventListener('click', function () {
          console.log(this.dataset.period)
@@ -84,5 +89,5 @@ document.addEventListener('DOMContentLoaded', function () {
       })
    })
 
-   fetchData('day');
+   fetchData('year');
 });

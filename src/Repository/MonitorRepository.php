@@ -40,18 +40,7 @@ class MonitorRepository extends ServiceEntityRepository
         }
     }
 
-    public function findUniqueResourcesByUser(User $user)
-    {
-        $qb = $this->createQueryBuilder('m')
-            ->select('r')
-            ->join('m.resource', 'r')
-            ->where('m.user = :user')
-            ->setParameter('user', $user)
-            ->groupBy('r.id');
-
-        return $qb->getQuery()->getResult();
-    }
-
+    //Récupère la ressource, son nom, son image, et la moyennne par lot.
     public function findMonitorAveragesByUser(User $user): array
     {
         $qb = $this->createQueryBuilder('m')
@@ -64,12 +53,27 @@ class MonitorRepository extends ServiceEntityRepository
         return $qb->getQuery()->getArrayResult();
     }
 
-    public function countByResource($resourceId) {
+    public function countByResource($resourceId): float|bool|int|string|null
+    {
         return $this->createQueryBuilder('m')
             ->select('count(m.id)')
             ->where('m.resource = :resourceId')
             ->setParameter('resourceId', $resourceId)
             ->getQuery()
             ->getSingleScalarResult();
+    }
+
+    public function findMonitorsByPeriod(User $user, int $resourceId, \DateTime $startDate, \DateTime $endDate): array
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->where('m.user = :user')
+            ->andWhere('m.resource = :resourceId')
+            ->andWhere('m.createdAt BETWEEN :startDate AND :endDate')
+            ->setParameter('user', $user)
+            ->setParameter('resourceId', $resourceId)
+            ->setParameter('startDate', $startDate)
+            ->setParameter('endDate', $endDate);
+
+        return $qb->getQuery()->getArrayResult();
     }
 }

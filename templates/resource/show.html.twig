@@ -3,33 +3,23 @@
 {% block title %}Détails de la Ressource{% endblock %}
 
 {% block body %}
+
     <h1>Détails de la Ressource: {{ resource.name }}</h1>
 
-    {% for data in averages %}
-        
-    {% endfor %}
-
     <div class="wrapper-style">
-        <h2>Courbe des trois lots</h2>
-        {{ render_chart(combinedChart) }}
+        <button class="period-selector" data-period="day">Jour</button>
+        <button class="period-selector" data-period="week">Semaine</button>
+        <button class="period-selector" data-period="month">Mois</button>
+        <button class="period-selector" data-period="year">Année</button>
+
+
+        <canvas id="myChart" data-resource-id="{{ resource.id }}"></canvas>
     </div>
 
-    <section class="grid lg:grid-cols-3 gap-4">
-        <div class="wrapper-style">
-            <h2>Graphique pour 1</h2>
-            {{ render_chart(chartPer1) }}
-        </div>
-
-        <div class="wrapper-style">
-            <h2>Graphique pour 10</h2>
-            {{ render_chart(chartPer10) }}
-        </div>
-
-        <div class="wrapper-style">
-            <h2>Graphique pour 100</h2>
-            {{ render_chart(chartPer100) }}
-        </div>
-    </section>
-
     {# Autres détails de la ressource #}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('chartResource') }}
 {% endblock %}

@@ -6,20 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MonitorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MonitorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/js/chartResource.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/chartResource.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/js/monitorAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/monitorAjax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResourceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Monitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Monitor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ChartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ChartService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitor/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/resource/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resource/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,26 +154,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/mathe/IdeaProjects/Monifus",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.rails.projectView.checked": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/IdeaProjects/Monifus&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -225,7 +217,8 @@
       <workItem from="1705622262355" duration="2770000" />
       <workItem from="1705625207337" duration="57662000" />
       <workItem from="1705695386224" duration="1352000" />
-      <workItem from="1705783784306" duration="17883000" />
+      <workItem from="1705783784306" duration="18904000" />
+      <workItem from="1705840339713" duration="13846000" />
     </task>
     <servers />
   </component>
