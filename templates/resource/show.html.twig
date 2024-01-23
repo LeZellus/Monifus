@@ -6,15 +6,16 @@
 
     <h1>Détails de la Ressource: {{ resource.name }}</h1>
 
-    <div class="wrapper-style">
-        <button class="period-selector" data-period="day">Jour</button>
-        <button class="period-selector" data-period="week">Semaine</button>
-        <button class="period-selector" data-period="month">Mois</button>
-        <button class="period-selector" data-period="year">Année</button>
+    <section class="grid 2xl:grid-cols-2">
+        <div class="wrapper wrapper-style ">
+            <button class="period-selector" data-period="day">Jour</button>
+            <button class="period-selector" data-period="week">Semaine</button>
+            <button class="period-selector" data-period="month">Mois</button>
+            <button class="period-selector" data-period="year">Année</button>
 
-
-        <canvas id="myChart" data-resource-id="{{ resource.id }}"></canvas>
-    </div>
+            <canvas id="myChart" data-resource-id="{{ resource.id }}"></canvas>
+        </div>
+    </section>
 
     {# Autres détails de la ressource #}
 {% endblock %}

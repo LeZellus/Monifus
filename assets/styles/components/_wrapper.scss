@@ -1,16 +1,35 @@
 .wrapper {
+  @apply p-4 border drop-shadow-lg rounded-lg shadow overflow-hidden;
+
   &-style {
-    @apply p-4 lg:p-6 border border-gray-300 dark:bg-opacity-60 bg-opacity-20 backdrop-blur-xl drop-shadow-lg bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden;
+    @apply border-gray-300 bg-white dark:bg-gray-800 dark:border-gray-700 bg-opacity-20 dark:bg-opacity-60 backdrop-blur-xl;
   }
   &-size {
     @apply w-full md:mt-0 sm:max-w-md;
   }
-}
 
-.item {
-  @apply transition duration-500 border border-gray-300 p-4 text-base font-normal rounded-lg bg-opacity-20 backdrop-blur-xl drop-shadow-lg bg-white rounded-lg shadow;
-  @apply dark:bg-opacity-60 dark:bg-gray-800 dark:border-gray-700;
-  &:hover {
-    @apply transition duration-500 dark:bg-opacity-100 bg-opacity-40 border border-gray-500 dark:border-gray-500;
+  &-green {
+    @apply border-green-300 bg-green-400 dark:bg-green-800 dark:border-green-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
   }
+
+  &-orange {
+    @apply border-orange-300 bg-orange-400 dark:bg-orange-800 dark:border-orange-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+  }
+
+  &-red {
+    @apply border-red-300 bg-red-400 dark:bg-red-800 dark:border-red-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+  }
+
+  &-blue {
+    @apply border-blue-300 bg-blue-400 dark:bg-blue-800 dark:border-blue-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+  }
+
+  &-pink {
+    @apply border-pink-300 bg-pink-400 dark:bg-pink-800 dark:border-pink-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+  }
+
+  &-yellow {
+    @apply border-yellow-300 bg-yellow-400 dark:bg-yellow-800 dark:border-yellow-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+  }
+
 }

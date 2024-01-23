@@ -36,9 +36,13 @@ class Resource
     #[ORM\OneToMany(mappedBy: 'resource', targetEntity: Monitor::class)]
     private Collection $monitors;
 
+    #[ORM\OneToMany(mappedBy: 'resource', targetEntity: Sale::class)]
+    private Collection $sales;
+
     public function __construct()
     {
         $this->monitors = new ArrayCollection();
+        $this->sales = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -130,6 +134,36 @@ class Resource
             // set the owning side to null (unless already changed)
             if ($monitor->getResource() === $this) {
                 $monitor->setResource(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Sale>
+     */
+    public function getSales(): Collection
+    {
+        return $this->sales;
+    }
+
+    public function addSale(Sale $sale): static
+    {
+        if (!$this->sales->contains($sale)) {
+            $this->sales->add($sale);
+            $sale->setResource($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSale(Sale $sale): static
+    {
+        if ($this->sales->removeElement($sale)) {
+            // set the owning side to null (unless already changed)
+            if ($sale->getResource() === $this) {
+                $sale->setResource(null);
             }
         }
 

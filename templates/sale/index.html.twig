@@ -1,0 +1,65 @@
+{# templates/sale/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Ventes{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Liste des Ventes</h1>
+
+    <div class="flex justify-center">
+        <a class="form-submit" href="{{ path('app_sale_new') }}">Nouvelle vente</a>
+    </div>
+
+    {{ include('sale/includes/_items.html.twig') }}
+
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 wrapper wrapper-style">
+        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+        <tr>
+            <th scope="col" class="p-4">
+                <span class="hidden sm:block">Nom de l'</span>
+                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">object</span>
+            </th>
+            <th scope="col" class="p-4">
+                <span class="hidden sm:block">Date d'</span>
+                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">achat</span>
+            </th>
+            <th scope="col" class="p-4">
+                <span class="hidden sm:block">Prix d'</span>
+                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">achat</span>
+            </th>
+            <th scope="col" class="p-4">
+                <span class="hidden sm:block">Date de</span>
+                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">vente</span>
+            </th>
+            <th scope="col" class="p-4">
+                <span class="hidden sm:block">Prix de </span>
+                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">vente</span>
+            </th>
+            <th scope="col" class="p-4">
+                <span class="hidden sm:block">Etat de </span>
+                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">vente</span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sale in sales %}
+            <tr>
+                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.resource.name }}</td>
+                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.buyDate|date('d-m-Y') }}</td>
+                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.buyPrice|number_format(0, '.', ' ') }} k</td>
+                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.sellDate ? sale.sellDate|date('Y-m-d H:i:s') : 'Non vendu' }}</td>
+                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.sellPrice|number_format(0, '.', ' ') }} k</td>
+                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">
+                    {% if sale.isSell %}
+                        Oui
+                    {% else %}
+                        En attente
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark">
+<html class="dark" lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Monifus, le moniteur Dofus{% endblock %}</title>
@@ -32,7 +32,7 @@
 <body class="bg-cover bg-center bg-fixed flex">
     {% include('includes/darkmode.html.twig') %}
     {% include('includes/sidebar.html.twig') %}
-    <section class="flex-1 w-full p-4 md:p-8 space-y-4 md:space-y-6">
+    <section class="flex-1 w-[calc(100%-74px)] p-4 space-y-4 md:space-y-6">
         {% include('includes/navbar.html.twig') %}
         {% block body %}
 

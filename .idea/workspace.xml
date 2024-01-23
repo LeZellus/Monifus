@@ -6,11 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/js/chartResource.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/chartResource.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/js/monitorAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/js/monitorAjax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResourceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonitorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_wrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_wrapper.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Resource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Resource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/logo.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/logo.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitor/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitor/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/resource/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resource/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/resource/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resource/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,6 +228,8 @@
       <workItem from="1705695386224" duration="1352000" />
       <workItem from="1705783784306" duration="18904000" />
       <workItem from="1705840339713" duration="13846000" />
+      <workItem from="1705952631871" duration="5241000" />
+      <workItem from="1706026199217" duration="8290000" />
     </task>
     <servers />
   </component>

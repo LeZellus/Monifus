@@ -1,37 +1,33 @@
-<aside class="w-64 py-6 pl-4 sticky top-0 h-screen hidden md:block" aria-label="Sidebar">
-    {% include('includes/logo.html.twig') %}
-    <ul class="space-y-2">
-        <li>
-            <a href="{{ path('app_home') }}" class="flex items-center item">
-                <i data-feather="home" class="w-4"></i>
-                <span class="ml-3">Dashboard</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('app_profil') }}" class="flex items-center item">
-                <i data-feather="user" class="w-4"></i>
-                <span class="flex-1 ml-3 whitespace-nowrap">Profil</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('app_resource') }}" class="flex items-center item">
-                <i data-feather="database" class="w-4"></i>
-                <span class="flex-1 ml-3 whitespace-nowrap">Ressources</span>
-            </a>
-        </li>
+<aside class="pl-4 sticky top-0 h-screen left-0 z-50 py-6 hidden md:block" aria-label="Sidebar">
+    <nav class="grid gap-4 wrapper-style wrapper group transition-width duration-300 hover:w-64 nav">
+        {% include('includes/logo.html.twig') %}
         {% if is_granted('ROLE_TRUST') %}
-            <li>
-                <a href="{{ path('app_monitor_index') }}" class="flex items-center item">
-                    <i data-feather="bar-chart-2" class="w-4"></i>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Moniteurs</span>
-                </a>
-            </li>
-        {% endif %}
-        <li>
-            <a href="{{ path("app_logout") }}" class="flex items-center item">
-                <i data-feather="log-out" class="w-4"></i>
-                <span class="flex-1 ml-3 whitespace-nowrap">Déconnexion</span>
+        <div class="grid gap-4 border-t-2 pt-4">
+            <a href="{{ path('app_home') }}" class="nav-item">
+                <i data-feather="home" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Accueil</span>
             </a>
-        </li>
-    </ul>
+            <a href="{{ path('app_profil') }}" class="nav-item group/icon">
+                <i data-feather="user" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Profil</span>
+            </a>
+            <a href="{{ path('app_resource') }}" class="nav-item group/icon">
+                <i data-feather="database" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Ressources</span>
+            </a>
+            <a href="{{ path('app_monitor_index') }}" class="nav-item group/icon">
+                <i data-feather="bar-chart-2" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Moniteurs</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="shopping-cart" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Ventes</span>
+            </a>
+            <a href="{{ path("app_logout") }}" class="nav-item group/icon">
+                <i data-feather="log-out" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Déconnexion</span>
+            </a>
+        </div>
+        {% endif %}
+    </nav>
 </aside>
