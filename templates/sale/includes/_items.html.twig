@@ -15,7 +15,7 @@
     </div>
 
     <div class="wrapper wrapper-orange flex justify-between items-center text-white font-semibold">
-        <h2>En attente :</h2>
+        <h2>A changer :</h2>
 
         <div class="flex items-center">
             <p class="text-lg">
@@ -30,7 +30,7 @@
     </div>
 
     <div class="wrapper wrapper-red flex justify-between items-center text-white font-semibold">
-        <h2>Taxe HDV :</h2>
+        <h2>A changer</h2>
 
         <div class="flex items-center">
             <p class="text-lg">
@@ -52,7 +52,7 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ taxe|number_format(0, '.', ' ') }}
+                    {{ profit|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
@@ -67,10 +67,11 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ taxe|number_format(0, '.', ' ') }}
+                    {{ percentProfit|number_format(0, '.', ' ') }}
                 {% endif %}
+
+                %
             </p>
-            <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
         </div>
     </div>
 
@@ -82,7 +83,7 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ taxe|number_format(0, '.', ' ') }}
+                    {{ totalSellPrice|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
@@ -112,7 +113,7 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ taxe|number_format(0, '.', ' ') }}
+                    {{ totalPendingPrice|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">

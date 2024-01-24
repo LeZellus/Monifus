@@ -1,5 +1,5 @@
 <aside class="pl-4 sticky top-0 h-screen left-0 z-50 py-6 hidden md:block" aria-label="Sidebar">
-    <nav class="grid gap-4 wrapper-style wrapper group transition-width duration-300 hover:w-64 nav">
+    <nav class="grid gap-4 wrapper-style wrapper group transition-width duration-300 hover:w-64 nav ">
         {% include('includes/logo.html.twig') %}
         {% if is_granted('ROLE_TRUST') %}
         <div class="grid gap-4 border-t-2 pt-4">
@@ -12,7 +12,7 @@
                 <span class="nav-item-text group-hover:block">Profil</span>
             </a>
             <a href="{{ path('app_resource') }}" class="nav-item group/icon">
-                <i data-feather="database" class="nav-item-icon"></i>
+                <i data-feather="activity" class="nav-item-icon"></i>
                 <span class="nav-item-text group-hover:block">Ressources</span>
             </a>
             <a href="{{ path('app_monitor_index') }}" class="nav-item group/icon">
@@ -23,7 +23,36 @@
                 <i data-feather="shopping-cart" class="nav-item-icon"></i>
                 <span class="nav-item-text group-hover:block">Ventes</span>
             </a>
-            <a href="{{ path("app_logout") }}" class="nav-item group/icon">
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+            <a href="{{ path("app_sale") }}" class="nav-item group/icon">
+                <i data-feather="book" class="nav-item-icon"></i>
+                <span class="nav-item-text group-hover:block">Documentation</span>
+            </a>
+
+            <a href="{{ path("app_logout") }}" class="nav-item group/icon mt-16">
                 <i data-feather="log-out" class="nav-item-icon"></i>
                 <span class="nav-item-text group-hover:block">Déconnexion</span>
             </a>

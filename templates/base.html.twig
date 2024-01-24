@@ -10,6 +10,10 @@
           href="{{ asset('uploads/favicon_package/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('uploads/favicon_package/site.webmanifest') }}">
     <link rel="mask-icon" href="{{ asset('uploads/favicon_package/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
+
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}

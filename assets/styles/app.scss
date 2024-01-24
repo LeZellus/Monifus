@@ -5,10 +5,18 @@
 @import "components/index";
 
 body {
-  @apply text-gray-700 dark:text-gray-200;
+  @apply text-secondary dark:text-gray-200;
   font-family: "Poppins", sans-serif;
 }
 
 h1 {
-  @apply text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-primary-500;
+  @apply text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-primary-400;
+}
+
+h1, h2, h3, h4, .family {
+  font-family: 'Fraunces', serif;
+}
+
+h2 {
+  @apply  dark:text-gray-200;
 }

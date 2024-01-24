@@ -1,0 +1,31 @@
+<div class="w-16">
+    <div class="flex items-center">
+        <i data-feather="layers" class="w-4 mr-2 text-primary-600"></i>
+        <span class="text-tertiary-400 font-bold">1</span>
+    </div>
+    <div class="flex items-center">
+        <i data-feather="layers" class="w-4 mr-2 text-primary-600"></i>
+        <span class="text-tertiary-400 font-bold">10</span>
+    </div>
+    <div class="flex items-center">
+        <i data-feather="layers" class="w-4 mr-2 text-primary-600"></i>
+        <span class="text-tertiary-400 font-bold">100</span>
+    </div>
+</div>
+<div class="flex-1">
+    <p class="flex justify-end items-center">
+        {% set formattedNumber = data.averagePriceUnit|number_format(0, ',', ' ') %}
+        <span class="font-bold align-middle">{{ formattedNumber }}</span>
+        <img class="w-3 h-3 ml-2" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
+    </p>
+    <p class="flex justify-end items-center">
+        {% set formattedNumber = data.averagePriceTen|number_format(0, ',', ' ') %}
+        <span class="font-bold align-middle">{{ formattedNumber }}</span>
+        <img class="w-3 h-3 ml-2" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
+    </p>
+    <p class="flex justify-end items-center">
+        {% set formattedNumber = data.averagePriceHundred|number_format(0, ',', ' ') %}
+        <span class="font-bold align-middle">{{ formattedNumber }}</span>
+        <img class="w-3 h-3 ml-2" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
+    </p>
+</div>

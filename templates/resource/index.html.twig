@@ -9,64 +9,21 @@
         <a class="col-span-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
     </div>
 
-    <section class="grid gap-4 lg:gap-6 lg:grid-cols-2 xl:grid-cols-3">
+    <section class="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {% for data in averages %}
-            <a href="{{ path('app_resource_show', {'id': data.resourceId}) }}" class="wrapper wrapper-style text-center grid gap-4 lg:gap-6">
-                <h3 class="text-2xl font-bold">{{ data.resourceName }}</h3>
-                <img class="w-16 h-16 m-auto" src="{{ data.resourceImg }}" alt="Image ressource dofus">
-
-                <div class="grid gap-2">
-                    <p class="text-green-400 font-bold">Prix moyen :</p>
-
-                    <hr class="border-gray-300 mt-6 mb-6">
-
-                    <div class="flex justify-between">
-                        <div class="font-light">
-                            Lot de
-                            <span class="font-semibold text-primary-500 uppercase">1</span>
-                            :
-                        </div>
-                        <span class="flex items-center tracking-widest">
-                            <span class="flex items-center tracking-widest">
-                                {% set formattedNumber = data.averagePriceUnit|number_format(0, ',', ' ') %}
-                                <span class="font-bold text-green-400 align-middle">{{ formattedNumber }}</span>
-                                <img class="w-4 h-4 ml-2 mb-0.5" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
-                            </span>
-                        </span>
-                    </div>
-
-                    <div class="flex justify-between">
-                        <div class="font-light">
-                            Lot de
-                            <span class="font-semibold text-primary-500 uppercase">10</span>
-                            :
-                        </div>
-                        <span class="flex items-center tracking-widest">
-                            <span class="flex items-center tracking-widest">
-                                {% set formattedNumber = data.averagePriceTen|number_format(0, ',', ' ') %}
-                                <span class="font-bold text-green-400 align-middle">{{ formattedNumber }}</span>
-                                <img class="w-4 h-4 ml-2 mb-0.5" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
-                            </span>
-                        </span>
-                    </div>
-
-                    <div class="flex justify-between">
-                        <div class="font-light">
-                            Lot de
-                            <span class="font-semibold text-primary-500 uppercase">100</span>
-                            :
-                        </div>
-                        <span class="flex items-center tracking-widest">
-                            <span class="flex items-center tracking-widest">
-                                {% set formattedNumber = data.averagePriceHundred|number_format(0, ',', ' ') %}
-                                <span class="font-bold text-green-400 align-middle">{{ formattedNumber }}</span>
-                                <img class="w-4 h-4 ml-2 mb-0.5" src="{{ asset("uploads/kamas.webp") }}" alt="Icone kamas">
-                            </span>
-                        </span>
-                    </div>
+            <a href="{{ path('app_resource_show', {'id': data.resourceId}) }}" class="wrapper wrapper-style wrapper-p-0 hover:shadow-2xl transition duration-300 relative">
+                <div class="flex justify-between p-4">
+                    <h3 class="text-2xl font-bold w-full">{{ data.resourceName }}</h3>
+                    <img class="w-8 h-8" src="{{ data.resourceImg }}" alt="Image ressource dofus">
                 </div>
 
+                <div class="flex pb-4 px-4">
+                    {{ include('resource/includes/_details.html.twig') }}
+                </div>
 
+                <div class="bg-secondary absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 bg-opacity-80 backdrop-blur-xl transition duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-bold family underline">Voir</p>
+                </div>
             </a>
         {% endfor %}
     </section>

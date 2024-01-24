@@ -13,49 +13,80 @@
 
     {{ include('sale/includes/_items.html.twig') }}
 
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 wrapper wrapper-style">
-        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
-        <tr>
-            <th scope="col" class="p-4">
-                <span class="hidden sm:block">Nom de l'</span>
-                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">object</span>
+    <table class="w-full text-xs text-left rtl:text-right wrapper wrapper-style">
+        <thead class="text-xs uppercase">
+        <tr class="border-b border-gray-300 dark:border-gray-700">
+            <th scope="col" class="p-2 ">
+                <span class="hidden sm:block text-xs">Nom de l'</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">object</span>
             </th>
-            <th scope="col" class="p-4">
-                <span class="hidden sm:block">Date d'</span>
-                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">achat</span>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="hidden sm:block text-xs">%</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">profit</span>
             </th>
-            <th scope="col" class="p-4">
-                <span class="hidden sm:block">Prix d'</span>
-                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">achat</span>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="sm:block text-xs">Date d'</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">achat</span>
             </th>
-            <th scope="col" class="p-4">
-                <span class="hidden sm:block">Date de</span>
-                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">vente</span>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="hidden sm:block text-xs">Date de</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">vente</span>
             </th>
-            <th scope="col" class="p-4">
-                <span class="hidden sm:block">Prix de </span>
-                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">vente</span>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="hidden sm:block text-xs">Prix d'</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">achat</span>
             </th>
-            <th scope="col" class="p-4">
-                <span class="hidden sm:block">Etat de </span>
-                <span class="text-primary-500 text-lg mt-1 drop-shadow-2xl">vente</span>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="hidden sm:block text-xs">Prix de </span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">vente</span>
+            </th>
+            <th scope="col" class="p-2 ">
+                <span class="hidden sm:block text-xs">Etat de </span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">vente</span>
+            </th>
+            <th scope="col" class="p-2 ">
+                <span class="hidden sm:block text-xs">Liste d'</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">actions</span>
             </th>
         </tr>
         </thead>
         <tbody>
         {% for sale in sales %}
-            <tr>
-                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.resource.name }}</td>
-                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.buyDate|date('d-m-Y') }}</td>
-                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.buyPrice|number_format(0, '.', ' ') }} k</td>
-                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.sellDate ? sale.sellDate|date('Y-m-d H:i:s') : 'Non vendu' }}</td>
-                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">{{ sale.sellPrice|number_format(0, '.', ' ') }} k</td>
-                <td class="border-b border-gray-300 dark:border-gray-700 p-4 text-lg">
-                    {% if sale.isSell %}
-                        Oui
-                    {% else %}
-                        En attente
-                    {% endif %}
+            {% set profit_percentage = (sale.sellPrice - sale.buyPrice) / sale.buyPrice * 100 %}
+            <tr class="border-b border-gray-300 dark:border-gray-700">
+                {% if sale.isSell %}
+                    <td class="p-2 text-lg text-green-500">
+                        {{ sale.resource.name }}
+                    </td>
+                {% else %}
+                    <td class="p-2 text-lg text-red-500">
+                        {{ sale.resource.name }}
+                    </td>
+                {% endif %}
+                <td class="p-2 text-lg hidden xl:table-cell">{{ profit_percentage }} %</td>
+                <td class="p-2 text-lg hidden xl:table-cell">{{ sale.buyDate|date('d-m-Y') }}</td>
+                <td class="p-2 text-lg hidden xl:table-cell">{{ sale.sellDate ? sale.sellDate|date('d-m-Y') : 'Non vendu' }}</td>
+                <td class="p-2 text-lg hidden xl:table-cell">{{ sale.buyPrice|number_format(0, '.', ' ') }} k</td>
+                <td class="p-2 text-lg hidden xl:table-cell">{{ sale.sellPrice|number_format(0, '.', ' ') }} k</td>
+                {% if sale.isSell %}
+                    <td class="p-2 text-lg text-green-500">
+                        OUI
+                    </td>
+                {% else %}
+                    <td class="p-2 text-lg text-red-500">
+                        NON
+                    </td>
+                {% endif %}
+                <td class="p-2 text-lg flex space-x-2">
+                    <a href="{{ path('app_sale_edit', {'id' : sale.id}) }}">
+                        <i data-feather="edit" class="text-tertiary"></i>
+                    </a>
+                    <form action="{{ path('app_sale_delete', {'id': sale.id}) }}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sale.id) }}">
+                        <button type="submit" class="btn btn-danger">
+                            <i data-feather="trash" class="text-red-400"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
         {% endfor %}

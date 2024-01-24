@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer vente | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h1>Editer une vente</h1>
+
+    <section class="wrapper wrapper-style">
+        {{ include('sale/_form.html.twig') }}
+    </section>
+{% endblock %}

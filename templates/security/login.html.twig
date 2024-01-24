@@ -3,10 +3,10 @@
 {% block title %}Connexion | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <div class="wrapper-style wrapper-size">
-        {% include("includes/logo.html.twig") %}
-        <div class="space-y-4 md:space-y-6">
-            <h1>Connexion à votre compte</h1>
+    <div class="wrapper wrapper-style wrapper-size">
+        <img class="mx-auto w-16" src="{{ asset('uploads/logo.svg') }}" alt="Logo Monifus">
+        <div class="space-y-4 md:space-y-6 mt-4">
+            <h1 class="text-center">Connexion</h1>
             <form class="space-y-4 md:space-y-6" method="post">
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -26,7 +26,7 @@
                     <input type="password" name="password" id="password" placeholder="••••••••" class="form-input"
                            required="">
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="grid">
                     <div class="flex items-start">
                         <div class="flex items-center h-5">
                             <input name="_remember_me" id="remember" aria-describedby="remember" type="checkbox"

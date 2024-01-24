@@ -19,20 +19,31 @@ class SaleController extends AbstractController
         $sales = $saleRepository->findAll();
         $totalBuyPrice = 0;
         $totalSellPrice = 0;
+        $totalPendingPrice = 0;
+        $totalPendingProfit = 0;
 
         foreach ($sales as $sale) {
             $totalBuyPrice += $sale->getBuyPrice();
+            $totalSellPrice += $sale->getSellPrice();
+
             if ($sale->isIsSell()) { // Seulement si la vente a été effectuée
-                $totalSellPrice += $sale->getSellPrice();
+                $profit = $totalSellPrice - $totalBuyPrice;
+                $percentProfit = $profit / $totalBuyPrice * 100;
+            }
+            if (!$sale->isIsSell()) { // Seulement si la vente n'a pas été effectuée
+                $totalPendingPrice += $sale->getSellPrice();
             }
         }
 
-        $taxe = $totalBuyPrice * 0.01;
+        $taxe = $totalSellPrice * 0.01;
 
         return $this->render('sale/index.html.twig', [
             'sales' => $sales,
             'totalBuyPrice' => $totalBuyPrice,
             'totalSellPrice' => $totalSellPrice,
+            'profit' => $profit,
+            'percentProfit' => $percentProfit,
+            'totalPendingPrice' => $totalPendingPrice,
             'taxe' => $taxe,
             'noSales' => empty($sales), // Vérifie s'il n'y a aucun Sale
         ]);
@@ -56,5 +67,37 @@ class SaleController extends AbstractController
         return $this->render('sale/new.html.twig', [
             'form' => $form,
         ]);
+    }
+
+    #[Route('/vente/editer/{id}', name: 'app_sale_edit')]
+    public function edit(Request $request, EntityManagerInterface $entityManager, Sale $sale): Response
+    {
+        $form = $this->createForm(SaleType::class, $sale);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_sale', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('sale/edit.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/vente/supprimer/{id}', name: 'app_sale_delete')]
+    public function delete(Request $request, EntityManagerInterface $entityManager, Sale $sale): Response
+    {
+        // Créer et vérifier un "token CSRF" pour éviter les attaques CSRF
+        if ($this->isCsrfTokenValid('delete'.$sale->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($sale);
+            $entityManager->flush();
+        }
+
+
+        // Redirection vers une autre page après la suppression
+        return $this->redirectToRoute('app_sale');
     }
 }
