@@ -27,3 +27,6 @@ Stack trace:
 [12-Oct-2022 14:30:35 UTC] [critical] Error thrown while running command "doctrine:migrations:migrate". Message: "An exception occurred in the driver: SQLSTATE[42000] [1044] Access denied for user 'kcwc9194_monifus'@'localhost' to database 'kcwc9194_monifus'"
 
 [12-Oct-2022 15:01:54 UTC] 2022-10-12T15:01:54+00:00 [info] User Deprecated: The "Symfony\Bridge\Doctrine\Logger\DbalLogger" class implements "Doctrine\DBAL\Logging\SQLLogger" that is deprecated Use {@see \Doctrine\DBAL\Logging\Middleware} or implement {@see \Doctrine\DBAL\Driver\Middleware} instead.
+[26-Jan-2024 16:35:49 UTC] [critical] Error thrown while running command "doctrine:migrations:migrate". Message: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'u359351136_monifus'@'127.0.0.1' (using password: YES)"
+[26-Jan-2024 16:38:14 UTC] [critical] Error thrown while running command "doctrine:migrations:migrate". Message: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'u359351136_monifus'@'127.0.0.1' (using password: YES)"
+[26-Jan-2024 16:38:16 UTC] [critical] Error thrown while running command "doctrine:migrations:migrate". Message: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'u359351136_monifus'@'127.0.0.1' (using password: YES)"

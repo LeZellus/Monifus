@@ -11,7 +11,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.3.0",
         "doctrine/orm": "^2.17",
         "fakerphp/faker": "^1.23",
-        "symfony/apache-pack": "^1.0.1",
+        "symfony/apache-pack": "^1.0",
         "symfony/cache": "7.0.*",
         "symfony/console": "7.0.*",
         "symfony/dotenv": "7.0.*",
