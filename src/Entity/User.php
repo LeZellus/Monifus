@@ -10,9 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[Vich\Uploadable]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -53,12 +56,34 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Record::class, orphanRemoval: true)]
     private Collection $records;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $profilePicture = null;
+
+    #[Vich\UploadableField(mapping: 'user_profile', fileNameProperty: 'profilePicture')]
+    private ?File $profilePictureFile = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $coverPicture = null;
+
+    #[Vich\UploadableField(mapping: 'user_cover', fileNameProperty: 'coverPicture')]
+    private ?File $coverPictureFile = null;
+
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->updatedAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->monitors = new ArrayCollection();
         $this->records = new ArrayCollection();
+    }
+
+    public function __sleep()
+    {
+        // Obtenez toutes les propriétés de l'objet
+        $properties = array_keys(get_object_vars($this));
+
+        // Excluez les propriétés qui ne doivent pas être sérialisées
+        return array_diff($properties, ['profilePictureFile', 'coverPictureFile']);
     }
 
     public function getId(): ?int
@@ -249,5 +274,57 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    public function getProfilePicture(): ?string
+    {
+        return $this->profilePicture;
+    }
+
+    public function setProfilePicture(?string $profilePicture): static
+    {
+        $this->profilePicture = $profilePicture;
+
+        return $this;
+    }
+
+    public function setProfilePictureFile(?File $image = null): void
+    {
+        $this->profilePictureFile = $image;
+
+        if (null !== $image) {
+            $this->updatedAt = new \DateTimeImmutable('now');
+        }
+    }
+
+    public function getProfilePictureFile(): ?File
+    {
+        return $this->profilePictureFile;
+    }
+
+    public function getCoverPicture(): ?string
+    {
+        return $this->coverPicture;
+    }
+
+    public function setCoverPicture(?string $coverPicture): static
+    {
+        $this->coverPicture = $coverPicture;
+
+        return $this;
+    }
+
+    public function setCoverPictureFile(?File $image = null): void
+    {
+        $this->coverPictureFile = $image;
+
+        if (null !== $image) {
+            $this->updatedAt = new \DateTimeImmutable('now');
+        }
+    }
+
+    public function getCoverPictureFile(): ?File
+    {
+        return $this->coverPictureFile;
     }
 }

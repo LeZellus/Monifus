@@ -24,8 +24,10 @@ class ProfilController extends AbstractController
             $em->persist($user);
             $em->flush();
         }
+
         return $this->render('profil/index.html.twig',[
             'editForm' => $form->createView(),
         ]);
     }
 }
+

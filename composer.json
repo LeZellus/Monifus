@@ -31,7 +31,8 @@
         "symfony/validator": "7.0.*",
         "symfony/webpack-encore-bundle": "^2.1.1",
         "symfony/yaml": "7.0.*",
-        "symfonycasts/verify-email-bundle": "^1.12"
+        "symfonycasts/verify-email-bundle": "^1.12",
+        "vich/uploader-bundle": "^2.3"
     },
     "config": {
         "allow-plugins": {

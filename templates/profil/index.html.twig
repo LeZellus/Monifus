@@ -4,22 +4,29 @@
 
 {% block body %}
     <h1 class="text-center">Profil</h1>
-    <section class="h-64 rounded-lg w-full overflow-hidden relative">
-        <img src="{{ asset('uploads/bglight.jpeg') }}" class="h-full w-full object-cover">
-        <div class="wrapper wrapper-style absolute w-full h-full z-10 top-0 left-0 flex justify-center items-center font-bold text-2xl text-gray-700 dark:text-gray-300">
-            Coming Soon
-        </div>
-    </section>
+
 
     <section class="grid gap-4 lg:gap-6 lg:grid-cols-3">
         <div class="wrapper wrapper-style grid gap-4 lg:gap-6">
-            <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
+            <div class="flex items-center">
+                {% if app.user.profilePicture %}
+                    <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset('images/profiles/' ~ app.user.profilePicture) }}')"></div>
+                {% else %}
+                    <p>Pas de photo de couverture.</p>
+                {% endif %}
+                <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
+            </div>
             <div>
                 <p>Email : {{ app.user.email }}</p>
                 <p>Contact sur Dofus : <span class="text-primary-500 font-bold">{{ app.user.pseudonymeDofus }}</span></p>
             </div>
         </div>
-        <div class="wrapper wrapper-style lg:col-span-2 grid gap-4 lg:gap-6">
+        {% if app.user.coverPicture %}
+            <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center" style="background-image:url('{{ asset('images/covers/' ~ app.user.coverPicture) }}')"></div>
+        {% else %}
+            <p>Pas de photo de couverture.</p>
+        {% endif %}
+        <div class="wrapper wrapper-style lg:col-start-2 lg:col-span-2 grid gap-4 lg:gap-6">
             <h2 class="text-xl font-extrabold">Informations générales</h2>
             {{ form_start(editForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
             <div>
@@ -29,6 +36,14 @@
             <div>
                 {{ form_label(editForm.pseudonymeDofus, 'Pseudo en jeu') }}
                 {{ form_widget(editForm.pseudonymeDofus) }}
+            </div>
+            <div>
+                {{ form_label(editForm.profilePictureFile, 'Photo de couverture') }}
+                {{ form_widget(editForm.profilePictureFile) }}
+            </div>
+            <div>
+                {{ form_label(editForm.coverPictureFile, 'Photo de profil') }}
+                {{ form_widget(editForm.coverPictureFile) }}
             </div>
 
             <div>
