@@ -4,82 +4,82 @@
 
 {% block body %}
     <h1 class="text-center">Documentation</h1>
-    <section class="wrapper wrapper-style grid gap-6">
-        <nav class="grid gap-2">
-            <h2 class="text-primary-400 dark:text-primary-400">Sommaire :</h2>
-            <ul class="grid gap-2">
-                <li>
-                    <a href="#section1" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                        <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                        <span>Ressources</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#section1" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                        <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                        <span>Moniteurs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#section2" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                        <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                        <span>Ventes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#section3" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                        <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                        <span>Records</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <section class="wrapper wrapper-style">
+        <div class="grid gap-6">
+            <nav class="grid gap-2">
+                <h2 class="text-primary-400 dark:text-primary-400">Sommaire :</h2>
+                <ul class="grid gap-2">
+                    <li>
+                        <a href="#section1" class="text-tertiary-400 hover:text-blue-700 flex items-center">
+                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
+                            <span>Ressources</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section1" class="text-tertiary-400 hover:text-blue-700 flex items-center">
+                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
+                            <span>Moniteurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section2" class="text-tertiary-400 hover:text-blue-700 flex items-center">
+                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
+                            <span>Ventes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section3" class="text-tertiary-400 hover:text-blue-700 flex items-center">
+                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
+                            <span>Records</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-        <div id="section1" class="grid gap-2">
-            <h2 class="text-primary-400 dark:text-primary-400">Ressources</h2>
-            <p>Principe des ressources : Une ressource permet au joueur d'analyser les prix au fil du temps.</p>
-            <p>Des graphiques seront mis à disposition pour calculer si une ressource est plutôt en hausse, ou en baisse</p>
+            <div id="section1" class="grid gap-2">
+                <h2 class="text-primary-400 dark:text-primary-400">Ressources</h2>
+                <p>Principe des ressources : Une ressource permet au joueur d'analyser les prix au fil du temps.</p>
+                <p>Des graphiques seront mis à disposition pour calculer si une ressource est plutôt en hausse, ou en baisse</p>
 
-            <div class="wrapper wrapper-red flex items-center justify-center">
-                <i data-feather="alert-triangle"></i>
-                <span class="mx-4">Attention</span>
-                <i data-feather="alert-triangle"></i>
+                <div class="wrapper wrapper-red flex items-center justify-center">
+                    <i data-feather="alert-triangle"></i>
+                    <span class="mx-4">Attention</span>
+                    <i data-feather="alert-triangle"></i>
+                </div>
+
+                <p>Une ressource n'affiche les données qu'à partir du deuxièmùe moniteur la concernant. (voir section Moniteurs)</p>
             </div>
 
-            <p>Une ressource n'affiche les données qu'à partir du deuxièmùe moniteur la concernant. (voir section Moniteurs)</p>
-        </div>
-
-        <div id="section2" class="grid gap-2">
-            <h2 class="text-primary-400 dark:text-primary-400">Moniteurs</h2>
-            <p>Principe du moniteur : Un moniteur permet simplement de renseigner le prix d'une ressource de votre choix. Vous pouvez donc renseigner le prix par lot de un, de dix, ou de cent.</p>
-            <p>Le moniteur ne sert à rien d'autre qu'à historiser un prix sur une ressource à un instant T</p>
-            <p>Les valeurs du moniteur , elles, sont calculéees dans les ressources. (voir section Ressources)</p>
-        </div>
-
-        <div id="section3" class="grid gap-4">
-            <h2 class="text-primary-400 dark:text-primary-400">Ventes</h2>
-            <p>Principe des ventes : Les ventes sont un historique de vos achats. Vous n'avez qu'à sélectionner le bon item, renseigner le prix d'achat et de vente.</p>
-            <p>L'application se charge de calculer les différentes valeurs automatiquement.</p>
-
-        </div>
-        <div id="section3" class="grid gap-4">
-            <h2 class="text-primary-400 dark:text-primary-400">Records</h2>
-            <p>La section record vous permet une fois connecté d'ajouter un record de temps sur n'importe quel monstre.</p>
-            <p>Vous pouvez ajouter un record en cliquant sur le bouton créer, puis en renseignant les diverses informations</p>
-            <p>Le record est soumis à validation avant publication.</p>
-
-            <div class="wrapper wrapper-red flex items-center justify-center">
-                <i data-feather="alert-triangle"></i>
-                <span class="mx-4">Attention</span>
-                <i data-feather="alert-triangle"></i>
+            <div id="section2" class="grid gap-2">
+                <h2 class="text-primary-400 dark:text-primary-400">Moniteurs</h2>
+                <p>Principe du moniteur : Un moniteur permet simplement de renseigner le prix d'une ressource de votre choix. Vous pouvez donc renseigner le prix par lot de un, de dix, ou de cent.</p>
+                <p>Le moniteur ne sert à rien d'autre qu'à historiser un prix sur une ressource à un instant T</p>
+                <p>Les valeurs du moniteur , elles, sont calculéees dans les ressources. (voir section Ressources)</p>
             </div>
 
-            <p>Le lien doit être un lien youtube valide ou le record sera supprimé.</p>
-            <p>Chaque record sera analysé.</p>
-            <p>Une fois créé un record n'est plus modifiable</p>
+            <div id="section3" class="grid gap-4">
+                <h2 class="text-primary-400 dark:text-primary-400">Ventes</h2>
+                <p>Principe des ventes : Les ventes sont un historique de vos achats. Vous n'avez qu'à sélectionner le bon item, renseigner le prix d'achat et de vente.</p>
+                <p>L'application se charge de calculer les différentes valeurs automatiquement.</p>
+
+            </div>
+            <div id="section3" class="grid gap-4">
+                <h2 class="text-primary-400 dark:text-primary-400">Records</h2>
+                <p>La section record vous permet une fois connecté d'ajouter un record de temps sur n'importe quel monstre.</p>
+                <p>Vous pouvez ajouter un record en cliquant sur le bouton créer, puis en renseignant les diverses informations</p>
+                <p>Le record est soumis à validation avant publication.</p>
+
+                <div class="wrapper wrapper-red flex items-center justify-center">
+                    <i data-feather="alert-triangle"></i>
+                    <span class="mx-4">Attention</span>
+                    <i data-feather="alert-triangle"></i>
+                </div>
+
+                <p>Le lien doit être un lien youtube valide ou le record sera supprimé.</p>
+                <p>Chaque record sera analysé.</p>
+                <p>Une fois créé un record n'est plus modifiable</p>
+            </div>
         </div>
-
-
     </section>
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
