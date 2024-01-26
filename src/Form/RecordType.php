@@ -24,7 +24,8 @@ class RecordType extends AbstractType
             ])
             ->add('time', TimeType::class, [
                 'attr' => ["class" => "form-input"],
-                "label_attr" => ["class" => "form-label"]
+                "label_attr" => ["class" => "form-label"],
+                'with_seconds' => true,
             ])
             ->add('videoLink', UrlType::class, [
                 'attr' => ["class" => "form-input"],

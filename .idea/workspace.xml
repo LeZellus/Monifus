@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/monifus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/monifus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RecordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RecordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SaleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Monster.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Monster.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Record.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfilController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MonsterRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonsterRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RecordRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProfilType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProfilType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navbar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/sidebar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/record/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/record/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/resource/includes/_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resource/includes/_details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/resource/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resource/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reward/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sale/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sale/includes/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sale/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sale/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sale/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sale/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +151,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/ux-autocomplete" />
       <path value="$PROJECT_DIR$/vendor/symfony/stimulus-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/ux-chartjs" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -237,7 +233,8 @@
       <workItem from="1706026199217" duration="25609000" />
       <workItem from="1706112405398" duration="11294000" />
       <workItem from="1706135790620" duration="3104000" />
-      <workItem from="1706264112881" duration="11678000" />
+      <workItem from="1706264112881" duration="18764000" />
+      <workItem from="1706286521177" duration="996000" />
     </task>
     <servers />
   </component>
