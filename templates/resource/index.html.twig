@@ -11,13 +11,13 @@
 
     <section class="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {% for data in averages %}
-            <a href="{{ path('app_resource_show', {'id': data.resourceId}) }}" class="wrapper wrapper-style wrapper-p-0 hover:shadow-2xl transition duration-300 relative">
-                <div class="flex justify-between p-4">
+            <a href="{{ path('app_resource_show', {'id': data.resourceId}) }}" class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2">
+                <div class="flex justify-between">
                     <h3 class="text-2xl font-bold w-full">{{ data.resourceName }}</h3>
                     <img class="w-8 h-8" src="{{ data.resourceImg }}" alt="Image ressource dofus">
                 </div>
 
-                <div class="flex pb-4 px-4">
+                <div class="flex">
                     {{ include('resource/includes/_details.html.twig') }}
                 </div>
 

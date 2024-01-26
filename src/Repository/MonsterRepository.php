@@ -21,28 +21,26 @@ class MonsterRepository extends ServiceEntityRepository
         parent::__construct($registry, Monster::class);
     }
 
-//    /**
-//     * @return Monster[] Returns an array of Monster objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('m.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findMonstersWithRecords()
+    {
+        return $this->createQueryBuilder('m')
+            ->innerJoin('m.records', 'r')
+            ->where('r.isApproved = true')
+            ->groupBy('m.id')
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Monster
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+
+    public function countRecordsForEachMonster()
+    {
+        return $this->createQueryBuilder('m')
+            ->leftJoin('m.records', 'r')
+            ->select('m.id, m.name, COUNT(r.id) as recordCount')
+            ->where('r.isApproved = true')
+            ->groupBy('m.id')
+            ->getQuery()
+            ->getResult();
+    }
+
 }

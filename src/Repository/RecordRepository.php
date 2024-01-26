@@ -21,28 +21,35 @@ class RecordRepository extends ServiceEntityRepository
         parent::__construct($registry, Record::class);
     }
 
-//    /**
-//     * @return Record[] Returns an array of Record objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findRecordsWithUserByMonster($monsterId)
+    {
+        return $this->createQueryBuilder('r')
+            ->innerJoin('r.user', 'u')
+            ->addSelect('u') // Sélectionnez l'utilisateur pour éviter une requête supplémentaire
+            ->where('r.monster = :monsterId')
+            ->andWhere('r.isApproved = true')
+            ->setParameter('monsterId', $monsterId)
+            ->orderBy('r.time', 'ASC') // Tri par le temps du record, du plus bas au plus haut
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Record
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findBestTimeForAllMonsters()
+    {
+        // D'abord, obtenir le temps le plus bas pour chaque monstre pour les records valides
+        $subQuery = $this->createQueryBuilder('r2')
+            ->select('MIN(r2.time) as minTime')
+            ->where('r2.monster = m.id')
+            ->andWhere('r2.isApproved = true')  // Assurez-vous que les records sont valides
+            ->groupBy('r2.monster');
+
+        // Ensuite, obtenir le record correspondant à ce temps pour chaque monstre
+        return $this->createQueryBuilder('r')
+            ->innerJoin('r.monster', 'm')
+            ->addSelect('m')
+            ->where('r.time = (' . $subQuery->getDQL() . ')')
+            ->andWhere('r.isApproved = true')  // Assurez-vous à nouveau que les records sont valides
+            ->getQuery()
+            ->getResult();
+    }
 }

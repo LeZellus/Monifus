@@ -21,6 +21,8 @@ class SaleController extends AbstractController
         $totalSellPrice = 0;
         $totalPendingPrice = 0;
         $totalPendingProfit = 0;
+        $profit = 0;
+        $percentProfit = 0;
 
         foreach ($sales as $sale) {
             $totalBuyPrice += $sale->getBuyPrice();

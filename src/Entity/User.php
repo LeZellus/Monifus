@@ -50,11 +50,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Monitor::class, orphanRemoval: true)]
     private Collection $monitors;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Record::class, orphanRemoval: true)]
+    private Collection $records;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->updatedAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->monitors = new ArrayCollection();
+        $this->records = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -211,6 +215,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($monitor->getUser() === $this) {
                 $monitor->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Record>
+     */
+    public function getRecords(): Collection
+    {
+        return $this->records;
+    }
+
+    public function addRecord(Record $record): static
+    {
+        if (!$this->records->contains($record)) {
+            $this->records->add($record);
+            $record->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecord(Record $record): static
+    {
+        if ($this->records->removeElement($record)) {
+            // set the owning side to null (unless already changed)
+            if ($record->getUser() === $this) {
+                $record->setUser(null);
             }
         }
 

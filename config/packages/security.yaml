@@ -35,12 +35,11 @@ security:
         ROLE_ADMIN: ROLE_TRUST
         ROLE_SUPER_ADMIN: ROLE_ADMIN
     access_control:
-        - { path: ^/connexion, roles: [PUBLIC_ACCESS] }
-        - { path: ^/inscription, roles: [PUBLIC_ACCESS] }
-        - { path: ^/deconnexion, roles: [PUBLIC_ACCESS] }
-        - { path: ^/, roles: ROLE_USER }
-        - { path: ^/monitor, roles: ROLE_TRUST }
-        - { path: ^/api/to/database, roles: ROLE_SUPER_ADMIN }
+        #- { path: ^/connexion, roles: [PUBLIC_ACCESS] }
+        #- { path: ^/inscription, roles: [PUBLIC_ACCESS] }
+        #- { path: ^/deconnexion, roles: [PUBLIC_ACCESS] }
+        #- { path: ^/, roles: ROLE_USER }
+        #- { path: ^/monitor, roles: ROLE_TRUST }
 
 when@test:
     security:

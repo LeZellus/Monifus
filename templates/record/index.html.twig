@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RecordController!{% endblock %}
+{% block title %}Records | {{ parent() }}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/mathe/IdeaProjects/Monifus/src/Controller/RecordController.php'|file_link(0) }}">src/Controller/RecordController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/mathe/IdeaProjects/Monifus/templates/record/index.html.twig'|file_link(0) }}">templates/record/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h1 class="text-center">Monstres avec Records</h1>
+    <div class="flex justify-center">
+        <a class="form-submit" href="{{ path('app_record_new') }}">Nouveau record</a>
+    </div>
+    <section class="grid gap-4 lg:grid-cols-3 xl:grid-cols-4">
+        {% for monster in monsters %}
+            <a class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2" href="{{ path('app_monster_show', {'id': monster.id}) }}">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="font-bold">{{ monster.name }}</h2>
+                        {% set recordCount = recordCounts|filter(count => count.id == monster.id)|first %}
+                        <p class="uppercase text-xs">Nombre de soumissions : {{ recordCount.recordCount }}</p>
+                    </div>
+                    <img class="ml-4 w-10 h-10" src="{{ monster.imgUrl }}" alt="image de {{ monster.name }}">
+                </div>
+                <div class="grid gap-1">
+                    <div class="flex items-center">
+                        <i class="text-primary-500 w-4 mr-2" data-feather="clock"></i>
+                        {% set bestRecord = bestRecords|filter(record => record.monster.id == monster.id)|first %}
+                        <span class="font-bold text-tertiary-400">{{ bestRecord.time|date('H:i:s') }}</span>
+                    </div>
+                    <div class="flex">
+                        <i class="text-primary-500 w-4 mr-2" data-feather="user"></i>
+                        <span class="font-bold text-tertiary-400">{{ bestRecord.user.pseudonymeWebsite }}</span>
+                    </div>
+                </div>
+                <div class="bg-secondary absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 bg-opacity-80 backdrop-blur-xl transition duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-bold family underline">Voir</p>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
 {% endblock %}

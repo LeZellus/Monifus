@@ -1,0 +1,59 @@
+{# templates/monster/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">Records pour {{ monster.name }}</h1>
+    <div class="flex justify-center flex-col items-center space-y-4">
+        <a class="form-submit" href="{{ path('app_record') }}">Retour</a>
+        <a class="form-submit" href="{{ path('app_record_new') }}">Nouveau record</a>
+    </div>
+
+    <table class="w-full text-xs text-left rtl:text-right wrapper wrapper-style">
+        <thead class="text-xs uppercase">
+        <tr class="border-b border-gray-300 dark:border-gray-700">
+            <th scope="col" class="p-2 ">
+                <span class="hidden sm:block text-xs">N°</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">place</span>
+            </th>
+            <th scope="col" class="p-2 ">
+                <span class="hidden sm:block text-xs">Nom du</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">joueur</span>
+            </th>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="hidden sm:block text-xs">Temps du</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">record</span>
+            </th>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="sm:block text-xs">Date du</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">record</span>
+            </th>
+            <th scope="col" class="p-2 hidden xl:table-cell">
+                <span class="hidden sm:block text-xs">Détails du</span>
+                <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">record</span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for record in records %}
+            <tr class="border-b border-gray-300 dark:border-gray-700">
+                <td class="p-2 text-sm hidden xl:table-cell">
+                    {% if loop.index == 1 %}
+                        <img class="w-8 h-8" src="{{ asset("uploads/gold.png") }}" alt="Image de pépite d'or">
+                    {% elseif loop.index == 2 %}
+                        <img class="w-8 h-8" src="{{ asset("uploads/iron.png") }}" alt="Image de pépite de fer">
+                    {% elseif loop.index == 3 %}
+                        <img class="w-8 h-8" src="{{ asset("uploads/bronze.png") }}" alt="Image de pépite de bronze">
+                    {% else %}
+                        <span class="pl-3">{{ loop.index }}</span>
+                    {% endif %}
+                </td>
+                <td class="p-2 text-sm hidden xl:table-cell">{{ record.user.pseudonymeWebsite }}</td>
+                <td class="p-2 text-sm hidden xl:table-cell">{{ record.time|date('H:i:s') }}</td>
+                <td class="p-2 text-sm hidden xl:table-cell">{{ record.createdAt|date('d-m-Y') }}</td>
+                <td class="p-2 text-sm hidden xl:table-cell"><a class="text-tertiary-400 hover:underline" href="{{ path('app_record_show', {'id': record.id}) }}">Voir</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
