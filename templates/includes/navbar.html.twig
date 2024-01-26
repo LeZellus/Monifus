@@ -1,12 +1,12 @@
 <nav class="p-4 bg-gray-50 wrapper wrapper-style sticky top-6 z-50">
     <div class="flex flex-wrap justify-between items-center w-full">
-        <div>
-            <p class="text-xs">Path / <span class="font-bold text-gray-700 dark:text-gray-200">Accueil</span></p>
-            <p class="font-extrabold text-lg text-gray-700 dark:text-gray-200">
+        <div class="flex">
+            <img class="md:hidden w-6 h-6 mr-4" src="{{ asset('uploads/logo.svg') }}" alt="Logo de Monifus">
+            <p class="text-lg text-gray-700 dark:text-gray-200">
                 {% if variable is defined and variable is not null %}
-                    Bonjour, {{ app.user.pseudonymeWebsite }}
+                    Bonjour, <span class="family text-primary-400 font-bold">{{ app.user.pseudonymeWebsite }}</span>
                 {% else %}
-                    Bonjour, Aventurier
+                    Bonjour, <span class="family text-primary-400 font-bold">Aventurier</span>
                 {% endif %}
             </p>
         </div>
@@ -14,21 +14,50 @@
             <span class="sr-only">Ouvrir le menu</span>
             <svg class="w-6 h-6 text-gray-700 dark:text-gray-200" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-d dark:border-gray-700">
-                <li>
-                    <a href="{{ path('app_home') }}" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Accueil</a>
-                </li>
-                <li>
-                    <a href="#" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Services</a>
-                </li>
-                <li>
-                    <a href="#" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Pricing</a>
-                </li>
-                <li>
-                    <a href="#" class="block py-2 pr-4 hover:text-primary-500 duration-300 transition hover:duration-300 md:border-0 md:p-0 dark:hover:text-primary-500">Contact</a>
-                </li>
-            </ul>
+        <div class="hidden w-full" id="navbar-solid-bg">
+            <div class="grid gap-4 pt-4">
+                <a href="{{ path('app_home') }}" class="nav-item">
+                    <i data-feather="home" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Accueil</span>
+                </a>
+                <a href="{{ path('app_profil') }}" class="nav-item">
+                    <i data-feather="user" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Profil</span>
+                </a>
+                <a href="{{ path('app_resource') }}" class="nav-item">
+                    <i data-feather="activity" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Ressources</span>
+                </a>
+                <a href="{{ path('app_monitor_index') }}" class="nav-item">
+                    <i data-feather="bar-chart-2" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Moniteurs</span>
+                </a>
+                <a href="{{ path("app_sale") }}" class="nav-item">
+                    <i data-feather="shopping-cart" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Ventes</span>
+                </a>
+                <a href="{{ path("app_record") }}" class="nav-item">
+                    <i data-feather="award" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Records</span>
+                </a>
+                <a href="{{ path("app_sale") }}" class="nav-item">
+                    <i data-feather="book" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Documentation</span>
+                </a>
+
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <a href="{{ path("app_logout") }}" class="nav-item mt-16">
+                        <i data-feather="log-out" class="nav-item-icon"></i>
+                        <span class="ml-6 font-semibold text-sm">Déconnexion</span>
+                    </a>
+                {% else %}
+                    <a href="{{ path("app_login") }}" class="nav-item mt-16">
+                        <i data-feather="log-in" class="nav-item-icon"></i>
+                        <span class="ml-6 font-semibold text-sm">Connexion</span>
+                    </a>
+                {% endif %}
+
+            </div>
         </div>
     </div>
 </nav>
