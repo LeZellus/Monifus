@@ -1,6 +1,6 @@
 .popup {
   position: fixed;
-  right: -100%; /* Assurez-vous que c'est suffisant pour cacher la popup complètement */
+  right: -400%; /* Assurez-vous que c'est suffisant pour cacher la popup complètement */
   top: 20px;
   z-index: 1000;
   transition: right .5s; /* Animation de glissement */
