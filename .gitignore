@@ -10,6 +10,8 @@
 .ftpquota
 .DS_Store
 .idea
+.env
+error.log
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###
