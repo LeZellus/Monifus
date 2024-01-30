@@ -78,15 +78,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->records = new ArrayCollection();
     }
 
-    public function __sleep()
-    {
-        // Obtenez toutes les propriétés de l'objet
-        $properties = array_keys(get_object_vars($this));
-
-        // Excluez les propriétés qui ne doivent pas être sérialisées
-        return array_diff($properties, ['profilePictureFile', 'coverPictureFile']);
-    }
-
     public function getId(): ?int
     {
         return $this->id;

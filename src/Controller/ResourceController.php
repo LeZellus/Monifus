@@ -28,7 +28,7 @@ class ResourceController extends AbstractController
     #[Route('/resource/{id}', name: 'app_resource_show')]
     public function show(int $id, ResourceRepository $resourceRepository): Response
     {
-       $resource = $resourceRepository->find($id);
+       /*$resource = $resourceRepository->find($id);
 
        if(!$resource){
            throw $this->createNotFoundException('La ressource demandée n\'existe pas');
@@ -36,7 +36,9 @@ class ResourceController extends AbstractController
 
        return $this->render('resource/show.html.twig', [
            'resource' => $resource,
-       ]);
+       ]);*/
+
+        return $this->render('home/coming_soon.html.twig');
     }
 
     #[Route('/resource/{id}/data', name: 'app_resource_data')]
