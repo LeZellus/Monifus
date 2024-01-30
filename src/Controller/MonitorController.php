@@ -27,7 +27,7 @@ class MonitorController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_monitor_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_monitor_new', methods: ['GET', 'POST'])]
     public function new(Request $request, MonitorRepository $monitorRepository): Response
     {
         $monitor = new Monitor();

@@ -24,13 +24,13 @@ class ProfilType extends AbstractType
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('profilePictureFile', FileType::class, [
-                'label' => 'Photo de profil',
+                'label' => 'Photo de couverture',
                 'attr' => ["class" => "form-input"],
                 'required' => false,
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('coverPictureFile', FileType::class, [
-                'label' => 'Photo de couverture',
+                'label' => 'Photo de profil',
                 'attr' => ["class" => "form-input"],
                 'required' => false,
                 "label_attr" => ["class" => "form-label"]

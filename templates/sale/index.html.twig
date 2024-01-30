@@ -63,7 +63,7 @@
                         {{ sale.resource.name }}
                     </td>
                 {% endif %}
-                <td class="p-2 text-lg hidden xl:table-cell">{{ profit_percentage }} %</td>
+                <td class="p-2 text-lg hidden xl:table-cell">{{ profit_percentage|number_format(0, '.', ' ') }} %</td>
                 <td class="p-2 text-lg hidden xl:table-cell">{{ sale.buyDate|date('d-m-Y') }}</td>
                 <td class="p-2 text-lg hidden xl:table-cell">{{ sale.sellDate ? sale.sellDate|date('d-m-Y') : 'Non vendu' }}</td>
                 <td class="p-2 text-lg hidden xl:table-cell">{{ sale.buyPrice|number_format(0, '.', ' ') }} k</td>
