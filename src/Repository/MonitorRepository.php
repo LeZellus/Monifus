@@ -63,7 +63,7 @@ class MonitorRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
-    public function findMonitorsByPeriod(User $user, int $resourceId, \DateTime $startDate, \DateTime $endDate): array
+    public function findMonitorsByPeriod(User $user, int $resourceId, \DateTimeImmutable $startDate, \DateTimeImmutable $endDate): array
     {
         $qb = $this->createQueryBuilder('m')
             ->where('m.user = :user')

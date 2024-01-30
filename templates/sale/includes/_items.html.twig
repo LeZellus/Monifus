@@ -15,33 +15,27 @@
     </div>
 
     <div class="wrapper wrapper-orange flex justify-between items-center text-white font-semibold">
-        <h2>A changer :</h2>
+        <h2>Total items :</h2>
 
-        <div class="flex items-center">
-            <p class="text-lg">
-                {% if noSales %}
-                    O
-                {% else %}
-                    {{ totalSellPrice|number_format(0, '.', ' ') }}
-                {% endif %}
-            </p>
-            <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
-        </div>
+        <p class="text-lg">
+            {% if noSales %}
+                O
+            {% else %}
+                3
+            {% endif %}
+        </p>
     </div>
 
     <div class="wrapper wrapper-red flex justify-between items-center text-white font-semibold">
-        <h2>A changer</h2>
+        <h2>Total items vendus :</h2>
 
-        <div class="flex items-center">
-            <p class="text-lg">
-                {% if noSales %}
-                    O
-                {% else %}
-                    {{ taxe|number_format(0, '.', ' ') }}
-                {% endif %}
-            </p>
-            <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
-        </div>
+        <p class="text-lg">
+            {% if noSales %}
+                O
+            {% else %}
+                2
+            {% endif %}
+        </p>
     </div>
 
     <div class="wrapper wrapper-blue flex justify-between items-center text-white font-semibold">

@@ -21,6 +21,7 @@ class MonsterRepository extends ServiceEntityRepository
         parent::__construct($registry, Monster::class);
     }
 
+    //Trouver les monstres qui ont un record
     public function findMonstersWithRecords()
     {
         return $this->createQueryBuilder('m')
@@ -32,10 +33,11 @@ class MonsterRepository extends ServiceEntityRepository
     }
 
 
+    //Compter le nombre de record pour chaque monstre qui possède un record
     public function countRecordsForEachMonster()
     {
         return $this->createQueryBuilder('m')
-            ->leftJoin('m.records', 'r')
+            ->innerJoin('m.records', 'r')
             ->select('m.id, m.name, COUNT(r.id) as recordCount')
             ->where('r.isApproved = true')
             ->groupBy('m.id')

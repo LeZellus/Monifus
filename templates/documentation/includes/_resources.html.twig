@@ -1,0 +1,26 @@
+<div id="section1" class="grid gap-8">
+    <h2 class="text-primary-400 dark:text-primary-400 text-4xl font-semibold mb-3">Ressources</h2>
+    <p>Le <strong>principe des ressources</strong> permet au joueur d'analyser l'évolution des prix au fil du temps. Cela offre une vision claire de la dynamique du marché.</p>
+
+    <p>Sur la page des ressources, si un moniteur est déjà configuré, vous verrez une présentation semblable à celle-ci :</p>
+    <img class="rounded-lg" src="{{ asset('documentation/resource_card.webp') }}" alt="Image d'une carte de ressource">
+
+    <p>Ces données représentent la moyenne des prix calculée à partir de tout les moniteurs pour une ressource donnée.</p>
+    <p>Par exemple, la moyenne des prix pour la ressource <em>"Épée de boisaille"</em> en lots de 1, 10 et 100 est respectivement de 6, 892 et 9786 kamas.</p>
+    <p>L'ajout de davantage de moniteurs pour une ressource spécifique permet d'obtenir des valeurs plus précises et fiables.</p>
+
+
+    <p>En cliquant sur la ressource, vous accédez aux différents graphiques de cette ressource au fil du temps.</p>
+    <p>Des graphiques seront également disponibles pour aider à déterminer si une ressource est en tendance haute ou basse.</p>
+    {#<p>Vous pourrez retrouver sur ce graphique les moniteurs ajoutés ainsi que leur date d'ajout et leur prix, par lots (A venir) :</p>
+    <img class="rounded-lg" src="{{ asset('documentation/resource_chart.webp') }}" alt="Image d'un graph de ressource">#}
+
+
+    <p>Vous pouvez créer un nouveau moniteur en utilisant le bouton suivant :</p>
+    <img class="rounded-lg" src="{{ asset('documentation/monitor_button.webp') }}" alt="Image d'un bouton de création de moniteur">
+
+    {#<div class="bg-yellow-100 p-4 rounded-lg mb-3 text-yellow-600 ">
+        <span class="text-md font-semibold uppercase">⚠️ Attention ⚠️</span>
+        <p>Une ressource ne commence à afficher des données qu'après la configuration du deuxième moniteur la concernant. Pour plus d'informations, voir la section <a class="text-tertiary-400 underline" href="#section1">Moniteurs</a>.</p>
+    </div>#}
+</div>
