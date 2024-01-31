@@ -30,7 +30,7 @@
     </script>
 </head>
 <body class="bg-cover bg-center bg-fixed py-16 lg:py-0 flex">
-    {% include('includes/darkmode.html.twig') %}
+    <div {{ react_component('ThemeToggle') }}></div>
     <section class="flex flex-col items-center justify-center py-8 mx-auto md:h-screen">
         {% block body %}
         {% endblock %}

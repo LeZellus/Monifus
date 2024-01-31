@@ -1,3 +1,4 @@
+import { registerReactControllerComponents } from '@symfony/ux-react';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -13,4 +14,9 @@ import './bootstrap';
 import 'flowbite';
 
 import feather from "feather-icons";
+
+
+registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
+
 feather.replace();
+

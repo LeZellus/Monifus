@@ -9,16 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Borel&family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
 
-    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
-        {{ encore_entry_script_tags('darkmode') }}
         {{ encore_entry_script_tags('randomAdvice') }}
     {% endblock %}
+
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -28,8 +27,9 @@
         }
     </script>
 </head>
+
 <body class="bg-cover bg-center bg-fixed flex">
-    {% include('includes/darkmode.html.twig') %}
+    <div {{ react_component('ThemeToggle') }}></div>
     {% include('includes/sidebar.html.twig') %}
     <section class="flex-1 w-[calc(100%-74px)] p-4 space-y-4 md:space-y-6">
         {% include('includes/navbar.html.twig') %}

@@ -21,7 +21,6 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('darkmode', './assets/styles/js/toggleDarkMode.js')
     .addEntry('monitorAjax', './assets/styles/js/monitorAjax.js')
     .addEntry('chartResource', './assets/styles/js/chartResource.js')
     .addEntry('randomAdvice', './assets/styles/js/randomAdvice.js')
@@ -31,6 +30,8 @@ Encore
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
+
+    .enableReactPreset()
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

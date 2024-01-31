@@ -10,7 +10,7 @@
 /vendor/
 .ftpquota
 .DS_Store
-.idea
+.idea/
 error.log
 ###< symfony/framework-bundle ###
 
