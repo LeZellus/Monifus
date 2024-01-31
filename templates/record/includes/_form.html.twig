@@ -1,6 +1,6 @@
 {{ form_start(form, {'attr': {'class': 'grid lg:gap-6 gap-4'}}) }}
-<div class="grid lg:grid-cols-3 gap-4 lg:gap-6">
-    <div>
+<div class="grid lg:grid-cols-2 gap-4 lg:gap-6">
+    <div class="lg:col-span-2">
         {{ form_label(form.monster, 'Choisissez le monstre ', {'label_attr': {'class': 'form-label'}}) }}
         {{ form_widget(form.monster) }}
     </div>
@@ -15,7 +15,7 @@
         {{ form_widget(form.videoLink) }}
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center lg:col-span-2">
         <button class="form-submit">{{ button_label|default('Créer') }}</button>
     </div>
 

@@ -1,35 +1,35 @@
 .wrapper {
-  @apply p-4 border drop-shadow-lg rounded-lg shadow overflow-hidden;
+  @apply p-4 border rounded-lg overflow-hidden;
 
   &-style {
-    @apply border-gray-300 bg-white dark:bg-gray-800 dark:border-gray-700 bg-opacity-20 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-gray-300 bg-white dark:bg-gray-800 dark:border-gray-700;
   }
   &-size {
     @apply md:mt-0 w-96;
   }
 
   &-green {
-    @apply border-green-300 bg-green-400 dark:bg-green-800 dark:border-green-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-green-300 bg-green-400 dark:bg-green-800 dark:border-green-700;
   }
 
   &-orange {
-    @apply border-orange-300 bg-orange-400 dark:bg-orange-800 dark:border-orange-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-orange-300 bg-orange-400 dark:bg-orange-800 dark:border-orange-700;
   }
 
   &-red {
-    @apply border-red-300 bg-red-400 dark:bg-red-800 dark:border-red-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-red-300 bg-red-400 dark:bg-red-800 dark:border-red-700;
   }
 
   &-blue {
-    @apply border-blue-300 bg-blue-400 dark:bg-blue-800 dark:border-blue-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-blue-300 bg-blue-400 dark:bg-blue-800 dark:border-blue-700;
   }
 
   &-pink {
-    @apply border-pink-300 bg-pink-400 dark:bg-pink-800 dark:border-pink-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-pink-300 bg-pink-400 dark:bg-pink-800 dark:border-pink-700;
   }
 
   &-yellow {
-    @apply border-yellow-300 bg-yellow-400 dark:bg-yellow-800 dark:border-yellow-700 bg-opacity-70 dark:bg-opacity-60 backdrop-blur-xl;
+    @apply border-yellow-300 bg-yellow-400 dark:bg-yellow-800 dark:border-yellow-700;
   }
 
   &-p-0 {
