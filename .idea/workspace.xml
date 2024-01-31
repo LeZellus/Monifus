@@ -6,28 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/invested.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/monitor_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/monitor_edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/monitor_index.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/profit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/profit_pending.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/profit_percent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/resource_card.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/resource_chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/sale_new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/sale_table.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/taxe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/total_items.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/total_items_sell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/total_sell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResourceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MonsterRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MonsterRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/documentation/includes/_monitors.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/documentation/includes/_monitors.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/documentation/includes/_resources.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/documentation/includes/_resources.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/documentation/includes/_sales.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/documentation/includes/_sales.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/record/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/record/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +159,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/mathe/IdeaProjects/Monifus/templates/documentation/includes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -245,7 +225,8 @@
       <workItem from="1706264112881" duration="18764000" />
       <workItem from="1706286521177" duration="1541000" />
       <workItem from="1706297354376" duration="460000" />
-      <workItem from="1706638850055" duration="14005000" />
+      <workItem from="1706638850055" duration="14307000" />
+      <workItem from="1706723455855" duration="503000" />
     </task>
     <servers />
   </component>

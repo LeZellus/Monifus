@@ -12,7 +12,7 @@
                 {% if app.user.profilePicture %}
                     <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset('images/profiles/' ~ app.user.profilePicture) }}')"></div>
                 {% else %}
-                    <p>Pas de photo de couverture.</p>
+                    <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset('uploads/profil_thumb.png') }}')"></div>
                 {% endif %}
                 <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
             </div>
@@ -22,9 +22,13 @@
             </div>
         </div>
         {% if app.user.coverPicture %}
-            <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center" style="background-image:url('{{ asset('images/covers/' ~ app.user.coverPicture) }}')"></div>
+            <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center p-4" style="background-image:url('{{ asset('images/covers/' ~ app.user.coverPicture) }}')">
+                <h2 class="text-xl font-extrabold">Photo de couverture</h2>
+            </div>
         {% else %}
-            <p>Pas de photo de couverture.</p>
+            <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center p-4" style="background-image:url('{{ asset('uploads/cover.webp') }}')">
+                <h2 class="text-xl font-extrabold">Photo de couverture</h2>
+            </div>
         {% endif %}
         <div class="wrapper wrapper-style lg:col-start-2 lg:col-span-2 grid gap-4 lg:gap-6">
             <h2 class="text-xl font-extrabold">Informations générales</h2>
