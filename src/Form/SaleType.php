@@ -17,25 +17,39 @@ class SaleType extends AbstractType
         $builder
             ->add('resource', ResourceAutocompleteField::class, [
                 'attr' => ['id' => 'tom-select'],
-                // autres options du champ
+                "required" => true,
             ])
             ->add('buyPrice', IntegerType::class, [
-                'attr' => ["class" => "form-input"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Prix d'achat en kamas"
+                ],
+                "required" => true,
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('sellPrice', IntegerType::class, [
-                'attr' => ["class" => "form-input"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Prix de vente en kamas"
+                ],
                 "label_attr" => ["class" => "form-label"],
                 "required" => false
             ])
             ->add('buyDate', DateTimeType::class, [
-                'attr' => ["class" => "form-input"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Date d'achat"
+                ],
                 "label_attr" => ["class" => "form-label"],
                 'data' => new \DateTime(), // Définit la date et l'heure actuelles comme valeur par défaut
                 'widget' => 'single_text',
+                "required" => true,
             ])
             ->add('sellDate', DateTimeType::class, [
-                'attr' => ["class" => "form-input"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Date de vente"
+                ],
                 "label_attr" => ["class" => "form-label"],
                 "required" => false
             ])

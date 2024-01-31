@@ -2,8 +2,8 @@
 
 
 
-<div class="grid lg:grid-cols-3 gap-4 lg:gap-6">
-    <div>
+<div class="grid lg:grid-cols-2 gap-4 lg:gap-6">
+    <div class="lg:col-span-2">
         {{ form_label(form.resource, 'Choisissez la ressource ', {'label_attr': {'class': 'form-label'}}) }}
         {{ form_widget(form.resource) }}
     </div>
@@ -33,7 +33,7 @@
         {{ form_widget(form.isSell) }}
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center lg:col-span-2">
         <button class="form-submit">{{ button_label|default('Créer') }}</button>
     </div>
 

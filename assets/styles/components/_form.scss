@@ -29,6 +29,11 @@
 
   &-label {
     @apply block font-medium mb-2 text-lg family;
+
+    &.required:after {
+      content: " *";
+      @apply text-red-500
+    }
   }
 
   &-checkbox {

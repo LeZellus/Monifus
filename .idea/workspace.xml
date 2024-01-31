@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dda4ab5e-8b6c-4794-a355-6f163a66f1d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/components/_form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SaleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SaleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sale/includes/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sale/includes/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sale/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sale/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +162,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/mathe/IdeaProjects/Monifus/templates/documentation/includes",
     "node.js.detected.package.eslint": "true",
@@ -226,7 +229,7 @@
       <workItem from="1706286521177" duration="1541000" />
       <workItem from="1706297354376" duration="460000" />
       <workItem from="1706638850055" duration="14307000" />
-      <workItem from="1706723455855" duration="503000" />
+      <workItem from="1706723455855" duration="1659000" />
     </task>
     <servers />
   </component>
