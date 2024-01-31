@@ -8,5 +8,5 @@
 ## Récupérer les ressources via l'API
 ``php bin/console app:fetch-dofus-data``
 
-
-
+## Trello (KanBan)
+https://trello.com/b/M0PVT2Ln/monifus
