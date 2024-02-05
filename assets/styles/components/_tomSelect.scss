@@ -14,5 +14,9 @@
 }
 
 .ts-wrapper.single .ts-control{
-  @apply dark:text-white bg-none drop-shadow-lg bg-gray-100 dark:bg-gray-700 p-4 dark:hover:bg-gray-800 hover:bg-gray-200 bg-opacity-50 dark:bg-opacity-100 rounded-lg shadow-none;
+  @apply dark:text-white bg-none bg-gray-100 p-4 dark:hover:bg-gray-800 hover:bg-gray-200 rounded-lg shadow-none;
 }
+
+.dark .ts-wrapper.single .ts-control {
+   @apply bg-gray-700;
+ }
