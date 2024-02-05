@@ -16,11 +16,9 @@ class RecordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('monster', EntityType::class, [
-                'class' => Monster::class,
-                'choice_label' => 'name',
+            ->add('monster', MonsterAutocompleteField::class, [
                 'attr' => ['id' => 'tom-select'],
-                'autocomplete' => true,
+                // autres options du champ
             ])
             ->add('time', TimeType::class, [
                 'attr' => ["class" => "form-input"],

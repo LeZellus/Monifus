@@ -16,9 +16,12 @@ class ResourceAutocompleteField extends AbstractType
     {
         $resolver->setDefaults([
             'class' => Resource::class,
-            'placeholder' => 'Choisissez une ressource',
+            'placeholder' => 'Sélectionnez une ressource',
             'choice_label' => 'name',
-
+            'tom_select_options' => [
+                'maxOptions' => null,
+                'loadingClass' => 'Chargement ...'
+            ],
             'query_builder' => function(ResourceRepository $resourceRepository) {
                 return $resourceRepository->createQueryBuilder('resource');
             },
