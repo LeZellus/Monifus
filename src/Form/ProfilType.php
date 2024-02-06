@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\UX\Dropzone\Form\DropzoneType;
 
 class ProfilType extends AbstractType
 {
@@ -23,15 +24,21 @@ class ProfilType extends AbstractType
                 'attr' => ["class" => "form-input"],
                 "label_attr" => ["class" => "form-label"]
             ])
-            ->add('profilePictureFile', FileType::class, [
+            ->add('profilePictureFile', DropzoneType::class, [
                 'label' => 'Photo de couverture',
-                'attr' => ["class" => "form-input"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Glissez déposez ou chargez un fichier"
+                ],
                 'required' => false,
                 "label_attr" => ["class" => "form-label"]
             ])
-            ->add('coverPictureFile', FileType::class, [
+            ->add('coverPictureFile', DropzoneType::class, [
                 'label' => 'Photo de profil',
-                'attr' => ["class" => "form-input"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Glissez déposez ou chargez un fichier"
+                ],
                 'required' => false,
                 "label_attr" => ["class" => "form-label"]
             ])

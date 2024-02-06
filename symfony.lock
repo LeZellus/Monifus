@@ -190,6 +190,9 @@
     "symfony/ux-chartjs": {
         "version": "v2.13.2"
     },
+    "symfony/ux-dropzone": {
+        "version": "v2.14.0"
+    },
     "symfony/ux-react": {
         "version": "2.14",
         "recipe": {

@@ -16,6 +16,15 @@
                 "fetch": "eager"
             }
         },
+        "@symfony/ux-dropzone": {
+            "dropzone": {
+                "enabled": true,
+                "fetch": "eager",
+                "autoimport": {
+                    "@symfony/ux-dropzone/dist/style.min.css": true
+                }
+            }
+        },
         "@symfony/ux-react": {
             "react": {
                 "enabled": true,
