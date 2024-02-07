@@ -6,6 +6,7 @@
 parameters:
 
 services:
+    App\Twig\MarkdownFilter: ~
     App\Service\ChartService:
         arguments:
             $parameters: '@parameter_bag'

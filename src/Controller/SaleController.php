@@ -13,30 +13,37 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SaleController extends AbstractController
 {
-    #[Route('/vente', name: 'app_sale')]
-    public function index(SaleRepository $saleRepository): Response
+    private EntityManagerInterface $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
     {
-        $sales = $saleRepository->findAll();
+        $this->entityManager = $entityManager;
+    }
+    #[Route('/vente', name: 'app_sale')]
+    public function index(): Response
+    {
+        $user = $this->getUser();
+        $sales = [];
+
         $totalBuyPrice = 0;
         $totalSellPrice = 0;
         $totalPendingPrice = 0;
-        $totalPendingProfit = 0;
-        $profit = 0;
-        $percentProfit = 0;
+
+        if($user) {
+            $sales = $this->entityManager->getRepository(Sale::class)->findBy(['user' => $user]);
+        }
 
         foreach ($sales as $sale) {
             $totalBuyPrice += $sale->getBuyPrice();
-            $totalSellPrice += $sale->getSellPrice();
-
-            if ($sale->isIsSell()) { // Seulement si la vente a été effectuée
-                $profit = $totalSellPrice - $totalBuyPrice;
-                $percentProfit = $profit / $totalBuyPrice * 100;
-            }
-            if (!$sale->isIsSell()) { // Seulement si la vente n'a pas été effectuée
+            if ($sale->isIsSell()) {
+                $totalSellPrice += $sale->getSellPrice();
+            } else {
                 $totalPendingPrice += $sale->getSellPrice();
             }
         }
 
+        $profit = $totalSellPrice - $totalBuyPrice;
+        $percentProfit = ($totalBuyPrice != 0) ? ($profit / $totalBuyPrice) * 100 : 0;
         $taxe = $totalSellPrice * 0.01;
 
         return $this->render('sale/index.html.twig', [
@@ -59,7 +66,7 @@ class SaleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
+            $sale->setUser($this->getUser());
             $entityManager->persist($sale);
             $entityManager->flush();
 

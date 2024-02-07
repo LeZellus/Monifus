@@ -33,6 +33,10 @@ class Sale
     #[ORM\JoinColumn(nullable: false)]
     private ?Resource $resource = null;
 
+    #[ORM\ManyToOne(inversedBy: 'sales')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,6 +110,18 @@ class Sale
     public function setResource(?Resource $resource): static
     {
         $this->resource = $resource;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
