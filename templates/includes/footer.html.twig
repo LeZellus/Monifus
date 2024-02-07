@@ -10,9 +10,9 @@
             <div class="max-w-screen-xl mx-auto space-y-8">
                 <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                     <a href="{{ path('app_home') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Accueil</a>
-                    {#<a href="{{ path('app_home') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Mentions légales</a>
-                    <a href="{{ path('app_home') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Protection données</a>
-                    <a href="{{ path('app_home') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">DevLogs</a>#}
+                    <a href="{{ path('app_protected_data') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Protection des données</a>
+                    <a href="{{ path('app_legal_mentions') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Mentions légales</a>
+                    {# <a href="{{ path('app_home') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">DevLogs</a>#}
                     <a href="{{ path('app_documentation') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Documentation</a>
                     <a href="{{ path('app_profil') }}" class="leading-6 hover:text-primary-400 transition duration-300 px-5 py-2">Profil</a>
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
