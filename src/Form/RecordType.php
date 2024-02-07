@@ -2,10 +2,9 @@
 
 namespace App\Form;
 
-use App\Entity\Monster;
 use App\Entity\Record;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,18 +15,18 @@ class RecordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('monster', MonsterAutocompleteField::class, [
-                'attr' => ['id' => 'tom-select'],
-                // autres options du champ
-            ])
+            ->add('monster', MonsterAutocompleteField::class)
             ->add('time', TimeType::class, [
-                'attr' => ["class" => "form-input"],
-                "label_attr" => ["class" => "form-label"],
-                'with_seconds' => true,
+                'label' => 'Temps du record',
             ])
             ->add('videoLink', UrlType::class, [
-                'attr' => ["class" => "form-input"],
-                "label_attr" => ["class" => "form-label"]
+                'label' => 'Lien de la vidéo',
+                'attr' => [
+                    'placeholder' => 'https://youtube.com/',
+                ]
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Créer',
             ])
         ;
     }

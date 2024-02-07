@@ -8,7 +8,7 @@
     {% endfor %}
 
     <div class="wrapper-style wrapper wrapper-size">
-        <img class="mx-auto w-16" src="{{ asset('uploads/logo.svg') }}" alt="Logo Monifus">
+        <img class="mx-auto w-12" src="{{ asset('uploads/logo.svg') }}" alt="Logo Monifus">
         <div class="space-y-4 md:space-y-6 mt-4">
             <h1 class="text-center">Inscription</h1>
 
@@ -17,35 +17,17 @@
                 <span class="font-base uppercase text-lg">M'inscire avec Discord</span>
             </a>
             {{ form_start(registrationForm, {'attr': {'class': 'form-wrapper'}}) }}
-            <div>
-                {{ form_label(registrationForm.email, 'Votre email') }}
-                {{ form_widget(registrationForm.email) }}
-                {{ form_errors(registrationForm.email) }}
-            </div>
-            <div>
-                {{ form_label(registrationForm.pseudonymeWebsite, 'Pseudo sur le site') }}
-                {{ form_widget(registrationForm.pseudonymeWebsite) }}
-                {{ form_errors(registrationForm.pseudonymeWebsite) }}
-            </div>
-            <div>
-                {{ form_label(registrationForm.pseudonymeDofus, 'Pseudo en jeu') }}
-                {{ form_widget(registrationForm.pseudonymeDofus) }}
-                {{ form_errors(registrationForm.pseudonymeDofus) }}
-            </div>
-            <div>
-                {{ form_label(registrationForm.plainPassword, 'Mot de passe') }}
-                {{ form_widget(registrationForm.plainPassword) }}
-                {{ form_errors(registrationForm.plainPassword) }}
-            </div>
-
-            <div class="flex justify-center">
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.pseudonymeWebsite) }}
+                {{ form_row(registrationForm.pseudonymeDofus) }}
+                {{ form_row(registrationForm.plainPassword) }}
                 {{ form_widget(registrationForm.submit) }}
-            </div>
-            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                Déjà inscrit? <a href="{{ path('app_login') }}"
-                                 class="font-medium text-primary-600 hover:underline dark:text-primary-500">Connexion</a>
-            </p>
             {{ form_end(registrationForm) }}
+
+            <p class="flex items-center justify-center">
+                Déjà inscrit? <a href="{{ path('app_login') }}"
+                                 class="font-medium text-primary-400 hover:underline dark:text-primary-400 ml-2">Connexion</a>
+            </p>
         </div>
     </div>
 {% endblock %}

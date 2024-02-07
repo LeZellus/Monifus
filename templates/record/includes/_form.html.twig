@@ -1,23 +1,11 @@
-{{ form_start(form, {'attr': {'class': 'grid lg:gap-6 gap-4'}}) }}
+{{ form_start(form, {'attr': {'class': 'form-wrapper'}}) }}
 <div class="grid lg:grid-cols-2 gap-4 lg:gap-6">
     <div class="lg:col-span-2">
-        {{ form_label(form.monster, 'Choisissez le monstre ', {'label_attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.monster) }}
+        {{ form_row(form.monster) }}
     </div>
-
-    <div>
-        {{ form_label(form.time, 'Temps', {'label_attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.time) }}
-    </div>
-
-    <div>
-        {{ form_label(form.videoLink, 'Lien de la vidéo youtube', {'label_attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.videoLink) }}
-    </div>
-
-    <div class="flex justify-center lg:col-span-2">
-        <button class="form-submit">{{ button_label|default('Créer') }}</button>
-    </div>
-
+    {{ form_row(form.time) }}
+    {{ form_row(form.videoLink) }}
+    {{ form_widget(form.submit) }}
 </div>
 {{ form_end(form) }}
+

@@ -1,0 +1,130 @@
+{% block form_row %}
+    <div class="grid gap-2">
+        {{ form_label(form) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
+
+{# Gestion des erreurs #}
+{% block form_errors %}
+    {% if errors|length > 0 %}
+        <ul class="text-red-400 text-xs">
+            {% for error in errors %}
+                <li>- {{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock form_errors %}
+
+{# Gestion des boutons #}
+{% block button_widget %}
+    {%- set type = type|default('button') -%}
+    {%- if type == 'submit' -%}
+        <div class="flex justify-center lg:col-span-2">
+            <button type="{{ type }}" {{ block('button_attributes') }} class="form-submit {{ attr.class|default('') }}">
+                {%- if label is not same as(false) -%}
+                    {{ label|trans({}, translation_domain) }}
+                {%- endif -%}
+            </button>
+        </div>
+    {%- else -%}
+        {# Autres types de boutons #}
+        <div class="flex justify-center lg:col-span-2">
+            <button type="{{ type }}" {{ block('button_attributes') }}>
+                {%- if label is not same as(false) -%}
+                    {{ label|trans({}, translation_domain) }}
+                {%- endif -%}
+            </button>
+        </div>
+    {%- endif -%}
+{% endblock button_widget %}
+
+{# Gestion des inputs text #}
+{% block text_widget %}
+    {% set type = type|default('text') %}
+    <div class="flex justify-center">
+        <input type="{{ type }}"
+                {{ block('widget_attributes') }}
+               class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+                {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+                {%- if required -%} required {%- endif -%}/>
+    </div>
+{% endblock %}
+
+{% block form_label %}
+    {% if label is not same as(false) %}
+        <label for="{{ id }}" class="form-label {{ label_attr.class|default('') }}">
+            {{ label }}
+        </label>
+    {% endif %}
+{% endblock form_label %}
+
+
+{% block time_widget %}
+    <input type="time"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block number_widget %}
+    <input type="number"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block url_widget %}
+    <input type="url"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block email_widget %}
+    <input type="email"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block password_widget %}
+    <input type="password"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block datetime_local_widget %}
+    <input type="datetime-local"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block datetime_widget %}
+    <input type="datetime-local"
+            {{ block('widget_attributes') }}
+           class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+            {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+{% block checkbox_widget %}
+    <input type="checkbox"
+           {{ block('widget_attributes') }}
+           class="form-checkbox inline-block"
+           {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+            {%- if checked -%} checked {%- endif -%}
+            {%- if required -%} required {%- endif -%}/>
+{% endblock %}
+
+
+
