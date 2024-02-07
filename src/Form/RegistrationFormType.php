@@ -4,16 +4,16 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
+use App\Validator\UniquePseudonyme;
 
 class RegistrationFormType extends AbstractType
 {
@@ -21,26 +21,27 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'attr' => ["class" => "form-input", "placeholder" => "exemple@exemple.fr"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "exemple@exemple.fr"
+                ],
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('pseudonymeWebsite', TextType::class, [
-                'attr' => ["class" => "form-input", "placeholder" => "Mathéo"],
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "Mathéo"
+                ],
                 "label_attr" => ["class" => "form-label"]
             ])
             ->add('pseudonymeDofus', TextType::class, [
-                'attr' => ["class" => "form-input", "placeholder" => "XxRamboPLxX"],
-                "label_attr" => ["class" => "form-label"]
-            ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'attr' => ["class" => "form-checkbox"],
-                'label' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez accepter nos conditions',
-                    ]),
+                'attr' => [
+                    "class" => "form-input",
+                    "placeholder" => "XxRamboPLxX"
                 ],
+                "label_attr" => [
+                    "class" => "form-label"
+                ]
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -50,14 +51,26 @@ class RegistrationFormType extends AbstractType
                 "label_attr" => ["class" => "form-label"],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Entrez un mot de passe',
+                        'message' => 'Renseignez un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 4096, // max length allowed by Symfony for security reasons
+                        'minMessage' => 'Votre mot de passe doit contenir minimum {{ limit }} caractères',
+                        'maxMessage' => 'Votre mot de passe doit contenir maximum {{ limit }} caractères',
                     ]),
+                    new Regex([
+                        'pattern' => '/[a-zA-Z]/',
+                        'message' => 'Votre mot de passe doit contenir une lettre'
+                    ]),
+                    new Regex([
+                        'pattern' => '/\d/',
+                        'message' => 'Votre mot de passe doit contenir un chiffre'
+                    ]),
+                    new Regex([
+                        'pattern' => '/[!@#$%^&*()_+\-=\[\]{};:|,.<>\/?]/',
+                        'message' => 'Votre mot de passe doit contenir un caractère spécial'
+                    ])
                 ],
             ])
             ->add('submit', SubmitType::class, [

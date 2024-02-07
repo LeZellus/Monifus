@@ -50,9 +50,17 @@ final class DiscordAuthenticator extends OAuth2Authenticator implements Authenti
 
                 $user = $this->userRepository->findOneBy(['discordId' => $discordUser->getId()]);
 
+                if(null === $user) {
+                    $user = $this->userRepository->findOneBy(['email' => $discordUser->getEmail()]);
+                }
+
                 if (null === $user) {
+                    $uniqId = uniqid();
+
                     $user = new User();
                     $user->setDiscordId($discordUser->getId());
+                    $user->setPseudonymeWebsite($uniqId);
+                    $user->setPseudonymeDofus($uniqId);
                     $user->setEmail($discordUser->getEmail());
                     $user->setPassword('');
 

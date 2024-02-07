@@ -25,6 +25,10 @@ module.exports = {
                     900: '#1E0B00',
                     950: '#020100'
                 },
+                'discord': {
+                    DEFAULT: '#7289DA',
+                    600: '#4664CE',
+                },
                 'bambeach': {
                     DEFAULT: '#C1B87F',
                     '50': '#F0EDDF',
