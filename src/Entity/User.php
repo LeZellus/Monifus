@@ -38,7 +38,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
-    #[UniquePseudonyme]
+    # #[UniquePseudonyme]
     #[Assert\NotBlank(message: 'Le pseudonyme du site ne peut pas être vide')]
     #[Assert\Length(
         min: 2,
@@ -49,7 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $pseudonymeWebsite = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[UniquePseudonyme]
+    # #[UniquePseudonyme]
     #[Assert\NotBlank(message: 'Le pseudonyme du site ne peut pas être vide')]
     #[Assert\Length(
         min: 2,
