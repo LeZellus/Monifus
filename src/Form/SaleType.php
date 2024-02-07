@@ -6,7 +6,8 @@ use App\Entity\Sale;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,48 +16,43 @@ class SaleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('resource', ResourceAutocompleteField::class, [
-                'attr' => ['id' => 'tom-select'],
-                "required" => true,
-            ])
-            ->add('buyPrice', IntegerType::class, [
+            ->add('resource', ResourceAutocompleteField::class)
+            ->add('buyPrice', NumberType::class, [
+                'label' => 'Prix d\'achat',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "Prix d'achat en kamas"
                 ],
                 "required" => true,
-                "label_attr" => ["class" => "form-label"]
             ])
-            ->add('sellPrice', IntegerType::class, [
+            ->add('sellPrice', NumberType::class, [
+                'label' => 'Prix de vente',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "Prix de vente en kamas"
                 ],
-                "label_attr" => ["class" => "form-label"],
                 "required" => false
             ])
             ->add('buyDate', DateTimeType::class, [
+                'label' => 'Date d\'achat',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "Date d'achat"
                 ],
-                "label_attr" => ["class" => "form-label"],
-                'data' => new \DateTime(), // Définit la date et l'heure actuelles comme valeur par défaut
+                'data' => new \DateTime(), // Défini la date et l'heure actuelles comme valeur par défaut
                 'widget' => 'single_text',
                 "required" => true,
             ])
             ->add('sellDate', DateTimeType::class, [
+                'label' => 'Date de vente',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "Date de vente"
                 ],
-                "label_attr" => ["class" => "form-label"],
                 "required" => false
             ])
             ->add('isSell', CheckboxType::class, [
-                'attr' => ["class" => "form-checkbox"],
-                "label_attr" => ["class" => "form-label"],
+                'label' => 'Vendu',
                 "required" => false
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Ajouter',
             ])
         ;
     }

@@ -5,15 +5,13 @@
 {% block body %}
     <h1 class="text-center">Profil</h1>
 
-
     <section class="grid gap-4 lg:gap-6 lg:grid-cols-3">
         <div class="wrapper wrapper-style grid gap-4 lg:gap-6">
             <div class="flex items-center">
-                {% if app.user.profilePicture %}
-                    <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset('images/profiles/' ~ app.user.profilePicture) }}')"></div>
-                {% else %}
-                    <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset('uploads/profil_thumb.png') }}')"></div>
-                {% endif %}
+
+                {% set profileImage = app.user.profilePicture ? ('images/profiles/' ~ app.user.profilePicture) : 'uploads/profil_thumb.png' %}
+                <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset(profileImage) }}')"></div>
+
                 <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
             </div>
             <div>
@@ -21,43 +19,20 @@
                 <p>Contact sur Dofus : <span class="text-primary-500 font-bold">{{ app.user.pseudonymeDofus }}</span></p>
             </div>
         </div>
-        {% if app.user.coverPicture %}
-            <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center p-4" style="background-image:url('{{ asset('images/covers/' ~ app.user.coverPicture) }}')">
-                <h2 class="text-xl font-extrabold">Photo de couverture</h2>
-            </div>
-        {% else %}
-            <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center p-4" style="background-image:url('{{ asset('uploads/cover.webp') }}')">
-                <h2 class="text-xl font-extrabold">Photo de couverture</h2>
-            </div>
-        {% endif %}
+
+        {% set coverImage = app.user.coverPicture ? ('images/covers/' ~ app.user.coverPicture) : 'uploads/cover.webp' %}
+        <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center p-4" style="background-image:url('{{ asset(coverImage) }}')">
+            <h2 class="text-xl font-extrabold">Photo de couverture</h2>
+        </div>
+
         <div class="wrapper wrapper-style lg:col-start-2 lg:col-span-2 grid gap-4 lg:gap-6">
             <h2 class="text-xl font-extrabold">Informations générales</h2>
             {{ form_start(editForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
-            <div>
-                {{ form_label(editForm.pseudonymeWebsite, 'Pseudo sur le site') }}
-                {{ form_widget(editForm.pseudonymeWebsite) }}
-                {{ form_errors(editForm.pseudonymeWebsite) }}
-            </div>
-            <div>
-                {{ form_label(editForm.pseudonymeDofus, 'Pseudo en jeu') }}
-                {{ form_widget(editForm.pseudonymeDofus) }}
-                {{ form_errors(editForm.pseudonymeDofus) }}
-            </div>
-            <div>
-                {{ form_label(editForm.profilePictureFile, 'Photo de profil') }}
-                {{ form_widget(editForm.profilePictureFile) }}
-                {{ form_errors(editForm.profilePictureFile) }}
-            </div>
-            <div>
-                {{ form_label(editForm.coverPictureFile, 'Photo de couverture') }}
-                {{ form_widget(editForm.coverPictureFile) }}
-                {{ form_errors(editForm.coverPictureFile) }}
-            </div>
-
-            <div>
-                {{ form_label(editForm.submit, 'Pseudo en jeu') }}
+                {{ form_row(editForm.pseudonymeWebsite) }}
+                {{ form_row(editForm.pseudonymeDofus) }}
+                {{ form_row(editForm.profilePictureFile) }}
+                {{ form_row(editForm.coverPictureFile) }}
                 {{ form_widget(editForm.submit) }}
-            </div>
             {{ form_end(editForm) }}
         </div>
     </section>

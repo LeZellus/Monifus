@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authenticator\AbstractLoginFormAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
@@ -52,5 +53,15 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
+    }
+
+    public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
+    {
+        $message = "Les identifiants sont incorrects"; // Personnalisez ce message
+
+        // Utiliser la session pour stocker le message d'erreur
+        $request->getSession()->set('authentication_error_message', $message);
+
+        return new RedirectResponse($this->urlGenerator->generate('app_login'));
     }
 }

@@ -21,34 +21,27 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'label' => 'Email',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "exemple@exemple.fr"
                 ],
-                "label_attr" => ["class" => "form-label"]
             ])
             ->add('pseudonymeWebsite', TextType::class, [
+                'label' => 'Pseudonyme du site',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "Mathéo"
                 ],
-                "label_attr" => ["class" => "form-label"]
             ])
             ->add('pseudonymeDofus', TextType::class, [
+                'label' => 'Pseudonyme sur Dofus',
                 'attr' => [
-                    "class" => "form-input",
                     "placeholder" => "XxRamboPLxX"
                 ],
-                "label_attr" => [
-                    "class" => "form-label"
-                ]
             ])
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+                'label' => 'Mot de passe',
                 'mapped' => false,
-                'attr' => ["class" => "form-input", "placeholder" => "**************", 'autocomplete' => 'new-password'],
-                "label_attr" => ["class" => "form-label"],
+                'attr' => ["placeholder" => "**************", 'autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Renseignez un mot de passe',
@@ -75,7 +68,6 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Inscription',
-                'attr' => ['class' => 'form-submit']
             ])
         ;
     }

@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-<html class="dark">
+<html class="dark" lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Monifus, le moniteur Dofus{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" type="image/png" sizes="32x32"
-          href="{{ asset('uploads/favicon_package/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-          href="{{ asset('uploads/favicon_package/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('uploads/favicon_package/site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('uploads/favicon_package/safari-pinned-tab.svg') }}" color="#5bbad5">
-    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    <link rel="icon" href="{{ asset('uploads/logo.ico') }}" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
+
+    <!-- Primary Meta Tags -->
+    <title>Monifus | Le Moniteur Dofus</title>
+    <meta name="title" content="Monifus | Le Moniteur Dofus" />
+    <meta name="description" content="Monifus est un fansite regroupant divers outils pour les joueurs de Dofus." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://monifus.fr/" />
+    <meta property="og:title" content="Monifus | Le Moniteur Dofus" />
+    <meta property="og:description" content="Monifus est un fansite regroupant divers outils pour les joueurs de Dofus." />
+    <meta property="og:image" content="{{ asset('uploads/banner.png') }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://monifus.fr/" />
+    <meta property="twitter:title" content="Monifus | Le Moniteur Dofus" />
+    <meta property="twitter:description" content="Monifus est un fansite regroupant divers outils pour les joueurs de Dofus." />
+    <meta property="twitter:image" content="{{ asset('uploads/banner.png') }}" />
+
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
