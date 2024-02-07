@@ -11,6 +11,7 @@
         <img class="mx-auto w-16" src="{{ asset('uploads/logo.svg') }}" alt="Logo Monifus">
         <div class="space-y-4 md:space-y-6 mt-4">
             <h1 class="text-center">Inscription</h1>
+            <a href="{{ path('oauth_discord_start') }}">Discord</a>
             {{ form_start(registrationForm, {'attr': {'class': 'form-wrapper'}}) }}
             <div>
                 {{ form_label(registrationForm.email, 'Votre email') }}

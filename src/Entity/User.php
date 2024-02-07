@@ -71,6 +71,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Sale::class)]
     private Collection $sales;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $discordId = null;
+
 
     public function __construct()
     {
@@ -79,6 +82,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->monitors = new ArrayCollection();
         $this->records = new ArrayCollection();
         $this->sales = new ArrayCollection();
+
+        // Valeur par défaut pour pseudonymeWebsite et pseudonymeDofus
+        $this->pseudonymeWebsite = 'Anonyme' . uniqid();
+        $this->pseudonymeDofus = 'Anonyme' . uniqid();
+        $this->roles = ["ROLE_USER"];
     }
 
     public function getId(): ?int
@@ -379,6 +387,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $sale->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDiscordId(): ?int
+    {
+        return $this->discordId;
+    }
+
+    public function setDiscordId(int $discordId): static
+    {
+        $this->discordId = $discordId;
 
         return $this;
     }
