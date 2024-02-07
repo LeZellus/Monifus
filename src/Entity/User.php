@@ -12,9 +12,11 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator\UniquePseudonyme;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'Un compte existe déjà avec cet email')]
 #[Vich\Uploadable]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -24,30 +26,50 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank(message: 'L\'email du site ne peut pas être vide')]
+    #[Assert\Email(message: 'Votre email n\'est pas valide')]
     private ?string $email = null;
 
     #[ORM\Column]
+    #[Assert\Type("array")]
     private array $roles = [];
 
-    /**
-     * @var string The hashed password
-     */
     #[ORM\Column]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[UniquePseudonyme]
+    #[Assert\NotBlank(message: 'Le pseudonyme du site ne peut pas être vide')]
+    #[Assert\Length(
+        min: 2,
+        max: 20,
+        minMessage: 'Minimum  {{ limit }} caractères',
+        maxMessage: 'Maximum {{ limit }} caractères',
+    )]
     private ?string $pseudonymeWebsite = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[UniquePseudonyme]
+    #[Assert\NotBlank(message: 'Le pseudonyme du site ne peut pas être vide')]
+    #[Assert\Length(
+        min: 2,
+        max: 20,
+        minMessage: 'Minimum  {{ limit }} caractères',
+        maxMessage: 'Maximum {{ limit }} caractères',
+    )]
+    #[Assert\Type("string", message: 'Le pseudonyme ne doit contenir que des lettres')]
     private ?string $pseudonymeDofus = null;
 
     #[ORM\Column]
+    #[Assert\Type("\DateTimeImmutable")]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
+    #[Assert\Type("\DateTimeImmutable")]
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(type: 'boolean')]
+    #[Assert\Type("bool")]
     private $isVerified = false;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Monitor::class, orphanRemoval: true)]
@@ -60,16 +82,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $profilePicture = null;
 
     #[Vich\UploadableField(mapping: 'user_profile', fileNameProperty: 'profilePicture')]
+    #[Assert\File(
+        maxSize: "2M",
+        mimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/webp",
+            "image/gif",
+            "image/svg+xml",
+        ],
+        mimeTypesMessage: 'Le fichier n\'est pas une image',
+    )]
     private ?File $profilePictureFile = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $coverPicture = null;
 
     #[Vich\UploadableField(mapping: 'user_cover', fileNameProperty: 'coverPicture')]
+    #[Assert\File(
+        maxSize: "2M",
+        mimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/webp",
+            "image/gif",
+            "image/svg+xml",
+        ],
+        mimeTypesMessage: 'Le fichier n\'est pas une image',
+    )]
     private ?File $coverPictureFile = null;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Sale::class)]
     private Collection $sales;
+
+    #[ORM\Column(nullable: true)]
+    #[Assert\Type("integer")]
+    private ?int $discordId = null;
 
 
     public function __construct()
@@ -79,6 +127,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->monitors = new ArrayCollection();
         $this->records = new ArrayCollection();
         $this->sales = new ArrayCollection();
+
+        $this->roles = ["ROLE_USER"];
     }
 
     public function getId(): ?int
@@ -379,6 +429,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $sale->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDiscordId(): ?int
+    {
+        return $this->discordId;
+    }
+
+    public function setDiscordId(int $discordId): static
+    {
+        $this->discordId = $discordId;
 
         return $this;
     }

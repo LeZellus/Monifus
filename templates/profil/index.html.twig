@@ -36,18 +36,22 @@
             <div>
                 {{ form_label(editForm.pseudonymeWebsite, 'Pseudo sur le site') }}
                 {{ form_widget(editForm.pseudonymeWebsite) }}
+                {{ form_errors(editForm.pseudonymeWebsite) }}
             </div>
             <div>
                 {{ form_label(editForm.pseudonymeDofus, 'Pseudo en jeu') }}
                 {{ form_widget(editForm.pseudonymeDofus) }}
+                {{ form_errors(editForm.pseudonymeDofus) }}
             </div>
             <div>
                 {{ form_label(editForm.profilePictureFile, 'Photo de profil') }}
                 {{ form_widget(editForm.profilePictureFile) }}
+                {{ form_errors(editForm.profilePictureFile) }}
             </div>
             <div>
                 {{ form_label(editForm.coverPictureFile, 'Photo de couverture') }}
                 {{ form_widget(editForm.coverPictureFile) }}
+                {{ form_errors(editForm.coverPictureFile) }}
             </div>
 
             <div>
