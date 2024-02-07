@@ -68,6 +68,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Vich\UploadableField(mapping: 'user_cover', fileNameProperty: 'coverPicture')]
     private ?File $coverPictureFile = null;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Sale::class)]
+    private Collection $sales;
+
 
     public function __construct()
     {
@@ -75,6 +78,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->updatedAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->monitors = new ArrayCollection();
         $this->records = new ArrayCollection();
+        $this->sales = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -347,5 +351,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->pseudonymeWebsite,
             $this->roles
         ] = $data;
+    }
+
+    /**
+     * @return Collection<int, Sale>
+     */
+    public function getSales(): Collection
+    {
+        return $this->sales;
+    }
+
+    public function addSale(Sale $sale): static
+    {
+        if (!$this->sales->contains($sale)) {
+            $this->sales->add($sale);
+            $sale->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSale(Sale $sale): static
+    {
+        if ($this->sales->removeElement($sale)) {
+            // set the owning side to null (unless already changed)
+            if ($sale->getUser() === $this) {
+                $sale->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
