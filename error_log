@@ -1,0 +1,10 @@
+[31-Jan-2024 21:56:04 UTC] [critical] Error thrown while running command "'cache:cleatr'". Message: "Command "cache:cleatr" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    cache:pool:clear
+    cache:pool:delete
+    cache:pool:invalidate-tags
+    cache:pool:list
+    cache:pool:prune
+    cache:warmup"
