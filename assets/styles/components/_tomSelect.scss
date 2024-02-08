@@ -1,30 +1,43 @@
+.ts-control {
+  @apply rounded-lg overflow-hidden bg-none bg-gray-100 p-2.5;
+}
+
 .ts-dropdown {
-  @apply rounded-lg overflow-hidden border-none;
+  @apply border-none rounded-lg overflow-hidden;
 }
 
-.ts-dropdown-content > div {
-  @apply dark:text-white drop-shadow-lg bg-white dark:bg-gray-900 p-4;
+.ts-dropdown .item {
+  @apply dark:text-white;
 }
 
-.ts-dropdown [data-selectable].option {
-  @apply dark:text-white drop-shadow-lg bg-gray-100 dark:bg-gray-900 p-4 dark:hover:bg-gray-800 hover:bg-gray-200 cursor-pointer bg-opacity-50 dark:bg-opacity-100;
-}
-.ts-wrapper.single.input-active .ts-control, .ts-wrapper.single.input-active .ts-control input {
-  @apply dark:text-white shadow-none rounded-lg;
+.ts-dropdown .option{
+  @apply p-4 bg-gray-100 dark:bg-gray-900 dark:text-white;
+
+  &:hover{
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
 }
 
-.ts-wrapper.single .ts-control{
-  @apply dark:text-white bg-none bg-gray-100 p-4 dark:hover:bg-gray-800 hover:bg-gray-200 rounded-lg shadow-none;
+.ts-wrapper.single .ts-control {
+  @apply shadow-none bg-none;
 }
 
-.ts-dropdown.single {
-  @apply overflow-hidden;
-}
-
-.dark .ts-wrapper.single .ts-control {
-  @apply bg-gray-900 hover:bg-gray-700 transition duration-300 border border-gray-600 p-2.5 #{!important};
+.ts-wrapper.single .ts-control, .ts-dropdown.single {
+  @apply border-gray-300 dark:border-gray-600;
 }
 
 .ts-control, .ts-wrapper.single.input-active .ts-control {
-  @apply bg-gray-100 hover:bg-white border-gray-300 p-2.5 #{!important};
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+.ts-dropdown, .ts-control, .ts-control input {
+  @apply text-sm;
+}
+
+.dark .ts-control, .dark .ts-wrapper.single.input-active .ts-control {
+  @apply rounded-lg overflow-hidden;
+}
+
+.ts-control, .ts-wrapper.single.input-active .ts-control {
+  @apply rounded-lg overflow-hidden;
 }
