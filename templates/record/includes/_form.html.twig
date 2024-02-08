@@ -5,7 +5,9 @@
     </div>
     {{ form_row(form.time) }}
     {{ form_row(form.videoLink) }}
-    {{ form_widget(form.submit) }}
+    <div class="lg:col-span-2">
+        {{ form_widget(form.submit) }}
+    </div>
 </div>
 {{ form_end(form) }}
 

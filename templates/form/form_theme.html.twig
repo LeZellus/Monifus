@@ -21,7 +21,7 @@
 {% block button_widget %}
     {%- set type = type|default('button') -%}
     {%- if type == 'submit' -%}
-        <div class="flex justify-center lg:col-span-2">
+        <div class="flex justify-center">
             <button type="{{ type }}" {{ block('button_attributes') }} class="form-submit {{ attr.class|default('') }}">
                 {%- if label is not same as(false) -%}
                     {{ label|trans({}, translation_domain) }}
@@ -30,7 +30,7 @@
         </div>
     {%- else -%}
         {# Autres types de boutons #}
-        <div class="flex justify-center lg:col-span-2">
+        <div class="flex justify-center">
             <button type="{{ type }}" {{ block('button_attributes') }}>
                 {%- if label is not same as(false) -%}
                     {{ label|trans({}, translation_domain) }}

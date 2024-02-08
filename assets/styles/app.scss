@@ -24,3 +24,7 @@ h1, h2, h3, h4, .family {
 h2 {
   @apply  dark:text-gray-200;
 }
+
+.link {
+  @apply text-primary-400 no-underline hover:underline transition duration-300 text-sm font-light;
+}

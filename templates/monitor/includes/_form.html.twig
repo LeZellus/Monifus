@@ -1,11 +1,13 @@
 {{ form_start(form, {'attr': {'class': 'form-wrapper'}}) }}
 <div class="grid lg:grid-cols-3 gap-4 lg:gap-6">
-    <div class="lg:col-span-2">
+    <div class="lg:col-span-3">
         {{ form_row(form.resource) }}
     </div>
     {{ form_row(form.pricePer1) }}
     {{ form_row(form.pricePer10) }}
     {{ form_row(form.pricePer100) }}
-    {{ form_widget(form.submit) }}
+    <div class="lg:col-span-3">
+        {{ form_widget(form.submit) }}
+    </div>
 </div>
 {{ form_end(form) }}
