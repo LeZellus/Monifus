@@ -21,11 +21,10 @@
   @apply overflow-hidden;
 }
 
-.ts-control, .ts-wrapper.single.input-active .ts-control {
-  @apply bg-gray-100 hover:bg-white border-gray-300 p-2.5 #{!important};
-}
-
-.dark .ts-control,.dark .ts-wrapper.single.input-active .ts-control {
+.dark .ts-wrapper.single .ts-control {
   @apply bg-gray-900 hover:bg-gray-700 transition duration-300 border border-gray-600 p-2.5 #{!important};
 }
 
+.ts-control, .ts-wrapper.single.input-active .ts-control {
+  @apply bg-gray-100 hover:bg-white border-gray-300 p-2.5 #{!important};
+}
