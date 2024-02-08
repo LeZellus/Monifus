@@ -1,43 +1,23 @@
 .ts-control {
-  @apply rounded-lg overflow-hidden bg-none bg-gray-100 p-2.5;
+  @apply border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-lg gap-2;
+}
+
+.ts-wrapper.plugin-remove_button .item {
+  @apply rounded-md;
+}
+
+.ts-wrapper.plugin-remove_button .item .remove {
+  @apply border-none text-lg leading-none py-1 rounded-r-lg;
 }
 
 .ts-dropdown {
-  @apply border-none rounded-lg overflow-hidden;
+  @apply rounded-lg overflow-hidden border-none shadow-none bg-gray-100 dark:bg-gray-900 dark:text-white;
 }
 
-.ts-dropdown .item {
-  @apply dark:text-white;
+.ts-dropdown [data-selectable].option {
+  @apply p-4;
 }
 
-.ts-dropdown .option{
-  @apply p-4 bg-gray-100 dark:bg-gray-900 dark:text-white;
-
-  &:hover{
-    @apply bg-gray-200 dark:bg-gray-700;
-  }
-}
-
-.ts-wrapper.single .ts-control {
-  @apply shadow-none bg-none;
-}
-
-.ts-wrapper.single .ts-control, .ts-dropdown.single {
-  @apply border-gray-300 dark:border-gray-600;
-}
-
-.ts-control, .ts-wrapper.single.input-active .ts-control {
-  @apply bg-gray-100 dark:bg-gray-900;
-}
-
-.ts-dropdown, .ts-control, .ts-control input {
-  @apply text-sm;
-}
-
-.dark .ts-control, .dark .ts-wrapper.single.input-active .ts-control {
-  @apply rounded-lg overflow-hidden;
-}
-
-.ts-control, .ts-wrapper.single.input-active .ts-control {
-  @apply rounded-lg overflow-hidden;
+.ts-dropdown .create:hover, .ts-dropdown .option:hover, .ts-dropdown .active {
+  @apply bg-gray-200 dark:bg-gray-800 dark:text-white;
 }
