@@ -3,12 +3,13 @@
     <div class="lg:col-span-2">
         {{ form_row(form.resource) }}
     </div>
-
     {{ form_row(form.buyPrice) }}
     {{ form_row(form.sellPrice) }}
     {{ form_row(form.buyDate) }}
     {{ form_row(form.sellDate) }}
     {{ form_row(form.isSell) }}
-    {{ form_widget(form.submit) }}
+    <div class="lg:col-span-2">
+        {{ form_widget(form.submit) }}
+    </div>
 </div>
 {{ form_end(form) }}
