@@ -35,6 +35,7 @@
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
         {{ encore_entry_script_tags('randomAdvice') }}
+        {{ encore_entry_script_tags('popup') }}
     {% endblock %}
 
     <script>
@@ -51,6 +52,17 @@
     <div {{ react_component('ThemeToggle') }}></div>
     {% include('includes/sidebar.html.twig') %}
     {% include('includes/footer.html.twig') %}
+
+    <div id="popup" class="fixed items-center justify-center bg-gray-800 bg-opacity-50 z-50 h-screen w-screen top-0 left-0 hidden">
+        <div class="wrapper wrapper-style m-4 grid gap-4 max-w-xs">
+            <img class="w-8 h-8 m-auto" src="{{ asset(('uploads/logo.svg')) }}" alt="Logo Monifus">
+            <p class="">Le site est en cours de développement, vous pouvez donc rencontrer des bugs. Merci de le signaler via le <a class="text-discord font-semibold" href="https://discord.gg/KVZP5Cyf9Q">discord</a> ou d'attendre un correctif. Merci pour votre compréhension. 🧡</p>
+            <hr>
+            <p>L'équipe Monifus.</p>
+            <button class="form-submit popup-close">OK</button>
+        </div>
+    </div>
+
     <section class="flex-1 w-[calc(100%-74px)] p-4 space-y-4 md:space-y-6 pb-8">
         {% include('includes/navbar.html.twig') %}
         {% block body %}

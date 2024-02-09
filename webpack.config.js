@@ -24,6 +24,7 @@ Encore
     .addEntry('monitorAjax', './assets/styles/js/monitorAjax.js')
     .addEntry('chartResource', './assets/styles/js/chartResource.js')
     .addEntry('randomAdvice', './assets/styles/js/randomAdvice.js')
+    .addEntry('popup', './assets/styles/js/popup.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
