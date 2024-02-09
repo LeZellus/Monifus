@@ -2,16 +2,22 @@
 
 namespace App\Controller;
 
-use App\Repository\ResourceRepository;
+use App\Service\BreadcrumbService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Cache\CacheInterface;
 
 class HomeController extends AbstractController
 {
+    private BreadcrumbService $breadcrumbService;
+
+    public function __construct(BreadcrumbService $breadcrumbService)
+    {
+        $this->breadcrumbService = $breadcrumbService;
+    }
+
     #[Route('/', name: 'app_home')]
-    public function index(CacheInterface $cache): Response
+    public function index(): Response
     {
         return $this->render('home/index.html.twig');
     }

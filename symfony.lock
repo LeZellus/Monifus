@@ -50,6 +50,9 @@
             "./config/packages/knpu_oauth2_client.yaml"
         ]
     },
+    "mhujer/breadcrumbs-bundle": {
+        "version": "1.5.9"
+    },
     "symfony/apache-pack": {
         "version": "1.0",
         "recipe": {

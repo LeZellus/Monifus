@@ -1,0 +1,11 @@
+.breadcrumb {
+  @apply flex items-center space-x-2;
+
+  &-item {
+    @apply text-xs;
+
+    &.active {
+      @apply text-primary-400 cursor-not-allowed;
+    }
+  }
+}

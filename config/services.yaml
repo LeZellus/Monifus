@@ -7,6 +7,9 @@ parameters:
 
 services:
     App\Twig\MarkdownFilter: ~
+    App\Service\BreadcrumbService:
+        arguments:
+            $breadcrumbs: '@white_october_breadcrumbs'
     App\Service\ChartService:
         arguments:
             $parameters: '@parameter_bag'

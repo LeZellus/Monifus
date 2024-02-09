@@ -7,6 +7,7 @@ use App\Entity\Record;
 use App\Form\RecordType;
 use App\Repository\MonsterRepository;
 use App\Repository\RecordRepository;
+use App\Service\BreadcrumbService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,12 +16,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RecordController extends AbstractController
 {
+    private BreadcrumbService $breadcrumbService;
+
+    public function __construct(BreadcrumbService $breadcrumbService)
+    {
+        $this->breadcrumbService = $breadcrumbService;
+    }
+
     #[Route('/record', name: 'app_record')]
     public function index(MonsterRepository $monsterRepository, RecordRepository $recordRepository): Response
     {
         $monsters = $monsterRepository->findMonstersWithRecords();
         $bestRecords = $recordRepository->findBestTimeForAllMonsters();
         $recordCounts = $monsterRepository->countRecordsForEachMonster();
+
+        $this->breadcrumbService->setBreadcrumbs("Records", "");
 
         return $this->render('record/index.html.twig', [
             'monsters' => $monsters,
@@ -45,6 +55,9 @@ class RecordController extends AbstractController
             return $this->redirectToRoute('app_record'); // Modifiez la route selon vos besoins
         }
 
+        $this->breadcrumbService->setBreadcrumbs("Records", "");
+        $this->breadcrumbService->setBreadcrumbs("Créer", "");
+
         return $this->render('record/new.html.twig', [
             'form' => $form->createView(),
         ]);
@@ -62,6 +75,9 @@ class RecordController extends AbstractController
             return $this->redirectToRoute('app_record', [], Response::HTTP_SEE_OTHER);
         }
 
+        $this->breadcrumbService->setBreadcrumbs("Records", "/record");
+        $this->breadcrumbService->setBreadcrumbs("Editer", "");
+
         return $this->render('record/edit.html.twig', [
             'form' => $form,
         ]);
@@ -71,6 +87,10 @@ class RecordController extends AbstractController
     public function show(int $id, RecordRepository $recordRepository): Response
     {
         $record = $recordRepository->find($id);
+        $recordMonsterName = $record->getMonster()->getName();
+
+        $this->breadcrumbService->setBreadcrumbs("Record", "/record");
+        $this->breadcrumbService->setBreadcrumbs($recordMonsterName, "");
 
         return $this->render('record/show.html.twig', [
             'record' => $record,

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Resource;
+use App\Service\BreadcrumbService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Monitor;
@@ -16,11 +17,18 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/monitor')]
 class MonitorController extends AbstractController
 {
+    private BreadcrumbService $breadcrumbService;
+    public function __construct(BreadcrumbService $breadcrumbService)
+    {
+        $this->breadcrumbService = $breadcrumbService;
+    }
     #[Route('/', name: 'app_monitor_index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser(); // Assurez-vous que l'authentification est configurée
         $resources = $entityManager->getRepository(Resource::class)->findResourcesWithMonitors($user);
+
+        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
 
         return $this->render('monitor/index.html.twig', [
             'resources' => $resources,
@@ -43,6 +51,9 @@ class MonitorController extends AbstractController
 
             return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
         }
+
+        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "/monitor");
+        $this->breadcrumbService->setBreadcrumbs("Nouveau", "");
 
         return $this->render('monitor/new.html.twig', [
             'monitor' => $monitor,
