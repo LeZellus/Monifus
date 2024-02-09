@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Sale;
 use App\Form\SaleType;
 use App\Repository\SaleRepository;
+use App\Service\BreadcrumbService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,10 +15,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class SaleController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
+    private BreadcrumbService $breadcrumbService;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManagerInterface $entityManager, BreadcrumbService $breadcrumbService)
     {
         $this->entityManager = $entityManager;
+        $this->breadcrumbService = $breadcrumbService;
     }
     #[Route('/vente', name: 'app_sale')]
     public function index(): Response
@@ -46,6 +49,8 @@ class SaleController extends AbstractController
         $percentProfit = ($totalBuyPrice != 0) ? ($profit / $totalBuyPrice) * 100 : 0;
         $taxe = $totalSellPrice * 0.01;
 
+        $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
+
         return $this->render('sale/index.html.twig', [
             'sales' => $sales,
             'totalBuyPrice' => $totalBuyPrice,
@@ -73,6 +78,9 @@ class SaleController extends AbstractController
             return $this->redirectToRoute('app_sale', [], Response::HTTP_SEE_OTHER);
         }
 
+        $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
+        $this->breadcrumbService->setBreadcrumbs("Nouveau", '');
+
         return $this->render('sale/new.html.twig', [
             'form' => $form,
         ]);
@@ -90,6 +98,9 @@ class SaleController extends AbstractController
 
             return $this->redirectToRoute('app_sale', [], Response::HTTP_SEE_OTHER);
         }
+
+        $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
+        $this->breadcrumbService->setBreadcrumbs("Editer", '');
 
         return $this->render('sale/edit.html.twig', [
             'form' => $form,
