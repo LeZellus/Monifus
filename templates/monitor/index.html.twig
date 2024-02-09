@@ -15,7 +15,7 @@
                 {% for resource in resources %}
                     <!-- Ajouter d'autres détails si nécessaire -->
                     <button type="button" class="loadMonitorsBtn flex justify-between w-full items-center resource wrapper wrapper-style p-4" data-resource-id="{{ resource.id }}">
-                        <h2 class="uppercase font-bold text-xl">{{ resource.name }}</h2>
+                        <span class="uppercase font-bold text-xl">{{ resource.name }}</span>
                         <img class="w-10 h-10" src="{{ resource.imgUrl }}" alt="Icone ressource">
                     </button>
                 {% endfor %}

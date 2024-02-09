@@ -28,3 +28,13 @@ h2 {
 .link {
   @apply text-primary-400 no-underline hover:underline transition duration-300 text-sm font-light;
 }
+
+tbody {
+
+  tr {
+
+    &:last-child {
+      @apply border-b-0;
+    }
+  }
+}
