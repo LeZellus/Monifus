@@ -11,7 +11,6 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
-import 'flowbite';
 
 import feather from "feather-icons";
 

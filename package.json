@@ -36,7 +36,6 @@
     "dependencies": {
         "chartjs-adapter-moment": "^1.0.1",
         "feather-icons": "^4.29.0",
-        "flowbite": "^1.5.3",
         "moment": "^2.30.1",
         "postcss": "^8.0.9"
     }

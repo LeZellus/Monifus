@@ -4,68 +4,64 @@
 
 {% block body %}
     <h1 class="text-center">Documentation</h1>
-    <section class="wrapper wrapper-style">
-        <div class="grid gap-32">
-            <nav class="grid gap-2">
-                <h2 class="text-primary-400 dark:text-primary-400">Sommaire :</h2>
-                <ul class="grid gap-2">
-                    <li>
-                        <a href="#section1" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                            <span>Ressources</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#section2" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                            <span>Moniteurs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#section3" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                            <span>Ventes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#section4" class="text-tertiary-400 hover:text-blue-700 flex items-center">
-                            <i class="w-4 h-4 mr-2" data-feather="award"></i>
-                            <span>Records</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            {{ include('documentation/includes/_resources.html.twig') }}
-            {{ include('documentation/includes/_monitors.html.twig') }}
-            {{ include('documentation/includes/_sales.html.twig') }}
-
-
-
-
-
-            <div id="section4" class="grid gap-8">
-                <h2 class="text-primary-400 dark:text-primary-400 text-2xl font-semibold mb-3">Records</h2>
-                <p>La section record vous permet une fois connecté d'ajouter un record de temps sur n'importe quel monstre.</p>
-                <p>Vous pouvez ajouter un record en cliquant sur le bouton créer, puis en renseignant les diverses informations</p>
-                <p>Le record est soumis à validation avant publication.</p>
-
-
-                <p>Le lien doit être un lien youtube valide ou le record sera supprimé.</p>
-                <p>Chaque record sera analysé.</p>
-                <p>Une fois créé un record n'est plus modifiable</p>
+        <section class="grid gap-4">
+            <div class="flex justify-center wrapper wrapper-style">
+                <nav class="tabs">
+                    <div class="tab-item active">
+                        <i class="tab-item-icon" data-feather="activity"></i>
+                        <span>Ressources</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="tab-item-icon" data-feather="bar-chart-2"></i>
+                        <span>Moniteurs</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="tab-item-icon" data-feather="shopping-cart"></i>
+                        <span>Ventes</span>
+                    </div>
+                    <div class="tab-item">
+                        <i class="tab-item-icon" data-feather="award"></i>
+                        <span>Records</span>
+                    </div>
+                </nav>
             </div>
-        </div>
-    </section>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+            <div class="tab-content wrapper wrapper-style">
+                {{ include('documentation/includes/_resources.html.twig') }}
+                {{ include('documentation/includes/_monitors.html.twig') }}
+                {{ include('documentation/includes/_sales.html.twig') }}
+                {{ include('documentation/includes/_records.html.twig') }}
+            </div>
+        </section>
+    <script>
+        // Cache the selectors
+        const tabs = document.querySelectorAll('.tab-item');
+        const panes = document.querySelectorAll('.tab-pane');
+
+        // Initialize the line position and width
+        const activeTab = document.querySelector('.tab-item.active');
+
+        // Attach click event listeners to tabs
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', function() {
+                // Find and deactivate the currently active elements
+                const activeTab = document.querySelector('.tab-item.active');
+                const activePane = document.querySelector('.tab-pane.active');
+                if (activeTab) {
+                    activeTab.classList.remove('active');
+                }
+                if (activePane) {
+                    activePane.classList.remove('active');
+                }
+
+                // Activate the clicked tab and corresponding pane
+                this.classList.add('active');
+                const pane = panes[index];
+                if (pane) {
+                    pane.classList.add('active');
+                }
             });
         });
+
     </script>
 {% endblock %}
