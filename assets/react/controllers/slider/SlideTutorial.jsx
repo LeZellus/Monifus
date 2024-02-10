@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
+import { useSpring, animated } from '@react-spring/web';
 import Slide from './Slide';
 import NavigationButtons from './SlideButtons';
 import NavigationDots from './SlideDots';
@@ -20,21 +21,15 @@ const SlideTutorial = memo(() => {
         setCurrentSlide(prev => Math.min(prev + 1, totalSlides - 1));
     }, [totalSlides]);
 
-    const [slideStyle, setSlideStyle] = useState({});
-
-    useEffect(() => {
-        setSlideStyle({
-            transform: `translateX(-${currentSlide * 100}%)`,
-            transition: 'transform 0.5s ease',
-        });
-    }, [currentSlide]);
-
-    console.log("bawi")
+    const slideStyle = useSpring({
+        transform: `translateX(-${currentSlide * 100}%)`,
+        from: { transform: 'translateX(0%)' },
+    });
 
     return (
         <div>
             <section id="slider" className="slider">
-                <div className="slide-container" style={slideStyle}>
+                <animated.div className="slide-container" style={slideStyle}>
                     {slides.map((slide, index) => (
                         <Slide
                             key={index}
@@ -43,7 +38,7 @@ const SlideTutorial = memo(() => {
                             description={slide.description}
                         />
                     ))}
-                </div>
+                </animated.div>
 
                 <NavigationButtons
                     currentSlide={currentSlide}
