@@ -12,6 +12,10 @@ const SlideButtons = ({ currentSlide, totalSlides, goToPrevSlide, goToNextSlide 
         from: { opacity: 0 },
     });
 
+
+    console.log("CurrentSlide :" + currentSlide)
+    console.log("totalSlides :" + totalSlides)
+
     return (
         <div>
             {currentSlide > 0 && (
@@ -25,16 +29,20 @@ const SlideButtons = ({ currentSlide, totalSlides, goToPrevSlide, goToNextSlide 
                     <span className="slide-button-text">Précédent</span>
                 </animated.button>
             )}
-            {currentSlide < totalSlides - 1 && (
-                <animated.button
-                    style={nextButtonStyle}
+            {currentSlide < totalSlides - 1 ? (
+                <button
                     id="next"
                     className="slide-button next"
                     onClick={goToNextSlide}
                 >
                     <span className="slide-button-text">Suivant</span>
                     <span className="slide-icon">👉🏻</span>
-                </animated.button>
+                </button>
+            ) : (
+                <a id="next" className="slide-button next" href="/">
+                    <span className="slide-button-text">J'ai compris !</span>
+                    <span className="slide-icon">👉🏻</span>
+                </a>
             )}
         </div>
     );
