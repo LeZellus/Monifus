@@ -1,0 +1,80 @@
+.slide {
+    @apply w-full min-h-svh flex-shrink-0 bg-white dark:bg-gray-800 flex items-center justify-center;
+
+    &-button {
+        @apply absolute transform top-1/2 -translate-y-1/2 text-lg uppercase flex items-center space-x-3;
+
+        &.next {
+            @apply right-4;
+
+            .slide-icon {
+                animation: slideRight 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+            }
+        }
+
+        &.prev {
+            @apply left-4;
+
+            .slide-icon {
+                animation: slideLeft 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+            }
+        }
+
+        &-text {
+            @apply hidden lg:block text-xs;
+        }
+    }
+
+    &-content {
+        @apply grid max-w-lg text-center gap-4 p-8;
+
+        img {
+            @apply m-auto w-32 drop-shadow-2xl;
+        }
+
+        p {
+            @apply leading-loose;
+        }
+    }
+
+    &-container {
+        @apply flex w-full relative bg-red-400;
+    }
+
+    &-dots {
+        @apply absolute bottom-4 w-full text-center space-x-4 h-4;
+    }
+
+    &-dot {
+        @apply h-3 w-3 bg-gray-100 dark:bg-gray-900 rounded-full;
+
+        &.active {
+            @apply bg-primary-400 relative;
+
+
+        }
+    }
+}
+
+.slider {
+    @apply overflow-x-hidden;
+}
+
+
+@keyframes slideRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Ajustez cette valeur pour modifier l'amplitude du mouvement */
+    }
+}
+
+@keyframes slideLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px); /* Ajustez cette valeur pour modifier l'amplitude du mouvement */
+    }
+}

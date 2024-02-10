@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function DataFetcher() {
+
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);

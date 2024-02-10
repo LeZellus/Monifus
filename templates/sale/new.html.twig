@@ -5,7 +5,18 @@
 {% block body %}
     <h1 class="text-center">Créer une vente</h1>
 
+    {{ include('includes/documentation.html.twig') }}
+
     <section class="wrapper wrapper-style">
+
+        <div class="flex justify-center">
+            <div class="rounded-lg bg-yellow-600 bg-opacity-30 border border-yellow-400 p-2 flex text-yellow-300 space-x-4">
+                <i data-feather="alert-triangle"></i>
+                <p><strong>Attention : </strong>Les ventes ne sont la <strong>QUE</strong> pour les <strong>équipements</strong>. Pour les ressources, ajoutez plutôt un
+                    <a class="text-tertiary-400" href="{{ path("app_monitor_new") }}">moniteur</a></p>
+            </div>
+        </div>
+
         {{ include('sale/includes/_form.html.twig') }}
     </section>
 {% endblock %}

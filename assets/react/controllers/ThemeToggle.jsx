@@ -17,7 +17,7 @@ function ThemeToggle() {
     };
 
     return (
-        <div className="fixed bottom-4 right-4">
+        <div className="fixed bottom-4 right-4 z-20">
             <label htmlFor="darkmode-checkbox" className="inline-flex relative items-center mr-5 cursor-pointer">
                 <input type="checkbox" value="" id="darkmode-checkbox" className="sr-only peer" checked={isDarkTheme}
                        onChange={toggleTheme} readOnly/>

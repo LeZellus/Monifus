@@ -5,6 +5,9 @@
 {% block body %}
 <main class="grid gap-4 lg:gap-6">
     <h1 class="text-center">Vos ressources</h1>
+
+    {{ include('includes/documentation.html.twig') }}
+
     <div class="flex justify-center">
         <a class="col-span-1 form-submit" href="{{ path('app_monitor_new') }}">Créer un moniteur</a>
     </div>

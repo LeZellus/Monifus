@@ -7,6 +7,8 @@
 {% block body %}
     <h1 class="text-center">Liste des Ventes</h1>
 
+    {{ include('includes/documentation.html.twig') }}
+
     <div class="flex justify-center">
         <a class="form-submit" href="{{ path('app_sale_new') }}">Nouvelle vente</a>
     </div>

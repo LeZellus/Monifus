@@ -1,0 +1,7 @@
+{% extends 'base_simple.html.twig' %}
+
+{% block title %}Tutoriel | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div {{ react_component('slider/SlideTutorial') }}></div>
+{% endblock %}

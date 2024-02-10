@@ -1,7 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="wrapper-style wrapper">
+    <h1 class="text-center">Dashboard Monifus</h1>
+    <div class="wrapper-style wrapper grid text-center gap-4">
+        <h2 class="text-primary-400 dark:text-primary-400">Bienvenu sur Monifus</h2>
+        <p>Cliquez sur le bouton ci-dessous pour avoir un rapide aperçu de ce que propose le site.</p>
+        <div class="flex justify-center">
+            <a class="rounded-lg bg-green-600 hover:bg-green-700 transition duration-300 px-4 py-2.5 inline-block text-white border border-green-400" href="{{ path('app_tutorial') }}">TUTORIEL</a>
+        </div>
+    </div>
 
+    <div class="wrapper-style wrapper grid text-center gap-4">
+        <h2 class="text-primary-400 dark:text-primary-400">Pour un usage plus poussé du site, retrouvez la documentation</h2>
+        <p>Cliquez sur le bouton ci-dessous pour accéder à la documentation.</p>
+        <div class="flex justify-center">
+            <a target="_blank" class="rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 px-4 py-2.5 inline-block text-white border border-blue-400" href="{{ path('app_documentation') }}">Documentation</a>
+        </div>
     </div>
 {% endblock body %}
