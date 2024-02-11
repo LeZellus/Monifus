@@ -21,7 +21,6 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('monitorAjax', './assets/styles/js/monitorAjax.js')
     .addEntry('chartResource', './assets/styles/js/chartResource.js')
     .addEntry('randomAdvice', './assets/styles/js/randomAdvice.js')
     .addEntry('popup', './assets/styles/js/popup.js')
