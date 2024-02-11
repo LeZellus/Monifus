@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MonitorRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MonitorRepository::class)]
@@ -22,50 +24,12 @@ class Monitor
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\Column(type: 'integer')]
-    private mixed $pricePer1;
+    #[ORM\OneToMany(mappedBy: 'monitor', targetEntity: Price::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    private Collection $prices;
 
-    #[ORM\Column(type: 'integer')]
-    private mixed $pricePer10;
-
-    #[ORM\Column(type: 'integer')]
-    private mixed $pricePer100;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
-
-    /*public function __construct()
+    public function __construct()
     {
-        $this->createdAt = new \DateTimeImmutable();
-    }*/
-    public function getPricePer1(): mixed
-    {
-        return $this->pricePer1;
-    }
-
-    public function setPricePer1(mixed $pricePer1): void
-    {
-        $this->pricePer1 = $pricePer1;
-    }
-
-    public function getPricePer10(): mixed
-    {
-        return $this->pricePer10;
-    }
-
-    public function setPricePer10(mixed $pricePer10): void
-    {
-        $this->pricePer10 = $pricePer10;
-    }
-
-    public function getPricePer100(): mixed
-    {
-        return $this->pricePer100;
-    }
-
-    public function setPricePer100(mixed $pricePer100): void
-    {
-        $this->pricePer100 = $pricePer100;
+        $this->prices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -97,26 +61,32 @@ class Monitor
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    /**
+     * @return Collection<int, Price>
+     */
+    public function getPrices(): Collection
     {
-        return $this->createdAt;
+        return $this->prices;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    public function addPrice(Price $price): static
     {
-        $this->createdAt = $createdAt;
+        if (!$this->prices->contains($price)) {
+            $this->prices->add($price);
+            $price->setMonitor($this);
+        }
 
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    public function removePrice(Price $price): static
     {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
-    {
-        $this->updatedAt = $updatedAt;
+        if ($this->prices->removeElement($price)) {
+            // set the owning side to null (unless already changed)
+            if ($price->getMonitor() === $this) {
+                $price->setMonitor(null);
+            }
+        }
 
         return $this;
     }

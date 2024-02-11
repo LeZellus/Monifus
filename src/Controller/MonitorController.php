@@ -3,16 +3,19 @@
 namespace App\Controller;
 
 use App\Entity\Resource;
+use App\Entity\User;
 use App\Service\BreadcrumbService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Monitor;
 use App\Form\MonitorType;
 use App\Repository\MonitorRepository;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
 #[Route('/monitor')]
 class MonitorController extends AbstractController
@@ -23,15 +26,15 @@ class MonitorController extends AbstractController
         $this->breadcrumbService = $breadcrumbService;
     }
     #[Route('/', name: 'app_monitor_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(MonitorRepository $monitorRepository, Security $security): Response
     {
-        $user = $this->getUser(); // Assurez-vous que l'authentification est configurée
-        $resources = $entityManager->getRepository(Resource::class)->findResourcesWithMonitors($user);
+        $user = $security->getUser();
 
-        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
+        $monitorsWithAvgPrices  = $monitorRepository->findByUserWithResourceAndPrices($user->getId());
 
+        // render the view with the monitors
         return $this->render('monitor/index.html.twig', [
-            'resources' => $resources,
+            'monitorsWithAvgPrices' => $monitorsWithAvgPrices,
         ]);
     }
 
@@ -39,14 +42,13 @@ class MonitorController extends AbstractController
     public function new(Request $request, MonitorRepository $monitorRepository): Response
     {
         $monitor = new Monitor();
+
         $form = $this->createForm(MonitorType::class, $monitor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $monitor->setUser($this->getUser());
-            //Peut-être à supprimer
-            $monitor->setCreatedAt(new \DateTimeImmutable());
             $monitorRepository->save($monitor, true);
 
             return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
@@ -61,17 +63,16 @@ class MonitorController extends AbstractController
         ]);
     }
 
-    #[Route('/{resourceId}', name: 'monitors_for_resource', methods: ['GET'])]
-    public function monitorsForResource(EntityManagerInterface $entityManager, int $resourceId): Response
+    #[Route('/monitors/search', name: 'app_monitor_search', methods: ['GET', 'POST'])]
+    public function search(Request $request, MonitorRepository $monitorRepository): Response
     {
-        $user = $this->getUser();
-        $monitors = $entityManager->getRepository(Monitor::class)->findBy([
-            'user' => $user,
-            'resource' => $resourceId
-        ]);
+        $searchTerm = $request->query->get('search');
 
-        return $this->render('monitor/show.html.twig', [
-            'monitors' => $monitors,
+        // Utiliser MonitorRepository pour rechercher les moniteurs
+        $monitorsWithAvgPrices = $monitorRepository->findBySearchTerm($searchTerm);
+
+        return $this->render('monitor/index.html.twig', [
+            'monitorsWithAvgPrices' => $monitorsWithAvgPrices,
         ]);
     }
 
@@ -92,22 +93,8 @@ class MonitorController extends AbstractController
     }
 
     #[Route('/delete/{id}', name: 'app_monitor_delete', methods: ['DELETE', 'POST'])]
-    public function deleteMonitor(int $id, MonitorRepository $monitorRepository, EntityManagerInterface $entityManager): JsonResponse
+    public function deleteMonitor(): Response
     {
-        $monitor = $monitorRepository->find($id);
-
-        if (!$monitor) {
-            return $this->json(['success' => false, 'message' => 'Moniteur non trouvé']);
-        }
-
-        $resourceId = $monitor->getResource()->getId();
-        $entityManager->remove($monitor);
-        $entityManager->flush();
-
-        // Calculez le nombre de moniteurs restants
-        $monitorCount = $monitorRepository->countByResource($resourceId);
-
-        return $this->json(['success' => true, 'monitorCount' => $monitorCount, 'resourceId' => $resourceId]);
+        return $this->render('app_home');
     }
-
 }

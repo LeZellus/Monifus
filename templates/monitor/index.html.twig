@@ -11,22 +11,53 @@
         <a class="form-submit" href="{{ path('app_monitor_new') }}">Créer Moniteur</a>
     </div>
 
-    <section class="grid gap-4 lg:gap-6">
-        {% if resources is not empty %}
-            <div class="grid gap-4 lg:grid-cols-2 xl:grid-cols-3" id="resourcesContainer">
-                {% for resource in resources %}
-                    <!-- Ajouter d'autres détails si nécessaire -->
-                    <button type="button" class="loadMonitorsBtn flex justify-between w-full items-center resource wrapper wrapper-style p-4" data-resource-id="{{ resource.id }}">
-                        <span class="uppercase font-bold text-xl">{{ resource.name }}</span>
-                        <img class="w-10 h-10" src="{{ resource.imgUrl }}" alt="Icone ressource">
-                    </button>
+    <section class="grid gap-4">
+        {%  if monitorsWithAvgPrices is not empty %}
+            <form action="{{ path('app_monitor_search') }}" method="get" class="grid gap-2">
+                <label class="form-label" for="search">Recherchez un moniteur</label>
+                <div class="flex space-x-2">
+                    <input id="search" class="form-input h-full flex-1" type="text" name="search" placeholder="Rechercher un moniteur" />
+                    <button class="wrapper wrapper-green h-14 w-14 flex justify-center font-semibold" type="submit">GO</button>
+
+                    <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_monitor_index') }}">
+                        <i data-feather="trash" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </form>
+            <section class="grid lg:grid-cols-2 xl:grid-cols-4 gap-4">
+                {% for monitorData in monitorsWithAvgPrices %}
+                    {# {{ path('app_resource_show', {'id': data.resourceId}) }} #}
+                    <a href="#" class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2">
+                        <div class="flex justify-between">
+                            <div class="grid gap-1">
+                                <h3 class="text-2xl font-bold w-full">{{ monitorData.0.resource.name }}</h3>
+                                <p class="text-xs uppercase flex items-center">
+                                    <span class="hidden md:block">Moniteurs créés pour cette ressource :</span>
+                                    <span class="md:hidden">Nombre :</span>
+                                    <span class="text-green-500 ml-1">{{ monitorData.priceCount }}</span>
+                                </p>
+                            </div>
+                            <img class="w-12 h-12" src="{{ monitorData.0.resource.imgUrl }}" alt="Image ressource dofus">
+                        </div>
+
+                        <div class="flex items-center">
+                            <span class="h-0.5 w-full bg-gray-300 dark:bg-gray-700 block"></span>
+                            <span class="uppercase text-nowrap mx-2 text-xs text-gray-300 dark:text-gray-500">Moyennes par lot :</span>
+                            <span class="h-0.5 w-full bg-gray-300 dark:bg-gray-700 block"></span>
+                        </div>
+
+                        <div class="flex">
+                            {{ include('resource/includes/_details.html.twig') }}
+                        </div>
+
+                        <div class="bg-secondary absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 bg-opacity-80 backdrop-blur-xl transition duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-bold family underline">Voir</p>
+                        </div>
+                    </a>
                 {% endfor %}
-            </div>
-            <div id="monitorsContainer">
-                <!-- Les moniteurs seront chargés ici -->
-            </div>
+            </section>
         {% else %}
-            <p class="text-center">Pour voir une ressource, ajoutez un moniteur</p>
+            <p class="lg:col-span-4 xl:col-span-4 text-center">Pour voir une ressource, ajoutez un moniteur</p>
         {% endif %}
     </section>
 {% endblock %}

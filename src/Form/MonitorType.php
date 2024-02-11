@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Monitor;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,23 +15,11 @@ class MonitorType extends AbstractType
     {
         $builder
             ->add('resource', ResourceAutocompleteField::class)
-            ->add('pricePer1', NumberType::class, [
-                'label' => 'Prix du lot de 1',
-                'attr' => [
-                    'placeholder' => '100'
-                ]
-            ])
-            ->add('pricePer10', NumberType::class, [
-                'label' => 'Prix du lot de 10',
-                'attr' => [
-                    'placeholder' => '1000'
-                ]
-            ])
-            ->add('pricePer100', NumberType::class, [
-                'label' => 'Prix du lot de 100',
-                'attr' => [
-                    'placeholder' => '10000'
-                ]
+            ->add('prices', CollectionType::class, [
+                'entry_type' => PriceType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'by_reference' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Ajouter',

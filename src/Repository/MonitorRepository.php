@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Monitor;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -53,27 +54,32 @@ class MonitorRepository extends ServiceEntityRepository
         return $qb->getQuery()->getArrayResult();
     }
 
-    public function countByResource($resourceId): float|bool|int|string|null
+    private function createBaseMonitorQueryBuilder(): QueryBuilder
     {
         return $this->createQueryBuilder('m')
-            ->select('count(m.id)')
-            ->where('m.resource = :resourceId')
-            ->setParameter('resourceId', $resourceId)
-            ->getQuery()
-            ->getSingleScalarResult();
+            ->leftJoin('m.resource', 'r')
+            ->leftJoin('m.prices', 'p')
+            ->addSelect('m', 'r', 'p')
+            ->addSelect('AVG(p.priceOne) as avgPriceOne, AVG(p.priceTen) as avgPriceTen, AVG(p.priceHundred) as avgPriceHundred')
+            ->addSelect('COUNT(p) as priceCount')
+            ->groupBy('m.id');
     }
 
-    public function findMonitorsByPeriod(User $user, int $resourceId, \DateTimeImmutable $startDate, \DateTimeImmutable $endDate): array
+    public function findByUserWithResourceAndPrices($userId): array|float|int|string
     {
-        $qb = $this->createQueryBuilder('m')
-            ->where('m.user = :user')
-            ->andWhere('m.resource = :resourceId')
-            ->andWhere('m.createdAt BETWEEN :startDate AND :endDate')
-            ->setParameter('user', $user)
-            ->setParameter('resourceId', $resourceId)
-            ->setParameter('startDate', $startDate)
-            ->setParameter('endDate', $endDate);
+        return $this->createBaseMonitorQueryBuilder()
+            ->andWhere('m.user = :user')
+            ->setParameter('user', $userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
 
-        return $qb->getQuery()->getArrayResult();
+    public function findBySearchTerm($searchTerm): array|float|int|string
+    {
+        return $this->createBaseMonitorQueryBuilder()
+            ->where('r.name LIKE :searchTerm')
+            ->setParameter('searchTerm', '%'.$searchTerm.'%')
+            ->getQuery()
+            ->getArrayResult();
     }
 }

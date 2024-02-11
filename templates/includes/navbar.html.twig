@@ -4,7 +4,7 @@
             <img class="md:hidden w-6 h-6 mr-4" src="{{ asset('uploads/logo.svg') }}" alt="Logo de Monifus">
             <div>
                 <p class="text-lg text-gray-700 dark:text-gray-200">
-                    {% if variable is defined and variable is not null %}
+                    {% if app.user is not null and app.user.pseudonymeWebsite is not null %}
                         Bonjour, <span class="family text-primary-400 font-bold">{{ app.user.pseudonymeWebsite }}</span>
                     {% else %}
                         Bonjour, <span class="family text-primary-400 font-bold">Aventurier</span>

@@ -14,8 +14,8 @@ import './bootstrap';
 
 import feather from "feather-icons";
 
-
-registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
-
 feather.replace();
 
+console.log(feather);
+
+registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
