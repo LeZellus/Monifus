@@ -74,6 +74,7 @@ class MonitorRepository extends ServiceEntityRepository
             ->leftJoin('m.prices', 'p')
             ->andWhere('m.id = :id')
             ->setParameter('id', $monitorId)
+            ->orderBy('p.createdAt', 'DESC')
             ->groupBy('m.id')
             ->getQuery()
             ->getSingleResult();

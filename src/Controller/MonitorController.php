@@ -36,6 +36,8 @@ class MonitorController extends AbstractController
 
         $monitorsWithAvgPrices  = $monitorRepository->findByUserWithResourceAndPrices($user->getId());
 
+        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
+
         // render the view with the monitors
         return $this->render('monitor/index.html.twig', [
             'monitorsWithAvgPrices' => $monitorsWithAvgPrices,
@@ -96,6 +98,8 @@ class MonitorController extends AbstractController
         // Utiliser MonitorRepository pour rechercher les moniteurs
         $monitorsWithAvgPrices = $monitorRepository->findBySearchTerm($searchTerm);
 
+        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
+
         return $this->render('monitor/index.html.twig', [
             'monitorsWithAvgPrices' => $monitorsWithAvgPrices,
         ]);
@@ -113,6 +117,9 @@ class MonitorController extends AbstractController
         if (!$monitor || $monitor->getUser() !== $user) {
             throw $this->createNotFoundException('Ce moniteur n\'existe pas ou vous n\'avez pas le droit de le consulter.');
         }
+
+        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "/monitor");
+        $this->breadcrumbService->setBreadcrumbs($monitor->getResource()->getName(), "");
 
         return $this->render('monitor/show.html.twig', [
             'monitor' => $monitor,

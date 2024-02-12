@@ -14,52 +14,33 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SaleController extends AbstractController
 {
-    private EntityManagerInterface $entityManager;
     private BreadcrumbService $breadcrumbService;
+    private SaleRepository $saleRepository;
 
-    public function __construct(EntityManagerInterface $entityManager, BreadcrumbService $breadcrumbService)
+    public function __construct(BreadcrumbService $breadcrumbService, SaleRepository $saleRepository)
     {
-        $this->entityManager = $entityManager;
         $this->breadcrumbService = $breadcrumbService;
+        $this->saleRepository = $saleRepository;
     }
     #[Route('/vente', name: 'app_sale')]
     public function index(): Response
     {
         $user = $this->getUser();
-        $sales = [];
 
-        $totalBuyPrice = 0;
-        $totalSellPrice = 0;
-        $totalPendingPrice = 0;
 
-        if($user) {
-            $sales = $this->entityManager->getRepository(Sale::class)->findBy(['user' => $user]);
+        if (!$user) {
+            return $this->redirectToRoute('app_login');
         }
 
-        foreach ($sales as $sale) {
-            $totalBuyPrice += $sale->getBuyPrice();
-            if ($sale->isIsSell()) {
-                $totalSellPrice += $sale->getSellPrice();
-            } else {
-                $totalPendingPrice += $sale->getSellPrice();
-            }
-        }
-
-        $profit = $totalSellPrice - $totalBuyPrice;
-        $percentProfit = ($totalBuyPrice != 0) ? ($profit / $totalBuyPrice) * 100 : 0;
-        $taxe = $totalSellPrice * 0.01;
+        $sales = $this->saleRepository->findBy(['user' => $user], ['isSell' => 'ASC']);
+        $stats = $this->saleRepository->getSaleStatsForUser($user);
 
         $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
 
         return $this->render('sale/index.html.twig', [
             'sales' => $sales,
-            'totalBuyPrice' => $totalBuyPrice,
-            'totalSellPrice' => $totalSellPrice,
-            'profit' => $profit,
-            'percentProfit' => $percentProfit,
-            'totalPendingPrice' => $totalPendingPrice,
-            'taxe' => $taxe,
-            'noSales' => empty($sales), // Vérifie s'il n'y a aucun Sale
+            'stats' => $stats,
+            'noSales' => empty($sales) // Vérifie s'il n'y a aucun Sale
         ]);
     }
 

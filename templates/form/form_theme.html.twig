@@ -118,10 +118,12 @@
 {% endblock %}
 
 {% block checkbox_widget %}
-    <input type="checkbox"
-           {{ block('widget_attributes') }}
-           class="form-checkbox inline-block"
-           {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
-            {%- if checked -%} checked {%- endif -%}
-            {%- if required -%} required {%- endif -%}/>
+    <div>
+        <input type="checkbox"
+                {{ block('widget_attributes') }}
+               class="form-checkbox inline-block"
+                {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+                {%- if checked -%} checked {%- endif -%}
+                {%- if required -%} required {%- endif -%}/>
+    </div>
 {% endblock %}

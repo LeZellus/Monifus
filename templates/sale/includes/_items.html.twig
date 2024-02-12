@@ -7,38 +7,14 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ totalBuyPrice|number_format(0, '.', ' ') }}
+                    {{ stats.totalBuyPrice|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
         </div>
     </div>
 
-    <div class="wrapper wrapper-orange flex justify-between items-center text-white font-semibold">
-        <h2>Total items :</h2>
-
-        <p class="text-lg">
-            {% if noSales %}
-                O
-            {% else %}
-                3
-            {% endif %}
-        </p>
-    </div>
-
-    <div class="wrapper wrapper-red flex justify-between items-center text-white font-semibold">
-        <h2>Total items vendus :</h2>
-
-        <p class="text-lg">
-            {% if noSales %}
-                O
-            {% else %}
-                2
-            {% endif %}
-        </p>
-    </div>
-
-    <div class="wrapper wrapper-blue flex justify-between items-center text-white font-semibold">
+    <div class="wrapper wrapper-green flex justify-between items-center text-white font-semibold">
         <h2>Profit net :</h2>
 
         <div class="flex items-center">
@@ -46,14 +22,14 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ profit|number_format(0, '.', ' ') }}
+                    {{ stats.profit|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
         </div>
     </div>
 
-    <div class="wrapper wrapper-pink flex justify-between items-center text-white font-semibold">
+    <div class="wrapper wrapper-green flex justify-between items-center text-white font-semibold">
         <h2>Profit % :</h2>
 
         <div class="flex items-center">
@@ -61,7 +37,7 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ percentProfit|number_format(0, '.', ' ') }}
+                    {{ stats.percentProfit|number_format(0, '.', ' ') }}
                 {% endif %}
 
                 %
@@ -69,7 +45,7 @@
         </div>
     </div>
 
-    <div class="wrapper wrapper-pink flex justify-between items-center text-white font-semibold">
+    <div class="wrapper wrapper-green flex justify-between items-center text-white font-semibold">
         <h2>Mis en vente :</h2>
 
         <div class="flex items-center">
@@ -77,11 +53,35 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ totalSellPrice|number_format(0, '.', ' ') }}
+                    {{ stats.totalSellPrice|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
         </div>
+    </div>
+
+    <div class="wrapper wrapper-blue flex justify-between items-center text-white font-semibold">
+        <h2>Total items :</h2>
+
+        <p class="text-lg">
+            {% if noSales %}
+                O
+            {% else %}
+                {{ stats.totalSaleCount }}
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="wrapper wrapper-blue flex justify-between items-center text-white font-semibold">
+        <h2>Total items vendus :</h2>
+
+        <p class="text-lg">
+            {% if noSales %}
+                O
+            {% else %}
+                {{ stats.totalSaled }}
+            {% endif %}
+        </p>
     </div>
 
     <div class="wrapper wrapper-red flex justify-between items-center text-white font-semibold">
@@ -92,14 +92,14 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ taxe|number_format(0, '.', ' ') }}
+                    {{ stats.taxe|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
         </div>
     </div>
 
-    <div class="wrapper wrapper-yellow flex justify-between items-center text-white font-semibold">
+    <div class="wrapper wrapper-orange flex justify-between items-center text-white font-semibold">
         <h2>Profit en attente :</h2>
 
         <div class="flex items-center">
@@ -107,7 +107,7 @@
                 {% if noSales %}
                     O
                 {% else %}
-                    {{ totalPendingPrice|number_format(0, '.', ' ') }}
+                    {{ stats.totalPendingPrice|number_format(0, '.', ' ') }}
                 {% endif %}
             </p>
             <img class="ml-2 h-6 w-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">

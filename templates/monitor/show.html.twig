@@ -3,23 +3,46 @@
 {% block title %}Détails du Moniteur{% endblock %}
 
 {% block body %}
-    <h1>{{ monitor.resource.name }}</h1>
-    <img src="{{ monitor.resource.imgUrl }}" alt="">
-    <div>
-        <p>Average Price One: {{ aggregates.avgPriceOne }}</p>
-        <p>Average Price Ten: {{ aggregates.avgPriceTen }}</p>
-        <p>Average Price Hundred: {{ aggregates.avgPriceHundred }}</p>
-        <p>Price Count: {{ aggregates.priceCount }}</p>
-    </div>
-    {% if monitor.prices is defined %}
-        <div>
-            {% for price in monitor.prices %}
-                <div>
-                    <p>Price One: {{ price.priceOne }}</p>
-                    <p>Price Ten: {{ price.priceTen }}</p>
-                    <p>Price Hundred: {{ price.priceHundred }}</p>
+    <main class="grid gap-4">
+        <div class="grid gap-4">
+            <section class="wrapper wrapper-style flex justify-between">
+                <div class="grid gap-2">
+                    <h1 class="text-4xl">{{ monitor.resource.name }}</h1>
+                    <p class="flex items-center uppercase text-xs text-gray-400 dark:text-gray-500">Nombre de moniteurs : <span class="ml-2 text-green-400 font-bold">{{ aggregates.priceCount }}</span></p>
                 </div>
-            {% endfor %}
+                <img class="h-20 w-20" src="{{ monitor.resource.imgUrl }}" alt="Image de la ressource {{ monitor.resource.imgUrl }}">
+            </section>
         </div>
-    {% endif %}
+
+
+        <div class="grid gap-4 lg:grid-cols-3 h-full">
+            <div class="wrapper wrapper-style grid gap-4">
+                <p class="uppercase text-xs text-gray-400 dark:text-gray-500 flex items-center">Moyenne lot de<span class="mx-2 text-green-400 font-bold">1</span></p>
+                <div class="flex items-center">
+                    <span class="text-4xl font-bold leading-6">{{ aggregates.avgPriceOne|number_format(0, '.', ' ') }}</span>
+                    <img class="ml-2 w-6 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
+                </div>
+            </div>
+            <div class="wrapper wrapper-style grid gap-4">
+                <p class="uppercase text-xs text-gray-400 dark:text-gray-500 flex items-center">Moyenne lot de<span class="mx-2 text-green-400 font-bold">10</span></p>
+                <div class="flex items-center">
+                    <span class="text-4xl font-bold leading-6">{{ aggregates.avgPriceTen|number_format(0, '.', ' ') }}</span>
+                    <img class="ml-2 w-6 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
+                </div>
+            </div>
+            <div class="wrapper wrapper-style grid gap-4">
+                <p class="uppercase text-xs text-gray-400 dark:text-gray-500 flex items-center">Moyenne lot de<span class="mx-2 text-green-400 font-bold">100</span></p>
+                <div class="flex items-center">
+                    <span class="text-4xl font-bold leading-6">{{ aggregates.avgPriceHundred|number_format(0, '.', ' ') }}</span>
+                    <img class="ml-2 w-6 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="wrapper wrapper-style wrapper-p-0 text-sm">
+                {{ include('monitor/includes/_detailsMonitor.html.twig') }}
+            </div>
+        </section>
+    </main>
 {% endblock %}

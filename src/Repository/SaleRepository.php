@@ -21,5 +21,26 @@ class SaleRepository extends ServiceEntityRepository
         parent::__construct($registry, Sale::class);
     }
 
+    public function getSaleStatsForUser($user)
+    {
+        $result = $this->createQueryBuilder('s')
+            ->select(
+                'SUM(s.buyPrice) as totalBuyPrice',
+                'SUM(CASE WHEN s.isSell = true THEN s.sellPrice ELSE 0 END) as totalSellPrice',
+                'SUM(CASE WHEN s.isSell = false THEN s.sellPrice ELSE 0 END) as totalPendingPrice',
+                'COUNT(s) as totalSaleCount',
+                'SUM(CASE WHEN s.isSell = true THEN 1 ELSE 0 END) as totalSaled'
+            )
+            ->where('s.user = :user')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->getSingleResult();
 
+        // Calculs supplémentaires
+        $result['profit'] = $result['totalSellPrice'] - $result['totalBuyPrice'];
+        $result['percentProfit'] = ($result['totalBuyPrice'] > 0) ? ($result['profit'] / $result['totalBuyPrice']) * 100 : 0;
+        $result['taxe'] = $result['totalSellPrice'] * 0.01;
+
+        return $result;
+    }
 }
