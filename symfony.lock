@@ -280,6 +280,9 @@
     "symfonycasts/verify-email-bundle": {
         "version": "v1.12.0"
     },
+    "twig/extra-bundle": {
+        "version": "v3.8.0"
+    },
     "vich/uploader-bundle": {
         "version": "2.3",
         "recipe": {

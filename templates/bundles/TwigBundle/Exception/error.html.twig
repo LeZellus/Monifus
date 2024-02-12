@@ -1,0 +1,66 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="wrapper wrapper-style">
+        <div class="container flex items-center justify-center px-6 py-12 mx-auto">
+            <div class="w-full ">
+                <div class="flex flex-col items-center mx-auto text-center">
+                    <p class="text-sm font-medium text-tertiary-400 uppercase">Erreur</p>
+                    <h1 class="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">Nous avons perdu un Dofus ...</h1>
+                    <p class="mt-4 text-gray-500 dark:text-gray-400">Nous avons tout fouillé, pas de trace d'œuf ici...</p>
+
+                    <div class="flex items-center mt-6 gap-x-3 shrink-0">
+                        <button onclick="history.back();" class="form-submit flex items-center">Retour</button>
+
+                        <a href="{{ path('app_home') }}" class="form-submit">Accueil</a>
+                    </div>
+                </div>
+
+                <div class="grid w-full max-w-6xl grid-cols-1 gap-8 mx-auto mt-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="p-6 rounded-lg bg-blue-50 dark:bg-gray-800">
+                        <i data-feather="book"></i>
+
+                        <h3 class="mt-6 font-medium text-gray-700 dark:text-gray-200 ">Documentation</h3>
+
+                        <p class="mt-2 text-gray-500 dark:text-gray-400 ">Apprenez en plus</p>
+
+                        <a href="{{ path('app_documentation') }}" class="inline-flex items-center mt-4 text-sm text-blue-500 gap-x-2 dark:text-blue-400 hover:underline">
+                            <span>Commencer l'apprentissage</span>
+
+                            <i data-feather="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="p-6 rounded-lg bg-blue-50 dark:bg-gray-800">
+                        <i data-feather="activity"></i>
+
+                        <h3 class="mt-6 font-medium text-gray-700 dark:text-gray-200 ">Vos moniteurs</h3>
+
+                        <p class="mt-2 text-gray-500 dark:text-gray-400 ">Retournez à vos moniteurs</p>
+
+                        <a href="{{ path('app_monitor_index') }}" class="inline-flex items-center mt-4 text-sm text-blue-500 gap-x-2 dark:text-blue-400 hover:underline">
+                            <span>Voir</span>
+
+                            <i data-feather="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="p-6 rounded-lg bg-blue-50 dark:bg-gray-800">
+                        <i data-feather="award"></i>
+
+                        <h3 class="mt-6 font-medium text-gray-700 dark:text-gray-200 ">Records</h3>
+
+                        <p class="mt-2 text-gray-500 dark:text-gray-400 ">Devenez le numéro un !</p>
+
+                        <a href="{{ path('app_record') }}" class="inline-flex items-center mt-4 text-sm text-blue-500 gap-x-2 dark:text-blue-400 hover:underline">
+                            <span>Entrer dans la légende</span>
+
+                            <i data-feather="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

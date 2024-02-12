@@ -38,6 +38,8 @@
         "symfony/webpack-encore-bundle": "^2.1.1",
         "symfony/yaml": "7.0.*",
         "symfonycasts/verify-email-bundle": "^1.12",
+        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/twig": "^2.12|^3.0",
         "vich/uploader-bundle": "^2.3",
         "wohali/oauth2-discord-new": "^1.2"
     },
