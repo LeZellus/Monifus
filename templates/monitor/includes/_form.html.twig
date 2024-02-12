@@ -1,6 +1,6 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'class': 'grid lg:gap-6 gap-4 monitor-new'}}) }}
     {{ form_row(form.resource) }}
+    {{ form_row(form.prices.vars.prototype) }}
 
-    {{ form_widget(form.prices.vars.prototype) }}
     {{ form_widget(form.submit) }}
 {{ form_end(form) }}

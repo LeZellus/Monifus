@@ -21,19 +21,6 @@ class ResourceRepository extends ServiceEntityRepository
         parent::__construct($registry, Resource::class);
     }
 
-    public function findResourcesWithMonitors($user)
-    {
-        $qb = $this->createQueryBuilder('r')
-            ->select('r, COUNT(m.id) AS HIDDEN monitorCount')
-            ->leftJoin('r.monitors', 'm')
-            ->where('m.user = :user')
-            ->setParameter('user', $user)
-            ->groupBy('r.id')
-            ->orderBy('monitorCount', 'DESC');
-
-        return $qb->getQuery()->getResult();
-    }
-
     public function save(Resource $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);

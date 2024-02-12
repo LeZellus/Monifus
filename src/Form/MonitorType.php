@@ -17,7 +17,12 @@ class MonitorType extends AbstractType
             ->add('resource', ResourceAutocompleteField::class)
             ->add('prices', CollectionType::class, [
                 'entry_type' => PriceType::class,
-                'entry_options' => ['label' => false],
+                'entry_options' => [
+                    'label' => false,
+                    'attr' => [
+                        'class' => 'grid md:grid-cols-3 gap-4'
+                    ]
+                ],
                 'allow_add' => true,
                 'by_reference' => false,
             ])

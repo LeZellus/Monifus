@@ -41,28 +41,42 @@ class MonitorRepository extends ServiceEntityRepository
         }
     }
 
-    //Récupère la ressource, son nom, son image, et la moyennne par lot.
-    public function findMonitorAveragesByUser(User $user): array
-    {
-        $qb = $this->createQueryBuilder('m')
-            ->select('r.id as resourceId', 'r.name as resourceName', 'r.imgUrl as resourceImg', 'AVG(m.pricePer1) as averagePriceUnit', 'AVG(m.pricePer10) as averagePriceTen', 'AVG(m.pricePer100) as averagePriceHundred')
-            ->join('m.resource', 'r')
-            ->where('m.user = :user')
-            ->groupBy('r.id')
-            ->setParameter('user', $user);
-
-        return $qb->getQuery()->getArrayResult();
-    }
-
     private function createBaseMonitorQueryBuilder(): QueryBuilder
     {
-        return $this->createQueryBuilder('m')
+        $truc = $this->createQueryBuilder('m')
             ->leftJoin('m.resource', 'r')
             ->leftJoin('m.prices', 'p')
             ->addSelect('m', 'r', 'p')
             ->addSelect('AVG(p.priceOne) as avgPriceOne, AVG(p.priceTen) as avgPriceTen, AVG(p.priceHundred) as avgPriceHundred')
             ->addSelect('COUNT(p) as priceCount')
             ->groupBy('m.id');
+
+        return $truc;
+    }
+
+    public function findOneByIdWithResourceAndPrices($monitorId): ?Monitor
+    {
+        return $this->createQueryBuilder('m')
+            ->leftJoin('m.resource', 'r')
+            ->leftJoin('m.prices', 'p')
+            ->addSelect('m', 'r', 'p')
+            ->andWhere('m.id = :id')
+            ->setParameter('id', $monitorId)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    public function getMonitorPriceAggregates($monitorId): ?array
+    {
+        // Calculer les agrégats pour le moniteur spécifié
+        return $this->createQueryBuilder('m')
+            ->select('AVG(p.priceOne) as avgPriceOne, AVG(p.priceTen) as avgPriceTen, AVG(p.priceHundred) as avgPriceHundred, COUNT(p) as priceCount')
+            ->leftJoin('m.prices', 'p')
+            ->andWhere('m.id = :id')
+            ->setParameter('id', $monitorId)
+            ->groupBy('m.id')
+            ->getQuery()
+            ->getSingleResult();
     }
 
     public function findByUserWithResourceAndPrices($userId): array|float|int|string

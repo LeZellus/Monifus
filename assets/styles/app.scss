@@ -38,3 +38,9 @@ tbody {
     }
   }
 }
+
+.monitor-new:last-child {
+  & > div:last-child {
+    @apply hidden;
+  }
+}

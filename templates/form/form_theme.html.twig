@@ -125,13 +125,3 @@
             {%- if checked -%} checked {%- endif -%}
             {%- if required -%} required {%- endif -%}/>
 {% endblock %}
-
-{% block collection_widget %}
-    <div class="{{ attr.class|default('') }}">
-        {% for child in form %}
-            <div class="collection-item">
-                {{ form_row(child) }}
-            </div>
-        {% endfor %}
-    </div>
-{% endblock collection_widget %}

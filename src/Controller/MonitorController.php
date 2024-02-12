@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Price;
 use App\Entity\Resource;
 use App\Entity\User;
 use App\Service\BreadcrumbService;
@@ -21,9 +22,12 @@ use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 class MonitorController extends AbstractController
 {
     private BreadcrumbService $breadcrumbService;
-    public function __construct(BreadcrumbService $breadcrumbService)
+    private Security $security;
+
+    public function __construct(BreadcrumbService $breadcrumbService, Security $security)
     {
         $this->breadcrumbService = $breadcrumbService;
+        $this->security = $security;
     }
     #[Route('/', name: 'app_monitor_index', methods: ['GET'])]
     public function index(MonitorRepository $monitorRepository, Security $security): Response
@@ -39,31 +43,52 @@ class MonitorController extends AbstractController
     }
 
     #[Route('/nouveau', name: 'app_monitor_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, MonitorRepository $monitorRepository): Response
+    public function new(Request $request, MonitorRepository $monitorRepository, EntityManagerInterface $entityManager): Response
     {
         $monitor = new Monitor();
-
         $form = $this->createForm(MonitorType::class, $monitor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $selectedResource = $monitor->getResource();
 
-            $monitor->setUser($this->getUser());
-            $monitorRepository->save($monitor, true);
+            // Vérifier si un Monitor avec cette ressource existe déjà pour cet utilisateur
+            $existingMonitor = $monitorRepository->findOneBy([
+                'user' => $this->getUser(),
+                'resource' => $selectedResource
+            ]);
 
-            return $this->redirectToRoute('app_monitor_index', [], Response::HTTP_SEE_OTHER);
+            if (!$existingMonitor) {
+                // Créer un nouveau Monitor
+                $monitor->setUser($this->getUser());
+                $entityManager->persist($monitor);
+            } else {
+                // Utiliser le Monitor existant
+                $monitor = $existingMonitor;
+            }
+
+            // Traiter les objets Price soumis via le formulaire
+            foreach ($form->get('prices')->getData() as $price) {
+                $price->setMonitor($monitor);
+                $entityManager->persist($price);
+            }
+
+            // Flush pour enregistrer les changements
+            $entityManager->flush();
+
+            // Rediriger vers la liste des Monitors
+            return $this->redirectToRoute('app_monitor_index');
         }
 
         $this->breadcrumbService->setBreadcrumbs("Moniteurs", "/monitor");
         $this->breadcrumbService->setBreadcrumbs("Nouveau", "");
 
         return $this->render('monitor/new.html.twig', [
-            'monitor' => $monitor,
             'form' => $form,
         ]);
     }
 
-    #[Route('/monitors/search', name: 'app_monitor_search', methods: ['GET', 'POST'])]
+    #[Route('/search', name: 'app_monitor_search', methods: ['GET', 'POST'])]
     public function search(Request $request, MonitorRepository $monitorRepository): Response
     {
         $searchTerm = $request->query->get('search');
@@ -76,6 +101,24 @@ class MonitorController extends AbstractController
         ]);
     }
 
+    #[Route('/{id}', name: 'app_monitor_show', methods: ['GET', 'POST'])]
+    public function show(int $id, MonitorRepository $monitorRepository): Response
+    {
+        $monitor = $monitorRepository->findOneByIdWithResourceAndPrices($id);
+        $monitorAggregates = $monitorRepository->getMonitorPriceAggregates($id);
+
+        $user = $this->security->getUser();
+
+        // Vérifier si l'utilisateur actuel est le propriétaire du moniteur
+        if (!$monitor || $monitor->getUser() !== $user) {
+            throw $this->createNotFoundException('Ce moniteur n\'existe pas ou vous n\'avez pas le droit de le consulter.');
+        }
+
+        return $this->render('monitor/show.html.twig', [
+            'monitor' => $monitor,
+            'aggregates' => $monitorAggregates,
+        ]);
+    }
 
     #[Route('/edit/{id}', name: 'app_monitor_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Monitor $monitor, EntityManagerInterface $entityManager): Response

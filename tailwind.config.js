@@ -4,6 +4,7 @@ module.exports = {
 
     content: [
         './templates/**/*.html.twig',
+        './src/Form/*.php',
         "./node_modules/flowbite/**/*.js",
         "./src/**/*.{js,jsx,ts,tsx}",
     ],
