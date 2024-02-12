@@ -119,6 +119,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Type("integer")]
     private ?int $discordId = null;
 
+    #[ORM\Column]
+    private ?bool $isTutorial = null;
+
 
     public function __construct()
     {
@@ -127,6 +130,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->monitors = new ArrayCollection();
         $this->records = new ArrayCollection();
         $this->sales = new ArrayCollection();
+        $this->isTutorial = false;
 
         $this->roles = ["ROLE_USER"];
     }
@@ -448,5 +452,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
         return $this->pseudonymeWebsite;
+    }
+
+    public function isIsTutorial(): ?bool
+    {
+        return $this->isTutorial;
+    }
+
+    public function setIsTutorial(bool $isTutorial): static
+    {
+        $this->isTutorial = $isTutorial;
+
+        return $this;
     }
 }

@@ -48,6 +48,7 @@ final class DiscordAuthenticator extends OAuth2Authenticator implements Authenti
             new UserBadge($accessToken->getToken(), function () use ($accessToken, $client) {
                 $discordUser = $client->fetchUserFromToken($accessToken);
 
+
                 $user = $this->userRepository->findOneBy(['discordId' => $discordUser->getId()]);
 
                 if(null === $user) {
@@ -76,7 +77,21 @@ final class DiscordAuthenticator extends OAuth2Authenticator implements Authenti
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        return new RedirectResponse($this->router->generate('app_tutorial'));
+        $user = $token->getUser();
+
+        // Vérifier si c'est la première connexion
+        if (!$user->isIsTutorial()) {
+            // Mettre à jour le statut de la première connexion
+            $user->setIsTutorial(true);
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
+
+            // Rediriger vers le tutoriel
+            return new RedirectResponse($this->router->generate('app_tutorial'));
+        } else {
+            // Rediriger vers la page d'accueil pour les connexions ultérieures
+            return new RedirectResponse($this->router->generate('app_home'));
+        }
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response

@@ -16,7 +16,12 @@ final class DiscordController
     #[Route('/start', name: 'start')]
     public function start (ClientRegistry $clientRegistry): RedirectResponse
     {
-        return $clientRegistry->getClient("discord")->redirect(['identify', 'email']);
+        $options = [
+            'scope' => ['identify', 'email'],
+            'prompt' => 'none'
+        ];
+
+        return $clientRegistry->getClient("discord")->redirect($options['scope'], $options);
     }
 
     #[Route('/login', name: 'login')]
