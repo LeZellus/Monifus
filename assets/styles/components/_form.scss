@@ -22,7 +22,7 @@
 
   //Form Submit
   &-submit {
-    @apply px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-primary-500 rounded-lg shrink-0 sm:w-auto hover:bg-primary-600 dark:hover:bg-primary-500 dark:bg-primary-600 flex items-center justify-center;
+    @apply px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-primary-500 rounded-lg shrink-0 sm:w-auto dark:hover:bg-primary-500 dark:bg-primary-600 flex items-center justify-center hover:bg-primary-600;
 
     &:focus {
       @apply outline-none ring-primary-400;
@@ -46,10 +46,6 @@
 
     &-full {
       @apply w-full;
-    }
-
-    &:hover {
-      @apply bg-primary-600;
     }
   }
 

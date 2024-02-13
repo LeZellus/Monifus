@@ -1,9 +1,48 @@
 <div class="tab-pane">
     <h2>Records</h2>
-    <p>La section record vous permet une fois connecté d'ajouter un record de temps sur n'importe quel monstre.</p>
-    <p>Vous pouvez ajouter un record en cliquant sur le bouton créer, puis en renseignant les diverses informations</p>
-    <p>Le record est soumis à validation avant publication.</p>
-    <p>Le lien doit être un lien youtube valide ou le record sera supprimé.</p>
-    <p>Chaque record sera analysé.</p>
-    <p>Une fois créé un record n'est plus modifiable</p>
+
+    <div class="grid gap-4">
+        <h3>Principe des Records</h3>
+        <p>La section record vous permet une fois connecté d'ajouter un record de temps sur n'importe quel monstre.</p>
+    </div>
+
+    <div class="grid gap-4">
+        <h3>Ajouter un record</h3>
+        <p>Vous pouvez ajouter un record depuis la <a class="link" href="{{ path('app_record') }}">page principale</a> des records, ou en cliquant sur ce <a class="link" href="{{ path('app_record_new') }}">lien</a>. Vous Devez être
+            <a class="link" href="{{ asset('app_login') }}">connecté</a> pour ajouter un record.
+        </p>
+        <p>Vous arrivez alors sur cette page :</p>
+        <img src="{{ asset('documentation/record_new.png') }}" alt="">
+        <p>Sélectionnez le monstre dans la liste, ou tapez son nom puis cliquez dessus.</p>
+        <p>Renseignez vos informations du record.</p>
+        <div class="wrapper wrapper-yellow justify-center">Le lien doit impérativement être un lien youtube.</div>
+        <p>Le record est soumis à validation avant publication.</p>
+        <p>Chaque record sera analysé.</p>
+        <div class="wrapper wrapper-yellow justify-center">Une fois créé un record n'est plus modifiable !</div>
+        <p>Un lien pour la documentation est également présent afin de revenir ici en cas de besoin :</p>
+        <img src="{{ asset('documentation/button_documentation.png') }}" alt="">
+    </div>
+
+    <div class="grid gap-4">
+        <h3>Consulter un record</h3>
+        <p>Une fois votre record validé, vous pourrez retrouver votre prestation dans la page du monstre que vous avez choisi :</p>
+        <img src="{{ asset('documentation/record_index.png') }}" alt="">
+        <p>Cliquez simplement sur le monstre, et consultez votre classement avec votre temps :</p>
+        <img src="{{ asset('documentation/record_show.png') }}" alt="">
+        <p>Vous pouvez ensuite cliquer sur l'icône d'œil pour visualiser l'un de record de la liste. Vous arrivez alors sur la page du record</p>
+    </div>
+
+    <div class="grid-gap-4">
+        <h3>page du Record : </h3>
+        <img src="{{ asset('documentation/record_single.png') }}" alt="">
+        <p>Vous pouvez accéder au profil du joueur en cliquant sur son pseudo (à venir).</p>
+        <p>Vous avez le temps, et la vidéo du record.</p>
+        <p>Un bouton est également disponible au cas où le lecteur ne soit pas fonctionnel :</p>
+        <img src="{{ asset('documentation/button_youtube.png') }}" alt="">
+    </div>
+
+    <div class="flex justify-center space-x-4">
+        <a class="form-submit" href="{{ path("app_monitor_index") }}">Accueil</a>
+        <a class="form-submit" href="{{ path("app_record") }}">Records</a>
+    </div>
 </div>

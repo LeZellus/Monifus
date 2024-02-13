@@ -1,10 +1,44 @@
-<div class="tab-pane">
+<div class="tab-pane active">
     <h2>Moniteurs</h2>
-    <p>Principe du moniteur : Un moniteur permet simplement de renseigner le prix d'une ressource de votre choix. Vous pouvez donc renseigner le prix par lot de un, de dix, ou de cent.</p>
-    <p>Sur la page principale, vous retrouvez toutes les ressources qui possèdent au moins un moniteur :</p>
-    <img src="{{ asset('documentation/monitor_index.webp') }}" alt="Image de la page d'accueil des moniteurs">
-    <p>Le moniteur ne sert à rien d'autre qu'à historiser un prix sur une ressource à un instant T</p>
-    <p>En cliquant sur une des ressources, vous obtenez tout les moniteurs associés. Vous pouvez éditez n'importe quelle valeur en cliquant dessus :</p>
-    <img src="{{ asset('documentation/monitor_edit.webp') }}" alt="Image de l'édition' des moniteurs">
-    <p>Les valeurs du moniteur, elles, sont calculéees dans les ressources. (voir section Ressources)</p>
+
+    <div class="grid gap-4">
+        <h3>Principe du moniteur :</h3>
+        <p>Un moniteur permet simplement de renseigner le prix d'une ressource de votre choix. Vous pouvez donc renseigner le prix par lot de un, de dix, ou de cent.</p>
+        <div class="wrapper wrapper-yellow justify-center">Le moniteur est reservé aux ressources vendues en lot !</div>
+    </div>
+
+    <div class="grid gap-4">
+        <h3>Page principale des moniteurs</h3>
+        <p>Sur la <a class="link" href="{{ path('app_monitor_index') }}">page principale</a> des moniteurs, vous retrouvez un moniteur par ressource que vous aurez ajouté. Voici à quoi ça ressemble :</p>
+        <img src="{{ asset('documentation/monitor_index.png') }}" alt="Image de la page d'accueil des moniteurs">
+        <p>Sur cette page, je peux donc voir que j'ai créé des moniteurs pour la ressource Epée d'Alle, et la ressource pépite.</p>
+        <p>Dans le cas où vous ajoutez un grand nombre de ressources, une barre de recherche est disponible. Tapez juste le nom de la ressource ou appuyez sur la touche "ENTER".</p>
+        <p>Un lien pour la documentation est également présent afin de revenir ici en cas de besoin :</p>
+        <img src="{{ asset('documentation/button_documentation.png') }}" alt="">
+    </div>
+
+    <div class="grid gap-4">
+        <h3>Ajouter un Moniteur :</h3>
+        <p>Pour ajouter un moniteur, cliquez sur le bouton ajouter depuis la <a class="link" href="{{ path('app_monitor_index') }}">page des moniteurs</a>, ou cliquez directement sur ce
+            <a class="link" href="{{ path('app_monitor_new') }}">lien</a>.</p>
+        <img src="{{ asset('documentation/monitor_new.png') }}" alt="">
+        <p>Le champ de recherche vous permet de scroller, ou rechercher directement la ressource en tapant son nom. Ensuite, cliquez simplement dessus.</p>
+        <p>Renseignez le prix des lots en kamas, puis cliquez sur ajouter : vous avez créé votre premier moniteur ! 🎉</p>
+    </div>
+
+    <div class="grid gap-4">
+        <h3>Consulter un Moniteur :</h3>
+        <p>En cliquant sur une des moniteurs, vous arrivez sur la page dédiée à la ressource. Sur cette page, vous pourrez retrouver tout un tas d'informations utiles.</p>
+        <img src="{{ asset('documentation/monitor_show.png') }}" alt="Image de l'édition' des moniteurs">
+        <p>Le premier bloc reprend le nom de la ressource, ainsi que le nombre de moniteurs présents pour cette ressource.</p>
+        <p>Ensuite, vous aurez les trois blocs de moyennes :</p>
+        <img src="{{ asset('documentation/monitor_average.png') }}" alt="Image de l'édition' des moniteurs">
+        <p>Ces blocs calculent la moyenne par lot de tous les moniteurs que vous avez renseignés. Plus vous avez de Moniteurs pour une ressource, plus les données seront fiables.</p>
+        <p>Puis, le dernier bloc liste les moniteurs que vous avez créés. Vous pouvez les éditer, ou les supprimer.</p>
+    </div>
+
+    <div class="flex justify-center space-x-4">
+        <a class="form-submit" href="{{ path("app_monitor_index") }}">Accueil</a>
+        <a class="form-submit" href="{{ path("app_monitor_index") }}">Moniteurs</a>
+    </div>
 </div>

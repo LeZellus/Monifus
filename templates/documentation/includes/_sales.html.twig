@@ -1,67 +1,102 @@
 <div class="tab-pane">
     <h2>Ventes</h2>
-    <p>Principe des ventes : Les ventes sont un historique de vos achats. Vous n'avez qu'à sélectionner le bon item, renseigner le prix d'achat et de vente :</p>
-    <img src="{{ asset('documentation/sale_new.webp') }}" alt="Image page ajouter vente">
-    <p>Vous pourrez modifiez n'importe quelle vente plus tard.</p>
-    <p>Les valeurs obligatoires sont l'item, et le prix d'achat</p>
-    <p>L'application se charge de calculer les différentes valeurs automatiquement. Et vous retrouvez un historique de vos achats avec la possibilité de modifier ou de supprimer :</p>
-    <img src="{{ asset('documentation/sale_table.webp') }}" alt="Image tables ventes">
 
-    <h3>Explication items du panel :</h3>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/profit.webp') }}" alt="Image card Profit">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Profit :</span>
-            Le profit représente la totalité des kamas que vous avez gagné (uniquement les items marqués vendus).
-        </p>
+    <div class="grid gap-4">
+        <h3>Principe des ventes :</h3>
+        <p>Les ventes sont un historique de vos achats. Elles sont <strong>principalement destinées aux items</strong> à grande valeur vendus à l'unité. L'application se charge d'effectuer les calculs pour vous.</p>
     </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/profit_percent.webp') }}" alt="Image card Profit %">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Profit % :</span>
-            Le profit % représente le pourcentage total de profit que vous avez réalisé (uniquement les items marqués vendus).
-        </p>
+
+    <div class="grid gap-4">
+        <h3>Ajouter une vente :</h3>
+        <img src="{{ asset('documentation/sale_new.png') }}" alt="Image page ajouter vente">
+        <p class="wrapper wrapper-green justify-center">Vous pourrez modifiez n'importe quelle vente plus tard.</p>
+        <p>Les valeurs obligatoires sont <strong>l'item</strong>, et le <strong>prix d'achat</strong>.</p>
+        <p>L'application se charge de calculer les différentes valeurs automatiquement. Et vous retrouvez un historique de vos achats sur la
+            <a class="link" href="{{ path("app_sale") }}">page principale</a></p>
     </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/profit_pending.webp') }}" alt="Image card Profit en attente">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Profit en attente :</span>
-            Le profit en attente représente la totalité des kamas qu'il vous reste à gagner.
-        </p>
+
+
+    <div class="grid gap-4">
+        <h3>Page principale des ventes :</h3>
+        <p>Une fois une ou plusieurs ventes créées, vous les retrouvez sur la <a class="link" href="{{ path('app_sale') }}">page principale</a> des ventes :</p>
+        <img src="{{ asset('documentation/sale_index.png') }}" alt="Image card Profit">
+        <p>Vous y retrouvez toutes les valeurs calculées automatiquement à partir des ventes que vous avez renseignées.</p>
+        <p class="wrapper wrapper-yellow">Attention : Seuls les items indiqués comme vendus sont comptés dans certains calculs</p>
+        <p>Un lien pour la documentation est également présent afin de revenir ici en cas de besoin :</p>
+        <img src="{{ asset('documentation/button_documentation.png') }}" alt="">
     </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/total_items.webp') }}" alt="Image card Total items">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Total items :</span>
-            Total items représente le nombre d'items mis en vente.
-        </p>
+
+
+    <div class="grid gap-4">
+        <h3>Explication items du panel :</h3>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/profit.png') }}" alt="Image card Profit">
+            <p>
+                <span class="font-bold">Profit :</span>
+                Le profit représente la totalité des kamas que vous avez gagné (uniquement les items marqués vendus).
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/profit_percent.png') }}" alt="Image card Profit %">
+            <p>
+                <span class="font-bold">Profit % :</span>
+                Le profit % représente le pourcentage total de profit que vous avez réalisé (uniquement les items marqués vendus).
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/profit_pending.png') }}" alt="Image card Profit en attente">
+            <p>
+                <span class="font-bold">Profit en attente :</span>
+                Le profit en attente représente la totalité des kamas qu'il vous reste à gagner.
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/total_items.png') }}" alt="Image card Total items">
+            <p>
+                <span class="font-bold">Total items :</span>
+                Total items représente le nombre d'items mis en vente.
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/total_items_sell.png') }}" alt="Image card Total items vendus">
+            <p>
+                <span class="font-bold">Total items vendus :</span>
+                Total items vendus représente le nombre d'items vendus (uniquement les items marqués vendus).
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/invested.png') }}" alt="Image card Investi">
+            <p>
+                <span class="font-bold">Investi :</span>
+                Investi représente le nombre de kamas dépensés dans l'achat/revente
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/taxe.png') }}" alt="Image card Taxe">
+            <p>
+                <span class="font-bold">Taxe :</span>
+                La taxe représente les kamas dépensés lors de la mise en vente en HDV (uniquement les items marqués vendus).
+            </p>
+        </div>
+        <div class="grid gap-4">
+            <img src="{{ asset('documentation/total_sell.png') }}" alt="Image card Mis en vente">
+            <p>
+                <span class="font-bold">Mis en vente :</span>
+                Mis en vente représente la totalité des kamas que vous avez mis en vente.
+            </p>
+        </div>
     </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/total_items_sell.webp') }}" alt="Image card Total items vendus">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Total items vendus :</span>
-            Total items vendus représente le nombre d'items vendus (uniquement les items marqués vendus).
-        </p>
+
+    <div class="grid gap-4">
+        <h3>Modification / Suppression d'une vente :</h3>
+        <p>Vous pouvez modifier n'importe quelle vente, les prix seront automatiquement mis à jour</p>
+        <p>Vous pouvez également supprimer un moniteur depuis l'icone poubelle.</p>
+        <p class="wrapper wrapper-red justify-center">Supprimer une vente retire ces chiffres des calculs du tableau.</p>
+        <p class="wrapper wrapper-red justify-center">Supprimer une vente est irréversible. Aucun historique n'est mis en place.</p>
     </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/invested.webp') }}" alt="Image card Investi">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Investi :</span>
-            Investi représente le nombre de kamas dépensés dans l'achat/revente
-        </p>
-    </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/taxe.webp') }}" alt="Image card Taxe">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Taxe :</span>
-            La taxe représente les kamas dépensés lors de la mise en vente en HDV (uniquement les items marqués vendus).
-        </p>
-    </div>
-    <div class="flex items-center space-x-2">
-        <img class="w-72" src="{{ asset('documentation/total_sell.webp') }}" alt="Image card Mis en vente">
-        <p>
-            <span class="text-tertiary-400 dark:text-tertiary-400">Mis en vente :</span>
-            Mis en vente représente la totalité des kamas que vous avez mis en vente.
-        </p>
+
+    <div class="flex justify-center space-x-4">
+        <a class="form-submit" href="{{ path("app_monitor_index") }}">Accueil</a>
+        <a class="form-submit" href="{{ path("app_sale") }}">Ventes</a>
     </div>
 </div>

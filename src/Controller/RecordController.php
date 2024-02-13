@@ -8,6 +8,7 @@ use App\Form\RecordType;
 use App\Repository\MonsterRepository;
 use App\Repository\RecordRepository;
 use App\Service\BreadcrumbService;
+use App\Service\ExtractYoutubeUrlService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +18,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class RecordController extends AbstractController
 {
     private BreadcrumbService $breadcrumbService;
+    private ExtractYoutubeUrlService $extractYoutubeUrlService;
 
-    public function __construct(BreadcrumbService $breadcrumbService)
+    public function __construct(BreadcrumbService $breadcrumbService, ExtractYoutubeUrlService $extractYoutubeUrlService)
     {
         $this->breadcrumbService = $breadcrumbService;
+        $this->extractYoutubeUrlService = $extractYoutubeUrlService;
     }
 
     #[Route('/record', name: 'app_record')]
@@ -89,11 +92,15 @@ class RecordController extends AbstractController
         $record = $recordRepository->find($id);
         $recordMonsterName = $record->getMonster()->getName();
 
+        $youtubeUrl = $record->getVideoLink();
+        $youtubeId = $this->extractYoutubeUrlService->extractYouTubeID($youtubeUrl);
+
         $this->breadcrumbService->setBreadcrumbs("Record", "/record");
         $this->breadcrumbService->setBreadcrumbs($recordMonsterName, "");
 
         return $this->render('record/show.html.twig', [
             'record' => $record,
+            'youtubeId' => $youtubeId
         ]);
     }
 
@@ -106,5 +113,4 @@ class RecordController extends AbstractController
             'records' => $monster->getRecords(),
         ]);
     }
-
 }

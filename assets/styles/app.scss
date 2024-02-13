@@ -7,6 +7,10 @@
 body {
   @apply text-secondary dark:text-gray-400 text-lg font-light;
   font-family: "Poppins", sans-serif;
+
+  strong {
+    @apply font-bold;
+  }
 }
 
 h1 {
@@ -30,7 +34,7 @@ h2 {
 }
 
 .link {
-  @apply text-primary-400 no-underline hover:underline transition duration-300 text-sm font-light;
+  @apply text-tertiary-400 no-underline hover:underline transition duration-300;
 }
 
 tbody {

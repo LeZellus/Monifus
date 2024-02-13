@@ -6,6 +6,7 @@ use App\Entity\Price;
 use App\Entity\Resource;
 use App\Entity\User;
 use App\Service\BreadcrumbService;
+use App\Service\ExtractYoutubeUrlService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Monitor;
@@ -23,8 +24,9 @@ class MonitorController extends AbstractController
 {
     private BreadcrumbService $breadcrumbService;
     private Security $security;
+    private ExtractYoutubeUrlService $extractYoutubeUrlService;
 
-    public function __construct(BreadcrumbService $breadcrumbService, Security $security)
+    public function __construct(BreadcrumbService $breadcrumbService, Security $security, ExtractYoutubeUrlService $extractYoutubeUrlService)
     {
         $this->breadcrumbService = $breadcrumbService;
         $this->security = $security;

@@ -19,10 +19,14 @@
 }
 
 .tab-pane {
-  @apply hidden gap-4;
+  @apply hidden lg:gap-32 gap-16 max-w-screen-md mx-auto;
+
+  h2 {
+    @apply text-center;
+  }
 
   img{
-    @apply rounded-lg
+    @apply rounded-lg mx-auto my-4;
   }
 
   h3 {
