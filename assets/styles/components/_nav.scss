@@ -1,4 +1,5 @@
 .nav {
+  @apply dark:text-white text-gray-900;
   width: 58px;
   &-item {
     @apply flex items-center;

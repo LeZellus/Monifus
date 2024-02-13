@@ -4,6 +4,10 @@
   &-item {
     @apply text-xs;
 
+    &:first-child {
+      @apply dark:text-white text-gray-900;
+    }
+
     &.active {
       @apply text-primary-400 cursor-not-allowed;
     }

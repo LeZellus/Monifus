@@ -13,6 +13,11 @@ const slides = [
         img: "/uploads/sale.png",
         title: "Historique de vente",
         description: "Vous l'avez demandé, nous l'avons fait ! Avec notre appli, gardez un œil sur vos achats et ventes d'équipements dans le jeu, une fonctionnalité que tous les joueurs attendaient avec impatience. Simple et ludique, c'est l'outil parfait pour booster votre jeu."
+    },
+    {
+        img: "/uploads/minikrone.png",
+        title: "Chez nous pas de bot !",
+        description: "La tache peut sembler difficile mais récompensera les plus tenaces ! Les données sont entièrement renseignés manuellement par le joueur. Nous mettons un point d'honneur sur ce sujet."
     }
 ];
 

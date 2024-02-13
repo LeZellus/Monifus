@@ -22,10 +22,30 @@
 
   //Form Submit
   &-submit {
-    @apply w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-primary-500 rounded-lg shrink-0 sm:w-auto hover:bg-primary-600 dark:hover:bg-primary-500 dark:bg-primary-600 flex items-center justify-center;
+    @apply px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-primary-500 rounded-lg shrink-0 sm:w-auto hover:bg-primary-600 dark:hover:bg-primary-500 dark:bg-primary-600 flex items-center justify-center;
 
     &:focus {
       @apply outline-none ring-primary-400;
+    }
+
+    &-discord {
+      @apply bg-discord-500 hover:bg-discord-600 dark:hover:bg-discord-500 dark:bg-discord-600;
+    }
+
+    &-twitter {
+      @apply bg-black hover:bg-gray-900 dark:hover:bg-gray-900 dark:bg-black;
+    }
+
+    &-youtube {
+      @apply bg-red-500 hover:bg-red-600 dark:hover:bg-red-500 dark:bg-red-600;
+    }
+
+    &-green {
+      @apply bg-green-500 hover:bg-green-600 dark:hover:bg-green-500 dark:bg-green-600;
+    }
+
+    &-full {
+      @apply w-full;
     }
 
     &:hover {

@@ -68,7 +68,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Inscription',
-                'attr' => ['class' => 'form-submit w-full']
+                'attr' => ['class' => 'form-submit form-submit-full']
             ])
         ;
     }

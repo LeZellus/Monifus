@@ -1,0 +1,53 @@
+<section class="wrapper-style wrapper grid gap-4">
+    <div class="text-center grid gap-4">
+        <h2 class="text-4xl font-bold text-gray-800">Pourquoi notre outil ?</h2>
+        <p>Cliquez sur le bouton ci-dessous pour avoir un rapide aperçu de ce que propose le site.</p>
+        <div class="flex justify-center">
+            <a class="form-submit form-submit-green" href="{{ path('app_tutorial') }}">TUTORIEL</a>
+        </div>
+    </div>
+
+
+    <div class="gap-8 justify-end items-center p-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="mx-auto md:mx-0 md:ml-auto" src="{{ asset('uploads/corne_bouftou.png') }}" alt="dashboard image">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Records de Boss Épiques</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Partagez vos prouesses ! Avec Monifus, ajoutez vos records personnels de boss et comparez-les avec ceux des autres joueurs...</p>
+            <div class="flex md:justify-start justify-center">
+                <a href="{{ path('app_record') }}" class="form-submit">
+                    Entrer dans la légende
+                    <i class="ml-2" data-feather="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="gap-8 justify-start items-center p-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="mx-auto md:mx-0 md:mr-auto md:hidden" src="{{ asset('uploads/servitude.png') }}" alt="dashboard image">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Économie du Jeu Maîtrisée</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Monifus offre une plateforme unique où vous pouvez ajouter et consulter les prix des ressources du jeu. Obtenez des analyses détaillées comme la moyenne des prix pour planifier vos prochaines stratégies commerciales.</p>
+            <div class="flex md:justify-start justify-center">
+                <a href="{{ path('app_monitor_index') }}" class="form-submit">
+                    Créer un moniteur
+                    <i class="ml-2" data-feather="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <img class="hidden md:block mx-auto md:mx-0 md:mr-auto" src="{{ asset('uploads/servitude.png') }}" alt="dashboard image">
+    </div>
+
+    <div class="gap-8 justify-end items-center p-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="mx-auto md:mx-0 md:ml-auto" src="{{ asset('uploads/gelano.png') }}" alt="dashboard image">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Historique de Vente Complet</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Gérez vos kamas comme un pro ! Notre historique de vente fournit des informations précieuses sur vos transactions passées, vous permettant de suivre vos profits, vos dépenses, et les kamas en attente. C'est l'outil parfait pour optimiser vos échanges et accroître votre fortune dans Dofus.</p>
+            <div class="flex md:justify-start justify-center">
+                <a href="{{ path('app_sale') }}" class="form-submit">
+                    Voir vos ventes
+                    <i class="ml-2" data-feather="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

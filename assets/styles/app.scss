@@ -5,12 +5,16 @@
 @import "components/index";
 
 body {
-  @apply text-secondary dark:text-gray-200;
+  @apply text-secondary dark:text-gray-400 text-lg font-light;
   font-family: "Poppins", sans-serif;
 }
 
 h1 {
-  @apply text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-primary-400;
+  @apply text-6xl font-bold leading-tight tracking-tight text-gray-900 dark:text-primary-400;
+}
+
+h3 {
+  @apply text-6xl font-bold leading-tight tracking-tight text-tertiary-400 dark:text-tertiary-400;
 }
 
 h2 {
@@ -22,7 +26,7 @@ h1, h2, h3, h4, .family {
 }
 
 h2 {
-  @apply  dark:text-gray-200;
+  @apply text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white;
 }
 
 .link {
