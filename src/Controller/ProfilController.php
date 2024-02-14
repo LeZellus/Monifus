@@ -6,9 +6,7 @@ use App\Form\PersonalDataType;
 use App\Form\ProfilType;
 use App\Repository\UserRepository;
 use App\Service\BreadcrumbService;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,8 +43,6 @@ class ProfilController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em->persist($user);
             $em->flush();
-
-            // Ajouter un message de succès ou une redirection si nécessaire
         }
 
         // Traiter le deuxième formulaire
@@ -54,12 +50,11 @@ class ProfilController extends AbstractController
         if ($personalDataForm->isSubmitted() && $personalDataForm->isValid()) {
             $em->persist($user);
             $em->flush();
-
-            // Ajouter un message de succès ou une redirection si nécessaire
         }
 
         // Définir le fil d'Ariane et rendre la vue
         $this->breadcrumbService->setBreadcrumbs("Mon profil", "");
+
         return $this->render('profil/index.html.twig', [
             'editForm' => $form->createView(),
             'personalDataForm' => $personalDataForm->createView()
