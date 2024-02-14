@@ -20,7 +20,7 @@
                         {% set recordCount = recordCounts|filter(count => count.id == monster.id)|first %}
                         <p class="uppercase text-xs">Nombre de soumissions : {{ recordCount.recordCount }}</p>
                     </div>
-                    <img class="ml-4 w-10 h-10" src="{{ monster.imgUrl }}" alt="image de {{ monster.name }}">
+                    <img class="ml-4 f-full" src="{{ monster.imgUrl }}" alt="image de {{ monster.name }}">
                 </div>
                 <div class="grid gap-1">
                     <div class="flex items-center">
