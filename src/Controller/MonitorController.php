@@ -129,24 +129,9 @@ class MonitorController extends AbstractController
         ]);
     }
 
-    #[Route('/edit/{id}', name: 'app_monitor_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Monitor $monitor, EntityManagerInterface $entityManager): Response
-    {
-        $type = $request->request->get('type');
-        $value = $request->request->get('value');
-
-        if (in_array($type, ['pricePer1', 'pricePer10', 'pricePer100'])) {
-            $monitor->{'set'.ucfirst($type)}($value);
-            $entityManager->flush();
-            return $this->json(['success' => true]);
-        }
-
-        return $this->json(['success' => false]);
-    }
-
-    #[Route('/delete/{id}', name: 'app_monitor_delete', methods: ['DELETE', 'POST'])]
+    #[Route('/delete/{id}', name: 'app_monitor_delete')]
     public function deleteMonitor(): Response
     {
-        return $this->render('app_home');
+        return $this->redirectToRoute('app_home');
     }
 }

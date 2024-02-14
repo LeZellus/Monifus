@@ -32,9 +32,6 @@
                 <td class="p-2 hidden xl:table-cell">{{ price.priceTen|number_format(0, '.', ' ') }} k</td>
                 <td class="p-2 hidden xl:table-cell">{{ price.priceHundred|number_format(0, '.', ' ') }} k</td>
                 <td class="p-2 flex space-x-2">
-                    <a href="{{ path('app_sale_edit', {'id' : monitor.id}) }}">
-                        <i data-feather="edit" class="text-tertiary"></i>
-                    </a>
                     <form action="{{ path('app_monitor_delete', {'id': monitor.id}) }}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ monitor.id) }}">
                         <button type="submit" class="btn btn-danger">
