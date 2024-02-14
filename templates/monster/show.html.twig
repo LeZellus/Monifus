@@ -12,26 +12,26 @@
     <section class="wrapper wrapper-style wrapper-p-0">
         <table class="w-full text-xs text-left rtl:text-right">
             <thead class="text-xs uppercase">
-            <tr class="border-b border-gray-300 dark:border-gray-700">
+            <tr class="border-b border-gray-300 dark:border-gray-700 text-xs lg:text-lg">
                 <th scope="col" class="p-2 ">
-                    <span class="hidden sm:block text-xs">N°</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">place</span>
+                    <span class="block text-xs">N°</span>
+                    <span class="text-primary-400 mt-1 drop-shadow-2xl family">place</span>
                 </th>
-                <th scope="col" class="p-2 ">
-                    <span class="hidden sm:block text-xs">Profil</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">joueur</span>
+                <th scope="col" class="p-2">
+                    <span class="block text-xs">Profil</span>
+                    <span class="text-primary-400 mt-1 drop-shadow-2xl family">joueur</span>
                 </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="hidden sm:block text-xs">Temps du</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">record</span>
-                </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="sm:block text-xs">Date du</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">record</span>
+                <th scope="col" class="p-2">
+                    <span class="block text-xs">Temps du</span>
+                    <span class="text-primary-400 mt-1 drop-shadow-2xl family">record</span>
                 </th>
                 <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="hidden sm:block text-xs">Détails du</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">record</span>
+                    <span class="block text-xs">Date du</span>
+                    <span class="text-primary-400 mt-1 drop-shadow-2xl family">record</span>
+                </th>
+                <th scope="col" class="p-2 hidden xl:table-cell">
+                    <span class="block text-xs">Détails du</span>
+                    <span class="text-primary-400 mt-1 drop-shadow-2xl family">record</span>
                 </th>
             </tr>
             </thead>
@@ -51,9 +51,12 @@
                     </td>
                     <td class="p-2 text-sm table-cell">
                         {% set profileImage = record.user.profilePicture ? ('images/profiles/' ~ record.user.profilePicture) : 'uploads/profil_thumb.png' %}
-                        <a href="#" class="block rounded-full w-6 h-6 bg-cover bg-center border-2 border-gray-300 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-400 transition duration-300" style="background-image:url('{{ asset(profileImage) }}')"></a>
+                        <a href="#" class="flex items-center group">
+                            <div class="block rounded-full w-6 h-6 bg-cover bg-center border-2 border-gray-300 dark:border-gray-700 group-hover:border-primary-400 dark:hover:border-primary-400 transition duration-300" style="background-image:url('{{ asset(profileImage) }}')"></div>
+                            <span class="hidden lg:block ml-2 font-normal group-hover:text-primary-400 transition duration-300">{{ record.user.pseudonymeDofus }}</span>
+                        </a>
                     </td>
-                    <td class="p-2 text-sm hidden xl:table-cell">
+                    <td class="p-2 text-sm">
                         <div class="flex items-center">
                             {{ record.time|date('H:i:s') }}
                             <i data-feather="clock" class="ml-2 w-4 hidden lg:block"></i>
@@ -65,7 +68,7 @@
                             <i data-feather="calendar" class="ml-2 w-4 hidden lg:block"></i>
                         </div>
                     </td>
-                    <td class="p-2 text-sm hidden xl:table-cell">
+                    <td class="p-2 text-sm xl:table-cell">
                         <a class="text-tertiary-400 hover:underline" href="{{ path('app_record_show', {'id': record.id}) }}">
                             <i data-feather="eye" class="w-5"></i>
                         </a>
