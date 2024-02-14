@@ -122,6 +122,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?bool $isTutorial = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $contact = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
+
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Classe $classe = null;
+
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Server $server = null;
+
 
     public function __construct()
     {
@@ -391,7 +403,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->password,
             $this->pseudonymeDofus,
             $this->pseudonymeWebsite,
-            $this->roles
+            $this->roles,
+            $this->contact,
+            $this->description,
+            $this->server,
+            $this->classe
         ];
     }
 
@@ -403,7 +419,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->password,
             $this->pseudonymeDofus,
             $this->pseudonymeWebsite,
-            $this->roles
+            $this->roles,
+            $this->contact,
+            $this->description,
+            $this->server,
+            $this->classe
         ] = $data;
     }
 
@@ -462,6 +482,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsTutorial(bool $isTutorial): static
     {
         $this->isTutorial = $isTutorial;
+
+        return $this;
+    }
+
+    public function getContact(): ?string
+    {
+        return $this->contact;
+    }
+
+    public function setContact(?string $contact): static
+    {
+        $this->contact = $contact;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getClasse(): ?Classe
+    {
+        return $this->classe;
+    }
+
+    public function setClasse(?Classe $classe): static
+    {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    public function getServer(): ?Server
+    {
+        return $this->server;
+    }
+
+    public function setServer(?Server $server): static
+    {
+        $this->server = $server;
 
         return $this;
     }

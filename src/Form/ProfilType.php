@@ -15,24 +15,29 @@ class ProfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('pseudonymeWebsite', TextType::class)
-            ->add('pseudonymeDofus', TextType::class)
+            ->add('pseudonymeWebsite', TextType::class, [
+                'label' => 'Pseudonyme du site',
+            ])
+            ->add('pseudonymeDofus', TextType::class, [
+                'label' => 'Pseudonyme sur Dofus',
+            ])
             ->add('profilePictureFile', DropzoneType::class, [
+                'label' => 'Photo de profil',
+                'attr' => [
+                    "placeholder" => "Glissez déposez ou chargez un fichier",
+                    "class" => "rounded-lg"
+                ],
+                'required' => false,
+            ])
+            ->add('coverPictureFile', DropzoneType::class, [
                 'label' => 'Photo de couverture',
                 'attr' => [
                     "placeholder" => "Glissez déposez ou chargez un fichier"
                 ],
                 'required' => false,
             ])
-            ->add('coverPictureFile', DropzoneType::class, [
-                'label' => 'Photo de profil',
-                'attr' => [
-                    "placeholder" => "Glissez déposez ou chargez un fichier"
-                ],
-                'required' => false,
-            ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Sauvegarder',
+                'label' => 'Enregistrer',
             ])
         ;
     }

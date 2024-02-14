@@ -167,7 +167,7 @@
 }
 
 .ts-control > input {
-  @apply inline-block p-0 min-h-0 max-w-full m-0 indent-0 border-0 bg-transparent flex-grow select-auto  placeholder-gray-300 dark:placeholder-gray-600;
+  @apply inline-block p-0 min-h-0 max-w-full m-0 indent-0 border-0 bg-transparent flex-grow select-auto  placeholder-gray-300 dark:placeholder-gray-600 dark:text-gray-100;
   min-width: 7rem;
   max-height: none !important;
   box-shadow: none !important;

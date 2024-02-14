@@ -29,6 +29,10 @@ h1, h2, h3, h4, .family {
   font-family: 'Fraunces', serif;
 }
 
+.dropzone-container {
+  @apply rounded-lg;
+}
+
 h2 {
   @apply text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white;
 }

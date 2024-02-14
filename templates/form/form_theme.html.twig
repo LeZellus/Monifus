@@ -52,9 +52,25 @@
     </div>
 {% endblock %}
 
+{% block select_widget %}
+    {% set type = type|default('text') %}
+    <div class="flex justify-center">
+        <input type="{{ type }}"
+                {{ block('widget_attributes') }}
+               class="{{ attr.class|default('') }} form-input {% if errors|length > 0 %}border border-red-400 dark:border-red-400{% endif %}"
+                {%- if value is not empty -%} value="{{ value }}" {%- endif -%}
+                {%- if required -%} required {%- endif -%}/>
+    </div>
+{% endblock %}
+
+
 {% block form_label %}
     {% if label is not same as(false) %}
-        <label for="{{ id }}" class="form-label {{ label_attr.class|default('') }}">
+        {% set label_classes = label_attr.class|default('') %}
+        {% if required %}
+            {% set label_classes = label_classes ~ ' required' %}
+        {% endif %}
+        <label for="{{ id }}" class="form-label {{ label_classes }}">
             {{ label }}
         </label>
     {% endif %}

@@ -18,6 +18,7 @@ class RecordType extends AbstractType
             ->add('monster', MonsterAutocompleteField::class)
             ->add('time', TimeType::class, [
                 'label' => 'Temps du record',
+                'with_seconds' => true,
             ])
             ->add('videoLink', UrlType::class, [
                 'label' => 'Lien de la vidéo',

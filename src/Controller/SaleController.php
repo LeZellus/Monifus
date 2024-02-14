@@ -80,7 +80,7 @@ class SaleController extends AbstractController
             return $this->redirectToRoute('app_sale', [], Response::HTTP_SEE_OTHER);
         }
 
-        $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
+        $this->breadcrumbService->setBreadcrumbs("Ventes", '/vente');
         $this->breadcrumbService->setBreadcrumbs("Editer", '');
 
         return $this->render('sale/edit.html.twig', [

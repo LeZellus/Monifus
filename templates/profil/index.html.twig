@@ -1,39 +1,92 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil | {{ parent() }}{% endblock %}
+{% block title %}Mon profil | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Profil</h1>
+    <h1 class="text-center">Mon profil</h1>
+    <main class="grid 2xl:grid-cols-4 gap-4">
+        <section class="col-span-1 flex flex-col space-y-4">
 
-    <section class="grid gap-4 lg:gap-6 lg:grid-cols-3">
-        <div class="wrapper wrapper-style grid gap-4 lg:gap-6">
-            <div class="flex items-center">
+            {% set backgroundImageUrl = '' %}
+            {% if app.user.coverPicture is not empty %}
+                {% set backgroundImageUrl = asset('images/covers/' ~ app.user.coverPicture) %}
+            {% else %}
+                {% set backgroundImageUrl = asset('uploads/cover.webp') %}
+            {% endif %}
+            <div style="background-image: url('{{ backgroundImageUrl }}')" class="profile-cover"></div>
 
-                {% set profileImage = app.user.profilePicture ? ('images/profiles/' ~ app.user.profilePicture) : 'uploads/profil_thumb.png' %}
-                <div class="rounded-full w-16 h-16 mr-4 bg-cover bg-center" style="background-image:url('{{ asset(profileImage) }}')"></div>
+            <div class="p-4 border rounded-lg wrapper-style relative grid gap-4">
+                <h3>Pseudonymes :</h3>
 
-                <h2 class="text-xl font-extrabold">{{ app.user.pseudonymeWebsite }}</h2>
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Pseudonyme sur le site :</p>
+                    <p class="text-primary-400">{{ app.user.pseudonymeWebsite }}</p>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Pseudonyme sur Dofus :</p>
+                    <p class="text-primary-400">{{ app.user.pseudonymeDofus }}</p>
+                </div>
+
+                <p class="text-center italic">
+                    {% if app.user.description is not empty %}
+                        {{ app.user.description }}
+                    {% else %}
+                        Aucune description.
+                    {% endif %}
+                </p>
+
+                {% set backgroundImageUrl = '' %}
+                {% if app.user.profilePicture is not empty %}
+                    {% set backgroundImageUrl = asset('images/profiles/' ~ app.user.profilePicture) %}
+                {% elseif app.user.classe is not empty %}
+                    {% set backgroundImageUrl = asset('classes/' ~ app.user.classe.imgUrl) %}
+                {% else %}
+                    {% set backgroundImageUrl = asset('uploads/logo.jpg') %}
+                {% endif %}
+                <div style="background-image: url('{{ backgroundImageUrl }}')" class="profile-thumb"></div>
             </div>
-            <div>
-                <p>Email : {{ app.user.email }}</p>
-                <p>Contact sur Dofus : <span class="text-primary-500 font-bold">{{ app.user.pseudonymeDofus }}</span></p>
+            <div class="p-4 border rounded-lg wrapper-style grid gap-4">
+                <h3>Activitées :</h3>
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Nombre de records :</p>
+                    <p class="text-green-400 font-bold text-sm">0</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Nombre de ventes :</p>
+                    <p class="text-green-400 font-bold text-sm">0</p>
+                </div>
             </div>
-        </div>
+            <div class="wrapper wrapper-style">
+                <div class="flex justify-center">
+                    <a href="{{ path('app_profil_show', {'id': app.user.id}) }}" class="form-submit">Voir la page publique</a>
+                </div>
+            </div>
+        </section>
 
-        {% set coverImage = app.user.coverPicture ? ('images/covers/' ~ app.user.coverPicture) : 'uploads/cover.webp' %}
-        <div class="w-full h-64 rounded-lg lg:col-span-2 overflow-hidden bg-cover bg-center p-4" style="background-image:url('{{ asset(coverImage) }}')">
-            <h2 class="text-xl font-extrabold">Photo de couverture</h2>
-        </div>
-
-        <div class="wrapper wrapper-style lg:col-start-2 lg:col-span-2 grid gap-4 lg:gap-6">
-            <h2 class="text-xl font-extrabold">Informations générales</h2>
-            {{ form_start(editForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
-                {{ form_row(editForm.pseudonymeWebsite) }}
-                {{ form_row(editForm.pseudonymeDofus) }}
-                {{ form_row(editForm.profilePictureFile) }}
-                {{ form_row(editForm.coverPictureFile) }}
-                {{ form_widget(editForm.submit) }}
-            {{ form_end(editForm) }}
-        </div>
-    </section>
+        <section class="2xl:col-span-3">
+            <div class="grid gap-4">
+                <div class="wrapper wrapper-style grid gap-4">
+                    <h2>Informations générales</h2>
+                    {{ form_start(editForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
+                        {{ form_row(editForm.pseudonymeWebsite) }}
+                        {{ form_row(editForm.pseudonymeDofus) }}
+                        {{ form_row(editForm.profilePictureFile) }}
+                        {{ form_row(editForm.coverPictureFile) }}
+                        {{ form_widget(editForm.submit) }}
+                    {{ form_end(editForm) }}
+                </div>
+                <div class="wrapper wrapper-style grid gap-4">
+                    <h2>Records</h2>
+                    {{ form_start(personalDataForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
+                        {{ form_row(personalDataForm.contact) }}
+                        {{ form_row(personalDataForm.description) }}
+                        {{ form_row(personalDataForm.server) }}
+                        {{ form_row(personalDataForm.classe) }}
+                        {{ form_widget(personalDataForm.submit) }}
+                    {{ form_end(personalDataForm) }}
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

@@ -51,7 +51,7 @@
                     </td>
                     <td class="p-2 text-sm table-cell">
                         {% set profileImage = record.user.profilePicture ? ('images/profiles/' ~ record.user.profilePicture) : 'uploads/profil_thumb.png' %}
-                        <a href="#" class="flex items-center group">
+                        <a href="{{ path('app_profil_show', {'id': record.user.id}) }}" class="flex items-center group">
                             <div class="block rounded-full w-6 h-6 bg-cover bg-center border-2 border-gray-300 dark:border-gray-700 group-hover:border-primary-400 dark:hover:border-primary-400 transition duration-300" style="background-image:url('{{ asset(profileImage) }}')"></div>
                             <span class="hidden lg:block ml-2 font-normal group-hover:text-primary-400 transition duration-300">{{ record.user.pseudonymeDofus }}</span>
                         </a>

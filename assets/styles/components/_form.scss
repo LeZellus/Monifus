@@ -71,3 +71,7 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+select {
+  @apply rounded-lg bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 block w-full p-2.5 appearance-none hover:bg-white dark:hover:bg-gray-800 text-sm focus-visible:outline-0;
+}

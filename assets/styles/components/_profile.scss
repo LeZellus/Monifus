@@ -1,0 +1,10 @@
+.profile {
+
+  &-thumb {
+    @apply absolute h-16 w-16 lg:h-32 lg:w-32 rounded-full lg:-top-28 -top-12 left-1/2 transform -translate-x-1/2 z-10 border bg-cover bg-center wrapper-style;
+  }
+
+  &-cover {
+    @apply h-32 lg:h-48 rounded-lg bg-cover bg-center;
+  }
+}

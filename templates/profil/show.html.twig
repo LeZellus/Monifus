@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil de {{ user.pseudonymeWebsite }} | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Profil de {{ user.pseudonymeWebsite }}</h1>
+    <main class="grid 2xl:grid-cols-4 gap-4">
+        <section class="col-span-1 flex flex-col space-y-4">
+
+            {% set backgroundImageUrl = '' %}
+            {% if user.coverPicture is not empty %}
+                {% set backgroundImageUrl = asset('images/covers/' ~ user.coverPicture) %}
+            {% else %}
+                {% set backgroundImageUrl = asset('uploads/cover.webp') %}
+            {% endif %}
+            <div style="background-image: url('{{ backgroundImageUrl }}')" class="profile-cover"></div>
+
+            <div class="p-4 border rounded-lg wrapper-style relative grid gap-4">
+                <h3>Pseudonymes :</h3>
+
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Pseudonyme sur le site :</p>
+                    <p class="text-primary-400">{{ user.pseudonymeWebsite }}</p>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Pseudonyme sur Dofus :</p>
+                    <p class="text-primary-400">{{ user.pseudonymeDofus }}</p>
+                </div>
+
+                <p class="text-center italic">
+                    {% if user.description is not empty %}
+                        {{ user.description }}
+                    {% else %}
+                        Aucune description.
+                    {% endif %}
+                </p>
+
+                {% set backgroundImageUrl = '' %}
+                {% if user.profilePicture is not empty %}
+                    {% set backgroundImageUrl = asset('images/profiles/' ~ user.profilePicture) %}
+                {% elseif user.classe is not empty %}
+                    {% set backgroundImageUrl = asset('classes/' ~ user.classe.imgUrl) %}
+                {% else %}
+                    {% set backgroundImageUrl = asset('uploads/logo.jpg') %}
+                {% endif %}
+                <div style="background-image: url('{{ backgroundImageUrl }}')" class="profile-thumb"></div>
+            </div>
+            <div class="p-4 border rounded-lg wrapper-style grid gap-4">
+                <h3>Activitées :</h3>
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Nombre de records :</p>
+                    <p class="text-green-400 font-bold text-sm">0</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Nombre de ventes :</p>
+                    <p class="text-green-400 font-bold text-sm">0</p>
+                </div>
+            </div>
+            {% if app.user.id == user.id %}
+            <div class="wrapper wrapper-style">
+                <div class="flex justify-center">
+                    <a href="{{ path('app_profil') }}" class="form-submit">Modifier mon profil</a>
+                </div>
+            </div>
+            {% endif %}
+        </section>
+
+        <section class="2xl:col-span-3">
+            <div class="grid gap-4">
+                <div class="wrapper wrapper-style grid gap-4">
+                    <h2>Informations personnelles</h2>
+                        <div class="flex justify-between items-center">
+                            <p class="text-xs uppercase font-bold">Adresse de contact :</p>
+                            {% if user.contact is not empty %}
+                                <p class="text-primary-400">{{ user.contact }}</p>
+                            {% else %}
+                                <p class="text-primary-400">Non spécifié.</p>
+                            {% endif %}
+                        </div>
+
+
+                        <div class="flex justify-between items-center">
+                            <p class="text-xs uppercase font-bold">Classe :</p>
+                            {% if user.classe is not empty %}
+                                <p class="text-primary-400">{{ user.classe }}</p>
+                            {% else %}
+                                <p class="text-primary-400">Non spécifié.</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <p class="text-xs uppercase font-bold">Serveur :</p>
+                            {% if user.server is not empty %}
+                                <p class="text-primary-400">{{ user.server }}</p>
+                            {% else %}
+                                <p class="text-primary-400">Non spécifié.</p>
+                            {% endif %}
+                        </div>
+                </div>
+                <div class="wrapper wrapper-style grid gap-4">
+                    <h2>Records</h2>
+                    <p>Ce joueur n'a posté aucun record.</p>
+                </div>
+                <div class="wrapper wrapper-style grid gap-4">
+                    <h2>Ventes</h2>
+                    <p>Ce joueur n'a aucune vente publique.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
