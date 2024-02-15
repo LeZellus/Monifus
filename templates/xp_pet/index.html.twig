@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">XPETifus</h1>
+    <main class="wrapper wrapper-style grid gap-8">
+        {% if profitability is not null %}
+            {% if profitability == 0 %}
+                <p class="wrapper wrapper-yellow justify-center">Peut-être que l'xp de la ressource n'est pas renseigné, merci de bien vouloir nous indiquer le montant sur le <a class="link mx-2" href="https://discord.link/VotreServeurDiscord">Discord</a> pour que l'on puisse le mettre à jour. L'équipe Monifus.</p>
+            {% endif %}
+        {% endif %}
+        <div class=" max-w-screen-md mx-auto w-full grid gap-4">
+            <img class="w-48 mx-auto" src="{{ asset('uploads/dragoune.png') }}" alt="Image dragoune Dofus">
+            {{ form_start(form, {'attr': {'class': 'form-wrapper'}}) }}
+            {{ form_row(form.resource) }}
+            {{ form_row(form.price) }}
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
+
+            {% if profitability is not null %}
+                <div class="grid gap-4 justify-center">
+                    <div>Rentabilité : <strong class="text-green-400">{{ profitability }}%</strong></div>
+                </div>
+            {% endif %}
+
+            <h3>Comment ça fonctionne ?</h3>
+            <ol class="list-decimal list-inside grid gap-2">
+                <li>Renseignez simplement la ressource souhaitée et son prix à <strong>l'unité</strong>.</li>
+                <li>Lancez le calcul.</li>
+                <li>Observez le résultat.</li>
+            </ol>
+
+            <p>Un bon nombre de ressources n'est pas renseigné et le résultat peut-être 0 à de nombreuses reprises. Veuillez nous informer des valeurs pour que l'on puisse mettre à jour.</p>
+        </div>
+    </main>
+{% endblock %}

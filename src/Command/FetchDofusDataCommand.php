@@ -80,6 +80,7 @@ class FetchDofusDataCommand extends Command
         $entity->setAnkamaId($item["id"]);
         $entity->setName($item["name"]["fr"] ?? 'Unknown');
         $entity->setImgUrl($item["img"]);
+        $entity->setXpPet(0);
 
         if ($entityClass == Resource::class) {
             $entity->setLevel($item["level"]);

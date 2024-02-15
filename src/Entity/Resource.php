@@ -39,6 +39,9 @@ class Resource
     #[ORM\OneToMany(mappedBy: 'resource', targetEntity: Sale::class)]
     private Collection $sales;
 
+    #[ORM\Column]
+    private ?float $xpPet = null;
+
     public function __construct()
     {
         $this->monitors = new ArrayCollection();
@@ -166,6 +169,18 @@ class Resource
                 $sale->setResource(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getXpPet(): ?float
+    {
+        return $this->xpPet;
+    }
+
+    public function setXpPet(float $xpPet): static
+    {
+        $this->xpPet = $xpPet;
 
         return $this;
     }
