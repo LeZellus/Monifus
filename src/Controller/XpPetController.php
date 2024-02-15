@@ -25,43 +25,15 @@ class XpPetController extends AbstractController
         $formXpPetNumber->handleRequest($request);
 
         $search = $request->query->get('search');
-        $profitability = null;
-        $number = null;
 
         $query = $resourceRepository->findResourcesWithXpPet($search);
-
         $limit = 10;
         $page = $request->query->getInt('page', 1);
 
-        $pagination = $paginator->paginate(
-            $query,
-            $page,
-            $limit
-        );
+        $pagination = $paginator->paginate($query, $page, $limit);
 
-        if ($formXpPetPercent->isSubmitted() && $formXpPetPercent->isValid()) {
-            $data = $formXpPetPercent->getData();
-
-            // Trouver la ressource sélectionnée
-            $resource = $entityManager->getRepository(Resource::class)->find($data['resource']);
-
-            // Calcul de la rentabilité
-            $xpPet = $resource ? $resource->getXpPet() : 0;
-            $price = $data['price'];
-            $profitability = $price != 0 ? ($xpPet / $price) * 100 : 0; // Pourcentage de rentabilité
-        }
-
-        if ($formXpPetNumber->isSubmitted() && $formXpPetNumber->isValid()) {
-            $data = $formXpPetNumber->getData();
-
-            // Trouver la ressource sélectionnée
-            $resource = $entityManager->getRepository(Resource::class)->find($data['resource']);
-
-            // Calcul de la rentabilité
-            $xpPet = $resource ? $resource->getXpPet() : 0;
-            $price = $data['price'];
-            $number = $price != 0 ? ($price / $xpPet) : 0;
-        }
+        $profitability = $this->calculateProfitability($formXpPetPercent, $entityManager);
+        $number = $this->calculateNumber($formXpPetNumber, $entityManager);
 
         return $this->render('xp_pet/index.html.twig', [
             'formXpPetPercent' => $formXpPetPercent->createView(),
@@ -71,5 +43,33 @@ class XpPetController extends AbstractController
             'pagination' => $pagination,
             'search' => $search
         ]);
+    }
+
+    private function calculateProfitability($form, $entityManager): float|int|null
+    {
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $resource = $entityManager->getRepository(Resource::class)->find($data['resource']);
+            $xpPet = $resource ? $resource->getXpPet() : 0;
+            $price = $data['price'];
+
+            return $price != 0 ? ($xpPet / $price) * 100 : null;
+        }
+
+        return null;
+    }
+
+    private function calculateNumber($form, $entityManager): float|int|null
+    {
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $resource = $entityManager->getRepository(Resource::class)->find($data['resource']);
+            $xpPet = $resource ? $resource->getXpPet() : 0;
+            $price = $data['price'];
+
+            return $xpPet != 0 ? ($price / $xpPet) : null;
+        }
+
+        return null;
     }
 }
