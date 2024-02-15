@@ -36,9 +36,18 @@
             </div>
         </section>
 
-        <div class="flex justify-center">
-            {{ knp_pagination_render(pagination) }}
-        </div>
+        <form action="{{ path('app_xp_pet') }}" method="get" class="grid gap-2">
+            <label class="form-label" for="search">Recherchez une ressource</label>
+            <div class="flex space-x-2">
+                <input value="{{ search }}" id="search" class="form-input h-full flex-1" type="text" name="search" placeholder="Galet brasillant" />
+                <button class="wrapper wrapper-green h-14 w-14 flex justify-center font-semibold" type="submit">GO</button>
+
+                <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_monitor_index') }}">
+                    <i data-feather="trash" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </form>
+
         <section class="wrapper wrapper-style wrapper-p-0 text-sm">
             <table class="w-full text-left rtl:text-right">
                 <thead class="text-xs uppercase">

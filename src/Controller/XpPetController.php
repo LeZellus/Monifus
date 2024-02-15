@@ -20,10 +20,11 @@ class XpPetController extends AbstractController
     {
         $form = $this->createForm(XpPetType::class);
         $form->handleRequest($request);
+        $search = $request->query->get('search');
 
         $profitability = null;
 
-        $resources = $resourceRepository->findResourcesWithXpPet();
+        $query = $resourceRepository->findResourcesWithXpPet($search);
 
         // Définir le nombre de résultats par page
         $limit = 10;
@@ -33,7 +34,7 @@ class XpPetController extends AbstractController
 
         // Paginer les résultats
         $pagination = $paginator->paginate(
-            $resources, // Requête ou queryBuilder
+            $query, // Requête ou queryBuilder
             $page,         // Numéro de la page actuelle
             $limit         // Nombre de résultats par page
         );
@@ -53,7 +54,8 @@ class XpPetController extends AbstractController
         return $this->render('xp_pet/index.html.twig', [
             'form' => $form->createView(),
             'profitability' => $profitability,
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'search' => $search
         ]);
     }
 }

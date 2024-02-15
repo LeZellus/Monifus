@@ -39,13 +39,16 @@ class ResourceRepository extends ServiceEntityRepository
         }
     }
 
-    public function findResourcesWithXpPet()
+    public function findResourcesWithXpPet(?string $search = null)
     {
-        return $this->createQueryBuilder('r')
-            ->where('r.xpPet IS NOT NULL')
-            ->andWhere('r.xpPet > 0')
-            ->orderBy('r.xpPet', 'DESC')
-            ->getQuery()
-            ->getResult();
+        $queryBuilder = $this->createQueryBuilder('r')
+            ->where('r.xpPet > 0');
+
+        if ($search) {
+            $queryBuilder->andWhere('r.name LIKE :search')
+                ->setParameter('search', '%'.$search.'%');
+        }
+
+        return $queryBuilder->getQuery()->getResult();
     }
 }
