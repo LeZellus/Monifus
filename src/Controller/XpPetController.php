@@ -26,6 +26,7 @@ class XpPetController extends AbstractController
 
         $search = $request->query->get('search');
         $profitability = null;
+        $number = null;
 
         $query = $resourceRepository->findResourcesWithXpPet($search);
 
@@ -59,12 +60,13 @@ class XpPetController extends AbstractController
             // Calcul de la rentabilité
             $xpPet = $resource ? $resource->getXpPet() : 0;
             $price = $data['price'];
-            $profitability = $price != 0 ? ($price / $xpPet) : 0;
+            $number = $price != 0 ? ($price / $xpPet) : 0;
         }
 
         return $this->render('xp_pet/index.html.twig', [
             'formXpPetPercent' => $formXpPetPercent->createView(),
             'formXpPetNumber' => $formXpPetNumber->createView(),
+            'number' => $number,
             'profitability' => $profitability,
             'pagination' => $pagination,
             'search' => $search
