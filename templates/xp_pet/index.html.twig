@@ -120,7 +120,7 @@
                         </td>
                         <td class="p-2">{{ resource.getName() }}</td>
                         <td class="p-2 hidden xl:table-cell">{{ resource.getLevel() }}</td>
-                        <td class="p-2">{{ resource.getXpPet == resource.getXpPet|number_format(0) ? resource.getXpPet|number_format(0) : resource.getXpPet|number_format(2) }}</td>
+                        <td class="p-2">{{ resource.getXpPet|number_format(2) }}</td>
                     </tr>
                 {% else %}
                     <tr class="border-b border-gray-300 dark:border-gray-700">

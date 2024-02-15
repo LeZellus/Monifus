@@ -42,7 +42,9 @@ class ResourceRepository extends ServiceEntityRepository
     public function findResourcesWithXpPet(?string $search = null)
     {
         $queryBuilder = $this->createQueryBuilder('r')
-            ->where('r.xpPet > 0');
+            ->where('r.xpPet > 0')
+            ->orderBy('r.xpPet', 'DESC')
+        ;
 
         if ($search) {
             $queryBuilder->andWhere('r.name LIKE :search')
