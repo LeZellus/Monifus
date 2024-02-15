@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Resource;
 use App\Form\XpPetType;
+use App\Repository\ResourceRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,12 +16,27 @@ use Symfony\Component\Routing\Attribute\Route;
 class XpPetController extends AbstractController
 {
     #[Route('/xpetifus', name: 'app_xp_pet')]
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, EntityManagerInterface $entityManager, ResourceRepository $resourceRepository, PaginatorInterface $paginator): Response
     {
         $form = $this->createForm(XpPetType::class);
         $form->handleRequest($request);
 
         $profitability = null;
+
+        $resources = $resourceRepository->findResourcesWithXpPet();
+
+        // Définir le nombre de résultats par page
+        $limit = 10;
+
+        // Récupérer le numéro de la page actuelle
+        $page = $request->query->getInt('page', 1);
+
+        // Paginer les résultats
+        $pagination = $paginator->paginate(
+            $resources, // Requête ou queryBuilder
+            $page,         // Numéro de la page actuelle
+            $limit         // Nombre de résultats par page
+        );
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
@@ -34,7 +52,8 @@ class XpPetController extends AbstractController
 
         return $this->render('xp_pet/index.html.twig', [
             'form' => $form->createView(),
-            'profitability' => $profitability
+            'profitability' => $profitability,
+            'pagination' => $pagination
         ]);
     }
 }

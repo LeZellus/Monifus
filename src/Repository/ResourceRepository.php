@@ -38,4 +38,14 @@ class ResourceRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    public function findResourcesWithXpPet()
+    {
+        return $this->createQueryBuilder('r')
+            ->where('r.xpPet IS NOT NULL')
+            ->andWhere('r.xpPet > 0')
+            ->orderBy('r.xpPet', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 }
