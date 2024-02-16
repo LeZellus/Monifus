@@ -17,7 +17,7 @@ const slides = [
     {
         img: "/uploads/minikrone.png",
         title: "Chez nous pas de bot !",
-        description: "La tache peut sembler difficile mais récompensera les plus tenaces ! Les données sont entièrement renseignés manuellement par le joueur. Nous mettons un point d'honneur sur ce sujet."
+        description: "La tache peut sembler difficile mais récompensera les plus tenaces ! Les données sont entièrement renseignés manuellement par le joueur hormis celle récupéré par l'API DofusDB. Nous mettons un point d'honneur sur ce sujet."
     }
 ];
 
