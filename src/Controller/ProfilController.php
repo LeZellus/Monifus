@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\PersonalDataType;
 use App\Form\ProfilType;
+use App\Form\SocialUserType;
 use App\Repository\UserRepository;
 use App\Service\BreadcrumbService;
 use Doctrine\Persistence\ManagerRegistry;
@@ -33,10 +34,12 @@ class ProfilController extends AbstractController
         // Créer les formulaires
         $form = $this->createForm(ProfilType::class, $user);
         $personalDataForm = $this->createForm(PersonalDataType::class, $user);
+        $socialDataForm = $this->createForm(SocialUserType::class, $user);
 
         // Cloner la requête pour chaque formulaire
         $formRequest = clone $request;
         $personalDataRequest = clone $request;
+        $socialDataRequest = clone $request;
 
         // Traiter le premier formulaire
         $form->handleRequest($formRequest);
@@ -52,12 +55,19 @@ class ProfilController extends AbstractController
             $em->flush();
         }
 
+        $socialDataForm->handleRequest($socialDataRequest);
+        if ($socialDataForm->isSubmitted() && $socialDataForm->isValid()) {
+            $em->persist($user);
+            $em->flush();
+        }
+
         // Définir le fil d'Ariane et rendre la vue
         $this->breadcrumbService->setBreadcrumbs("Mon profil", "");
 
         return $this->render('profil/index.html.twig', [
             'editForm' => $form->createView(),
-            'personalDataForm' => $personalDataForm->createView()
+            'personalDataForm' => $personalDataForm->createView(),
+            'socialDataForm' => $socialDataForm->createView()
         ]);
     }
 

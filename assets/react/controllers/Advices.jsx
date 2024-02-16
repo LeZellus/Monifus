@@ -7,6 +7,8 @@ const AdvicePopup = () => {
 
     // Function to fetch advice
     const fetchAdvice = () => {
+        console.log('test');
+
         fetch('/advice')
             .then(response => response.text())
             .then(conseil => {

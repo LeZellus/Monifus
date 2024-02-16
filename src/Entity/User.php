@@ -134,6 +134,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(inversedBy: 'users')]
     private ?Server $server = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $youtubeUrl = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $twitterUrl = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $ankamaUrl = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $twitchUrl = null;
+
 
     public function __construct()
     {
@@ -530,6 +542,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setServer(?Server $server): static
     {
         $this->server = $server;
+
+        return $this;
+    }
+
+    public function getYoutubeUrl(): ?string
+    {
+        return $this->youtubeUrl;
+    }
+
+    public function setYoutubeUrl(?string $youtubeUrl): static
+    {
+        $this->youtubeUrl = $youtubeUrl;
+
+        return $this;
+    }
+
+    public function getTwitterUrl(): ?string
+    {
+        return $this->twitterUrl;
+    }
+
+    public function setTwitterUrl(?string $twitterUrl): static
+    {
+        $this->twitterUrl = $twitterUrl;
+
+        return $this;
+    }
+
+    public function getAnkamaUrl(): ?string
+    {
+        return $this->ankamaUrl;
+    }
+
+    public function setAnkamaUrl(?string $ankamaUrl): static
+    {
+        $this->ankamaUrl = $ankamaUrl;
+
+        return $this;
+    }
+
+    public function getTwitchUrl(): ?string
+    {
+        return $this->twitchUrl;
+    }
+
+    public function setTwitchUrl(?string $twitchUrl): static
+    {
+        $this->twitchUrl = $twitchUrl;
 
         return $this;
     }

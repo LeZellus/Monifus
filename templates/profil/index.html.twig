@@ -67,7 +67,7 @@
         <section class="2xl:col-span-3">
             <div class="grid gap-4">
                 <div class="wrapper wrapper-style grid gap-4">
-                    <h2>Informations générales</h2>
+                    <h2>Informations personnelles</h2>
                     {{ form_start(editForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
                         {{ form_row(editForm.pseudonymeWebsite) }}
                         {{ form_row(editForm.pseudonymeDofus) }}
@@ -77,7 +77,7 @@
                     {{ form_end(editForm) }}
                 </div>
                 <div class="wrapper wrapper-style grid gap-4">
-                    <h2>Records</h2>
+                    <h2>Informations générales</h2>
                     {{ form_start(personalDataForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
                         {{ form_row(personalDataForm.contact) }}
                         {{ form_row(personalDataForm.description) }}
@@ -85,6 +85,16 @@
                         {{ form_row(personalDataForm.classe) }}
                         {{ form_widget(personalDataForm.submit) }}
                     {{ form_end(personalDataForm) }}
+                </div>
+                <div class="wrapper wrapper-style grid gap-4">
+                    <h2>Réseaux sociaux</h2>
+                    {{ form_start(socialDataForm, {'attr': {'class': 'grid md:grid-cols-2 lg:gap-6 gap-4'}}) }}
+                        {{ form_row(socialDataForm.youtubeUrl) }}
+                        {{ form_row(socialDataForm.twitchUrl) }}
+                        {{ form_row(socialDataForm.ankamaUrl) }}
+                        {{ form_row(socialDataForm.twitterUrl) }}
+                        {{ form_widget(socialDataForm.submit) }}
+                    {{ form_end(socialDataForm) }}
                 </div>
             </div>
         </section>

@@ -36,6 +36,14 @@
       @apply bg-black hover:bg-gray-900 dark:hover:bg-gray-900 dark:bg-black;
     }
 
+    &-twitch {
+      @apply  bg-twitch-500 hover:bg-twitch-600 dark:hover:bg-twitch-500 dark:bg-twitch-600;
+    }
+
+    &-ankama {
+      @apply  bg-ankama-500 hover:bg-ankama-600 dark:hover:bg-ankama-500 dark:bg-ankama-600;
+    }
+
     &-youtube {
       @apply bg-red-500 hover:bg-red-600 dark:hover:bg-red-500 dark:bg-red-600;
     }
