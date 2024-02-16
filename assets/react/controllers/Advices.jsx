@@ -43,9 +43,11 @@ const AdvicePopup = () => {
              className={`popup ${showPopup ? 'popup-enter' : 'popup-exit'}`}
              role="alert">
             <div className="popup-content">
-                <p className="font-bold">Point Conseil !</p>
-                <p id="adviceText" className="text-sm">{advice}</p>
-                <i data-feather="x" className="close-btn" onClick={() => setShowPopup(false)}></i>
+                <div>
+                    <p className="font-bold">Point Conseil !</p>
+                    <p id="adviceText" className="text-gray-600 dark:text-white">{advice}</p>
+                </div>
+                <button className="popup-close" onClick={() => setShowPopup(false)}>Fermer</button>
             </div>
         </div>
     );

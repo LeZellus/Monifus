@@ -1,5 +1,5 @@
 .popup {
-  @apply bg-green-100 border-t-4 border-green-500 rounded-lg text-green-900 px-4 py-3 shadow-md fixed left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] z-50 sm:w-auto;
+  @apply wrapper wrapper-green fixed left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] z-50 sm:w-auto;
 
   &-enter {
     animation: slideDown 2s forwards;
@@ -8,22 +8,30 @@
   &-exit {
     animation: slideUp 2s forwards;
   }
+
+  &-content {
+    @apply relative flex text-lg;
+  }
+
+  &-close {
+    @apply ml-4 text-xs text-gray-400 dark:text-gray-500 uppercase;
+  }
 }
 
 @keyframes slideDown {
   from {
-    top: -100%;
+    bottom: -100%;
   }
   to {
-    top: 20px;
+    bottom: 20px;
   }
 }
 
 @keyframes slideUp {
   from {
-    top: 20px;
+    bottom: 20px;
   }
   to {
-    top: -100%;
+    bottom: -100%;
   }
 }
