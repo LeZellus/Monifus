@@ -1,15 +1,29 @@
 .popup {
-  position: fixed;
-  right: -400%; /* Assurez-vous que c'est suffisant pour cacher la popup complètement */
-  top: 20px;
-  z-index: 1000;
-  transition: right .5s; /* Animation de glissement */
+  @apply bg-green-100 border-t-4 border-green-500 rounded-lg text-green-900 px-4 py-3 shadow-md fixed left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] z-50 sm:w-auto;
+
+  &-enter {
+    animation: slideDown 2s forwards;
+  }
+
+  &-exit {
+    animation: slideUp 2s forwards;
+  }
 }
 
-.popup-content {
-  border-radius: 5px;
+@keyframes slideDown {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 20px;
+  }
 }
 
-.close-btn {
-  cursor: pointer;
+@keyframes slideUp {
+  from {
+    top: 20px;
+  }
+  to {
+    top: -100%;
+  }
 }

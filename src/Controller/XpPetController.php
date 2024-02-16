@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Resource;
 use App\Form\XpPetPercentType;
 use App\Repository\ResourceRepository;
+use App\Service\BreadcrumbService;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -15,6 +16,13 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class XpPetController extends AbstractController
 {
+    private BreadcrumbService $breadcrumbService;
+
+    public function __construct(BreadcrumbService $breadcrumbService)
+    {
+        $this->breadcrumbService = $breadcrumbService;
+    }
+
     #[Route('/xpetifus', name: 'app_xp_pet')]
     public function index(Request $request, EntityManagerInterface $entityManager, ResourceRepository $resourceRepository, PaginatorInterface $paginator): Response
     {
@@ -34,6 +42,8 @@ class XpPetController extends AbstractController
 
         $profitability = $this->calculateProfitability($formXpPetPercent, $entityManager);
         $number = $this->calculateNumber($formXpPetNumber, $entityManager);
+
+        $this->breadcrumbService->setBreadcrumbs("XPETifus", "");
 
         return $this->render('xp_pet/index.html.twig', [
             'formXpPetPercent' => $formXpPetPercent->createView(),
