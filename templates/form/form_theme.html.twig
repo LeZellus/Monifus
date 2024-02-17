@@ -131,3 +131,12 @@
                 {%- if required -%} required {%- endif -%}/>
     </div>
 {% endblock %}
+
+{% block collection_entry_widget  %}
+    <li class="grid gap-4">
+        {{ form_row(form) }}
+        <div class="flex">
+            <button type="button" class="remove_item_link form-submit form-submit-youtube">Supprimer cette ligne</button>
+        </div>
+    </li>
+{% endblock %}

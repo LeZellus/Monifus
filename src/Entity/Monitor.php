@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\MonitorRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -24,6 +25,7 @@ class Monitor
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[Assert\Valid]
     #[ORM\OneToMany(mappedBy: 'monitor', targetEntity: Price::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $prices;
 

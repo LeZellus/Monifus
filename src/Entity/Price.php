@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PriceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PriceRepository::class)]
 class Price
@@ -14,12 +15,27 @@ class Price
     private ?int $id = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\PositiveOrZero(message: "Le prix doit être un nombre positif ou zéro.")]
+    #[Assert\Type(
+        type: "integer",
+        message: "Le prix doit être un nombre entier."
+    )]
     private ?int $priceOne = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\PositiveOrZero(message: "Le prix doit être un nombre positif ou zéro.")]
+    #[Assert\Type(
+        type: "integer",
+        message: "Le prix doit être un nombre entier."
+    )]
     private ?int $priceTen = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\PositiveOrZero(message: "Le prix doit être un nombre positif ou zéro.")]
+    #[Assert\Type(
+        type: "integer",
+        message: "Le prix doit être un nombre entier."
+    )]
     private ?int $priceHundred = null;
 
     #[ORM\ManyToOne(inversedBy: 'prices')]
