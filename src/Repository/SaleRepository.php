@@ -43,4 +43,16 @@ class SaleRepository extends ServiceEntityRepository
 
         return $result;
     }
+
+    public function findTopSalesByBuySellRatio(): array
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.isSell = :isSell')
+            ->setParameter('isSell', true)
+            ->andWhere('s.buyPrice IS NOT NULL')
+            ->andWhere('s.sellPrice IS NOT NULL')
+            ->orderBy('s.sellPrice / s.buyPrice', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -28,6 +28,11 @@
                     <p class="text-primary-400">{{ app.user.pseudonymeDofus }}</p>
                 </div>
 
+                <div class="flex justify-between items-center">
+                    <p class="text-xs uppercase font-bold">Email du compte :</p>
+                    <p class="text-primary-400">{{ app.user.email }}</p>
+                </div>
+
                 <p class="text-center italic">
                     {% if app.user.description is not empty %}
                         {{ app.user.description }}
