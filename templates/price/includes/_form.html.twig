@@ -1,6 +1,13 @@
 {{ form_start(form, {'attr': {'class': 'grid gap-4'}}) }}
+    {% if form.vars.errors|length > 0 %}
+        <div class="text-red-400 text-center">
+            {% for error in form.vars.errors %}
+                <p>- {{ error.message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
     {{ form_row(form.resource) }}
-    <div class="grid md:grid-cols-3">
+    <div class="grid md:grid-cols-3 gap-4">
         {{ form_row(form.priceOne) }}
         {{ form_row(form.priceTen) }}
         {{ form_row(form.priceHundred) }}

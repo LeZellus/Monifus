@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PriceRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 #[ORM\Entity(repositoryClass: PriceRepository::class)]
 class Price
@@ -129,5 +130,14 @@ class Price
         $this->Resource = $Resource;
 
         return $this;
+    }
+
+    #[Assert\Callback]
+    public function validate(ExecutionContextInterface $context): void
+    {
+        if (empty($this->priceOne) && empty($this->priceTen) && empty($this->priceHundred)) {
+            $context->buildViolation('Vous devez renseigner au moins un prix sur un des 3 lots.')
+                ->addViolation();
+        }
     }
 }

@@ -21,18 +21,21 @@ class PriceType extends AbstractType
                 'attr' => [
                     "placeholder" => "100"
                 ],
+                'required' => false,
             ])
             ->add('priceTen', TextType::class, [
                 'label' => 'Prix lot de 10',
                 'attr' => [
                     "placeholder" => "1 000"
                 ],
+                'required' => false,
             ])
             ->add('priceHundred', TextType::class, [
                 'label' => 'Prix lot de 100',
                 'attr' => [
                     "placeholder" => "10 000"
                 ],
+                'required' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => "Ajouter"
