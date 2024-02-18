@@ -94,6 +94,8 @@ class PriceController extends AbstractController
         $priceDetails = $pricesData['details'];
         $aggregatedData = $pricesData['aggregated'];
 
+        $this->breadcrumbService->setBreadcrumbs("Moniteurs", "/price");
+
         return $this->render('price/show.html.twig', [
             'priceDetails' => $priceDetails,
             'aggregatedData' => $aggregatedData,

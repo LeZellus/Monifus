@@ -35,7 +35,7 @@
                     <form action="{{ path('app_price_delete', {'resourceId': priceDetails[0].Resource.id, 'priceId': price.id}) }}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ price.id) }}">
                         <button type="submit" class="btn btn-danger">
-                            <i data-feather="trash" class="text-red-400"></i>
+                            <i data-feather="trash" class="text-red-400 w-4 h-4"></i>
                         </button>
                     </form>
                 </td>
