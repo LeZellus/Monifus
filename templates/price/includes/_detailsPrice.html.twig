@@ -1,24 +1,24 @@
 <table class="w-full text-left rtl:text-right">
     <thead class="text-xs uppercase">
     <tr class="border-b border-gray-300 dark:border-gray-700">
-        <th scope="col" class="p-2 ">
+        <th scope="col" class="p-2 hidden xl:table-cell">
             <span class="hidden sm:block text-xs">Date de</span>
             <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">Création</span>
         </th>
-        <th scope="col" class="p-2 ">
-            <span class="hidden sm:block text-xs">Lot de</span>
+        <th scope="col" class="p-2 table-cell">
+            <span class="block text-xs">Lot de</span>
             <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">1</span>
         </th>
-        <th scope="col" class="p-2 hidden xl:table-cell">
-            <span class="hidden sm:block text-xs">Lot de</span>
+        <th scope="col" class="p-2 table-cell">
+            <span class="block text-xs">Lot de</span>
             <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">10</span>
         </th>
-        <th scope="col" class="p-2 hidden xl:table-cell">
-            <span class="sm:block text-xs">Lot de</span>
+        <th scope="col" class="p-2 table-cell">
+            <span class="block text-xs">Lot de</span>
             <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">100</span>
         </th>
         <th scope="col" class="p-2 hidden xl:table-cell">
-            <span class="hidden sm:block text-xs">Liste d'</span>
+            <span class="block text-xs">Liste d'</span>
             <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">Actions</span>
         </th>
     </tr>
@@ -28,16 +28,16 @@
         {% for price in priceDetails  %}
             <tr class="border-b border-gray-300 dark:border-gray-700">
                 <td class="p-2 hidden xl:table-cell">{{ price.createdAt|date('d-m-y') }}</td>
-                <td class="p-2 hidden xl:table-cell">{{ price.priceOne|number_format(0, '.', ' ') }} k</td>
-                <td class="p-2 hidden xl:table-cell">{{ price.priceTen|number_format(0, '.', ' ') }} k</td>
-                <td class="p-2 hidden xl:table-cell">{{ price.priceHundred|number_format(0, '.', ' ') }} k</td>
+                <td class="p-2 table-cell">{{ price.priceOne|number_format(0, '.', ' ') }} k</td>
+                <td class="p-2 table-cell">{{ price.priceTen|number_format(0, '.', ' ') }} k</td>
+                <td class="p-2 table-cell">{{ price.priceHundred|number_format(0, '.', ' ') }} k</td>
                 <td class="p-2 flex space-x-2">
-                    {#<form action="{{ path('app_monitor_delete', {'id': monitor.id}) }}" method="post">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ monitor.id) }}">
+                    <form action="{{ path('app_price_delete', {'resourceId': priceDetails[0].Resource.id, 'priceId': price.id}) }}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ price.id) }}">
                         <button type="submit" class="btn btn-danger">
+                            <i data-feather="trash" class="text-red-400"></i>
                         </button>
-                    </form>#}
-                    <i data-feather="trash" class="text-red-400"></i>
+                    </form>
                 </td>
             </tr>
         {% endfor %}

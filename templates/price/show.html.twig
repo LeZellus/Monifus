@@ -54,5 +54,14 @@
                 {{ include('price/includes/_detailsPrice.html.twig') }}
             </div>
         </section>
+
+        <section class="grid lg:grid-cols-2 gap-4">
+            {% for graphName, graphData in pricesGraph %}
+                <div class="wrapper wrapper-style">
+                    <h3>{{ graphData.title }}</h3>
+                    {{ render_chart(graphData.chart) }} {# Assurez-vous que graphData.chart est bien un objet Chart #}
+                </div>
+            {% endfor %}
+        </section>
     </main>
 {% endblock %}

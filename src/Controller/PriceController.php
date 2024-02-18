@@ -89,12 +89,41 @@ class PriceController extends AbstractController
 
         $pricesData = $priceRepository->findByUserAndResourceWithDetails($userId, $id);
 
+        $pricesGraph = $this->chartService->getGraphConfigurations($pricesData);
+
         $priceDetails = $pricesData['details'];
         $aggregatedData = $pricesData['aggregated'];
 
         return $this->render('price/show.html.twig', [
             'priceDetails' => $priceDetails,
             'aggregatedData' => $aggregatedData,
+            'pricesGraph' => $pricesGraph,
         ]);
+    }
+
+    #[Route('/supprimer/{priceId}', name: 'app_price_delete', methods: ['POST'])]
+    public function delete(int $priceId, PriceRepository $priceRepository, EntityManagerInterface $entityManager): Response
+    {
+        $user = $this->security->getUser();
+        $userId = $user->getId();
+
+        // Vérifier si le prix appartient à l'utilisateur et à la ressource
+        $price = $priceRepository->findOneBy([
+            'id' => $priceId,
+            'User' => $userId,
+        ]);
+
+        $resourceId = $price->getResource()->getId();
+
+        if (!$price) {
+            throw $this->createNotFoundException('Le prix demandé n\'existe pas ou vous n\'avez pas les droits pour le supprimer.');
+        }
+
+        // Supprimer le prix
+        $entityManager->remove($price);
+        $entityManager->flush();
+
+        // Redirection vers la page de la ressource
+        return $this->redirectToRoute('app_price_show', ['id' => $resourceId]);
     }
 }
