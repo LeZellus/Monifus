@@ -6,6 +6,7 @@ use App\Entity\Price;
 use App\Form\PriceType;
 use App\Repository\PriceRepository;
 use App\Service\BreadcrumbService;
+use App\Service\ChartService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -18,11 +19,13 @@ class PriceController extends AbstractController
 {
     private BreadcrumbService $breadcrumbService;
     private Security $security;
+    private ChartService $chartService;
 
-    public function __construct(BreadcrumbService $breadcrumbService, Security $security)
+    public function __construct(BreadcrumbService $breadcrumbService, Security $security, ChartService $chartService)
     {
         $this->breadcrumbService = $breadcrumbService;
         $this->security = $security;
+        $this->chartService = $chartService;
     }
 
     #[Route('/', name: 'app_price_index', methods: ['GET'])]
@@ -82,29 +85,16 @@ class PriceController extends AbstractController
     public function show(int $id, PriceRepository $priceRepository): Response
     {
         $user = $this->security->getUser();
+        $userId = $user->getId();
 
-        // Récupère tous les prix pour l'utilisateur actuel et la ressource donnée
-        $prices = $priceRepository->findBy([
-            'User' => $user->getId(),
-            'Resource' => $id
-        ]);
+        $pricesData = $priceRepository->findByUserAndResourceWithDetails($userId, $id);
 
-        $priceCount = count($prices);
-        $avgPriceOne = $avgPriceTen = $avgPriceHundred = 0;
+        $priceDetails = $pricesData['details'];
+        $aggregatedData = $pricesData['aggregated'];
 
-        if ($priceCount > 0) {
-            $avgPriceOne = array_sum(array_map(fn($price) => $price->getPriceOne(), $prices)) / $priceCount;
-            $avgPriceTen = array_sum(array_map(fn($price) => $price->getPriceTen(), $prices)) / $priceCount;
-            $avgPriceHundred = array_sum(array_map(fn($price) => $price->getPriceHundred(), $prices)) / $priceCount;
-        }
-
-        // render la vue avec les détails de la ressource
         return $this->render('price/show.html.twig', [
-            'prices' => $prices,
-            'avgPriceOne' => $avgPriceOne,
-            'avgPriceTen' => $avgPriceTen,
-            'avgPriceHundred' => $avgPriceHundred,
-            'priceCount' => $priceCount
+            'priceDetails' => $priceDetails,
+            'aggregatedData' => $aggregatedData,
         ]);
     }
 }

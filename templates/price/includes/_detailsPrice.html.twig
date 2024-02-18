@@ -24,8 +24,8 @@
     </tr>
     </thead>
     <tbody>
-    {% if prices is defined %}
-        {% for price in prices %}
+    {% if priceDetails is defined %}
+        {% for price in priceDetails  %}
             <tr class="border-b border-gray-300 dark:border-gray-700">
                 <td class="p-2 hidden xl:table-cell">{{ price.createdAt|date('d-m-y') }}</td>
                 <td class="p-2 hidden xl:table-cell">{{ price.priceOne|number_format(0, '.', ' ') }} k</td>

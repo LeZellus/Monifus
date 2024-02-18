@@ -8,16 +8,16 @@
             <section class="wrapper wrapper-style flex justify-between">
                 <div class="grid gap-2">
                     <h1 class="text-4xl">
-                        {% if prices|length > 0 %}
-                            Détails de la Ressource : {{ prices[0].Resource.name }}
+                        {% if priceDetails|length > 0 %}
+                            Détails de la Ressource : {{ priceDetails[0].Resource.name }}
                         {% else %}
                             Aucune donnée de prix disponible pour cette ressource
                         {% endif %}
                     </h1>
-                    <p class="flex items-center uppercase text-xs">Nombre de moniteurs : <span class="ml-2 text-green-400 font-bold">{{ priceCount }}</span></p>
+                    <p class="flex items-center uppercase text-xs">Nombre de moniteurs : <span class="ml-2 text-green-400 font-bold">{{ aggregatedData.priceCount|number_format(0, '.', ' ') }}</span></p>
                 </div>
-                {% if prices|length > 0 %}
-                    <img class="h-20 w-20" src="{{ prices[0].Resource.imgUrl }}" alt="Image de la ressource {{ prices[0].Resource.imgUrl }}">
+                {% if priceDetails|length > 0 %}
+                    <img class="h-20 w-20" src="{{ priceDetails[0].Resource.imgUrl }}" alt="Image de la ressource {{ priceDetails[0].Resource.imgUrl }}">
                 {% else %}
                     Aucune donnée de prix disponible pour cette ressource
                 {% endif %}
@@ -29,21 +29,21 @@
             <div class="wrapper wrapper-style grid gap-4">
                 <p class="uppercase text-xs flex items-center">Moyenne lot de<span class="mx-2 text-green-400 font-bold">1</span></p>
                 <div class="flex items-center dark:text-white">
-                    <span class="text-4xl font-bold leading-6">{{ avgPriceOne|number_format(0, '.', ' ') }}</span>
+                    <span class="text-4xl font-bold leading-6">{{ aggregatedData.avgPriceOne|number_format(0, '.', ' ') }}</span>
                     <img class="ml-2 w-6 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
                 </div>
             </div>
             <div class="wrapper wrapper-style grid gap-4">
                 <p class="uppercase text-xs flex items-center">Moyenne lot de<span class="mx-2 text-green-400 font-bold">10</span></p>
                 <div class="flex items-center dark:text-white">
-                    <span class="text-4xl font-bold leading-6">{{ avgPriceTen|number_format(0, '.', ' ') }}</span>
+                    <span class="text-4xl font-bold leading-6">{{ aggregatedData.avgPriceTen|number_format(0, '.', ' ') }}</span>
                     <img class="ml-2 w-6 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
                 </div>
             </div>
             <div class="wrapper wrapper-style grid gap-4">
                 <p class="uppercase text-xs flex items-center">Moyenne lot de<span class="mx-2 text-green-400 font-bold">100</span></p>
                 <div class="flex items-center dark:text-white">
-                    <span class="text-4xl font-bold leading-6">{{ avgPriceHundred|number_format(0, '.', ' ') }}</span>
+                    <span class="text-4xl font-bold leading-6">{{ aggregatedData.avgPriceHundred|number_format(0, '.', ' ') }}</span>
                     <img class="ml-2 w-6 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="Icone kamas">
                 </div>
             </div>

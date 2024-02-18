@@ -34,6 +34,15 @@ class PriceRepository extends ServiceEntityRepository
             ->groupBy('r.id'); // Supposant que vous voulez grouper par l'identifiant de la ressource
     }
 
+    private function createDetailedPriceQueryBuilder(): QueryBuilder
+    {
+        return $this->createQueryBuilder('p')
+            ->leftJoin('p.User', 'u')
+            ->leftJoin('p.Resource', 'r')
+            ->addSelect('p', 'u', 'r');
+    }
+
+    // Récupération des moniteurs et leurs moyennes par utilisateur
     public function findByUserWithResourceAndPrices($userId): array|float|int|string
     {
         return $this->createBasePriceQueryBuilder()
@@ -43,23 +52,38 @@ class PriceRepository extends ServiceEntityRepository
             ->getArrayResult();
     }
 
-    public function findPriceAggregatesByUserAndResource($userId, $resourceId): array
+    // Récupération du moniteur par utilisateur et par ressource, puis calcul de la moyenne
+    public function findByUserAndResourceWithDetails($userId, $resourceId): array
     {
-        $queryBuilder = $this->createBasePriceQueryBuilder()
+        $qb = $this->createDetailedPriceQueryBuilder()
             ->andWhere('u.id = :user')
             ->andWhere('r.id = :resource')
             ->setParameter('user', $userId)
             ->setParameter('resource', $resourceId);
 
-        // Vous pouvez ajouter d'autres statistiques si nécessaire
-        $queryBuilder->select('AVG(p.priceOne) as avgPriceOne',
-            'AVG(p.priceTen) as avgPriceTen',
-            'AVG(p.priceHundred) as avgPriceHundred',
-            'COUNT(p) as priceCount');
+        $priceDetails = $qb->getQuery()->getArrayResult();
 
-        return $queryBuilder->getQuery()->getArrayResult();
+        // Calcul des données agrégées
+        $aggregatedData = [
+            'avgPriceOne' => 0,
+            'avgPriceTen' => 0,
+            'avgPriceHundred' => 0,
+            'priceCount' => count($priceDetails),
+        ];
+
+        if ($aggregatedData['priceCount'] > 0) {
+            $aggregatedData['avgPriceOne'] = array_sum(array_column($priceDetails, 'priceOne')) / $aggregatedData['priceCount'];
+            $aggregatedData['avgPriceTen'] = array_sum(array_column($priceDetails, 'priceTen')) / $aggregatedData['priceCount'];
+            $aggregatedData['avgPriceHundred'] = array_sum(array_column($priceDetails, 'priceHundred')) / $aggregatedData['priceCount'];
+        }
+
+        return [
+            'details' => $priceDetails,
+            'aggregated' => $aggregatedData,
+        ];
     }
 
+    // Méthode de recherche sur les moniteurs
     public function findBySearchTerm($searchTerm): array|float|int|string
     {
         return $this->createBasePriceQueryBuilder()
