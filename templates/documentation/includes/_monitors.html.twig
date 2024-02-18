@@ -9,7 +9,7 @@
 
     <div class="grid gap-4">
         <h3>Page principale des moniteurs</h3>
-        <p>Sur la <a class="link" href="{{ path('app_monitor_index') }}">page principale</a> des moniteurs, vous retrouvez un moniteur par ressource que vous aurez ajouté. Voici à quoi ça ressemble :</p>
+        <p>Sur la <a class="link" href="{{ path('app_price_index') }}">page principale</a> des moniteurs, vous retrouvez un moniteur par ressource que vous aurez ajouté. Voici à quoi ça ressemble :</p>
         <img src="{{ asset('documentation/monitor_index.png') }}" alt="Image de la page d'accueil des moniteurs">
         <p>Sur cette page, je peux donc voir que j'ai créé des moniteurs pour la ressource Epée d'Alle, et la ressource pépite.</p>
         <p>Dans le cas où vous ajoutez un grand nombre de ressources, une barre de recherche est disponible. Tapez juste le nom de la ressource ou appuyez sur la touche "ENTER".</p>
@@ -19,8 +19,8 @@
 
     <div class="grid gap-4">
         <h3>Ajouter un Moniteur :</h3>
-        <p>Pour ajouter un moniteur, cliquez sur le bouton ajouter depuis la <a class="link" href="{{ path('app_monitor_index') }}">page des moniteurs</a>, ou cliquez directement sur ce
-            <a class="link" href="{{ path('app_monitor_new') }}">lien</a>.</p>
+        <p>Pour ajouter un moniteur, cliquez sur le bouton ajouter depuis la <a class="link" href="{{ path('app_price_index') }}">page des moniteurs</a>, ou cliquez directement sur ce
+            <a class="link" href="{{ path('app_price_new') }}">lien</a>.</p>
         <img src="{{ asset('documentation/monitor_new.png') }}" alt="">
         <p>Le champ de recherche vous permet de scroller, ou rechercher directement la ressource en tapant son nom. Ensuite, cliquez simplement dessus.</p>
         <p>Renseignez le prix des lots en kamas, puis cliquez sur ajouter : vous avez créé votre premier moniteur ! 🎉</p>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="flex justify-center space-x-4">
-        <a class="form-submit" href="{{ path("app_monitor_index") }}">Accueil</a>
-        <a class="form-submit" href="{{ path("app_monitor_index") }}">Moniteurs</a>
+        <a class="form-submit" href="{{ path("app_price_index") }}">Accueil</a>
+        <a class="form-submit" href="{{ path("app_price_index") }}">Moniteurs</a>
     </div>
 </div>
