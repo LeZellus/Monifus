@@ -72,9 +72,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Type("bool")]
     private $isVerified = false;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Monitor::class, orphanRemoval: true)]
-    private Collection $monitors;
-
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Record::class, orphanRemoval: true)]
     private Collection $records;
 
@@ -146,17 +143,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $twitchUrl = null;
 
+    #[ORM\OneToMany(mappedBy: 'User', targetEntity: Price::class, orphanRemoval: true)]
+    private Collection $prices;
+
 
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->updatedAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
-        $this->monitors = new ArrayCollection();
         $this->records = new ArrayCollection();
         $this->sales = new ArrayCollection();
         $this->isTutorial = false;
 
         $this->roles = ["ROLE_USER"];
+        $this->prices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -285,36 +285,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Monitor>
-     */
-    public function getMonitors(): Collection
-    {
-        return $this->monitors;
-    }
-
-    public function addMonitor(Monitor $monitor): self
-    {
-        if (!$this->monitors->contains($monitor)) {
-            $this->monitors->add($monitor);
-            $monitor->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMonitor(Monitor $monitor): self
-    {
-        if ($this->monitors->removeElement($monitor)) {
-            // set the owning side to null (unless already changed)
-            if ($monitor->getUser() === $this) {
-                $monitor->setUser(null);
-            }
-        }
 
         return $this;
     }
@@ -590,6 +560,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTwitchUrl(?string $twitchUrl): static
     {
         $this->twitchUrl = $twitchUrl;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Price>
+     */
+    public function getPrices(): Collection
+    {
+        return $this->prices;
+    }
+
+    public function addPrice(Price $price): static
+    {
+        if (!$this->prices->contains($price)) {
+            $this->prices->add($price);
+            $price->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrice(Price $price): static
+    {
+        if ($this->prices->removeElement($price)) {
+            // set the owning side to null (unless already changed)
+            if ($price->getUser() === $this) {
+                $price->setUser(null);
+            }
+        }
 
         return $this;
     }

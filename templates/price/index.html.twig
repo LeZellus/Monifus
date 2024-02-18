@@ -8,35 +8,35 @@
     {{ include('includes/documentation.html.twig') }}
 
     <div class="flex justify-center flex-col items-center space-y-4">
-        <a class="form-submit" href="{{ path('app_monitor_new') }}">Créer Moniteur</a>
+        <a class="form-submit" href="{{ path('app_price_new') }}">Créer Moniteur</a>
     </div>
 
     <section class="grid gap-4">
         {%  if monitorsWithAvgPrices is not empty %}
-            <form action="{{ path('app_monitor_search') }}" method="get" class="grid gap-2">
+            <form action="{{ path('app_price_search') }}" method="get" class="grid gap-2">
                 <label class="form-label" for="search">Recherchez un moniteur</label>
                 <div class="flex space-x-2">
                     <input id="search" class="form-input h-full flex-1" type="text" name="search" placeholder="Rechercher un moniteur" />
                     <button class="wrapper wrapper-green h-14 w-14 flex justify-center font-semibold" type="submit">GO</button>
 
-                    <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_monitor_index') }}">
+                    <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_price_index') }}">
                         <i data-feather="trash" class="w-4 h-4"></i>
                     </a>
                 </div>
             </form>
             <section class="grid lg:grid-cols-2 xl:grid-cols-4 gap-4">
                 {% for monitorData in monitorsWithAvgPrices %}
-                    <a href="{{ path('app_monitor_show', {'id': monitorData.0.id}) }}" class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2">
+                    <a href="{{ path('app_price_show', {'id': monitorData.0.Resource.id}) }}" class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2">
                         <div class="flex justify-between">
                             <div class="grid gap-1">
-                                <h3 class="text-2xl font-bold w-full">{{ monitorData.0.resource.name }}</h3>
+                                <h3 class="text-2xl font-bold w-full">{{ monitorData.0.Resource.name }}</h3>
                                 <p class="text-xs uppercase flex items-center">
                                     <span class="hidden md:block">Moniteurs créés pour cette ressource :</span>
                                     <span class="md:hidden">Nombre :</span>
                                     <span class="text-green-500 ml-1">{{ monitorData.priceCount }}</span>
                                 </p>
                             </div>
-                            <img class="w-12 h-12" src="{{ monitorData.0.resource.imgUrl }}" alt="Image ressource dofus">
+                            <img class="w-12 h-12" src="{{ monitorData.0.Resource.imgUrl }}" alt="Image ressource dofus">
                         </div>
 
                         <div class="flex items-center">
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="flex">
-                            {{ include('monitor/includes/_detailsCard.html.twig') }}
+                            {{ include('price/includes/_detailsCard.html.twig') }}
                         </div>
 
                         <div class="bg-secondary absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 bg-opacity-80 backdrop-blur-xl transition duration-300 flex items-center justify-center">

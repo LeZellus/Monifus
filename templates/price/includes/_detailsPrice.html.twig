@@ -24,23 +24,27 @@
     </tr>
     </thead>
     <tbody>
-    {% if monitor.prices is defined %}
-        {% for price in monitor.prices %}
+    {% if prices is defined %}
+        {% for price in prices %}
             <tr class="border-b border-gray-300 dark:border-gray-700">
                 <td class="p-2 hidden xl:table-cell">{{ price.createdAt|date('d-m-y') }}</td>
                 <td class="p-2 hidden xl:table-cell">{{ price.priceOne|number_format(0, '.', ' ') }} k</td>
                 <td class="p-2 hidden xl:table-cell">{{ price.priceTen|number_format(0, '.', ' ') }} k</td>
                 <td class="p-2 hidden xl:table-cell">{{ price.priceHundred|number_format(0, '.', ' ') }} k</td>
                 <td class="p-2 flex space-x-2">
-                    <form action="{{ path('app_monitor_delete', {'id': monitor.id}) }}" method="post">
+                    {#<form action="{{ path('app_monitor_delete', {'id': monitor.id}) }}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ monitor.id) }}">
                         <button type="submit" class="btn btn-danger">
-                            <i data-feather="trash" class="text-red-400"></i>
                         </button>
-                    </form>
+                    </form>#}
+                    <i data-feather="trash" class="text-red-400"></i>
                 </td>
             </tr>
         {% endfor %}
+    {% else %}
+        <tr>
+            <td>Aucun donnée</td>
+        </tr>
     {% endif %}
     </tbody>
 </table>

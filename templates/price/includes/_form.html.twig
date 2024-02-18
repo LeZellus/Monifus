@@ -1,0 +1,9 @@
+{{ form_start(form, {'attr': {'class': 'grid gap-4'}}) }}
+    {{ form_row(form.resource) }}
+    <div class="grid md:grid-cols-3">
+        {{ form_row(form.priceOne) }}
+        {{ form_row(form.priceTen) }}
+        {{ form_row(form.priceHundred) }}
+    </div>
+    {{ form_widget(form.submit) }}
+{{ form_end(form) }}

@@ -38,12 +38,16 @@ class Price
     )]
     private ?int $priceHundred = null;
 
-    #[ORM\ManyToOne(inversedBy: 'prices')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?monitor $monitor = null;
-
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'prices')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $User = null;
+
+    #[ORM\ManyToOne(inversedBy: 'prices')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Resource $Resource = null;
 
     public function __construct()
     {
@@ -91,18 +95,6 @@ class Price
         return $this;
     }
 
-    public function getMonitor(): ?monitor
-    {
-        return $this->monitor;
-    }
-
-    public function setMonitor(?monitor $monitor): static
-    {
-        $this->monitor = $monitor;
-
-        return $this;
-    }
-
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
@@ -111,6 +103,30 @@ class Price
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): static
+    {
+        $this->User = $User;
+
+        return $this;
+    }
+
+    public function getResource(): ?Resource
+    {
+        return $this->Resource;
+    }
+
+    public function setResource(?Resource $Resource): static
+    {
+        $this->Resource = $Resource;
 
         return $this;
     }

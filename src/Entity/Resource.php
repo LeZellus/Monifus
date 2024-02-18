@@ -33,19 +33,19 @@ class Resource
     #[ORM\Column]
     private ?bool $isImportant = null;
 
-    #[ORM\OneToMany(mappedBy: 'resource', targetEntity: Monitor::class)]
-    private Collection $monitors;
-
     #[ORM\OneToMany(mappedBy: 'resource', targetEntity: Sale::class)]
     private Collection $sales;
 
     #[ORM\Column]
     private ?float $xpPet = null;
 
+    #[ORM\OneToMany(mappedBy: 'Resource', targetEntity: Price::class)]
+    private Collection $prices;
+
     public function __construct()
     {
-        $this->monitors = new ArrayCollection();
         $this->sales = new ArrayCollection();
+        $this->prices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -114,36 +114,6 @@ class Resource
     }
 
     /**
-     * @return Collection<int, Monitor>
-     */
-    public function getMonitors(): Collection
-    {
-        return $this->monitors;
-    }
-
-    public function addMonitor(Monitor $monitor): self
-    {
-        if (!$this->monitors->contains($monitor)) {
-            $this->monitors->add($monitor);
-            $monitor->setResource($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMonitor(Monitor $monitor): self
-    {
-        if ($this->monitors->removeElement($monitor)) {
-            // set the owning side to null (unless already changed)
-            if ($monitor->getResource() === $this) {
-                $monitor->setResource(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection<int, Sale>
      */
     public function getSales(): Collection
@@ -181,6 +151,36 @@ class Resource
     public function setXpPet(float $xpPet): static
     {
         $this->xpPet = $xpPet;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Price>
+     */
+    public function getPrices(): Collection
+    {
+        return $this->prices;
+    }
+
+    public function addPrice(Price $price): static
+    {
+        if (!$this->prices->contains($price)) {
+            $this->prices->add($price);
+            $price->setResource($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrice(Price $price): static
+    {
+        if ($this->prices->removeElement($price)) {
+            // set the owning side to null (unless already changed)
+            if ($price->getResource() === $this) {
+                $price->setResource(null);
+            }
+        }
 
         return $this;
     }
