@@ -43,7 +43,7 @@ security:
         #- { path: ^/deconnexion, roles: [PUBLIC_ACCESS] }
         #- { path: ^/, roles: ROLE_USER }
         - { path: ^/profil, roles: ROLE_USER }
-        - { path: ^/monitor, roles: ROLE_USER }
+        - { path: ^/price, roles: ROLE_USER }
         - { path: ^/vente, roles: ROLE_USER }
         - { path: ^/record/nouveau, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
