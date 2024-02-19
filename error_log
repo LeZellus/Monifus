@@ -8,3 +8,32 @@ Did you mean one of these?
     cache:pool:list
     cache:pool:prune
     cache:warmup"
+[07-Feb-2024 11:32:50 UTC] [critical] Error thrown while running command "'doctrine:migration:migrate'". Message: "An exception occurred while executing a query: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'monitor' already exists"
+[07-Feb-2024 11:36:55 UTC] [critical] Error thrown while running command "'doctrine:fixtures:load'". Message: "There are no commands defined in the "doctrine:fixtures" namespace.
+
+Did you mean one of these?
+    doctrine
+    doctrine:cache
+    doctrine:database
+    doctrine:mapping
+    doctrine:migrations
+    doctrine:query
+    doctrine:schema
+
+You may be looking for a command provided by the "DoctrineFixturesBundle" which is currently not installed. Try running "composer require doctrine/doctrine-fixtures-bundle --dev"."
+[07-Feb-2024 16:28:25 UTC] PHP Fatal error:  Uncaught Error: Class "KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle" not found in /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php:136
+Stack trace:
+#0 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/http-kernel/Kernel.php(332): App\Kernel->registerBundles()
+#1 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/http-kernel/Kernel.php(724): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/http-kernel/Kernel.php(123): Symfony\Component\HttpKernel\Kernel->preBoot()
+#3 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/framework-bundle/Console/Application.php(179): Symfony\Component\HttpKernel\Kernel->boot()
+#4 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/framework-bundle/Console/Application.php(71): Symfony\Bundle\FrameworkBundle\Console\Application->registerCommands()
+#5 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/console/Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun()
+#6 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/runtime/Runner/Symfony/ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run()
+#7 /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#8 /home/u359351136/domains/monifus.fr/public_html/Monifus/bin/console(11): require_once('/home/u35935113...')
+#9 {main}
+  thrown in /home/u359351136/domains/monifus.fr/public_html/Monifus/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php on line 136
+[07-Feb-2024 17:18:39 UTC] [critical] Error thrown while running command "'make:controller' MentionsController". Message: "There are no commands defined in the "make" namespace.
+
+You may be looking for a command provided by the "MakerBundle" which is currently not installed. Try running "composer require symfony/maker-bundle --dev"."
