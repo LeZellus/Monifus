@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Contact</h1>
+
+    <main class="wrapper wrapper-style">
+        <div class="max-w-screen-md mx-auto">
+            {{ form_start(form, {'attr': {'class': 'form-wrapper'}}) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.content) }}
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

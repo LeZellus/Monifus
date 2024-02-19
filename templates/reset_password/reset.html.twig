@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réinitialiser le mot de passe | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Réinitialiser le mot de passe</h1>
+
+    <section class="wrapper wrapper-style">
+        <div class="max-w-screen-md mx-auto">
+            {{ form_start(resetForm, {'attr': { 'class': 'grid gap-4' }}) }}
+            {{ form_row(resetForm.plainPassword) }}
+            <div class="flex justify-center">
+                {{ form_widget(resetForm.submit) }}
+            </div>
+            {{ form_end(resetForm) }}
+        </div>
+    </section>
+{% endblock %}
