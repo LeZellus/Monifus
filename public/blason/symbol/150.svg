@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="56.0px" width="56.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <use ffdec:characterId="59" ffdec:characterName="150_fla.Symbole174_1" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite0"/>
+    <use ffdec:characterId="61" height="38.2" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.4, 8.7)" width="55.4" xlink:href="#sprite58"/>
+    <use ffdec:characterId="63" height="36.95" id="up" transform="matrix(1.0, 0.0, 0.0, 1.0, 1.15, 9.45)" width="53.9" xlink:href="#sprite59"/>
+  </g>
+  <defs>
+    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="58" ffdec:characterName="150_fla.Symbole171_2" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite1"/>
+    </g>
+    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="57" ffdec:characterName="150_fla.Symbole168_3" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite2"/>
+    </g>
+    <g id="sprite2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="56" ffdec:characterName="150_fla.Symbole165_4" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite3"/>
+    </g>
+    <g id="sprite3" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="55" ffdec:characterName="150_fla.Symbole162_5" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite4"/>
+    </g>
+    <g id="sprite4" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="54" ffdec:characterName="150_fla.Symbole159_6" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite5"/>
+    </g>
+    <g id="sprite5" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="53" ffdec:characterName="150_fla.Symbole156_7" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite6"/>
+    </g>
+    <g id="sprite6" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="52" ffdec:characterName="150_fla.Symbole153_8" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite7"/>
+    </g>
+    <g id="sprite7" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="51" ffdec:characterName="150_fla.Symbole150_9" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite8"/>
+    </g>
+    <g id="sprite8" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="50" ffdec:characterName="150_fla.Symbole147_10" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite9"/>
+    </g>
+    <g id="sprite9" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="49" ffdec:characterName="150_fla.Symbole144_11" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite10"/>
+    </g>
+    <g id="sprite10" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="48" ffdec:characterName="150_fla.Symbole141_12" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite11"/>
+    </g>
+    <g id="sprite11" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="47" ffdec:characterName="150_fla.Symbole138_13" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite12"/>
+    </g>
+    <g id="sprite12" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="46" ffdec:characterName="150_fla.Symbole135_14" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite13"/>
+    </g>
+    <g id="sprite13" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="45" ffdec:characterName="150_fla.Symbole132_15" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite14"/>
+    </g>
+    <g id="sprite14" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="44" ffdec:characterName="150_fla.Symbole129_16" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite15"/>
+    </g>
+    <g id="sprite15" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="43" ffdec:characterName="150_fla.Symbole126_17" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite16"/>
+    </g>
+    <g id="sprite16" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="42" ffdec:characterName="150_fla.Symbole123_18" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite17"/>
+    </g>
+    <g id="sprite17" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="41" ffdec:characterName="150_fla.Symbole120_19" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite18"/>
+    </g>
+    <g id="sprite18" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="40" ffdec:characterName="150_fla.Symbole117_20" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite19"/>
+    </g>
+    <g id="sprite19" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="39" ffdec:characterName="150_fla.Symbole114_21" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite20"/>
+    </g>
+    <g id="sprite20" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="38" ffdec:characterName="150_fla.Symbole111_22" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite21"/>
+    </g>
+    <g id="sprite21" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="37" ffdec:characterName="150_fla.Symbole108_23" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite22"/>
+    </g>
+    <g id="sprite22" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="36" ffdec:characterName="150_fla.Symbole105_24" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite23"/>
+    </g>
+    <g id="sprite23" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="35" ffdec:characterName="150_fla.Symbole102_25" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite24"/>
+    </g>
+    <g id="sprite24" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="34" ffdec:characterName="150_fla.Symbole99_26" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite25"/>
+    </g>
+    <g id="sprite25" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="33" ffdec:characterName="150_fla.Symbole96_27" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite26"/>
+    </g>
+    <g id="sprite26" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="32" ffdec:characterName="150_fla.Symbole93_28" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite27"/>
+    </g>
+    <g id="sprite27" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="31" ffdec:characterName="150_fla.Symbole90_29" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite28"/>
+    </g>
+    <g id="sprite28" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="30" ffdec:characterName="150_fla.Symbole87_30" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite29"/>
+    </g>
+    <g id="sprite29" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="29" ffdec:characterName="150_fla.Symbole84_31" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite30"/>
+    </g>
+    <g id="sprite30" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="28" ffdec:characterName="150_fla.Symbole81_32" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite31"/>
+    </g>
+    <g id="sprite31" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="27" ffdec:characterName="150_fla.Symbole78_33" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite32"/>
+    </g>
+    <g id="sprite32" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="26" ffdec:characterName="150_fla.Symbole75_34" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite33"/>
+    </g>
+    <g id="sprite33" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="25" ffdec:characterName="150_fla.Symbole72_35" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite34"/>
+    </g>
+    <g id="sprite34" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="24" ffdec:characterName="150_fla.Symbole69_36" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite35"/>
+    </g>
+    <g id="sprite35" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="23" ffdec:characterName="150_fla.Symbole66_37" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite36"/>
+    </g>
+    <g id="sprite36" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="22" ffdec:characterName="150_fla.Symbole63_38" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite37"/>
+    </g>
+    <g id="sprite37" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="21" ffdec:characterName="150_fla.Symbole60_39" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite38"/>
+    </g>
+    <g id="sprite38" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="20" ffdec:characterName="150_fla.Symbole57_40" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite39"/>
+    </g>
+    <g id="sprite39" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="19" ffdec:characterName="150_fla.Symbole54_41" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite40"/>
+    </g>
+    <g id="sprite40" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="18" ffdec:characterName="150_fla.Symbole51_42" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite41"/>
+    </g>
+    <g id="sprite41" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="17" ffdec:characterName="150_fla.Symbole48_43" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite42"/>
+    </g>
+    <g id="sprite42" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="16" ffdec:characterName="150_fla.Symbole45_44" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite43"/>
+    </g>
+    <g id="sprite43" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="15" ffdec:characterName="150_fla.Symbole42_45" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite44"/>
+    </g>
+    <g id="sprite44" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="14" ffdec:characterName="150_fla.Symbole39_46" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite45"/>
+    </g>
+    <g id="sprite45" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="13" ffdec:characterName="150_fla.Symbole36_47" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite46"/>
+    </g>
+    <g id="sprite46" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="12" ffdec:characterName="150_fla.Symbole33_48" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite47"/>
+    </g>
+    <g id="sprite47" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="11" ffdec:characterName="150_fla.Symbole30_49" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite48"/>
+    </g>
+    <g id="sprite48" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="10" ffdec:characterName="150_fla.Symbole27_50" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite49"/>
+    </g>
+    <g id="sprite49" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="9" ffdec:characterName="150_fla.Symbole24_51" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite50"/>
+    </g>
+    <g id="sprite50" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="8" ffdec:characterName="150_fla.Symbole21_52" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite51"/>
+    </g>
+    <g id="sprite51" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="7" ffdec:characterName="150_fla.Symbole18_53" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite52"/>
+    </g>
+    <g id="sprite52" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="6" ffdec:characterName="150_fla.Symbole15_54" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite53"/>
+    </g>
+    <g id="sprite53" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="5" ffdec:characterName="150_fla.Symbole12_55" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite54"/>
+    </g>
+    <g id="sprite54" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="4" ffdec:characterName="150_fla.Symbole9_56" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite55"/>
+    </g>
+    <g id="sprite55" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="3" ffdec:characterName="150_fla.Symbole6_57" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite56"/>
+    </g>
+    <g id="sprite56" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="2" height="56.0" id="back" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#sprite57"/>
+    </g>
+    <g id="sprite57" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="1" height="56.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape0"/>
+    </g>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <path d="M56.0 56.0 L0.0 56.0 0.0 0.0 56.0 0.0 56.0 56.0" fill="#010101" fill-opacity="0.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="sprite58" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.75, 0.75)">
+      <use ffdec:characterId="60" height="38.2" transform="matrix(1.0, 0.0, 0.0, 1.0, -0.75, -0.75)" width="55.4" xlink:href="#shape1"/>
+    </g>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.75, 0.75)">
+      <path d="M42.35 27.3 L42.0 27.15 Q41.6 24.8 40.25 22.65 37.75 18.55 32.1 14.9 33.15 13.6 32.7 12.4 L32.4 12.2 24.3 26.45 24.3 26.35 18.75 35.8 17.5 36.7 16.65 36.7 16.05 36.35 15.85 36.2 14.85 35.65 14.15 35.3 14.0 35.0 13.55 34.4 13.55 33.6 13.55 33.25 13.75 33.1 32.75 0.9 Q33.5 0.0 34.1 0.0 34.75 -0.05 37.3 1.8 L37.55 2.35 Q37.75 2.75 37.55 3.35 L37.4 3.6 35.45 6.85 35.6 6.95 35.8 6.95 Q37.7 6.55 37.75 5.25 43.95 8.2 48.55 8.45 51.35 8.6 53.9 7.5 53.9 20.35 42.35 27.3 M52.2 9.9 Q51.5 12.7 50.1 15.8 47.0 22.25 42.85 24.15 48.4 18.6 52.2 9.9 M20.3 0.3 L19.6 0.15 19.3 0.3 16.8 1.7 Q16.5 2.05 16.35 2.5 16.2 2.9 16.4 3.45 L16.55 3.75 18.5 7.05 18.35 7.1 18.05 7.05 18.1 7.1 16.4 6.0 16.1 5.4 Q9.95 8.45 5.4 8.65 2.6 8.75 0.0 7.65 0.0 20.55 11.55 27.45 L11.85 27.3 Q12.35 24.95 13.7 22.8 16.2 18.65 21.85 15.05 20.75 13.75 21.25 12.65 L21.55 12.4 23.25 15.3 26.35 9.9 21.2 1.05 Q21.0 0.4 20.3 0.3 M11.2 24.65 Q5.65 19.1 1.8 10.45 2.45 13.2 3.9 16.4 6.95 22.7 11.2 24.65 Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.2" stroke-width="1.5"/>
+    </g>
+    <g id="sprite59" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="62" height="36.95" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="53.9" xlink:href="#shape2"/>
+    </g>
+    <g id="shape2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <path d="M53.9 7.5 Q53.9 20.35 42.35 27.3 L42.0 27.15 Q41.6 24.8 40.25 22.65 37.75 18.55 32.1 14.9 33.15 13.6 32.7 12.4 L32.4 12.2 24.3 26.45 24.3 26.35 18.75 35.8 17.5 36.7 16.65 36.7 16.05 36.35 15.85 36.2 14.85 35.65 14.15 35.3 14.0 35.0 13.55 34.4 13.55 33.6 13.55 33.25 13.75 33.1 32.75 0.9 Q33.5 0.0 34.1 0.0 34.75 -0.05 37.3 1.8 L37.55 2.35 Q37.75 2.75 37.55 3.35 L37.4 3.6 35.45 6.85 35.6 6.95 35.8 6.95 Q37.7 6.55 37.75 5.25 43.95 8.2 48.55 8.45 51.35 8.6 53.9 7.5 M20.3 0.3 Q21.0 0.4 21.2 1.05 L26.35 9.9 23.25 15.3 21.55 12.4 21.25 12.65 Q20.75 13.75 21.85 15.05 16.2 18.65 13.7 22.8 12.35 24.95 11.85 27.3 L11.55 27.45 Q0.0 20.55 0.0 7.65 2.6 8.75 5.4 8.65 9.95 8.45 16.1 5.4 L16.4 6.0 18.1 7.1 18.05 7.05 18.35 7.1 18.5 7.05 16.55 3.75 16.4 3.45 Q16.2 2.9 16.35 2.5 16.5 2.05 16.8 1.7 L19.3 0.3 19.6 0.15 20.3 0.3 M42.85 24.15 Q47.0 22.25 50.1 15.8 51.5 12.7 52.2 9.9 48.4 18.6 42.85 24.15 M40.35 34.55 L39.95 35.1 39.8 35.45 39.1 35.8 38.1 36.35 37.9 36.45 37.25 36.85 36.45 36.9 35.2 36.05 29.65 26.5 29.65 26.6 27.45 22.7 30.6 17.15 40.1 33.25 40.35 33.4 40.35 33.7 40.35 34.55 M11.2 24.65 Q5.65 19.1 1.8 10.45 2.45 13.2 3.9 16.4 6.95 22.7 11.2 24.65" fill="#000000" fill-rule="evenodd" stroke="none"/>
+    </g>
+  </defs>
+</svg>

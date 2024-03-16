@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlasonController!{% endblock %}
+
+{% block body %}
+
+    <section class="grid grid-cols-2">
+        <div class="preview">
+
+        </div>
+        <div>
+            <div class="back-selection">
+                <h2>Choisissez un Contour et Fond</h2>
+                <div class="image-grid">
+                    {% for id, back in backs %}
+                        <div class="image-item relative" data-id="{{ id }}">
+                            <img class="absolute top-0 left-0 lazyload" data-src="{{ asset(back.border) }}" alt="Border {{ id }}" loading="lazy">
+                            <img class="lazyload" data-src="{{ asset(back.background) }}" alt="Background {{ id }}" loading="lazy">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="symbol-selection hidden">
+                <h2>Choisissez un Symbole</h2>
+                <div class="image-grid">
+                    {% for id, symbol in symbols %}
+                        <div class="image-item" data-id="{{ id }}">
+                            <img class="lazyload" data-src="{{ asset(symbol) }}" alt="Symbol {{ id }}" loading="lazy">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ... #}
+
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        .image-item {
+            cursor: pointer;
+        }
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+{% endblock %}
