@@ -34,9 +34,11 @@
             <a class="form-submit form-submit-green" href="#">Modifier la guilde</a>
         {% endif %}
 
-        {% if guild == app.user.guild %}
-            <a href="{{ path('app_guild_leave', {'name': guild.name}) }}" id="members-btn" class="form-submit form-submit-youtube">Quitter la guilde</a>
-        {% elseif app.user.guild is null %}
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            {% if guild == app.user.guild %}
+                <a href="{{ path('app_guild_leave', {'name': guild.name}) }}" id="members-btn" class="form-submit form-submit-youtube">Quitter la guilde</a>
+            {% endif %}
+        {% else %}
             <a href="{{ path('app_guild_join', {'name': guild.name}) }}" id="members-btn" class="form-submit">Rejoindre la guilde</a>
         {% endif %}
     </div>
