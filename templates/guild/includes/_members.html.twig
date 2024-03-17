@@ -1,0 +1,23 @@
+<div class="absolute -bottom-full left-0 h-[calc(100%-8rem)] w-full overflow-y-scroll bg-white dark:bg-gray-800 pb-4 pt-6 pl-4 pr-2 members transition duration-300 space-y-4" id="members-section">
+    {% if guild.members|length > 0 %}
+        {% for member in guild.members %}
+            <a class="flex flex-col items-center space-y-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-gray-700 rounded-lg p-4 transition duration-300" href="#">
+                <div class="size-12 rounded-full overflow-hidden">
+                    {% if member.profilePicture %}
+                        <img src="{{ asset('images/profiles/' ~ member.profilePicture) }}" alt="Photo de profil de {{ member.pseudonymeWebsite }}" />
+                    {% else %}
+                        <img src="{{ asset('uploads/logo.jpg') }}" alt="Photo de profil de {{ member.pseudonymeWebsite }}" />
+                    {% endif %}
+                </div>
+                <div class="text-xs text-center grid gap-2">
+                    {% if guild.leader == member %}
+                        <span class="text-primary-400">Meneur</span>
+                    {% else %}
+                        <span>Membre</span>
+                    {% endif %}
+                    <span class="text-tertiary-400 break-words">{{ member.pseudonymeDofus }}</span>
+                </div>
+            </a>
+        {% endfor %}
+    {% endif %}
+</div>

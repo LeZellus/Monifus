@@ -13,7 +13,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
-use App\Validator\UniquePseudonyme;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'Un compte existe déjà avec cet email')]
@@ -145,6 +144,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'User', targetEntity: Price::class, orphanRemoval: true)]
     private Collection $prices;
+
+    #[ORM\ManyToOne(inversedBy: 'members')]
+    private ?Guild $guild = null;
 
 
     public function __construct()
@@ -590,6 +592,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $price->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getGuild(): ?Guild
+    {
+        return $this->guild;
+    }
+
+    public function setGuild(?Guild $guild): static
+    {
+        $this->guild = $guild;
 
         return $this;
     }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GuildController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Créer une page de guilde</h1>
+    <section class="wrapper wrapper-style grid gap-4">
+        {% for message in app.flashes('info') %}
+            <p class="wrapper wrapper-style wrapper-red text-red-400 text-center">{{ message }}</p>
+        {% endfor %}
+        {{ include('guild/includes/_form.html.twig') }}
+    </section>
+{% endblock %}

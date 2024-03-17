@@ -1,0 +1,75 @@
+{% extends 'base_form.html.twig' %}
+
+{% block title %}Guifus | {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <section class="wrapper wrapper-style wrapper-size wrapper-p-0 relative z-50">
+        {{ include("guild/includes/_members.html.twig") }}
+        <div class="relative">
+            {% if guild.coverPicture %}
+                <img class="h-32 w-full object-cover" src="{{ asset("guilds/covers/" ~ guild.coverPicture) }}" alt="Image de couverture">
+            {% else %}
+                <img class="h-32 w-full object-cover" src="https://i81.servimg.com/u/f81/16/03/11/75/osmoz10.jpg" alt="Image de couverture">
+            {% endif %}
+
+            {% if guild.blasonPicture %}
+                <img class="h-24 absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" src="{{ asset("guilds/blasons/" ~ guild.blasonPicture) }}" alt="Image Blason">
+            {% else %}
+                <img class="h-24 absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" src="{{ asset("uploads/blason.png") }}" alt="Image Blason">
+            {% endif %}
+
+            <div class="size-24 bg-orange-500 absolute z-20 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)] rounded-full flex justify-center items-center text-white opacity-0" id="members-btn-close">
+                <i data-feather="x"></i>
+            </div>
+        </div>
+        {{ include("guild/includes/_content.html.twig") }}
+    </section>
+
+    <div class="grid gap-4 w-full mt-4">
+        <span class="wrapper wrapper-style w-full text-xs dark:text-gray-300" id="urlToCopy">{{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.requestUri }}</span>
+        <button class="form-submit mx-auto" id="copyButton" data-text="Copier lien">Copier lien</button>
+    </div>
+
+    <p class="mt-2 text-xs">Propulsé par <a class="link" href="https://monifus.fr/">Monifus.fr</a></p>
+
+
+    <script>
+        document.getElementById('members-btn').addEventListener('click', function() {
+            let membersSection = document.getElementById('members-section');
+            membersSection.classList.remove('-bottom-full');
+            membersSection.classList.add('bottom-0');
+            document.getElementById('members-btn-close').classList.remove('opacity-0');
+            document.getElementById('members-btn-close').classList.add('opacity-1');
+        });
+
+
+        document.getElementById('members-btn-close').addEventListener('click', function() {
+            let membersSection = document.getElementById('members-section');
+            membersSection.classList.add('-bottom-full');
+            membersSection.classList.remove('bottom-0');
+            document.getElementById('members-btn-close').classList.remove('opacity-1');
+            document.getElementById('members-btn-close').classList.add('opacity-0');
+        });
+
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const url = document.getElementById('urlToCopy').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                const button = document.getElementById('copyButton');
+                const originalText = button.getAttribute('data-text');
+
+                // Changer le texte et ajouter la classe
+                button.textContent = 'Copié !';
+                button.classList.add('form-submit-green');
+
+                // Réinitialiser après 5 secondes
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('form-submit-green');
+                }, 5000);
+            }).catch(err => {
+                console.error('Erreur lors de la copie: ', err);
+            });
+        });
+    </script>
+{% endblock %}
