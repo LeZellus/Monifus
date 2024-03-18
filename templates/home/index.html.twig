@@ -3,15 +3,29 @@
 {% block body %}
     <h1 class="text-center">Bienvenu sur Monifus</h1>
 
+    <section class="wrapper wrapper-style grid gap-6">
+        <h2 class="text-center">Nouveau !</h2>
+        <div class="flex justify-center flex-col items-center text-center space-y-2">
+            <p>Vous pouvez maintenant créer votre page de guilde pour la partager !</p>
+            <a class="form-submit" href="https://monifus.fr/guilde/Bam_Beach">Voir un exemple</a>
+            <img class="rounded-lg h-96" src="{{ asset("uploads/guild_page.png") }}" alt="Page de guilde">
+        </div>
+
+        <div class="flex justify-center flex-col items-center text-center space-y-2">
+            <p>Pour ça rien de plus simple :</p>
+            <a class="form-submit form-submit-green" href="{{ path('app_guild_new') }}">Cliquez ici !</a>
+        </div>
+    </section>
+
     {{ include('home/includes/_about.html.twig') }}
 
-    <div class="wrapper-style wrapper">
+    <section class="wrapper-style wrapper">
         <div class="wrapper wrapper-yellow uppercase justify-center">
             <i class="hidden md:block" data-feather="alert-triangle"></i>
             <p class="md:mx-4">Aucun bot n'est utilisé sur ce site web. Ni aucun système de lecture de donnée du jeu hormis les données disponibles via l'<a class="link" href="https://dofusdb.fr/fr/">API DofusDB</a>. Tout le reste doit être renseigné manuellement.</p>
             <i class="hidden md:block" data-feather="alert-triangle"></i>
         </div>
-    </div>
+    </section>
 
     <section class="wrapper-style wrapper grid text-center gap-16">
         <div class="grid gap-4">
