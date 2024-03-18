@@ -94,8 +94,11 @@ class GuildController extends AbstractController
         $name = str_replace('_', ' ', $name);
         $guild = $guildRepository->findOneBy(['name' => $name]);
         $user = $this->getUser();
+        $isLeader = false;
 
-        $isLeader = $guildRepository->isUserLeaderOfGuild($user->getId());
+        if($user) {
+            $isLeader = $guildRepository->isUserLeaderOfGuild($user->getId());
+        }
 
         if (!$guild) {
             throw new NotFoundHttpException('Aucune guilde trouvée');
