@@ -91,7 +91,11 @@ class GuildController extends AbstractController
     #[Route('/{name}', name: 'app_guild_show', methods: ['GET', 'POST'])]
     public function show(string $name, GuildRepository $guildRepository): Response
     {
+        $name = str_replace('_', ' ', $name);
         $guild = $guildRepository->findOneBy(['name' => $name]);
+        $user = $this->getUser();
+
+        $isLeader = $guildRepository->isUserLeaderOfGuild($user->getId());
 
         if (!$guild) {
             throw new NotFoundHttpException('Aucune guilde trouvée');
@@ -99,6 +103,7 @@ class GuildController extends AbstractController
 
         return $this->render('guild/show.html.twig', [
             'guild' => $guild,
+            'isLeader' => $isLeader
         ]);
     }
 
@@ -111,6 +116,7 @@ class GuildController extends AbstractController
     #[Route('/partir/{name}', name: 'app_guild_leave', methods: ['GET', 'POST'])]
     public function leave(string $name): Response
     {
+        $name = str_replace('_', ' ', $name);
         $guild = $this->getGuild($name);
         $user = $this->getUser();
 
@@ -132,6 +138,7 @@ class GuildController extends AbstractController
 
     private function handleGuildMembership(string $name, bool $join): Response
     {
+        $name = str_replace('_', ' ', $name);
         $guild = $this->getGuild($name);
         $user = $this->getUser();
 
