@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
         const popup = document.getElementById("popup");
-        const closeButtons = document.querySelectorAll(".popup-close");
+        const closeButtons = document.querySelectorAll(".popup-enter-close");
 
         if(!popup) {
             console.log("Element popup non trouvé");
