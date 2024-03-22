@@ -9,7 +9,7 @@
         {% endfor %}
 
         {% if isUserLoggedIn %}
-            {% if userGuild.leader == app.user %}
+            {% if userGuild is not null and userGuild.leader == app.user %}
                 <a class="form-submit form-submit-green" href="{{ path('app_guilds_edit', {'name': userGuild.name}) }}">Modifier ma guilde</a>
             {% endif %}
             {% if userGuild %}

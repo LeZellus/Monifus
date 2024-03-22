@@ -113,8 +113,14 @@ class GuildController extends AbstractController
     #[Route('/editer/{name}', name: 'app_guilds_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, EntityManagerInterface $entityManager, string $name, GuildRepository $guildRepository): Response
     {
+        $user = $this->getUser();
         $name = str_replace('_', ' ', $name);
         $guild = $guildRepository->findOneBy(['name' => $name]);
+
+        if ($user !== $guild->getLeader()) {
+            $this->addFlash('error', 'Vous ne pouvez pas modifier une guilde qui ne vous appartient pas.');
+            return $this->redirectToRoute('app_guilds'); // Rediriger vers la liste des guildes
+        }
 
         $form = $this->createForm(GuildType::class, $guild);
         $form->handleRequest($request);
