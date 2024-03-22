@@ -110,6 +110,30 @@ class GuildController extends AbstractController
         ]);
     }
 
+    #[Route('/editer/{name}', name: 'app_guilds_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, EntityManagerInterface $entityManager, string $name, GuildRepository $guildRepository): Response
+    {
+        $name = str_replace('_', ' ', $name);
+        $guild = $guildRepository->findOneBy(['name' => $name]);
+
+        $form = $this->createForm(GuildType::class, $guild);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_guilds', [], Response::HTTP_SEE_OTHER);
+        }
+
+        $this->breadcrumbService->setBreadcrumbs("Guildes", '/guilds');
+        $this->breadcrumbService->setBreadcrumbs("Editer", '');
+
+        return $this->render('guild/edit.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
     #[Route('/rejoindre/{name}', name: 'app_guilds_join', methods: ['GET', 'POST'])]
     public function join(string $name): Response
     {

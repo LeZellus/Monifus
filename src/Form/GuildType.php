@@ -68,7 +68,7 @@ class GuildType extends AbstractType
                 'required' => false,
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Description'
+                'label' => 'Enregistrer'
             ])
         ;
     }

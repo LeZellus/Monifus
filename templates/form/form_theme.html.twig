@@ -22,7 +22,7 @@
     {%- set type = type|default('button') -%}
     {%- if type == 'submit' -%}
         <div class="flex justify-center">
-            <button type="{{ type }}" {{ block('button_attributes') }} class="form-submit {{ attr.class|default('') }}">
+            <button type="{{ type }}" {{ block('button_attributes') }} class="form-submit form-submit-green {{ attr.class|default('') }}">
                 {%- if label is not same as(false) -%}
                     {{ label|trans({}, translation_domain) }}
                 {%- endif -%}

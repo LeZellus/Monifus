@@ -9,7 +9,7 @@
     <button id="members-btn"  class="form-submit">Voir les membres</button>
 
     {% if guild.leader == app.user %}
-        <a class="form-submit form-submit-green" href="#">Modifier la guilde</a>
+        <a class="form-submit form-submit-green" href="{{ path('app_guilds_edit', {'name': guild.name}) }}">Modifier la guilde</a>
     {% endif %}
 
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
