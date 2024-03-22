@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Comparer pour le tri
     const comparer = (idx, type, asc) => (a, b) => {
+        if (asc === null) return 0; // Pas de tri
+
         const v1 = getCellValue(asc ? a : b, idx, type);
         const v2 = getCellValue(asc ? b : a, idx, type);
 
@@ -38,14 +40,62 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // Fonction pour mettre à jour la couleur de l'icône
+    const updateIconColor = (th, asc) => {
+        // Supprimer les couleurs précédentes
+        const allIcons = document.querySelectorAll('.triable-icon');
+        allIcons.forEach(icon => {
+            icon.classList.remove('text-green-400', 'text-red-400');
+            icon.classList.add('text-gray-300', 'hover:text-gray-400', 'dark:text-gray-600', 'dark:hover:text-gray-500');
+        });
+
+        if (asc === null) {
+            // Réinitialiser la couleur de tous les th
+            document.querySelectorAll('th.triable svg').forEach(icon => {
+                icon.classList.remove('text-red-400', 'text-green-400');
+                icon.classList.add('text-gray-300', 'hover:text-gray-400', 'dark:text-gray-600', 'dark:hover:text-gray-500');
+            });
+            return;
+        }
+
+        // Obtenir l'icône du th actuel
+        const icon = th.querySelector('svg');
+        // Ajouter la nouvelle couleur
+        icon.classList.remove('text-gray-300', 'hover:text-gray-400', 'dark:text-gray-600', 'dark:hover:text-gray-500');
+        icon.classList.add(asc ? 'text-green-400' : 'text-red-400');
+    };
+
+    // Sauvegarder l'ordre initial des lignes pour chaque tableau
+    const initialRows = new Map();
+    document.querySelectorAll('table').forEach(table => {
+        initialRows.set(table, Array.from(table.querySelectorAll('tbody tr')));
+    });
+
     // Ajout de l'écouteur sur chaque th triable
     document.querySelectorAll('th.triable').forEach(th => th.addEventListener('click', function () {
         const table = th.closest('table');
         const tbody = table.querySelector('tbody');
         const idx = Array.from(th.parentNode.children).indexOf(th);
         const type = th.getAttribute('data-type');
+
+        if (this.asc === undefined) {
+            // Premier clic: tri descendant
+            this.asc = false;
+        } else if (this.asc === false) {
+            // Deuxième clic: tri ascendant
+            this.asc = true;
+        } else {
+            // Troisième clic: retour à l'état initial
+            initialRows.get(table).forEach(tr => tbody.appendChild(tr));
+            this.asc = null;
+            updateIconColor(th, this.asc);
+            return;
+        }
+
         Array.from(tbody.querySelectorAll('tr'))
-            .sort(comparer(idx, type, this.asc = !this.asc))
+            .sort(comparer(idx, type, this.asc))
             .forEach(tr => tbody.appendChild(tr));
+
+        updateIconColor(th, this.asc);
     }));
 });

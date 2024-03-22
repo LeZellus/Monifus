@@ -43,7 +43,7 @@
 }
 
 .triable {
-  svg {
-    @apply text-gray-300 hover:text-gray-400 dark:text-gray-600 cursor-pointer dark:hover:text-gray-500 transition duration-300 w-4 h-4 ml-2;
+  &-icon {
+    @apply cursor-pointer transition duration-300 w-4 h-4 ml-2;
   }
 }
