@@ -72,30 +72,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Ajout de l'écouteur sur chaque th triable
-    document.querySelectorAll('th.triable').forEach(th => th.addEventListener('click', function () {
-        const table = th.closest('table');
-        const tbody = table.querySelector('tbody');
-        const idx = Array.from(th.parentNode.children).indexOf(th);
-        const type = th.getAttribute('data-type');
+    document.querySelectorAll('th.triable').forEach(th => {
+        // Initialiser un compteur de clics pour chaque en-tête
+        th.clickCount = 0;
 
-        if (this.asc === undefined) {
-            // Premier clic: tri descendant
-            this.asc = false;
-        } else if (this.asc === false) {
-            // Deuxième clic: tri ascendant
-            this.asc = true;
-        } else {
-            // Troisième clic: retour à l'état initial
-            initialRows.get(table).forEach(tr => tbody.appendChild(tr));
-            this.asc = null;
-            updateIconColor(th, this.asc);
-            return;
-        }
+        th.addEventListener('click', function () {
+            const table = th.closest('table');
+            const tbody = table.querySelector('tbody');
+            const idx = Array.from(th.parentNode.children).indexOf(th);
+            const type = th.getAttribute('data-type');
 
-        Array.from(tbody.querySelectorAll('tr'))
-            .sort(comparer(idx, type, this.asc))
-            .forEach(tr => tbody.appendChild(tr));
+            // Incrémenter le compteur et déterminer l'action en fonction du nombre de clics
+            th.clickCount = (th.clickCount + 1) % 3; // 0: état initial, 1: tri descendant, 2: tri ascendant
 
-        updateIconColor(th, this.asc);
-    }));
+            if (th.clickCount === 0) {
+                // Troisième clic: retour à l'état initial
+                initialRows.get(table).forEach(tr => tbody.appendChild(tr));
+            } else {
+                // Premier et deuxième clics: trier
+                const asc = th.clickCount === 2;
+                Array.from(tbody.querySelectorAll('tr'))
+                    .sort(comparer(idx, type, asc))
+                    .forEach(tr => tbody.appendChild(tr));
+            }
+
+            updateIconColor(th, th.clickCount === 2 ? true : th.clickCount === 1 ? false : null);
+        });
+    });
 });
