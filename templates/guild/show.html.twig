@@ -32,9 +32,9 @@
             {% endif %}
 
             {% if guild.blasonPicture %}
-                <img class="h-24 absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" src="{{ asset("guilds/blasons/" ~ guild.blasonPicture) }}" alt="Image Blason">
+                <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("guilds/blasons/" ~ guild.blasonPicture) }}')"></div>
             {% else %}
-                <img class="h-24 absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" src="{{ asset("uploads/blason.png") }}" alt="Image Blason">
+                <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("uploads/blason.png") }}')"></div>
             {% endif %}
 
             <div class="size-24 bg-orange-500 absolute z-20 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)] rounded-full flex justify-center items-center text-white opacity-0" id="members-btn-close">
@@ -42,6 +42,7 @@
             </div>
         </div>
         {{ include("guild/includes/_content.html.twig") }}
+        {{ include("guild/includes/_buttons.html.twig") }}
     </section>
 
     <div class="grid gap-4 w-full mt-4">

@@ -80,6 +80,30 @@ class Guild
     #[ORM\JoinColumn(nullable: false)]
     private ?User $leader = null;
 
+    #[ORM\Column]
+    #[Assert\Range(
+        notInRangeMessage: 'Le niveau doit être entre 1 et 200',
+        min: 1,
+        max: 200
+    )]
+    private ?int $minimumLevel = null;
+
+    #[ORM\Column]
+    #[Assert\Range(
+        notInRangeMessage: 'Le niveau doit être entre 1 et 200',
+        min: 1,
+        max: 200
+    )]
+    private ?int $level = null;
+
+    #[ORM\Column]
+    #[Assert\Range(
+        notInRangeMessage: 'Le niveau doit être entre 1 et 22000',
+        min: 1,
+        max: 22000
+    )]
+    private ?int $minimumSuccess = null;
+
     public function __construct()
     {
         $this->members = new ArrayCollection();
@@ -246,6 +270,42 @@ class Guild
     public function setLeader(User $leader): static
     {
         $this->leader = $leader;
+
+        return $this;
+    }
+
+    public function getMinimumLevel(): ?int
+    {
+        return $this->minimumLevel;
+    }
+
+    public function setMinimumLevel(int $minimumLevel): static
+    {
+        $this->minimumLevel = $minimumLevel;
+
+        return $this;
+    }
+
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    public function setLevel(int $level): static
+    {
+        $this->level = $level;
+
+        return $this;
+    }
+
+    public function getMinimumSuccess(): ?int
+    {
+        return $this->minimumSuccess;
+    }
+
+    public function setMinimumSuccess(int $minimumSuccess): static
+    {
+        $this->minimumSuccess = $minimumSuccess;
 
         return $this;
     }

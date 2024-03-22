@@ -7,6 +7,13 @@
     </div>
 
     <div class="grid grid-cols-2 gap-4">
+        <h2 class="lg:col-span-2">Prérequis de guilde</h2>
+        {{ form_row(form.minimumLevel) }}
+        {{ form_row(form.level) }}
+        {{ form_row(form.minimumSuccess) }}
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
         <h2 class="lg:col-span-2">Informations principales</h2>
         {{ form_row(form.name) }}
         {{ form_row(form.description) }}

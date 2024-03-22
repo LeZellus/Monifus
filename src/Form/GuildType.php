@@ -6,6 +6,8 @@ use App\Entity\Guild;
 use App\Entity\Server;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -23,6 +25,18 @@ class GuildType extends AbstractType
             ])
             ->add('description', TextType::class, [
                 'label' => 'Description',
+                'required' => true
+            ])
+            ->add('level', NumberType::class, [
+                'label' => 'Niveau de votre guilde',
+                'required' => true
+            ])
+            ->add('minimumLevel', NumberType::class, [
+                'label' => 'Level requis',
+                'required' => true
+            ])
+            ->add('minimumSuccess', NumberType::class, [
+                'label' => 'Succès requis',
                 'required' => true
             ])
             ->add('discordUrl', TextType::class, [

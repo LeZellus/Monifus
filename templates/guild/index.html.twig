@@ -37,29 +37,12 @@
                         {% endif %}
 
                         {% if guild.blasonPicture %}
-                            <img class="h-24 absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" src="{{ asset("guilds/blasons/" ~ guild.blasonPicture) }}" alt="Image Blason">
+                            <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("guilds/blasons/" ~ guild.blasonPicture) }}')"></div>
                         {% else %}
-                            <img class="h-24 absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" src="{{ asset("uploads/blason.png") }}" alt="Image Blason">
+                            <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("uploads/blason.png") }}')"></div>
                         {% endif %}
                     </div>
-                    <div class="p-4 grid gap-2">
-                        <h3 class="text-center dark:text-orange-500">{{ guild.name }}</h3>
-                        <div class="flex justify-between">
-                            <div class="flex items-center">
-                                <i class="w-4 mr-2 text-primary-500" data-feather="server"></i>
-                                <p class="font-bold">Serveur : </p>
-                            </div>
-                            <p class="text-tertiary-400 font-bold">{{ guild.server }}</p>
-                        </div>
-                        <div class="flex justify-between">
-                            <div class="flex justify-between">
-                                <i class="w-4 mr-2 text-primary-500" data-feather="users"></i>
-                                <p class="font-bold">Membres : </p>
-                            </div>
-                            <p class="text-green-400 font-bold">{{ guild.members|length }}</p>
-                        </div>
-                        <button class="form-submit mx-auto">Voir</button>
-                    </div>
+                    {{ include("guilds/includes/_content.html.twig") }}
                 </a>
             {% endfor %}
         </div>
