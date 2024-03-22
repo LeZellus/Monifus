@@ -9,8 +9,6 @@ const SlideTutorial = memo(() => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const totalSlides = slides.length;
 
-    console.log(slides)
-
     const goToSlide = useCallback((slideNumber) => {
         setCurrentSlide(slideNumber);
     }, []);
