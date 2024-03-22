@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const icon = th.querySelector('svg');
         // Ajouter la nouvelle couleur
         icon.classList.remove('text-gray-300', 'hover:text-gray-400', 'dark:text-gray-600', 'dark:hover:text-gray-500');
-        icon.classList.add(asc ? 'text-green-400' : 'text-red-400');
+        icon.classList.add(asc ? 'text-red-400' : 'text-green-400');
     };
 
     // Sauvegarder l'ordre initial des lignes pour chaque tableau
