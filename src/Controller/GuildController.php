@@ -80,7 +80,7 @@ class GuildController extends AbstractController
             return $this->redirectToRoute('app_guilds');
         }
 
-        $this->breadcrumbService->setBreadcrumbs("Guilde", "/guilde");
+        $this->breadcrumbService->setBreadcrumbs("Guilde", "/guildes");
         $this->breadcrumbService->setBreadcrumbs("Nouvelle", "");
 
         return $this->render('guild/new.html.twig', [
