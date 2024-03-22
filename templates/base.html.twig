@@ -37,6 +37,19 @@
         {{ encore_entry_script_tags('popup') }}
     {% endblock %}
 
+    {% if not is_granted('ROLE_ADMIN') %}
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSB01711P1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TSB01711P1');
+        </script>
+        <!-- Fin Google Analytics -->
+    {% endif %}
+
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
