@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/guilde')]
+#[Route('/guildes')]
 class GuildController extends AbstractController
 {
     private BreadcrumbService $breadcrumbService;
@@ -31,7 +31,7 @@ class GuildController extends AbstractController
         $this->guildRepository = $guildRepository;
     }
 
-    #[Route('/', name: 'app_guild')]
+    #[Route('/', name: 'app_guilds')]
     public function index(GuildRepository $guildRepository): Response
     {
         $guilds = $guildRepository->findAll();
@@ -51,7 +51,7 @@ class GuildController extends AbstractController
         ]);
     }
 
-    #[Route('/nouvelle', name: 'app_guild_new', methods: ['GET', 'POST'])]
+    #[Route('/nouvelle', name: 'app_guilds_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $guild = new Guild();
@@ -77,7 +77,7 @@ class GuildController extends AbstractController
             $entityManager->flush();
 
             // Rediriger vers la liste des Monitors
-            return $this->redirectToRoute('app_guild');
+            return $this->redirectToRoute('app_guilds');
         }
 
         $this->breadcrumbService->setBreadcrumbs("Guilde", "/guilde");
@@ -88,7 +88,7 @@ class GuildController extends AbstractController
         ]);
     }
 
-    #[Route('/{name}', name: 'app_guild_show', methods: ['GET', 'POST'])]
+    #[Route('/{name}', name: 'app_guilds_show', methods: ['GET', 'POST'])]
     public function show(string $name, GuildRepository $guildRepository): Response
     {
         $name = str_replace('_', ' ', $name);
@@ -110,13 +110,13 @@ class GuildController extends AbstractController
         ]);
     }
 
-    #[Route('/rejoindre/{name}', name: 'app_guild_join', methods: ['GET', 'POST'])]
+    #[Route('/rejoindre/{name}', name: 'app_guilds_join', methods: ['GET', 'POST'])]
     public function join(string $name): Response
     {
         return $this->handleGuildMembership($name, true);
     }
 
-    #[Route('/partir/{name}', name: 'app_guild_leave', methods: ['GET', 'POST'])]
+    #[Route('/partir/{name}', name: 'app_guilds_leave', methods: ['GET', 'POST'])]
     public function leave(string $name): Response
     {
         $name = str_replace('_', ' ', $name);
@@ -126,13 +126,13 @@ class GuildController extends AbstractController
         // Vérifier si l'utilisateur appartient à la guilde
         if ($guild != $user->getGuild()) {
             $this->addFlash('error', 'Vous ne pouvez pas quitter une guilde à laquelle vous n\'appartenez pas.');
-            return $this->redirectToRoute('app_guild'); // Rediriger vers la liste des guildes
+            return $this->redirectToRoute('app_guilds'); // Rediriger vers la liste des guildes
         }
 
         // Vérifier si l'utilisateur est le leader de la guilde
         if ($guild->getLeader() === $user) {
             $this->addFlash('error', 'Le créateur de la guilde ne peut pas quitter sa guilde.');
-            return $this->redirectToRoute('app_guild');
+            return $this->redirectToRoute('app_guilds');
         }
 
         // Procéder au retrait de la guilde
@@ -150,7 +150,7 @@ class GuildController extends AbstractController
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
-        return $this->redirectToRoute($join ? 'app_guild_show' : 'app_guild', ['name' => $name]);
+        return $this->redirectToRoute($join ? 'app_guilds_show' : 'app_guilds', ['name' => $name]);
     }
 
     private function getGuild(string $name): Guild

@@ -11,15 +11,15 @@
         {% if isUserLoggedIn %}
             {% if userGuild %}
                 {# Lien vers la page de la guilde de l'utilisateur #}
-                <a class="form-submit" href="{{ path('app_guild_show', {'name': userGuild.name|replace({' ': '_'})}) }}">{{ userGuild.name }}</a>
-                <a class="form-submit form-submit-youtube" href="{{ path('app_guild_leave', {'name': userGuild.name}) }}">Quitter ma guilde</a>
+                <a class="form-submit" href="{{ path('app_guilds_show', {'name': userGuild.name|replace({' ': '_'})}) }}">{{ userGuild.name }}</a>
+                <a class="form-submit form-submit-youtube" href="{{ path('app_guilds_leave', {'name': userGuild.name}) }}">Quitter ma guilde</a>
             {% else %}
                 {# Bouton pour créer une guilde #}
-                <a class="form-submit" href="{{ path('app_guild_new') }}">Créer une guilde</a>
+                <a class="form-submit" href="{{ path('app_guilds_new') }}">Créer une guilde</a>
             {% endif %}
         {% else %}
             {# Proposer de créer une guilde #}
-            <a class="form-submit" href="{{ path('app_guild_new') }}">Créer une guilde</a>
+            <a class="form-submit" href="{{ path('app_guilds_new') }}">Créer une guilde</a>
         {% endif %}
     </div>
 
@@ -28,7 +28,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {% for guild in guilds %}
                 {# Afficher les informations de chaque guilde #}
-                <a href="{{ path('app_guild_show', {'name': guild.name|replace({' ': '_'})}) }}" class="border rounded-lg border-gray-300 dark:border-gray-700 overflow-hidden group">
+                <a href="{{ path('app_guilds_show', {'name': guild.name|replace({' ': '_'})}) }}" class="border rounded-lg border-gray-300 dark:border-gray-700 overflow-hidden group">
                     <div class="relative">
                         {% if guild.coverPicture %}
                             <img class="h-32 w-full object-cover" src="{{ asset("guilds/covers/" ~ guild.coverPicture) }}" alt="Image de couverture">
