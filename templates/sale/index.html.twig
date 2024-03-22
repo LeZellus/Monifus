@@ -16,40 +16,83 @@
     {{ include('sale/includes/_items.html.twig') }}
 
     <section class="wrapper wrapper-style wrapper-p-0 text-sm">
-        <table class="w-full text-left rtl:text-right">
+        <table id="table" class="w-full text-left rtl:text-right">
             <thead class="text-xs uppercase">
             <tr class="border-b border-gray-300 dark:border-gray-700">
-                <th scope="col" class="p-2 ">
-                    <span class="hidden sm:block text-xs">Nom de l'</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">object</span>
+
+                <th scope="col" class="triable p-2 table-cell" data-column="0" data-type="string">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="hidden sm:block text-xs">Nom de l'</span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">object</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="hidden sm:block text-xs">%</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">profit</span>
+
+                <th scope="col" class="triable p-2 hidden xl:table-cell" data-column="1" data-type="number">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="hidden sm:block text-xs">%</span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">profit</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="sm:block text-xs">Date d'</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">achat</span>
+
+                <th scope="col" class="triable p-2 hidden xl:table-cell" data-column="2" data-type="date">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="sm:block text-xs">Date d'</span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">achat</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="hidden sm:block text-xs">Date de</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">vente</span>
+
+                <th scope="col" class="triable p-2 hidden xl:table-cell" data-column="3" data-type="date">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="hidden sm:block text-xs">Date de</span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">vente</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="hidden sm:block text-xs">Prix d'</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">achat</span>
+
+                <th scope="col" class="triable p-2 hidden xl:table-cell" data-column="4" data-type="number">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="hidden sm:block text-xs">Prix d'</span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">achat</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 hidden xl:table-cell">
-                    <span class="hidden sm:block text-xs">Prix de </span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">vente</span>
+
+                <th scope="col" class="triable p-2 hidden xl:table-cell" data-column="5" data-type="number">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="hidden sm:block text-xs">Prix de </span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">vente</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 ">
-                    <span class="hidden sm:block text-xs">Etat de </span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">vente</span>
+
+                <th scope="col" class="triable p-2" data-column="6" data-type="string">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="hidden sm:block text-xs">Etat de </span>
+                            <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">vente</span>
+                        </div>
+                        <i data-feather="filter"></i>
+                    </div>
                 </th>
-                <th scope="col" class="p-2 ">
+
+                <th scope="col" class="triable p-2">
                     <span class="hidden sm:block text-xs">Liste d'</span>
-                    <span class="text-primary-400 text-lg mt-1 drop-shadow-2xl family">actions</span>
+                    <span class="text-primary-400 text-xs md:text-lg mt-1 drop-shadow-2xl family">actions</span>
                 </th>
             </tr>
             </thead>
@@ -57,43 +100,34 @@
             {% for sale in sales %}
                 {% set profit_percentage = (sale.sellPrice - sale.buyPrice) / sale.buyPrice * 100 %}
                 <tr class="border-b border-gray-300 dark:border-gray-700">
-                    {% if sale.isSell %}
-                        <td class="p-2 text-green-400">
-                            {{ sale.resource.name }}
-                        </td>
-                    {% else %}
-                        <td class="p-2 text-red-400">
-                            {{ sale.resource.name }}
-                        </td>
-                    {% endif %}
+                    <td class="p-2 {{ sale.isSell ? 'text-green-400' : 'text-red-400' }}">{{ sale.resource.name }}</td>
                     <td class="p-2 hidden xl:table-cell">{{ profit_percentage|number_format(0, '.', ' ') }} %</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.buyDate|date('d-m-Y') }}</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.sellDate ? sale.sellDate|date('d-m-Y') : 'Non vendu' }}</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.buyPrice|number_format(0, '.', ' ') }} k</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.sellPrice|number_format(0, '.', ' ') }} k</td>
-                    {% if sale.isSell %}
-                        <td class="p-2 text-green-500">
-                            OUI
-                        </td>
-                    {% else %}
-                        <td class="p-2 text-red-500">
-                            NON
-                        </td>
-                    {% endif %}
-                    <td class="p-2 flex space-x-2">
-                        <a href="{{ path('app_sale_edit', {'id' : sale.id}) }}">
-                            <i data-feather="edit" class="text-tertiary"></i>
-                        </a>
-                        <form action="{{ path('app_sale_delete', {'id': sale.id}) }}" method="post">
-                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sale.id) }}">
-                            <button type="submit" class="btn btn-danger">
-                                <i data-feather="trash" class="text-red-400"></i>
-                            </button>
-                        </form>
+                    <td class="p-2 {{ sale.isSell ? 'text-green-500' : 'text-red-500' }}">{{ sale.isSell? 'OUI' : 'NON' }}</td>
+                    <td class="p-2 table-cell">
+                        <div class="flex items-center">
+                            <a href="{{ path('app_sale_edit', {'id' : sale.id}) }}">
+                                <i data-feather="edit" class="text-tertiary w-4 h-4 hover:text-tertiary-300 transition duration-300"></i>
+                            </a>
+                            <form action="{{ path('app_sale_delete', {'id': sale.id}) }}" method="post" class="flex items-center">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sale.id) }}">
+                                <button type="submit" class="btn btn-danger">
+                                    <i data-feather="trash" class="text-red-500 w-4 h-4 ml-2 hover:text-red-300 transition duration-300"></i>
+                                </button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('triable') }}
 {% endblock %}

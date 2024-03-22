@@ -41,3 +41,9 @@
 .tab-item-icon {
   @apply w-4 h-4 mr-2 hidden lg:block;
 }
+
+.triable {
+  svg {
+    @apply text-gray-300 hover:text-gray-400 dark:text-gray-600 cursor-pointer dark:hover:text-gray-500 transition duration-300 w-4 h-4 ml-2;
+  }
+}
