@@ -7,11 +7,11 @@
     <section class="wrapper-size grid gap-6 mb-6">
         <a href="{{ path("app_home") }}" class="flex items-center justify-center">
             <img class="w-6" src="{{ asset('uploads/logo.svg') }}" alt="Logo Monifus">
-            <span class="font-bold ml-2 text-2xl">Monifus</span>
+            <span class="font-bold ml-2 text-2xl text-gray-900 dark:text-gray-200">Monifus</span>
         </a>
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <div class="grid gap-2">
-                <p class="text-center text-xs">Vous semblez connecté, vous pouvez retourner sur le site via le bouton ci-dessous :</p>
+                <p class="text-center text-xs dark:text-gray-300">Vous semblez connecté, vous pouvez retourner sur le site via le bouton ci-dessous :</p>
                 <div class="flex items-center justify-center">
                     <a class="form form-submit" href="{{ path('app_guilds') }}">Retour</a>
                 </div>
