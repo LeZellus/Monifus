@@ -37,6 +37,10 @@ h2 {
   @apply text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white;
 }
 
+h2.animation-text-color {
+  animation: textColorChange 2s infinite; /* Applique l'animation à h2 */
+}
+
 .link {
   @apply text-tertiary-400 no-underline hover:underline transition duration-300;
 }
@@ -54,5 +58,11 @@ tbody {
 .monitor-new:last-child {
   & > div:last-child {
     @apply hidden;
+  }
+}
+
+@keyframes textColorChange {
+  50% {
+    @apply text-primary-400; /* Couleur à mi-chemin (orange) */
   }
 }

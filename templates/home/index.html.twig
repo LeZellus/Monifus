@@ -1,14 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="text-center">Bienvenu sur Monifus</h1>
+    <h1 class="text-center">Bienvenue sur Monifus</h1>
+
+    <section class="wrapper wrapper-style grid gap-6">
+        <h2 class="text-center animation-text-color">Concours !</h2>
+        <div class="flex items-center justify-center text-xs">
+            <span>Temps restant :</span>
+            <span id="countdownTimer" class="text-red-400 ml-2"></span>
+        </div>
+        <div class="flex justify-center flex-col items-center text-center space-y-2">
+            <p><strong>Participez</strong> au concours twitter et <strong class="text-green-400">tentez de gagner</strong> :</p>
+            <p class="flex items-center text-2xl text-white uppercase">
+                <span>2 millions </span>
+                <img class="ml-2 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="">
+            </p>
+        </div>
+
+        <div class="flex justify-center flex-col items-center text-center space-y-2">
+            <p class="mb-2">Pour ça rien de plus simple :</p>
+            <a class="form-submit form-submit-twitter animate-bounce" href="https://twitter.com/MonifusApp/status/1769837534891123156">Cliquez ici !</a>
+        </div>
+    </section>
 
     <section class="wrapper wrapper-style grid gap-6">
         <h2 class="text-center">Nouveau !</h2>
         <div class="flex justify-center flex-col items-center text-center space-y-2">
             <p>Vous pouvez maintenant créer votre page de guilde pour la partager !</p>
             <a class="form-submit" href="https://monifus.fr/guildes/Bam_Beach">Voir un exemple</a>
-            <img class="rounded-lg h-96" src="{{ asset("uploads/guild_page.png") }}" alt="Page de guilde">
+            <img class="rounded-lg h-96 object-cover" src="{{ asset("uploads/guild_page.png") }}" alt="Page de guilde">
         </div>
 
         <div class="flex justify-center flex-col items-center text-center space-y-2">
@@ -49,4 +69,32 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const currentMonth = now.getMonth();
+            const nextMonth = new Date(now.getFullYear(), currentMonth + 1, 0);
+
+            // Vérifier si nous sommes déjà après le 25 de ce mois
+            if (now.getDate() > 25) {
+                nextMonth.setMonth(currentMonth + 2);
+            }
+            nextMonth.setDate(25);
+
+            const totalSeconds = (nextMonth - now) / 1000;
+
+            // Calculer jours, heures, minutes et secondes
+            const days = Math.floor(totalSeconds / 3600 / 24);
+            const hours = Math.floor(totalSeconds / 3600) % 24;
+            const minutes = Math.floor(totalSeconds / 60) % 60;
+            const seconds = Math.floor(totalSeconds) % 60;
+
+            // Mettre à jour le HTML
+            document.getElementById("countdownTimer").innerHTML = `${days} jours ${hours} heures ${minutes} minutes ${seconds} secondes`;
+        }
+        updateCountdown();
+        // Mettre à jour le compteur toutes les secondes
+        setInterval(updateCountdown, 1000);
+    </script>
 {% endblock body %}
