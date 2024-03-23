@@ -7,6 +7,7 @@ use App\Form\SaleType;
 use App\Repository\SaleRepository;
 use App\Service\BreadcrumbService;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,22 +24,25 @@ class SaleController extends AbstractController
         $this->saleRepository = $saleRepository;
     }
     #[Route('/vente', name: 'app_sale')]
-    public function index(): Response
+    public function index(PaginatorInterface $paginator, Request $request): Response
     {
         $user = $this->getUser();
-
+        $stats = $this->saleRepository->getSaleStatsForUser($user);
 
         if (!$user) {
             return $this->redirectToRoute('app_login');
         }
 
-        $sales = $this->saleRepository->findBy(['user' => $user], ['isSell' => 'ASC']);
-        $stats = $this->saleRepository->getSaleStatsForUser($user);
+        $query = $this->saleRepository->findBy(['user' => $user], ['isSell' => 'ASC']);
+        $limit = 4;
+        $page = $request->query->getInt('page', 1);
+
+        $pagination = $paginator->paginate($query, $page, $limit);
 
         $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
 
         return $this->render('sale/index.html.twig', [
-            'sales' => $sales,
+            'pagination' => $pagination,
             'stats' => $stats,
             'noSales' => empty($sales) // Vérifie s'il n'y a aucun Sale
         ]);

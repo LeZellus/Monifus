@@ -97,7 +97,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for sale in sales %}
+            {% for sale in pagination %}
                 {% if sale.buyPrice == 0 %}
                     {# Ici, vous pouvez choisir ce que vous voulez faire si buyPrice est 0. Par exemple, fixer le profit_percentage à 100 ou à une autre valeur spéciale. #}
                     {% set profit_percentage = 100 %}
@@ -131,6 +131,9 @@
             </tbody>
         </table>
     </section>
+    <div class="flex justify-center">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 {% endblock %}
 
 {% block javascripts %}
