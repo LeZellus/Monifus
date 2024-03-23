@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Sale;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -21,9 +22,25 @@ class SaleRepository extends ServiceEntityRepository
         parent::__construct($registry, Sale::class);
     }
 
-    public function getSaleStatsForUser($user)
+    public function findSalesByUserAndResourceName($user, $searchTerm): Query
     {
-        $result = $this->createQueryBuilder('s')
+        $qb = $this->createQueryBuilder('s')
+            ->leftJoin('s.resource', 'r') // Assurez-vous que 'resource' est la relation correcte
+            ->where('s.user = :user')
+            ->setParameter('user', $user);
+
+        if (!empty($searchTerm)) {
+            $qb->andWhere('r.name LIKE :term') // 'name' doit être le champ dans Resource à rechercher
+            ->setParameter('term', '%'.$searchTerm.'%');
+        }
+
+        return $qb->getQuery();
+    }
+
+    public function getSaleStatsForUserAndResourceSearch($user, $searchTerm)
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->leftJoin('s.resource', 'r')
             ->select(
                 'SUM(s.buyPrice) as totalBuyPrice',
                 'SUM(CASE WHEN s.isSell = true THEN s.sellPrice ELSE 0 END) as totalSellPrice',
@@ -32,9 +49,14 @@ class SaleRepository extends ServiceEntityRepository
                 'SUM(CASE WHEN s.isSell = true THEN 1 ELSE 0 END) as totalSaled'
             )
             ->where('s.user = :user')
-            ->setParameter('user', $user)
-            ->getQuery()
-            ->getSingleResult();
+            ->setParameter('user', $user);
+
+        if (!empty($searchTerm)) {
+            $qb->andWhere('r.name LIKE :term')
+                ->setParameter('term', '%'.$searchTerm.'%');
+        }
+
+        $result = $qb->getQuery()->getSingleResult();
 
         // Calculs supplémentaires
         $result['profit'] = $result['totalSellPrice'] - $result['totalBuyPrice'];

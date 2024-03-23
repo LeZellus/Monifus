@@ -27,14 +27,16 @@ class SaleController extends AbstractController
     public function index(PaginatorInterface $paginator, Request $request): Response
     {
         $user = $this->getUser();
-        $stats = $this->saleRepository->getSaleStatsForUser($user);
 
         if (!$user) {
             return $this->redirectToRoute('app_login');
         }
 
-        $query = $this->saleRepository->findBy(['user' => $user], ['isSell' => 'ASC']);
-        $limit = 4;
+        $search = $request->query->get('search', '');
+        $query = $this->saleRepository->findSalesByUserAndResourceName($user, $search);
+        $stats = $this->saleRepository->getSaleStatsForUserAndResourceSearch($user, $search);
+
+        $limit = 50;
         $page = $request->query->getInt('page', 1);
 
         $pagination = $paginator->paginate($query, $page, $limit);
@@ -44,7 +46,8 @@ class SaleController extends AbstractController
         return $this->render('sale/index.html.twig', [
             'pagination' => $pagination,
             'stats' => $stats,
-            'noSales' => empty($sales) // Vérifie s'il n'y a aucun Sale
+            'search' => $search,
+            'noSales' => empty($query) // Vérifie s'il n'y a aucun Sale
         ]);
     }
 
