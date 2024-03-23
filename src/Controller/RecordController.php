@@ -58,7 +58,7 @@ class RecordController extends AbstractController
             return $this->redirectToRoute('app_record'); // Modifiez la route selon vos besoins
         }
 
-        $this->breadcrumbService->setBreadcrumbs("Records", "");
+        $this->breadcrumbService->setBreadcrumbs("Records", "/record");
         $this->breadcrumbService->setBreadcrumbs("Créer", "");
 
         return $this->render('record/new.html.twig', [

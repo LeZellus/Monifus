@@ -1,0 +1,45 @@
+  User-agent: *
+  Allow: /
+
+  Allow: /profil/*
+
+  Disallow: /connexion
+  Disallow: /reset-password
+  Disallow: /record/nouveau
+  Disallow: /admin
+  Disallow: /profil
+  Disallow: /vente
+  Disallow: /price
+  Disallow: /record/nouveau
+
+  Sitemap: https://monifus.fr/sitemap.xml
+
+  User-agent: buenibot
+  Disallow: /
+
+  User-agent: EtaoSpider
+  Disallow: /
+
+  User-agent: Yandex
+  Disallow: /
+
+  User-agent: Baiduspider
+  Disallow: /
+
+  User-Agent: MJ12bot
+  Disallow: /
+
+  User-agent: PetalBot
+  Disallow: /
+
+  User-agent: TextBulkerBot
+  Disallow: /
+
+  User-agent: GPTBot
+  Disallow: /
+
+  User-Agent: ChatGPT-User
+  Disallow: /
+
+  User-Agent: CCBot
+  Disallow: /

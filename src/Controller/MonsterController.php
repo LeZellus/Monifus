@@ -24,7 +24,7 @@ class MonsterController extends AbstractController
         $records = $recordRepository->findRecordsWithUserByMonster($monster->getId());
         $monsterName = $monster->getName();
 
-        $this->breadcrumbService->setBreadcrumbs("Records", "/records");
+        $this->breadcrumbService->setBreadcrumbs("Records", "/record");
         $this->breadcrumbService->setBreadcrumbs($monsterName, "");
 
         return $this->render('monster/show.html.twig', [
