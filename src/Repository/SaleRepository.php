@@ -61,7 +61,7 @@ class SaleRepository extends ServiceEntityRepository
         // Calculs supplémentaires
         $result['profit'] = $result['totalSellPrice'] - $result['totalBuyPrice'];
         $result['percentProfit'] = ($result['totalBuyPrice'] > 0) ? ($result['profit'] / $result['totalBuyPrice']) * 100 : 0;
-        $result['taxe'] = $result['totalSellPrice'] * 0.01;
+        $result['taxe'] = $result['totalSellPrice'] * 0.02;
 
         return $result;
     }
