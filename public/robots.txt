@@ -1,13 +1,11 @@
   User-agent: *
   Allow: /
 
-  Allow: /profil/*
-
   Disallow: /connexion
   Disallow: /reset-password
   Disallow: /record/nouveau
   Disallow: /admin
-  Disallow: /profil
+  Disallow: /profil/mon-profil
   Disallow: /vente
   Disallow: /price
   Disallow: /record/nouveau
