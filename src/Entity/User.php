@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator\Constraints\ValidImageExtension;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'Un compte existe déjà avec cet email')]
@@ -78,6 +79,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $profilePicture = null;
 
     #[Vich\UploadableField(mapping: 'user_profile', fileNameProperty: 'profilePicture')]
+    #[ValidImageExtension]
     #[Assert\File(
         maxSize: "2M",
         mimeTypes: [
@@ -95,6 +97,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $coverPicture = null;
 
     #[Vich\UploadableField(mapping: 'user_cover', fileNameProperty: 'coverPicture')]
+    #[ValidImageExtension]
     #[Assert\File(
         maxSize: "2M",
         mimeTypes: [
