@@ -35,7 +35,13 @@
                 </thead>
                 <tbody>
                 {% for sale in sales %}
-                    {% set profit_percentage = (sale.sellPrice - sale.buyPrice) / sale.buyPrice * 100 %}
+                    {% if sale.buyPrice == 0 %}
+                        {# Ici, vous pouvez choisir ce que vous voulez faire si buyPrice est 0. Par exemple, fixer le profit_percentage à 100 ou à une autre valeur spéciale. #}
+                        {% set profit_percentage = 100 %}
+                    {% else %}
+                        {# Si buyPrice n'est pas 0, utilisez la formule normale pour calculer le profit_percentage. #}
+                        {% set profit_percentage = (sale.sellPrice - sale.buyPrice) / sale.buyPrice * 100 %}
+                    {% endif %}
                     <tr class="border-b border-gray-300 dark:border-gray-700">
                         {% if sale.isSell %}
                             <td class="p-2 text-green-400">
