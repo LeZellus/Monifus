@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\GuildRepository;
+use App\Validator\Constraints\ValidImageExtension;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -39,6 +40,7 @@ class Guild
     private ?string $blasonPicture = null;
 
     #[Vich\UploadableField(mapping: 'guild_blason', fileNameProperty: 'blasonPicture')]
+    #[ValidImageExtension]
     #[Assert\File(
         maxSize: "2M",
         mimeTypes: [
@@ -56,6 +58,7 @@ class Guild
     private ?string $coverPicture = null;
 
     #[Vich\UploadableField(mapping: 'guild_cover', fileNameProperty: 'coverPicture')]
+    #[ValidImageExtension]
     #[Assert\File(
         maxSize: "2M",
         mimeTypes: [
