@@ -57,12 +57,14 @@
                     <p class="text-green-400 font-bold text-sm">0</p>
                 </div>
             </div>
-            {% if app.user.id == user.id %}
-            <div class="wrapper wrapper-style">
-                <div class="flex justify-center">
-                    <a href="{{ path('app_profil') }}" class="form-submit">Modifier mon profil</a>
-                </div>
-            </div>
+            {% if app.user %}
+                {% if app.user.id == user.id %}
+                    <div class="wrapper wrapper-style">
+                        <div class="flex justify-center">
+                            <a href="{{ path('app_profil') }}" class="form-submit">Modifier mon profil</a>
+                        </div>
+                    </div>
+                {% endif %}
             {% endif %}
         </section>
 

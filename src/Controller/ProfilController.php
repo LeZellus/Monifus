@@ -26,7 +26,7 @@ class ProfilController extends AbstractController
         $this->breadcrumbService = $breadcrumbService;
         $this->security = $security;
     }
-    #[Route('/profil', name: 'app_profil')]
+    #[Route('/profil/mon-profil', name: 'app_profil')]
     #[IsGranted('ROLE_USER')]
     public function index(Request $request, ManagerRegistry $doctrine): Response
     {

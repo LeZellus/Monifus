@@ -42,8 +42,7 @@ security:
         #- { path: ^/inscription, roles: [PUBLIC_ACCESS] }
         #- { path: ^/deconnexion, roles: [PUBLIC_ACCESS] }
         #- { path: ^/, roles: ROLE_USER }
-        - { path: ^/profil$, roles: ROLE_USER }
-        - { path: ^/profil/.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/profil/mon-profil, roles: ROLE_USER }
         - { path: ^/price, roles: ROLE_USER }
         - { path: ^/vente, roles: ROLE_USER }
         - { path: ^/record/nouveau, roles: ROLE_USER }
