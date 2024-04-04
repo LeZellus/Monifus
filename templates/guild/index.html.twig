@@ -36,13 +36,13 @@
                         {% if guild.coverPicture %}
                             <img class="h-32 w-full object-cover" src="{{ asset("guilds/covers/" ~ guild.coverPicture) }}" alt="Image de couverture">
                         {% else %}
-                            <img class="h-32 w-full object-cover" src="https://i81.servimg.com/u/f81/16/03/11/75/osmoz10.jpg" alt="Image de couverture">
+                            <img class="h-32 w-full object-cover" src="{{ asset('uploads/cover.webp') }}" alt="Image de couverture">
                         {% endif %}
 
                         {% if guild.blasonPicture %}
                             <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("guilds/blasons/" ~ guild.blasonPicture) }}')"></div>
                         {% else %}
-                            <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("uploads/blason.png") }}')"></div>
+                            <div class="h-24 w-24 rounded-full bg-cover overflow-hidden absolute z-10 left-1/2 transform -translate-x-1/2 top-[calc(100%-5rem)]" style="background-image: url('{{ asset("uploads/logo.jpg") }}')"></div>
                         {% endif %}
                     </div>
                     {{ include("guild/includes/_content.html.twig") }}
