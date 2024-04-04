@@ -27,6 +27,9 @@
         </div>
     </form>
 
+    <div class="flex justify-center">
+        {{ knp_pagination_render(pagination) }}
+    </div>
     <section class="wrapper wrapper-style wrapper-p-0 text-sm">
         <table id="table" class="w-full text-left rtl:text-right">
             <thead class="text-xs uppercase">
@@ -143,7 +146,7 @@
             </tbody>
         </table>
     </section>
-    <div class="flex justify-center">
+    <div class="flex justify-center pb-16">
         {{ knp_pagination_render(pagination) }}
     </div>
 {% endblock %}
