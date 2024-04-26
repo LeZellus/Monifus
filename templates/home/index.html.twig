@@ -4,6 +4,26 @@
     <h1 class="text-center">Bienvenue sur Monifus</h1>
 
     <section class="wrapper wrapper-style grid gap-6">
+        <h2 class="text-center animation-text-color">Concours !</h2>
+        <div class="flex items-center justify-center text-xs">
+            <span>Temps restant :</span>
+            <span id="countdownTimer" class="text-red-400 ml-2"></span>
+        </div>
+        <div class="flex justify-center flex-col items-center text-center space-y-2">
+            <p><strong>Participez</strong> au concours twitter et <strong class="text-green-400">tentez de gagner</strong> :</p>
+            <p class="flex items-center text-2xl dark:text-white uppercase">
+                <span>10 millions </span>
+                <img class="ml-2 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="">
+            </p>
+        </div>
+
+        <div class="flex justify-center flex-col items-center text-center space-y-2">
+            <p class="mb-2">Pour ça rien de plus simple :</p>
+            <a class="form-submit form-submit-twitter animate-bounce" href="https://x.com/MonifusApp/status/1778460193090638119">Cliquez ici !</a>
+        </div>
+    </section>
+
+    <section class="wrapper wrapper-style grid gap-6">
         <h2 class="text-center">Nouveau !</h2>
         <div class="flex justify-center flex-col items-center text-center space-y-2">
             <p>Vous pouvez maintenant créer votre page de guilde pour la partager !</p>
@@ -49,4 +69,27 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const expirationDate = new Date(now.getFullYear(), 4, 11); // 4 pour mai (les mois commencent à 0)
+            if (now > expirationDate) {
+                // Si la date actuelle dépasse la date d'expiration
+                document.getElementById("countdownTimer").innerHTML = "Concours terminé.";
+                clearInterval(intervalID); // Arrête l'intervalle
+                return;
+            }
+            const totalSeconds = (expirationDate - now) / 1000;
+            // Calculer jours, heures, minutes et secondes
+            const days = Math.floor(totalSeconds / 3600 / 24);
+            const hours = Math.floor(totalSeconds / 3600) % 24;
+            const minutes = Math.floor(totalSeconds / 60) % 60;
+            const seconds = Math.floor(totalSeconds) % 60;
+            // Mettre à jour le HTML
+            document.getElementById("countdownTimer").innerHTML = `${days} jours ${hours} heures ${minutes} minutes ${seconds} secondes`;
+        }
+        const intervalID = setInterval(updateCountdown, 1000); // Conserver l'ID de l'intervalle pour pouvoir l'arrêter
+    </script>
+
 {% endblock body %}
