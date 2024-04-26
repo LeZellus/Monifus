@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HeroController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Nos héros</h1>
+    <p class="text-center">Retrouvez sur cette page tous les profils ayant apporté de l'aide pour Monifus.fr.</p>
+
+    <section class="wrapper wrapper-style grid gap-8">
+        <div class="grid gap-4">
+            <h2 class="text-center">Dons</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {% for donor in donors %}
+                <a class="flex flex-col items-center space-y-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-gray-700 rounded-lg p-4 transition duration-300" href="{{ path("app_profil_show", {'id': donor.id}) }}">
+                    <div class="size-12 rounded-full overflow-hidden">
+                        {% if donor.profilePicture %}
+                            <img src="{{ asset('images/profiles/' ~ donor.profilePicture) }}" alt="Photo de profil de {{ donor.pseudonymeWebsite }}" />
+                        {% else %}
+                            <img src="{{ asset('uploads/logo.jpg') }}" alt="Photo de profil de {{ donor.pseudonymeWebsite }}" />
+                        {% endif %}
+                    </div>
+                    <div>{{ donor.pseudonymeWebsite }}</div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <h2 class="text-center">Report bug</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {% for bugReporter in bugReporters %}
+                    <a class="flex flex-col items-center space-y-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-gray-700 rounded-lg p-4 transition duration-300" href="{{ path("app_profil_show", {'id': bugReporter.id}) }}">
+                        <div class="size-12 rounded-full overflow-hidden">
+                            {% if bugReporter.profilePicture %}
+                                <img src="{{ asset('images/profiles/' ~ bugReporter.profilePicture) }}" alt="Photo de profil de {{ bugReporter.pseudonymeWebsite }}" />
+                            {% else %}
+                                <img src="{{ asset('uploads/logo.jpg') }}" alt="Photo de profil de {{ bugReporter.pseudonymeWebsite }}" />
+                            {% endif %}
+                        </div>
+                        <div>{{ bugReporter.pseudonymeWebsite }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <h2 class="text-center">Suggestions</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {% for suggester in suggesters %}
+                    <a class="flex flex-col items-center space-y-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-gray-700 rounded-lg p-4 transition duration-300" href="{{ path("app_profil_show", {'id': suggester.id}) }}">
+                        <div class="size-12 rounded-full overflow-hidden">
+                            {% if suggester.profilePicture %}
+                                <img src="{{ asset('images/profiles/' ~ suggester.profilePicture) }}" alt="Photo de profil de {{ suggester.pseudonymeWebsite }}" />
+                            {% else %}
+                                <img src="{{ asset('uploads/logo.jpg') }}" alt="Photo de profil de {{ suggester.pseudonymeWebsite }}" />
+                            {% endif %}
+                        </div>
+                        <div>{{ suggester.pseudonymeWebsite }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -4,7 +4,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-
+    DONORS_IDS: '%env(DONORS_IDS)%'
+    BUG_REPORTERS_IDS: '%env(BUG_REPORTERS_IDS)%'
+    SUGGESTERS_IDS: '%env(SUGGESTERS_IDS)%'
 services:
     App\Twig\MarkdownFilter: ~
     App\Service\BreadcrumbService:

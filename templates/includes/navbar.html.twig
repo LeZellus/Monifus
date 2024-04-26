@@ -49,10 +49,15 @@
                     <i data-feather="shield" class="nav-item-icon"></i>
                     <span class="ml-6 font-semibold text-sm">Guifus</span>
                 </a>
+                <a href="{{ path("app_hero") }}" class="nav-item">
+                    <i data-feather="star" class="nav-item-icon"></i>
+                    <span class="ml-6 font-semibold text-sm">Nos héros</span>
+                </a>
                 <a href="{{ path("app_documentation") }}" class="nav-item">
                     <i data-feather="book" class="nav-item-icon"></i>
                     <span class="ml-6 font-semibold text-sm">Documentation</span>
                 </a>
+
 
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                     <a href="{{ path("app_logout") }}" class="nav-item mt-16">
