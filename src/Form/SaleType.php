@@ -36,8 +36,6 @@ class SaleType extends AbstractType
                 'attr' => [
                     "placeholder" => "Date d'achat"
                 ],
-                'data' => new \DateTime(), // Défini la date et l'heure actuelles comme valeur par défaut
-                'widget' => 'single_text',
                 "required" => true,
             ])
             ->add('sellDate', DateTimeType::class, [

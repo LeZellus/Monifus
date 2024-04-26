@@ -19,4 +19,13 @@
 
         {{ include('sale/includes/_form.html.twig') }}
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let buyDateInput = document.getElementById('sale_buyDate'); // Remplacez 'buy_date_input_id' par l'ID réel de votre input
+            if (!buyDateInput.value) { // Vérifie si le champ est vide
+                buyDateInput.value = new Date().toISOString().slice(0, 16); // Format: YYYY-MM-DDTHH:mm
+            }
+        });
+    </script>
 {% endblock %}
