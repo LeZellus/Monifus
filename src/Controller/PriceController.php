@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Price;
+use App\Entity\Resource;
 use App\Form\PriceType;
 use App\Repository\PriceRepository;
 use App\Service\BreadcrumbService;
@@ -46,7 +47,16 @@ class PriceController extends AbstractController
     #[Route('/nouveau', name: 'app_price_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $resourceId = $request->query->get('resourceId');
         $price = new Price();
+
+        if ($resourceId) {
+            $resource = $entityManager->getRepository(Resource::class)->find($resourceId);
+            if ($resource) {
+                $price->setResource($resource); // Pré-sélectionne la ressource si elle est trouvée
+            }
+        }
+
         $form = $this->createForm(PriceType::class, $price);
         $form->handleRequest($request);
 
