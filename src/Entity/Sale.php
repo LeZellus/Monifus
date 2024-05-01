@@ -37,6 +37,20 @@ class Sale
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[ORM\ManyToOne(targetEntity: Stock::class, inversedBy: 'sales')]
+    #[ORM\JoinColumn(name: 'stock_id', referencedColumnName: 'id', nullable: false)]
+    private $stock;
+
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    public function setStock($stock): void
+    {
+        $this->stock = $stock;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Sale;
+use App\Entity\Stock;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -44,6 +46,11 @@ class SaleType extends AbstractType
                     "placeholder" => "Date de vente"
                 ],
                 "required" => false
+            ])
+            ->add('stock', EntityType::class, [
+                'label' => 'Quantité',
+                'class' => Stock::class,
+                'choice_label' => 'quantity',
             ])
             ->add('isSell', CheckboxType::class, [
                 'label' => 'Vendu',
