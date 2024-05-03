@@ -99,4 +99,23 @@ document.addEventListener('DOMContentLoaded', function () {
             updateIconColor(th, th.clickCount === 2 ? true : th.clickCount === 1 ? false : null);
         });
     });
+
+    const showSoldBtn = document.getElementById('show-sold');
+    const showUnsoldBtn = document.getElementById('show-unsold');
+
+    showSoldBtn.addEventListener('click', function () {
+        document.querySelectorAll('.is-sold').forEach(row => row.style.display = '');
+        document.querySelectorAll('.not-sold').forEach(row => row.style.display = 'none');
+
+        showSoldBtn.classList.add('active');
+        showUnsoldBtn.classList.remove('active');
+    });
+
+    showUnsoldBtn.addEventListener('click', function () {
+        document.querySelectorAll('.is-sold').forEach(row => row.style.display = 'none');
+        document.querySelectorAll('.not-sold').forEach(row => row.style.display = '');
+
+        showUnsoldBtn.classList.add('active');
+        showSoldBtn.classList.remove('active');
+    });
 });

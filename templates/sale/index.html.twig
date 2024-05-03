@@ -9,9 +9,14 @@
 
     {{ include('includes/documentation.html.twig') }}
 
-    <div class="flex justify-center">
-        <a class="form-submit" href="{{ path('app_sale_new') }}">Nouvelle vente</a>
-    </div>
+    <section class="wrapper wrapper-style">
+        <div class="flex space-x-2">
+            <a class="form-submit form-submit-green" href="{{ path('app_sale_new') }}">Nouvelle vente</a>
+            <button class="form-submit" id="show-sold">Afficher les vendus</button>
+            <button class="form-submit" id="show-unsold">Afficher les non vendus</button>
+            <a class="form-submit form-submit-youtube" href="{{ path('app_sale') }}">Réinitialiser</a>
+        </div>
+    </section>
 
     {{ include('sale/includes/_items.html.twig') }}
 
@@ -130,7 +135,7 @@
                     {# Si buyPrice n'est pas 0, utilisez la formule normale pour calculer le profit_percentage. #}
                     {% set profit_percentage = (sale.sellPrice - sale.buyPrice) / sale.buyPrice * 100 %}
                 {% endif %}
-                <tr class="border-b border-gray-300 dark:border-gray-700">
+                <tr class="border-b border-gray-300 dark:border-gray-700 {{ sale.isSell ? 'is-sold' : 'not-sold' }}">
                     <td class="p-2 {{ sale.isSell ? 'text-green-400' : 'text-red-400' }}">{{ sale.resource.name }}</td>
                     <td class="p-2 hidden xl:table-cell">{{ profit_percentage|number_format(0, '.', ' ') }} %</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.buyDate|date('d-m-Y') }}</td>

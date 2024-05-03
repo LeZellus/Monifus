@@ -55,6 +55,10 @@
     &-full {
       @apply w-full;
     }
+
+    &.active {
+      @apply ring-2 ring-primary-400;
+    }
   }
 
   &-label {

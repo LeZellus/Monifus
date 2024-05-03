@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\StockRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: StockRepository::class)]
@@ -15,6 +17,14 @@ class Stock
 
     #[ORM\Column(length: 255)]
     private ?string $quantity = null;
+
+    #[ORM\OneToMany(mappedBy: 'stock', targetEntity: Sale::class)]
+    private $sales; // Cette ligne est ajoutée
+
+    public function __construct()
+    {
+        $this->sales = new ArrayCollection(); // Cela permet d'initialiser la collection des ventes
+    }
 
     public function getId(): ?int
     {
@@ -31,6 +41,11 @@ class Stock
         $this->quantity = $quantity;
 
         return $this;
+    }
+
+    public function getSales(): Collection
+    {
+        return $this->sales;
     }
 
     public function __toString(): string

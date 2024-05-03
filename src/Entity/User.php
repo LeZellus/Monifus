@@ -114,9 +114,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Sale::class)]
     private Collection $sales;
 
-    #[ORM\Column(nullable: true, type: 'bigint')]
-    #[Assert\Type("integer")]
-    private ?int $discordId = null;
+    #[ORM\Column(type: 'string', nullable: true)]
+    #[Assert\Type("string")]
+    private ?string $discordId = null;
 
     #[ORM\Column]
     private ?bool $isTutorial = null;
@@ -444,12 +444,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getDiscordId(): ?int
+    public function getDiscordId(): ?string
     {
         return $this->discordId;
     }
 
-    public function setDiscordId(?int $discordId): self
+    public function setDiscordId(?string $discordId): self
     {
         $this->discordId = $discordId;
 
