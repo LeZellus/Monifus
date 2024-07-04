@@ -37,3 +37,13 @@ Stack trace:
 [07-Feb-2024 17:18:39 UTC] [critical] Error thrown while running command "'make:controller' MentionsController". Message: "There are no commands defined in the "make" namespace.
 
 You may be looking for a command provided by the "MakerBundle" which is currently not installed. Try running "composer require symfony/maker-bundle --dev"."
+[19-Feb-2024 23:36:14 UTC] [critical] Error thrown while running command "cache:clear --prod". Message: "The "--prod" option does not exist."
+[19-Feb-2024 23:36:21 UTC] [critical] Error thrown while running command "cache:clear --production". Message: "The "--production" option does not exist."
+[19-Feb-2024 23:44:22 UTC] [critical] Error thrown while running command "dump-autoload". Message: "Command "dump-autoload" is not defined."
+[03-May-2024 11:43:56 UTC] [critical] Error thrown while running command "'doctrine:database:migrate'". Message: "Command "doctrine:database:migrate" is not defined.
+
+Did you mean one of these?
+    doctrine:database:create
+    doctrine:database:drop
+    doctrine:migrations:migrate"
+[03-May-2024 13:31:42 UTC] [critical] Error thrown while running command "'cahce:clear'". Message: "There are no commands defined in the "cahce" namespace."
