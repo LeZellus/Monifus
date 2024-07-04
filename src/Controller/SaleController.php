@@ -36,7 +36,7 @@ class SaleController extends AbstractController
         $query = $this->saleRepository->findSalesByUserAndResourceName($user, $search);
         $stats = $this->saleRepository->getSaleStatsForUserAndResourceSearch($user, $search);
 
-        $limit = 2;
+        $limit = 50;
         $page = $request->query->getInt('page', 1);
 
         $pagination = $paginator->paginate($query, $page, $limit);

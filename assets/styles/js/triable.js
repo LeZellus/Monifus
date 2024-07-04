@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const showSoldBtn = document.getElementById('show-sold');
     const showUnsoldBtn = document.getElementById('show-unsold');
+    const showAllBtn = document.getElementById('show-all');
 
     // Fonction pour nettoyer et extraire la valeur numérique
     const getNumericValue = (value) => {
@@ -140,14 +141,13 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     showSoldBtn.addEventListener('click', showSold);
-
     showUnsoldBtn.addEventListener('click', showUnsold);
+    showAllBtn.addEventListener('click', showAll);
 
     // Fonction pour mettre à jour l'affichage en fonction du localStorage
     const updateDisplayFromLocalStorage = () => {
         const displayState = localStorage.getItem('displayState');
 
-        console.log(displayState)
         if (displayState === 'sold') {
             showSold();
         } else if (displayState === 'unsold') {
