@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    const showSoldBtn = document.getElementById('show-sold');
+    const showUnsoldBtn = document.getElementById('show-unsold');
+
     // Fonction pour nettoyer et extraire la valeur numérique
     const getNumericValue = (value) => {
         return Number(value.replace(/[^0-9.-]+/g, ""));
@@ -100,22 +104,60 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const showSoldBtn = document.getElementById('show-sold');
-    const showUnsoldBtn = document.getElementById('show-unsold');
+    // Fonction pour enregistrer l'état dans le localStorage
+    const saveDisplayStateToLocalStorage = (state) => {
+        localStorage.setItem('displayState', state);
+    };
 
-    showSoldBtn.addEventListener('click', function () {
+    const showSold = () => {
         document.querySelectorAll('.is-sold').forEach(row => row.style.display = '');
         document.querySelectorAll('.not-sold').forEach(row => row.style.display = 'none');
 
         showSoldBtn.classList.add('active');
         showUnsoldBtn.classList.remove('active');
-    });
 
-    showUnsoldBtn.addEventListener('click', function () {
+        saveDisplayStateToLocalStorage('sold');
+    };
+
+    const showUnsold = () => {
         document.querySelectorAll('.is-sold').forEach(row => row.style.display = 'none');
         document.querySelectorAll('.not-sold').forEach(row => row.style.display = '');
 
         showUnsoldBtn.classList.add('active');
         showSoldBtn.classList.remove('active');
-    });
+
+        saveDisplayStateToLocalStorage('unsold');
+    };
+
+    const showAll = () => {
+        document.querySelectorAll('.is-sold').forEach(row => row.style.display = '');
+        document.querySelectorAll('.not-sold').forEach(row => row.style.display = '');
+
+        showSoldBtn.classList.remove('active');
+        showUnsoldBtn.classList.remove('active');
+
+        saveDisplayStateToLocalStorage('all');
+    };
+
+    showSoldBtn.addEventListener('click', showSold);
+
+    showUnsoldBtn.addEventListener('click', showUnsold);
+
+    // Fonction pour mettre à jour l'affichage en fonction du localStorage
+    const updateDisplayFromLocalStorage = () => {
+        const displayState = localStorage.getItem('displayState');
+
+        console.log(displayState)
+        if (displayState === 'sold') {
+            showSold();
+        } else if (displayState === 'unsold') {
+            showUnsold();
+        } else {
+            // Par défaut, afficher tous les éléments
+            showAll();
+        }
+    };
+
+    // Initialisation de l'affichage en fonction du localStorage au chargement de la page
+    updateDisplayFromLocalStorage();
 });
