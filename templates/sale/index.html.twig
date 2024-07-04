@@ -9,28 +9,40 @@
 
     {{ include('includes/documentation.html.twig') }}
 
-    <section class="wrapper wrapper-style">
-        <div class="flex space-x-2">
-            <a class="form-submit form-submit-green" href="{{ path('app_sale_new') }}">Nouvelle vente</a>
-            <button class="form-submit" id="show-sold">Afficher les vendus</button>
-            <button class="form-submit" id="show-unsold">Afficher les non vendus</button>
-            <a class="form-submit form-submit-youtube" href="{{ path('app_sale') }}">Réinitialiser</a>
+    <section class="wrapper wrapper-style space-y-4 2xl:space-y-0 2xl:flex justify-between">
+        <form action="{{ path('app_sale') }}" method="get" class="grid gap-2 w-72 2xl:mr-2">
+            <label class="form-label" for="search">Recherchez une vente :</label>
+            <div class="flex space-x-2">
+                <input value="{{ search }}" id="search" class="form-input flex-1" type="text" name="search" placeholder="Solomonk" />
+                <button class="form-submit form-submit-green" type="submit">GO</button>
+            </div>
+        </form>
+
+        <div class="grid gap-2">
+            <div class="form-label">Filtres :</div>
+            <div class="flex gap-2 flex-wrap">
+                <a class="form-submit form-submit-green" href="{{ path('app_sale_new') }}">Nouvelle vente</a>
+                <button class="form-submit" id="show-sold">Afficher les vendus</button>
+                <button class="form-submit" id="show-unsold">Afficher les non vendus</button>
+                <button class="form-submit form-submit-youtube" id="show-all">Réinitialiser</button>
+            </div>
         </div>
+
+        <form class="grid gap-2 w-72 2xl:ml-2" action="{{ path('app_sale') }}" method="get">
+            <label class="form-label" for="limit">Nombre d'items par page :</label>
+            <div class="flex gap-2">
+                <select name="limit" id="limit" class="form-input flex-1">
+                    <option value="10" {% if limit == 10 %}selected{% endif %}>10</option>
+                    <option value="50" {% if limit == 50 %}selected{% endif %}>50</option>
+                    <option value="100" {% if limit == 100 %}selected{% endif %}>100</option>
+                    <option value="200" {% if limit == 200 %}selected{% endif %}>200</option>
+                </select>
+                <button class="form-submit form-submit-green" type="submit">OK</button>
+            </div>
+        </form>
     </section>
 
     {{ include('sale/includes/_items.html.twig') }}
-
-    <form action="{{ path('app_sale') }}" method="get" class="grid gap-2">
-        <label class="form-label" for="search">Recherchez une vente</label>
-        <div class="flex space-x-2">
-            <input value="{{ search }}" id="search" class="form-input h-full flex-1" type="text" name="search" placeholder="Solomonk" />
-            <button class="wrapper wrapper-green h-14 w-14 flex justify-center font-semibold" type="submit">GO</button>
-
-            <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_sale') }}">
-                <i data-feather="trash" class="w-4 h-4"></i>
-            </a>
-        </div>
-    </form>
 
     <div class="flex justify-center">
         {{ knp_pagination_render(pagination) }}
