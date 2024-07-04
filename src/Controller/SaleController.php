@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,9 +25,14 @@ class SaleController extends AbstractController
         $this->saleRepository = $saleRepository;
     }
     #[Route('/vente', name: 'app_sale')]
-    public function index(PaginatorInterface $paginator, Request $request): Response
+    public function index(PaginatorInterface $paginator, Request $request, RequestStack $requestStack): Response
     {
         $user = $this->getUser();
+
+        $session = $requestStack->getSession();
+
+
+        $limit = $request->query->get('limit', $session->get('sale_pagination_limit', 50));
 
         if (!$user) {
             return $this->redirectToRoute('app_login');
@@ -36,10 +42,11 @@ class SaleController extends AbstractController
         $query = $this->saleRepository->findSalesByUserAndResourceName($user, $search);
         $stats = $this->saleRepository->getSaleStatsForUserAndResourceSearch($user, $search);
 
-        $limit = 50;
         $page = $request->query->getInt('page', 1);
 
         $pagination = $paginator->paginate($query, $page, $limit);
+
+        $session->set('sale_pagination_limit', $limit);
 
         $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
 
@@ -47,6 +54,7 @@ class SaleController extends AbstractController
             'pagination' => $pagination,
             'stats' => $stats,
             'search' => $search,
+            'limit' => $limit,
             'noSales' => empty($query) // Vérifie s'il n'y a aucun Sale
         ]);
     }
