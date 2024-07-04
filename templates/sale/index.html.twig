@@ -149,6 +149,12 @@
                             <a href="{{ path('app_sale_edit', {'id' : sale.id}) }}">
                                 <i data-feather="edit" class="text-tertiary w-4 h-4 hover:text-tertiary-300 transition duration-300"></i>
                             </a>
+                            <form action="{{ path('app_sale_copy', {'id': sale.id}) }}" method="post" class="flex items-center">
+                                <input type="hidden" name="_token" value="{{ csrf_token('copy' ~ sale.id) }}">
+                                <button type="submit" class="btn btn-primary">
+                                    <i data-feather="copy" class="text-green-500 w-4 h-4 ml-2 hover:text-red-300 transition duration-300"></i>
+                                </button>
+                            </form>
                             <form action="{{ path('app_sale_delete', {'id': sale.id}) }}" method="post" class="flex items-center">
                                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sale.id) }}">
                                 <button type="submit" class="btn btn-danger">

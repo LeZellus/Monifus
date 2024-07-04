@@ -66,7 +66,7 @@ class SaleController extends AbstractController
             return $this->redirectToRoute('app_sale', [], Response::HTTP_SEE_OTHER);
         }
 
-        $this->breadcrumbService->setBreadcrumbs("Ventes", '/sales');
+        $this->breadcrumbService->setBreadcrumbs("Ventes", '/vente');
         $this->breadcrumbService->setBreadcrumbs("Nouveau", '');
 
         return $this->render('sale/new.html.twig', [
@@ -107,5 +107,19 @@ class SaleController extends AbstractController
 
         // Redirection vers une autre page après la suppression
         return $this->redirectToRoute('app_sale');
+    }
+
+    #[Route('/vente/copier/{id}', name: 'app_sale_copy', methods: ['POST'])]
+    public function copy(Request $request, EntityManagerInterface $entityManager, Sale $sale): Response
+    {
+        $newSale = clone $sale; // Clone l'objet Sale existant
+
+        // Vous pouvez modifier ici les propriétés nécessaires du clone, par exemple :
+        // $newSale->setId(null); // Réinitialise l'ID pour créer un nouvel enregistrement
+
+        $entityManager->persist($newSale);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_sale_edit', ['id' => $newSale->getId()]);
     }
 }
