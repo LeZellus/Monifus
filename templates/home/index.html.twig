@@ -37,20 +37,7 @@
         </div>
     </section>#}
 
-    <section class="wrapper wrapper-style grid gap-6">
-        <div class="grid max-w-screen-xl gap-4 mx-auto w-full">
-            <h2 class="text-center">Dernier record :</h2>
-            <h3 class="text-center">Bouftou Royal <span class="text-white">par</span> <strong>Manu-Bipboup-Metiers</strong></h3>
-            <p class="text-center">Temps : <strong class="text-primary-500">0:01</strong></p>
-            <div class="flex mx-auto space-x-2">
-                <a class="form-submit" href="https://monifus.fr/record/8">Voir le record</a>
-                <a class="form-submit form-submit-green" href="{{ path("app_record_new") }}">Ajouter un record</a>
-            </div>
-            <div class="grid gap-4">
-                <iframe class="rounded-lg w-full aspect-video" src="https://www.youtube.com/embed/0lRL6ZU13EY?si=1dUiHSFboM3lN_Zw"></iframe>
-            </div>
-        </div>
-    </section>
+    {{ include('home/includes/_record.html.twig') }}
 
     {{ include('home/includes/_about.html.twig') }}
 

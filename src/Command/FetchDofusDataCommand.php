@@ -84,6 +84,7 @@ class FetchDofusDataCommand extends Command
         if ($entityClass == Resource::class) {
             $entity->setLevel($item["level"]);
             $entity->setIsImportant(false);
+            $entity->setXpPet(0);
         } elseif ($entityClass == Monster::class) {
             $entity->setLevel($item["grades"][0]["level"]);
         }

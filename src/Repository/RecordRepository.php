@@ -52,4 +52,15 @@ class RecordRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findLatestRecord()
+    {
+        return $this->createQueryBuilder('r')
+            ->where('r.isApproved = :approved') // Condition pour vérifier si isApproved est true
+            ->setParameter('approved', true) 
+            ->orderBy('r.createdAt', 'DESC') // Tri décroissant par date
+            ->setMaxResults(1) // Limite à un seul résultat
+            ->getQuery()
+            ->getOneOrNullResult(); // Retourne un seul résultat ou null si aucun
+    }
 }
