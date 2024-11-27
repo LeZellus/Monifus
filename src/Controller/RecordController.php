@@ -26,7 +26,7 @@ class RecordController extends AbstractController
         $this->extractYoutubeUrlService = $extractYoutubeUrlService;
     }
 
-    #[Route('/record', name: 'app_record')]
+    #[Route('/records', name: 'app_record')]
     public function index(MonsterRepository $monsterRepository, RecordRepository $recordRepository): Response
     {
         $monsters = $monsterRepository->findMonstersWithRecords();
