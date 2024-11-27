@@ -4,8 +4,12 @@
             <img class="md:hidden w-6 h-6 mr-4" src="{{ asset('uploads/logo.svg') }}" alt="Logo de Monifus">
             <div>
                 <p class="text-lg text-gray-700 dark:text-gray-200 font-bold">
-                    {% if app.user is not null and app.user.pseudonymeWebsite is not null %}
-                        Bonjour, <span class="family text-primary-400">{{ app.user.pseudonymeWebsite }}</span>
+                    {% if app.user %}
+                        {% if app.user.pseudonymeWebsite is not null %}
+                            Bonjour, <span class="family text-primary-400">{{ app.user.pseudonymeWebsite }}</span>
+                        {% else %}
+                            Bonjour, <span class="family text-primary-400">Aventurier</span>
+                        {% endif %}
                     {% else %}
                         Bonjour, <span class="family text-primary-400">Aventurier</span>
                     {% endif %}

@@ -15,7 +15,6 @@ use App\Service\ExtractYoutubeUrlService;
 class HomeController extends AbstractController
 {
     private BreadcrumbService $breadcrumbService;
-    private RecordRepository $recordRepository;
     private ExtractYoutubeUrlService $extractYoutubeUrlService;
 
     public function __construct(BreadcrumbService $breadcrumbService, ExtractYoutubeUrlService $extractYoutubeUrlService)

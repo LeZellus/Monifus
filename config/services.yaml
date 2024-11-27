@@ -9,6 +9,7 @@ parameters:
     SUGGESTERS_IDS: '%env(SUGGESTERS_IDS)%'
 services:
     App\Twig\MarkdownFilter: ~
+    App\Service\ExtractYoutubeUrlService: ~
     App\Service\BreadcrumbService:
         arguments:
             $breadcrumbs: '@white_october_breadcrumbs'
