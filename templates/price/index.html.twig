@@ -13,50 +13,54 @@
 
     <section class="grid gap-4">
         {%  if monitorsWithAvgPrices is not empty %}
-            <form action="{{ path('app_price_search') }}" method="get" class="grid gap-2">
-                <label class="form-label" for="search">Recherchez un moniteur</label>
-                <div class="flex space-x-2">
-                    <input id="search" class="form-input h-full flex-1" type="text" name="search" placeholder="Rechercher un moniteur" />
-                    <button class="wrapper wrapper-green h-14 w-14 flex justify-center font-semibold" type="submit">GO</button>
+        <form action="{{ path('app_price_search') }}" method="get" class="grid gap-2">
+            <label class="form-label" for="search">Recherchez un moniteur</label>
+            <div class="flex space-x-2">
+                <input id="search" class="form-input h-full flex-1" type="text" name="search" placeholder="Rechercher un moniteur" />
+                <button class="wrapper wrapper-green h-14 w-14 flex justify-center font-semibold" type="submit">GO</button>
 
-                    <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_price_index') }}">
-                        <i data-feather="trash" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </form>
-            <section class="grid lg:grid-cols-2 xl:grid-cols-4 gap-4">
-                {% for monitorData in monitorsWithAvgPrices %}
-                    <a href="{{ path('app_price_show', {'id': monitorData.0.Resource.id}) }}" class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2">
-                        <div class="flex justify-between">
-                            <div class="grid gap-1">
-                                <h3 class="text-2xl font-bold w-full">{{ monitorData.0.Resource.name }}</h3>
-                                <p class="text-xs uppercase flex items-center">
-                                    <span class="hidden md:block">Moniteurs créés pour cette ressource :</span>
-                                    <span class="md:hidden">Nombre :</span>
-                                    <span class="text-green-500 ml-1">{{ monitorData.priceCount }}</span>
-                                </p>
-                            </div>
-                            <img class="w-12 h-12" src="{{ monitorData.0.Resource.imgUrl }}" alt="Image ressource dofus">
+                <a class="wrapper wrapper-red h-14 w-14 flex justify-center" href="{{ path('app_price_index') }}">
+                    <i data-feather="trash" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </form>
+        <section class="grid lg:grid-cols-2 xl:grid-cols-4 gap-4">
+            {% for monitorData in monitorsWithAvgPrices %}
+                <a href="{{ path('app_price_show', {'id': monitorData[0].id}) }}" class="wrapper wrapper-style hover:shadow-2xl transition duration-300 relative grid gap-2">
+                    <div class="flex justify-between">
+                        <div class="grid gap-1">
+                            <h3 class="text-2xl font-bold w-full">{{ monitorData[0].name }}</h3>
+                            <p class="text-xs uppercase flex items-center">
+                                <span class="hidden md:block">Moniteurs créés pour cette ressource :</span>
+                                <span class="md:hidden">Nombre :</span>
+                                <span class="text-green-500 ml-1">{{ monitorData.priceCount }}</span>
+                            </p>
                         </div>
+                        <img class="w-12 h-12" src="{{ monitorData[0].imgUrl }}" alt="Image ressource dofus">
+                    </div>
 
-                        <div class="flex items-center">
-                            <span class="h-0.5 w-full bg-gray-300 dark:bg-gray-700 block"></span>
-                            <span class="uppercase text-nowrap mx-2 text-xs text-gray-300 dark:text-gray-500">Moyennes par lot :</span>
-                            <span class="h-0.5 w-full bg-gray-300 dark:bg-gray-700 block"></span>
-                        </div>
+                    <div class="flex items-center">
+                        <span class="h-0.5 w-full bg-gray-300 dark:bg-gray-700 block"></span>
+                        <span class="uppercase text-nowrap mx-2 text-xs text-gray-300 dark:text-gray-500">Moyennes par lot :</span>
+                        <span class="h-0.5 w-full bg-gray-300 dark:bg-gray-700 block"></span>
+                    </div>
 
-                        <div class="flex">
-                            {{ include('price/includes/_detailsCard.html.twig') }}
-                        </div>
+                    <div class="flex">
+                        {% include 'price/includes/_detailsCard.html.twig' with {
+                            'priceOne': monitorData.avgPriceOne,
+                            'priceTen': monitorData.avgPriceTen,
+                            'priceHundred': monitorData.avgPriceHundred
+                        } %}
+                    </div>
 
-                        <div class="bg-secondary absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 bg-opacity-80 backdrop-blur-xl transition duration-300 flex items-center justify-center">
-                            <p class="text-white text-lg font-bold family underline">Voir</p>
-                        </div>
-                    </a>
-                {% endfor %}
-            </section>
-        {% else %}
-            <p class="lg:col-span-4 xl:col-span-4 text-center">Pour voir une ressource, ajoutez un moniteur</p>
-        {% endif %}
+                    <div class="bg-secondary absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 bg-opacity-80 backdrop-blur-xl transition duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-bold family underline">Voir</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </section>
+    {% else %}
+        <p class="lg:col-span-4 xl:col-span-4 text-center">Pour voir une ressource, ajoutez un moniteur</p>
+    {% endif %}
     </section>
 {% endblock %}

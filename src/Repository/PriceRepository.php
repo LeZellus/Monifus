@@ -23,15 +23,22 @@ class PriceRepository extends ServiceEntityRepository
         parent::__construct($registry, Price::class);
     }
 
-    private function createBasePriceQueryBuilder(): QueryBuilder
+    public function findMonitorsWithAvgPrices(): array
     {
-        return $this->createQueryBuilder('p')
-            ->leftJoin('p.User', 'u') // Remplacez 'u' par l'alias approprié pour l'entité User
-            ->leftJoin('p.Resource', 'r') // Remplacez 'r' par l'alias approprié pour l'entité Resource
-            ->addSelect('p', 'u', 'r')
-            ->addSelect('AVG(p.priceOne) as avgPriceOne, AVG(p.priceTen) as avgPriceTen, AVG(p.priceHundred) as avgPriceHundred')
-            ->addSelect('COUNT(p) as priceCount')
-            ->groupBy('r.id'); // Supposant que vous voulez grouper par l'identifiant de la ressource
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            'SELECT r, 
+            COUNT(p.id) as priceCount, 
+            AVG(p.priceOne) as avgPriceOne, 
+            AVG(p.priceTen) as avgPriceTen, 
+            AVG(p.priceHundred) as avgPriceHundred
+            FROM App\Entity\Resource r 
+            JOIN r.prices p 
+            GROUP BY r.id 
+            ORDER BY priceCount DESC'
+        );
+
+        return $query->getResult();
     }
 
     private function createDetailedPriceQueryBuilder(): QueryBuilder

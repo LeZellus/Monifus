@@ -34,7 +34,7 @@ class PriceController extends AbstractController
     {
         $user = $security->getUser();
 
-        $monitorsWithAvgPrices  = $priceRepository->findByUserWithResourceAndPrices($user->getId());
+        $monitorsWithAvgPrices = $priceRepository->findMonitorsWithAvgPrices();
 
         $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
 
