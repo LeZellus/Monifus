@@ -3,7 +3,7 @@
 {% block body %}
     <h1 class="text-center">Bienvenue sur Monifus</h1>
 
-    {#<section class="wrapper wrapper-style grid gap-6">
+    <section class="wrapper wrapper-style grid gap-6">
         <h2 class="text-center animation-text-color">Concours !</h2>
         <div class="flex items-center justify-center text-xs">
             <span>Temps restant :</span>
@@ -12,14 +12,14 @@
         <div class="flex justify-center flex-col items-center text-center space-y-2">
             <p><strong>Participez</strong> au concours twitter et <strong class="text-green-400">tentez de gagner</strong> :</p>
             <p class="flex items-center text-2xl dark:text-white uppercase">
-                <span>10 millions </span>
+                <span>1 an d'abonnement en </span>
                 <img class="ml-2 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="">
             </p>
         </div>
 
         <div class="flex justify-center flex-col items-center text-center space-y-2">
             <p class="mb-2">Pour ça rien de plus simple :</p>
-            <a class="form-submit form-submit-twitter animate-bounce" href="https://x.com/MonifusApp/status/1778460193090638119">Cliquez ici !</a>
+            <a class="form-submit form-submit-twitter animate-bounce" href="https://x.com/MonifusApp/status/1862752703438364854">Cliquez ici !</a>
         </div>
     </section>
 
@@ -35,7 +35,7 @@
             <p>Pour ça rien de plus simple :</p>
             <a class="form-submit form-submit-green" href="{{ path('app_guilds_new') }}">Cliquez ici !</a>
         </div>
-    </section>#}
+    </section>
 
     {{ include('home/includes/_record.html.twig') }}
 
@@ -75,7 +75,7 @@
     <script>
         function updateCountdown() {
             const now = new Date();
-            const expirationDate = new Date(now.getFullYear(), 4, 11); // 4 pour mai (les mois commencent à 0)
+            const expirationDate = new Date(now.getFullYear(), 11, 03); // 4 pour mai (les mois commencent à 0)
             if (now > expirationDate) {
                 // Si la date actuelle dépasse la date d'expiration
                 document.getElementById("countdownTimer").innerHTML = "Concours terminé.";

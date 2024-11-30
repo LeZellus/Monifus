@@ -35,6 +35,7 @@
         "symfony/ux-autocomplete": "^2.13",
         "symfony/ux-chartjs": "^2.13",
         "symfony/ux-dropzone": "^2.14",
+        "symfony/ux-icons": "^2.21",
         "symfony/ux-react": "^2.14",
         "symfony/validator": "7.0.*",
         "symfony/webpack-encore-bundle": "^2.1.1",
