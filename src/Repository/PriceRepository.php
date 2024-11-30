@@ -23,20 +23,22 @@ class PriceRepository extends ServiceEntityRepository
         parent::__construct($registry, Price::class);
     }
 
-    public function findMonitorsWithAvgPrices(): array
+    public function findMonitorsWithAvgPrices($user): array
     {
         $em = $this->getEntityManager();
         $query = $em->createQuery(
             'SELECT r, 
-            COUNT(p.id) as priceCount, 
-            AVG(p.priceOne) as avgPriceOne, 
-            AVG(p.priceTen) as avgPriceTen, 
-            AVG(p.priceHundred) as avgPriceHundred
+                COUNT(p.id) as priceCount, 
+                AVG(p.priceOne) as avgPriceOne, 
+                AVG(p.priceTen) as avgPriceTen, 
+                AVG(p.priceHundred) as avgPriceHundred
             FROM App\Entity\Resource r 
             JOIN r.prices p 
+            WHERE p.User = :user 
             GROUP BY r.id 
             ORDER BY priceCount DESC'
-        );
+        )
+        ->setParameter('user', $user);
 
         return $query->getResult();
     }

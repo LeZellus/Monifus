@@ -30,11 +30,11 @@ class PriceController extends AbstractController
     }
 
     #[Route('/', name: 'app_price_index', methods: ['GET'])]
-    public function index(PriceRepository $priceRepository, Security $security): Response
+    public function index(PriceRepository $priceRepository): Response
     {
-        $user = $security->getUser();
+        $user = $this->getUser();
 
-        $monitorsWithAvgPrices = $priceRepository->findMonitorsWithAvgPrices();
+        $monitorsWithAvgPrices = $priceRepository->findMonitorsWithAvgPrices($user);
 
         $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
 
