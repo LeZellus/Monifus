@@ -33,7 +33,7 @@ class SaleRepository extends ServiceEntityRepository
         } else {
             // Supprimez les conditions précédentes et appliquez uniquement la condition admin
             $qb->where('s.buyDate > :adminDate')
-                ->setParameter('adminDate', new \DateTime('2024-12-03'));
+                ->setParameter('adminDate', new \DateTime('2022-12-03'));
         }
 
         if (!empty($searchTerm)) {
