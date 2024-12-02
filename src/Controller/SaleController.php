@@ -28,6 +28,7 @@ class SaleController extends AbstractController
     public function index(PaginatorInterface $paginator, Request $request, RequestStack $requestStack): Response
     {
         $user = $this->getUser();
+        $isAdmin = $this->isGranted('ROLE_ADMIN');
 
         $session = $requestStack->getSession();
 
@@ -39,7 +40,7 @@ class SaleController extends AbstractController
         }
 
         $search = $request->query->get('search', '');
-        $query = $this->saleRepository->findSalesByUserAndResourceName($user, $search);
+        $query = $this->saleRepository->findSalesByUserAndResourceName($user, $search, $isAdmin);
         $stats = $this->saleRepository->getSaleStatsForUserAndResourceSearch($user, $search);
 
         $page = $request->query->getInt('page', 1);
@@ -55,7 +56,8 @@ class SaleController extends AbstractController
             'stats' => $stats,
             'search' => $search,
             'limit' => $limit,
-            'noSales' => empty($query) // Vérifie s'il n'y a aucun Sale
+            'noSales' => empty($query), // Vérifie s'il n'y a aucun Sale
+            'currentUser' => $user,
         ]);
     }
 

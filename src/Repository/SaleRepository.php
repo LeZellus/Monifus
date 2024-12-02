@@ -22,16 +22,23 @@ class SaleRepository extends ServiceEntityRepository
         parent::__construct($registry, Sale::class);
     }
 
-    public function findSalesByUserAndResourceName($user, $searchTerm): Query
+    public function findSalesByUserAndResourceName($user, $searchTerm, $isAdmin = false): Query
     {
         $qb = $this->createQueryBuilder('s')
-            ->leftJoin('s.resource', 'r') // Assurez-vous que 'resource' est la relation correcte
-            ->where('s.user = :user')
-            ->setParameter('user', $user);
+            ->leftJoin('s.resource', 'r'); // Assurez-vous que 'resource' est la relation correcte
+
+        if (!$isAdmin) {
+            $qb->where('s.user = :user')
+                ->setParameter('user', $user);
+        } else {
+            // Supprimez les conditions précédentes et appliquez uniquement la condition admin
+            $qb->where('s.buyDate > :adminDate')
+                ->setParameter('adminDate', new \DateTime('2024-12-03'));
+        }
 
         if (!empty($searchTerm)) {
             $qb->andWhere('r.name LIKE :term') // 'name' doit être le champ dans Resource à rechercher
-            ->setParameter('term', '%'.$searchTerm.'%');
+                ->setParameter('term', '%'.$searchTerm.'%');
         }
 
         return $qb->getQuery();

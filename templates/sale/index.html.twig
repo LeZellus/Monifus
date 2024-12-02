@@ -148,14 +148,25 @@
                     {% set profit_percentage = (sale.sellPrice - sale.buyPrice) / sale.buyPrice * 100 %}
                 {% endif %}
                 <tr class="border-b border-gray-300 dark:border-gray-700 {{ sale.isSell ? 'is-sold' : 'not-sold' }}">
-                    <td class="p-2 {{ sale.isSell ? 'text-green-400' : 'text-red-400' }}">{{ sale.resource.name }}</td>
+                    <td class="p-2 {{ sale.isSell ? 'text-green-400' : 'text-red-400' }}">
+                        {{ sale.resource.name }}
+                        {% if app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
+                            {% if sale.user != currentUser %}
+                                <span class="text-xs text-red-500 italic">(Autre utilisateur)</span>
+                            {% else %}
+                                <span class="text-xs text-gray-500 italic">(Votre vente)</span>
+                            {% endif %}
+                        {% endif %}
+                    </td>
                     <td class="p-2 hidden xl:table-cell">{{ profit_percentage|number_format(0, '.', ' ') }} %</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.buyDate|date('d-m-Y') }}</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.sellDate ? sale.sellDate|date('d-m-Y') : 'Non vendu' }}</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.buyPrice|number_format(0, '.', ' ') }} k</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.sellPrice|number_format(0, '.', ' ') }} k</td>
                     <td class="p-2 hidden xl:table-cell">{{ sale.stock }}</td>
-                    <td class="p-2 {{ sale.isSell ? 'text-green-500' : 'text-red-500' }}">{{ sale.isSell? 'OUI' : 'NON' }}</td>
+                    <td class="p-2 {{ sale.isSell ? 'text-green-500' : 'text-red-500' }}">
+                        {{ sale.isSell ? 'OUI' : 'NON' }}
+                    </td>
                     <td class="p-2 table-cell">
                         <div class="flex items-center">
                             <a href="{{ path('app_sale_edit', {'id' : sale.id}) }}">
