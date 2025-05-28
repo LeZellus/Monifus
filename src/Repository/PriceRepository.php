@@ -51,16 +51,6 @@ class PriceRepository extends ServiceEntityRepository
             ->addSelect('p', 'u', 'r');
     }
 
-    // Récupération des moniteurs et leurs moyennes par utilisateur
-    public function findByUserWithResourceAndPrices($userId): array|float|int|string
-    {
-        return $this->createBasePriceQueryBuilder()
-            ->andWhere('u.id = :user')
-            ->setParameter('user', $userId)
-            ->getQuery()
-            ->getArrayResult();
-    }
-
     // Récupération du moniteur par utilisateur et par ressource, puis calcul de la moyenne
     public function findByUserAndResourceWithDetails($userId, $resourceId): array
     {
@@ -93,12 +83,25 @@ class PriceRepository extends ServiceEntityRepository
     }
 
     // Méthode de recherche sur les moniteurs
-    public function findBySearchTerm($searchTerm): array|float|int|string
+    public function findBySearchTerm($searchTerm, $user): array
     {
-        return $this->createBasePriceQueryBuilder()
-            ->where('r.name LIKE :searchTerm')
-            ->setParameter('searchTerm', '%'.$searchTerm.'%')
-            ->getQuery()
-            ->getArrayResult();
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            'SELECT r, 
+                COUNT(p.id) as priceCount, 
+                AVG(p.priceOne) as avgPriceOne, 
+                AVG(p.priceTen) as avgPriceTen, 
+                AVG(p.priceHundred) as avgPriceHundred
+            FROM App\Entity\Resource r 
+            JOIN r.prices p 
+            WHERE p.User = :user 
+            AND r.name LIKE :searchTerm
+            GROUP BY r.id 
+            ORDER BY priceCount DESC'
+        )
+        ->setParameter('user', $user)
+        ->setParameter('searchTerm', '%'.$searchTerm.'%');
+
+        return $query->getResult();
     }
 }

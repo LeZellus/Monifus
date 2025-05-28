@@ -82,7 +82,7 @@ class PriceController extends AbstractController
     {
         $searchTerm = $request->query->get('search');
 
-        $monitorsWithAvgPrices = $priceRepository->findBySearchTerm($searchTerm);
+        $monitorsWithAvgPrices = $priceRepository->findBySearchTerm($searchTerm, $this->security->getUser());
 
         $this->breadcrumbService->setBreadcrumbs("Moniteurs", "");
 

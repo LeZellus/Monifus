@@ -5,6 +5,7 @@ namespace App\Command;
 use App\Entity\Resource;
 use App\Entity\Monster;
 use App\Service\DofusApiService;
+use App\Service\ImageValidatorService;
 use Doctrine\ORM\EntityManagerInterface;
 use JetBrains\PhpStorm\NoReturn;
 use Symfony\Component\Console\Command\Command;
@@ -15,11 +16,13 @@ class FetchDofusDataCommand extends Command
 {
     private DofusApiService $dofusApiService;
     private EntityManagerInterface $entityManager;
+    private ImageValidatorService $imageValidatorService;
 
-    public function __construct(DofusApiService $dofusApiService, EntityManagerInterface $entityManager)
+    public function __construct(DofusApiService $dofusApiService, EntityManagerInterface $entityManager, ImageValidatorService $imageValidatorService)
     {
         $this->dofusApiService = $dofusApiService;
         $this->entityManager = $entityManager;
+        $this->imageValidatorService = $imageValidatorService;
         parent::__construct();
     }
 
@@ -79,7 +82,10 @@ class FetchDofusDataCommand extends Command
 
         $entity->setAnkamaId($item["id"]);
         $entity->setName($item["name"]["fr"] ?? 'Unknown');
-        $entity->setImgUrl($item["img"]);
+        
+        // Validation de l'URL d'image avec le service
+        $imageUrl = $this->imageValidatorService->validateAndGetImageUrl($item["img"]);
+        $entity->setImgUrl($imageUrl);
 
         if ($entityClass == Resource::class) {
             $entity->setLevel($item["level"]);
