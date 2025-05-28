@@ -10,6 +10,8 @@ parameters:
 services:
     App\Twig\MarkdownFilter: ~
     App\Service\ExtractYoutubeUrlService: ~
+    App\Service\ImageValidatorService:
+        autowire: true
     App\Service\BreadcrumbService:
         arguments:
             $breadcrumbs: '@white_october_breadcrumbs'
