@@ -24,13 +24,9 @@ class Server
     #[ORM\OneToMany(mappedBy: 'server', targetEntity: User::class)]
     private Collection $users;
 
-    #[ORM\OneToMany(mappedBy: 'server', targetEntity: Guild::class)]
-    private Collection $guilds;
-
     public function __construct()
     {
         $this->users = new ArrayCollection();
-        $this->guilds = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -95,35 +91,5 @@ class Server
     public function __toString()
     {
         return $this->name;
-    }
-
-    /**
-     * @return Collection<int, Guild>
-     */
-    public function getGuilds(): Collection
-    {
-        return $this->guilds;
-    }
-
-    public function addGuild(Guild $guild): static
-    {
-        if (!$this->guilds->contains($guild)) {
-            $this->guilds->add($guild);
-            $guild->setServer($this);
-        }
-
-        return $this;
-    }
-
-    public function removeGuild(Guild $guild): static
-    {
-        if ($this->guilds->removeElement($guild)) {
-            // set the owning side to null (unless already changed)
-            if ($guild->getServer() === $this) {
-                $guild->setServer(null);
-            }
-        }
-
-        return $this;
     }
 }

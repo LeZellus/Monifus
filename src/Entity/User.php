@@ -148,10 +148,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'User', targetEntity: Price::class, orphanRemoval: true)]
     private Collection $prices;
 
-    #[ORM\ManyToOne(inversedBy: 'members')]
-    private ?Guild $guild = null;
-
-
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
@@ -595,18 +591,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $price->setUser(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getGuild(): ?Guild
-    {
-        return $this->guild;
-    }
-
-    public function setGuild(?Guild $guild): static
-    {
-        $this->guild = $guild;
 
         return $this;
     }
