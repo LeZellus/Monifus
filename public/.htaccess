@@ -20,6 +20,10 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Redirection de toutes les pages guildes vers la home avec code 301
+    RewriteRule ^guildes/?$ / [R=301,L]
+    RewriteRule ^guildes/(.*)$ / [R=301,L]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper

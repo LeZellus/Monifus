@@ -1,43 +1,44 @@
-  User-agent: *
-  Allow: /
+User-agent: *
+Allow: /
 
-  Disallow: /connexion
-  Disallow: /reset-password
-  Disallow: /record/nouveau
-  Disallow: /admin
-  Disallow: /profil/mon-profil
-  Disallow: /vente
-  Disallow: /price
-  Disallow: /record/nouveau
+Disallow: /connexion
+Disallow: /reset-password
+Disallow: /record/nouveau
+Disallow: /admin
+Disallow: /profil/mon-profil
+Disallow: /vente
+Disallow: /price
+Disallow: /guildes/
+Disallow: /guildes
 
-  Sitemap: https://monifus.fr/sitemap.xml
+Sitemap: https://monifus.fr/sitemap.xml
 
-  User-agent: buenibot
-  Disallow: /
+User-agent: buenibot
+Disallow: /
 
-  User-agent: EtaoSpider
-  Disallow: /
+User-agent: EtaoSpider
+Disallow: /
 
-  User-agent: Yandex
-  Disallow: /
+User-agent: Yandex
+Disallow: /
 
-  User-agent: Baiduspider
-  Disallow: /
+User-agent: Baiduspider
+Disallow: /
 
-  User-Agent: MJ12bot
-  Disallow: /
+User-agent: MJ12bot
+Disallow: /
 
-  User-agent: PetalBot
-  Disallow: /
+User-agent: PetalBot
+Disallow: /
 
-  User-agent: TextBulkerBot
-  Disallow: /
+User-agent: TextBulkerBot
+Disallow: /
 
-  User-agent: GPTBot
-  Disallow: /
+User-agent: GPTBot
+Disallow: /
 
-  User-Agent: ChatGPT-User
-  Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
 
-  User-Agent: CCBot
-  Disallow: /
+User-agent: CCBot
+Disallow: /
