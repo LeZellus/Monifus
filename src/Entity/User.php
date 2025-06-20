@@ -72,9 +72,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Type("bool")]
     private $isVerified = false;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Record::class, orphanRemoval: true)]
-    private Collection $records;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $profilePicture = null;
 
@@ -152,7 +149,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->createdAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
         $this->updatedAt = new \DateTimeImmutable("now", new DateTimeZone('Europe/Paris'));
-        $this->records = new ArrayCollection();
         $this->sales = new ArrayCollection();
         $this->isTutorial = false;
 
@@ -286,36 +282,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Record>
-     */
-    public function getRecords(): Collection
-    {
-        return $this->records;
-    }
-
-    public function addRecord(Record $record): static
-    {
-        if (!$this->records->contains($record)) {
-            $this->records->add($record);
-            $record->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRecord(Record $record): static
-    {
-        if ($this->records->removeElement($record)) {
-            // set the owning side to null (unless already changed)
-            if ($record->getUser() === $this) {
-                $record->setUser(null);
-            }
-        }
 
         return $this;
     }

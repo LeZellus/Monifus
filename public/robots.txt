@@ -11,6 +11,7 @@ Disallow: /price
 Disallow: /guildes/
 Disallow: /guildes
 Disallow: /xpetifus
+Disallow: /record
 
 Sitemap: https://monifus.fr/sitemap.xml
 

@@ -3,42 +3,6 @@
 {% block body %}
     <h1 class="text-center">Bienvenue sur Monifus</h1>
 
-    {# 
-    <section class="wrapper wrapper-style grid gap-6">
-        <h2 class="text-center animation-text-color">Concours !</h2>
-        <div class="flex items-center justify-center text-xs">
-            <span>Temps restant :</span>
-            <span id="countdownTimer" class="text-red-400 ml-2"></span>
-        </div>
-        <div class="flex justify-center flex-col items-center text-center space-y-2">
-            <p><strong>Participez</strong> au concours twitter et <strong class="text-green-400">tentez de gagner</strong> :</p>
-            <p class="flex items-center text-2xl dark:text-white uppercase">
-                <span>1 an d'abonnement en </span>
-                <img class="ml-2 h-6" src="{{ asset('uploads/kamas.webp') }}" alt="">
-            </p>
-        </div>
-
-        <div class="flex justify-center flex-col items-center text-center space-y-2">
-            <p class="mb-2">Pour ça rien de plus simple :</p>
-            <a class="form-submit form-submit-twitter animate-bounce" href="https://x.com/MonifusApp/status/1862752703438364854">Cliquez ici !</a>
-        </div>
-    </section>
-
-    <section class="wrapper wrapper-style grid gap-6">
-        <h2 class="text-center">Nouveau !</h2>
-        <div class="flex justify-center flex-col items-center text-center space-y-2">
-            <p>Vous pouvez maintenant créer votre page de guilde pour la partager !</p>
-            <a class="form-submit" href="https://monifus.fr/guildes/Bam_Beach">Voir un exemple</a>
-            <img class="rounded-lg h-96 object-cover" src="{{ asset("uploads/guild_page.png") }}" alt="Page de guilde">
-        </div>
-
-        <div class="flex justify-center flex-col items-center text-center space-y-2">
-            <p>Pour ça rien de plus simple :</p>
-            <a class="form-submit form-submit-green" href="{{ path('app_guilds_new') }}">Cliquez ici !</a>
-        </div>
-    </section>
-    #}
-
     {{ include('home/includes/_about.html.twig') }}
 
     <section class="wrapper-style wrapper">
