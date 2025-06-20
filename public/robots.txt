@@ -10,6 +10,7 @@ Disallow: /vente
 Disallow: /price
 Disallow: /guildes/
 Disallow: /guildes
+Disallow: /xpetifus
 
 Sitemap: https://monifus.fr/sitemap.xml
 

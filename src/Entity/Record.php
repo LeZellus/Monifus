@@ -14,10 +14,6 @@ class Record
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'records')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Monster $monster = null;
-
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
@@ -42,18 +38,6 @@ class Record
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getMonster(): ?Monster
-    {
-        return $this->monster;
-    }
-
-    public function setMonster(?Monster $monster): static
-    {
-        $this->monster = $monster;
-
-        return $this;
     }
 
     public function getTime(): ?\DateTimeInterface
